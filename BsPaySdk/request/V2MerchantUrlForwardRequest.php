@@ -1,0 +1,82 @@
+<?php
+
+namespace BsPaySdk\request;
+
+use BsPaySdk\enums\FunctionCodeEnum;
+
+/**
+ * 商户统一进件（页面版）
+ *
+ * @author sdk-generator
+ * @Description
+ */
+class V2MerchantUrlForwardRequest extends BaseRequest
+{
+
+    /**
+     * 请求流水号
+     */
+    private $reqSeqId;
+    /**
+     * 请求日期
+     */
+    private $reqDate;
+    /**
+     * 渠道商号
+     */
+    private $upperHuifuId;
+    /**
+     * 手机号
+     */
+    private $phone;
+    /**
+     * 门店号
+     */
+    private $storeid;
+
+    public function getFunctionCode() {
+        return FunctionCodeEnum::$V2_MERCHANT_URL_FORWARD;
+    }
+
+
+    public function getReqSeqId() {
+        return $this->reqSeqId;
+    }
+
+    public function setReqSeqId($reqSeqId) {
+        $this->reqSeqId = $reqSeqId;
+    }
+
+    public function getReqDate() {
+        return $this->reqDate;
+    }
+
+    public function setReqDate($reqDate) {
+        $this->reqDate = $reqDate;
+    }
+
+    public function getUpperHuifuId() {
+        return $this->upperHuifuId;
+    }
+
+    public function setUpperHuifuId($upperHuifuId) {
+        $this->upperHuifuId = $upperHuifuId;
+    }
+
+    public function getPhone() {
+        return $this->phone;
+    }
+
+    public function setPhone($phone) {
+        $this->phone = $phone;
+    }
+
+    public function getStoreid() {
+        return $this->storeid;
+    }
+
+    public function setStoreid($storeid) {
+        $this->storeid = $storeid;
+    }
+
+}

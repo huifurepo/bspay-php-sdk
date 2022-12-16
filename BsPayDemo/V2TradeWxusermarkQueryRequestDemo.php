@@ -1,0 +1,58 @@
+<?php
+
+/**
+ * 微信用户标识查询接口 - 示例
+ *
+ * @author sdk-generator
+ * @Description
+ */
+namespace BsPayDemo;
+
+// 1. 资源及配置加载
+require_once dirname(__FILE__) . "/loader.php";
+require_once  dirname(__FILE__). "/../BsPaySdk/request/V2TradeWxusermarkQueryRequest.php";
+
+use BsPaySdk\core\BsPayClient;
+use BsPaySdk\request\V2TradeWxusermarkQueryRequest;
+
+// 2.组装请求参数
+$request = new V2TradeWxusermarkQueryRequest();
+// 商户号
+$request->setHuifuId("6666000003100616");
+// 请求日期
+$request->setReqDate(date("Ymd"));
+// 请求流水号
+$request->setReqSeqId(date("YmdHis").mt_rand());
+// 支付授权码
+$request->setAuthCode("130636925881320560");
+
+// 设置非必填字段
+$extendInfoMap = getExtendInfos();
+$request->setExtendInfo($extendInfoMap);
+
+// 3. 发起API调用
+$client = new BsPayClient();
+$result = $client->postRequest($request);
+if (!$result || $result->isError()) {  //失败处理
+    var_dump($result -> getErrorInfo());
+} else {    //成功处理
+    var_dump($result);
+}
+
+/**
+ * 非必填字段
+ *
+ */
+function getExtendInfos() {
+    // 设置非必填字段
+    $extendInfoMap = array();
+    // 子商户公众账号ID
+    $extendInfoMap["sub_appid"]= "oQOa46X2FxRqEy6F4YmwIRCrA7Mk";
+    // 渠道号
+    $extendInfoMap["channel_no"]= "";
+    // 场景类型
+    $extendInfoMap["pay_scene"]= "";
+    return $extendInfoMap;
+}
+
+
