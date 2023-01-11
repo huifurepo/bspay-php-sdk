@@ -5,6 +5,18 @@ namespace BsPaySdk\enums;
 class FunctionCodeEnum
 {
     /**
+     * 子账户开通配置
+     */
+    static $V2_MERCHANT_SETTLE_CONFIG = 'v2/merchant/settle/config';
+    /**
+     * 修改子账户配置
+     */
+    static $V2_MERCHANT_SETTLE_MODIFY = 'v2/merchant/settle/modify';
+    /**
+     * 批量交易状态查询
+     */
+    static $V2_TRADE_TRANSSTAT_QUERY = 'v2/trade/transstat/query';
+    /**
      * 网银支付接口
      */
     static $V2_TRADE_ONLINEPAYMENT_BANKING_FRONTPAY = 'v2/trade/onlinepayment/banking/frontpay';

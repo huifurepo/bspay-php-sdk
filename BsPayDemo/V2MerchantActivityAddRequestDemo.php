@@ -108,6 +108,8 @@ function getExtendInfos() {
     $extendInfoMap["industry_photo"]= "";
     // 负责人授权函图片
     $extendInfoMap["legal_person_auth_photo"]= "";
+    // 食堂经营相关资质
+    // $extendInfoMap["food_qualification_proof"]= "";
     return $extendInfoMap;
 }
 

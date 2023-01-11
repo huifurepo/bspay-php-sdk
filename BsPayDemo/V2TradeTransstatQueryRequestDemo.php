@@ -1,7 +1,7 @@
 <?php
 
 /**
- * 网银付款银行账户查询 - 示例
+ * 批量交易状态查询 - 示例
  *
  * @author sdk-generator
  * @Description
@@ -10,23 +10,21 @@ namespace BsPayDemo;
 
 // 1. 资源及配置加载
 require_once dirname(__FILE__) . "/loader.php";
-require_once  dirname(__FILE__). "/../BsPaySdk/request/V2TradeOnlinepaymentBankpayPayerqueryRequest.php";
+require_once  dirname(__FILE__). "/../BsPaySdk/request/V2TradeTransstatQueryRequest.php";
 
 use BsPaySdk\core\BsPayClient;
-use BsPaySdk\request\V2TradeOnlinepaymentBankpayPayerqueryRequest;
+use BsPaySdk\request\V2TradeTransstatQueryRequest;
 
 // 2.组装请求参数
-$request = new V2TradeOnlinepaymentBankpayPayerqueryRequest();
-// 请求日期
-$request->setReqDate(date("Ymd"));
-// 请求流水号
-$request->setReqSeqId(date("YmdHis").mt_rand());
+$request = new V2TradeTransstatQueryRequest();
 // 商户号
-$request->setHuifuId("6666000003100615");
-// 原交易请求日期
-$request->setOrgReqDate("20221104");
-// 原交易请求流水号
-$request->setOrgReqSeqId("6246684562803777");
+// $request->setHuifuId("test");
+// 页码
+$request->setPageNo("1");
+// 页大小
+$request->setPageSize("4");
+// 请求日期
+// $request->setReqDate(date("Ymd"));
 
 // 设置非必填字段
 $extendInfoMap = getExtendInfos();
@@ -48,10 +46,8 @@ if (!$result || $result->isError()) {  //失败处理
 function getExtendInfos() {
     // 设置非必填字段
     $extendInfoMap = array();
-    // 原交易汇付全局流水号
-    $extendInfoMap["org_hf_seq_id"]= "";
-    // 商户备注
-    $extendInfoMap["remark"]= "remark123";
+    // 请求订单
+    $extendInfoMap["reqseqid_list"]= "[\"20221108104332293079\",\"20221108104817E93140\",\"20221108104800E93135\",\"20221108112153E93750\",\"20221108133737E96102\"]";
     return $extendInfoMap;
 }
 

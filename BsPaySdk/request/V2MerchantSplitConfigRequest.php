@@ -30,14 +30,6 @@ class V2MerchantSplitConfigRequest extends BaseRequest
      */
     private $ruleOrigin;
     /**
-     * 分账是否支持撤销交易
-     */
-    private $repealFlag;
-    /**
-     * 分账是否支持退货交易
-     */
-    private $refundFlag;
-    /**
      * 分账开关
      */
     private $divFlag;
@@ -85,22 +77,6 @@ class V2MerchantSplitConfigRequest extends BaseRequest
 
     public function setRuleOrigin($ruleOrigin) {
         $this->ruleOrigin = $ruleOrigin;
-    }
-
-    public function getRepealFlag() {
-        return $this->repealFlag;
-    }
-
-    public function setRepealFlag($repealFlag) {
-        $this->repealFlag = $repealFlag;
-    }
-
-    public function getRefundFlag() {
-        return $this->refundFlag;
-    }
-
-    public function setRefundFlag($refundFlag) {
-        $this->refundFlag = $refundFlag;
     }
 
     public function getDivFlag() {

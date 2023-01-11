@@ -86,6 +86,8 @@ function getExtendInfos() {
     $extendInfoMap["notify_url"]= "http://www.baidu.com";
     // 备注
     $extendInfoMap["remark"]= "string";
+    // 账户号
+    // $extendInfoMap["acct_id"]= "";
     return $extendInfoMap;
 }
 
@@ -165,6 +167,8 @@ function getAcctInfosRucan() {
     // $dto["div_amt"] = "test";
     // 被分账方ID
     // $dto["huifu_id"] = "test";
+    // 账户号
+    // $dto["acct_id"] = "";
 
     $dtoList = array();
     array_push($dtoList, $dto);
@@ -325,6 +329,8 @@ function getExtendParams() {
     $dto["parking_id"] = "123wsx";
     // 系统商编号
     $dto["sys_service_provider_id"] = "1111111";
+    // 信用卡分期资产方式
+    // $dto["fq_channels"] = "";
 
     return $dto;
 }

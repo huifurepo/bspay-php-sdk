@@ -1,7 +1,7 @@
 <?php
 
 /**
- * 网银付款银行账户查询 - 示例
+ * 查询投诉协商历史 - 示例
  *
  * @author sdk-generator
  * @Description
@@ -10,23 +10,21 @@ namespace BsPayDemo;
 
 // 1. 资源及配置加载
 require_once dirname(__FILE__) . "/loader.php";
-require_once  dirname(__FILE__). "/../BsPaySdk/request/V2TradeOnlinepaymentBankpayPayerqueryRequest.php";
+require_once  dirname(__FILE__). "/../BsPaySdk/request/V2MerchantComplaintHistoryQueryRequest.php";
 
 use BsPaySdk\core\BsPayClient;
-use BsPaySdk\request\V2TradeOnlinepaymentBankpayPayerqueryRequest;
+use BsPaySdk\request\V2MerchantComplaintHistoryQueryRequest;
 
 // 2.组装请求参数
-$request = new V2TradeOnlinepaymentBankpayPayerqueryRequest();
-// 请求日期
-$request->setReqDate(date("Ymd"));
+$request = new V2MerchantComplaintHistoryQueryRequest();
 // 请求流水号
 $request->setReqSeqId(date("YmdHis").mt_rand());
-// 商户号
-$request->setHuifuId("6666000003100615");
-// 原交易请求日期
-$request->setOrgReqDate("20221104");
-// 原交易请求流水号
-$request->setOrgReqSeqId("6246684562803777");
+// 请求时间
+$request->setReqDate(date("Ymd"));
+// 投诉单号
+$request->setComplaintId("200000020221019110032287912");
+// 微信商户号
+$request->setMchId("1507920721");
 
 // 设置非必填字段
 $extendInfoMap = getExtendInfos();
@@ -48,10 +46,10 @@ if (!$result || $result->isError()) {  //失败处理
 function getExtendInfos() {
     // 设置非必填字段
     $extendInfoMap = array();
-    // 原交易汇付全局流水号
-    $extendInfoMap["org_hf_seq_id"]= "";
-    // 商户备注
-    $extendInfoMap["remark"]= "remark123";
+    // 分页开始位置
+    $extendInfoMap["offset"]= "10";
+    // 分页大小
+    $extendInfoMap["limit"]= "1";
     return $extendInfoMap;
 }
 

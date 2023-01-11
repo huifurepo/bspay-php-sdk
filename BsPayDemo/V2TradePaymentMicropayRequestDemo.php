@@ -82,6 +82,8 @@ function getExtendInfos() {
     $extendInfoMap["notify_url"]= "http://www.baidu.com";
     // 交易备注
     $extendInfoMap["remark"]= "";
+    // 账户号
+    // $extendInfoMap["acct_id"]= "";
     return $extendInfoMap;
 }
 
@@ -147,6 +149,8 @@ function getAcctInfosRucan() {
     // $dto["div_amt"] = "test";
     // 被分账方ID
     // $dto["huifu_id"] = "test";
+    // 账户号
+    // $dto["acct_id"] = "";
 
     $dtoList = array();
     array_push($dtoList, $dto);

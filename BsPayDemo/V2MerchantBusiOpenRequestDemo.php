@@ -130,6 +130,8 @@ function getExtendInfos() {
     // $extendInfoMap["online_pay_fee_conf_list"]= getOnlinePayFeeConfList();
     // 银行大额转账对象
     // $extendInfoMap["bank_big_amt_pay_config"]= getBankBigAmtPayConfig();
+    // 微信直连配置对象
+    // $extendInfoMap["wx_zl_conf"]= getWxZlConf();
     return $extendInfoMap;
 }
 
@@ -141,8 +143,8 @@ function getWxConfList() {
     $dto["fee_rate"] = "0.38";
     // 费率规则号
     $dto["fee_rule_id"] = "758";
-    // 商户经营类目
-    $dto["mcc"] = "111";
+    // ~~商户经营类目~~
+    // $dto["~~mcc~~"] = "";
     // 子渠道号
     $dto["pay_channel_id"] = "JP00001";
     // 申请服务
@@ -287,6 +289,16 @@ function getUnionConfList() {
     return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
+function getWxZlConf() {
+    $dto = array();
+    // 微信子商户号
+    // $dto["sub_mch_id"] = "test";
+    // 配置集合
+    // $dto["wx_zl_pay_conf_list"] = getWxZlPayConfList();
+
+    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+}
+
 function getOnlinePayFeeConfList() {
     $dto = array();
     // 业务类型
@@ -339,6 +351,22 @@ function getBankBigAmtPayConfig() {
     // $dto["big_amt_limit_per_day"] = "";
 
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+}
+
+function getWxZlPayConfList() {
+    $dto = array();
+    // 申请服务
+    // $dto["service_code"] = "test";
+    // 功能服务appid
+    // $dto["sub_app_id"] = "test";
+    // 功能开关
+    // $dto["switch_state"] = "test";
+    // 功能费率(%)
+    // $dto["fee_rate"] = "test";
+
+    $dtoList = array();
+    array_push($dtoList, $dto);
+    return $dtoList;
 }
 
 function getHbFqFeeConfig() {

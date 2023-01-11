@@ -14,6 +14,14 @@ class V2TradeOnlinepaymentBankpayPayerqueryRequest extends BaseRequest
 {
 
     /**
+     * 请求日期
+     */
+    private $reqDate;
+    /**
+     * 请求流水号
+     */
+    private $reqSeqId;
+    /**
      * 商户号
      */
     private $huifuId;
@@ -25,23 +33,27 @@ class V2TradeOnlinepaymentBankpayPayerqueryRequest extends BaseRequest
      * 原交易请求流水号
      */
     private $orgReqSeqId;
-    /**
-     * 请求日期
-     */
-    private $reqDate;
-    /**
-     * 请求流水号
-     */
-    private $reqSeqId;
-    /**
-     * 原交易汇付全局流水号
-     */
-    private $orgHfSeqId;
 
     public function getFunctionCode() {
         return FunctionCodeEnum::$V2_TRADE_ONLINEPAYMENT_BANKPAY_PAYERQUERY;
     }
 
+
+    public function getReqDate() {
+        return $this->reqDate;
+    }
+
+    public function setReqDate($reqDate) {
+        $this->reqDate = $reqDate;
+    }
+
+    public function getReqSeqId() {
+        return $this->reqSeqId;
+    }
+
+    public function setReqSeqId($reqSeqId) {
+        $this->reqSeqId = $reqSeqId;
+    }
 
     public function getHuifuId() {
         return $this->huifuId;
@@ -65,30 +77,6 @@ class V2TradeOnlinepaymentBankpayPayerqueryRequest extends BaseRequest
 
     public function setOrgReqSeqId($orgReqSeqId) {
         $this->orgReqSeqId = $orgReqSeqId;
-    }
-
-    public function getReqDate() {
-        return $this->reqDate;
-    }
-
-    public function setReqDate($reqDate) {
-        $this->reqDate = $reqDate;
-    }
-
-    public function getReqSeqId() {
-        return $this->reqSeqId;
-    }
-
-    public function setReqSeqId($reqSeqId) {
-        $this->reqSeqId = $reqSeqId;
-    }
-
-    public function getOrgHfSeqId() {
-        return $this->orgHfSeqId;
-    }
-
-    public function setOrgHfSeqId($orgHfSeqId) {
-        $this->orgHfSeqId = $orgHfSeqId;
     }
 
 }

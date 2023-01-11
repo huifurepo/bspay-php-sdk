@@ -25,10 +25,6 @@ $request->setReqDate(date("Ymd"));
 $request->setHuifuId("6666000105582434");
 // 分账规则来源
 $request->setRuleOrigin("02");
-// 分账是否支持撤销交易
-$request->setRepealFlag("Y");
-// 分账是否支持退货交易
-$request->setRefundFlag("Y");
 // 分账开关
 $request->setDivFlag("Y");
 // 最大分账比例
