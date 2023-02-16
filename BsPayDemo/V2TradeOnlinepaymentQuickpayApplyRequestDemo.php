@@ -73,20 +73,18 @@ function getExtendInfos() {
     return $extendInfoMap;
 }
 
-function getCombinedpayData() {
+function getRiskCheckData() {
     $dto = array();
-    // 补贴方汇付编号
-    // $dto["huifu_id"] = "test";
-    // 补贴方类型
-    // $dto["user_type"] = "test";
-    // 补贴方账户号
-    // $dto["acct_id"] = "test";
-    // 补贴金额
-    // $dto["amount"] = "test";
+    // ip地址
+    $dto["ip_addr"] = "106.33.180.238";
+    // 基站地址
+    // $dto["base_atation"] = "";
+    // 纬度
+    // $dto["latitude"] = "";
+    // 经度
+    // $dto["longitude"] = "";
 
-    $dtoList = array();
-    array_push($dtoList, $dto);
-    return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
 function getTerminalDeviceData() {
@@ -111,18 +109,20 @@ function getTerminalDeviceData() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function getRiskCheckData() {
+function getCombinedpayData() {
     $dto = array();
-    // ip地址
-    $dto["ip_addr"] = "106.33.180.238";
-    // 基站地址
-    // $dto["base_atation"] = "";
-    // 纬度
-    // $dto["latitude"] = "";
-    // 经度
-    // $dto["longitude"] = "";
+    // 补贴方汇付编号
+    // $dto["huifu_id"] = "test";
+    // 补贴方类型
+    // $dto["user_type"] = "test";
+    // 补贴方账户号
+    // $dto["acct_id"] = "test";
+    // 补贴金额
+    // $dto["amount"] = "test";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    $dtoList = array();
+    array_push($dtoList, $dto);
+    return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
 function getAcctInfos() {
@@ -139,6 +139,14 @@ function getAcctInfos() {
     return $dtoList;
 }
 
+function getAcctSplitBunchRucan() {
+    $dto = array();
+    // 分账信息列表
+    // $dto["acct_infos"] = getAcctInfos();
+
+    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+}
+
 function getExtendPayData() {
     $dto = array();
     // 业务种类
@@ -147,14 +155,6 @@ function getExtendPayData() {
     // $dto["goods_short_name"] = "test";
     // 网关支付受理渠道
     $dto["gw_chnnl_tp"] = "99";
-
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
-}
-
-function getAcctSplitBunchRucan() {
-    $dto = array();
-    // 分账信息列表
-    // $dto["acct_infos"] = getAcctInfos();
 
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }

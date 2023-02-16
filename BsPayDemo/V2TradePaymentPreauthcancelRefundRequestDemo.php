@@ -81,6 +81,20 @@ function getExtendInfos() {
     return $extendInfoMap;
 }
 
+function getRiskCheckInfo() {
+    $dto = array();
+    // 基站地址
+    $dto["base_station"] = "192.168.1.1";
+    // ip地址
+    $dto["ip_addr"] = "192.168.1.1";
+    // 纬度
+    $dto["latitude"] = "33.3";
+    // 经度
+    $dto["longitude"] = "33.3";
+
+    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+}
+
 function getTerminalDeviceInfo() {
     $dto = array();
     // 交易设备GPS
@@ -107,20 +121,6 @@ function getTerminalDeviceInfo() {
     $dto["pnr_dev_id"] = "";
 
     return $dto;
-}
-
-function getRiskCheckInfo() {
-    $dto = array();
-    // 基站地址
-    $dto["base_station"] = "192.168.1.1";
-    // ip地址
-    $dto["ip_addr"] = "192.168.1.1";
-    // 纬度
-    $dto["latitude"] = "33.3";
-    // 经度
-    $dto["longitude"] = "33.3";
-
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
 

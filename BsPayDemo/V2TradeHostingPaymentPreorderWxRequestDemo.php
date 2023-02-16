@@ -77,20 +77,20 @@ function getAcctInfosRucan() {
     return $dtoList;
 }
 
+function getAcctSplitBunchRucan() {
+    $dto = array();
+    // 分账明细
+    $dto["acct_infos"] = getAcctInfosRucan();
+
+    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+}
+
 function getMiniappDataRucan() {
     $dto = array();
     // 应用ID
     $dto["seq_id"] = "系统应用ID";
     // 私有信息
     // $dto["private_info"] = "";
-
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
-}
-
-function getAcctSplitBunchRucan() {
-    $dto = array();
-    // 分账明细
-    $dto["acct_infos"] = getAcctInfosRucan();
 
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }

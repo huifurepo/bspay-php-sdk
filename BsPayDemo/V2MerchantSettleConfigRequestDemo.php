@@ -59,40 +59,6 @@ function getExtendInfos() {
     return $extendInfoMap;
 }
 
-function getSettleConfig() {
-    $dto = array();
-    // 结算周期
-    $dto["settle_cycle"] = "D1";
-    // 结算手续费外扣商户号填写承担手续费的汇付商户号；当out_settle_flag&#x3D;1时必填，否则非必填；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：6666000123123123&lt;/font&gt;
-    $dto["out_settle_huifuid"] = "6666000106070589";
-    // 起结金额
-    $dto["min_amt"] = "1";
-    // 留存金额
-    $dto["remained_amt"] = "2";
-    // 结算摘要
-    $dto["settle_abstract"] = "abstract";
-    // 手续费外扣标记
-    $dto["out_settle_flag"] = "1";
-    // 结算手续费外扣账户类型
-    $dto["out_settle_acct_type"] = "01";
-    // 节假日结算手续费率（%）
-    $dto["fixed_ratio"] = "66.88";
-    // 结算方式
-    $dto["settle_pattern"] = "P0";
-    // 结算批次号
-    $dto["settle_batch_no"] = "0";
-    // 是否优先到账
-    $dto["is_priority_receipt"] = "N";
-    // 自定义结算处理时间
-    $dto["settle_time"] = "211221";
-    // 节假日结算手续费固定金额（元）
-    $dto["constant_amt"] = "211221";
-    // 卡序列号
-    $dto["token_no"] = "";
-
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
-}
-
 function getCardInfo() {
     $dto = array();
     // 结算账户类型
@@ -123,6 +89,40 @@ function getCardInfo() {
     $dto["cert_begin_date"] = "20220101";
     // 银行卡绑定手机号
     $dto["mp"] = "1751111111";
+
+    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+}
+
+function getSettleConfig() {
+    $dto = array();
+    // 结算周期
+    $dto["settle_cycle"] = "D1";
+    // 结算手续费外扣商户号填写承担手续费的汇付商户号；当out_settle_flag&#x3D;1时必填，否则非必填；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：6666000123123123&lt;/font&gt;
+    $dto["out_settle_huifuid"] = "6666000106070589";
+    // 起结金额
+    $dto["min_amt"] = "1";
+    // 留存金额
+    $dto["remained_amt"] = "2";
+    // 结算摘要
+    $dto["settle_abstract"] = "abstract";
+    // 手续费外扣标记
+    $dto["out_settle_flag"] = "1";
+    // 结算手续费外扣账户类型
+    $dto["out_settle_acct_type"] = "01";
+    // 节假日结算手续费率（%）
+    $dto["fixed_ratio"] = "66.88";
+    // 结算方式
+    $dto["settle_pattern"] = "P0";
+    // 结算批次号
+    $dto["settle_batch_no"] = "0";
+    // 是否优先到账
+    $dto["is_priority_receipt"] = "N";
+    // 自定义结算处理时间
+    $dto["settle_time"] = "211221";
+    // 节假日结算手续费固定金额（元）
+    $dto["constant_amt"] = "211221";
+    // 卡序列号
+    $dto["token_no"] = "";
 
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }

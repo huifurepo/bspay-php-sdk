@@ -79,20 +79,12 @@ function getAcctInfosRucan() {
     return $dtoList;
 }
 
-function getCombinedpayData() {
+function getAcctSplitBunchRucan() {
     $dto = array();
-    // 补贴方汇付编号
-    // $dto["huifu_id"] = "test";
-    // 补贴方类型
-    // $dto["user_type"] = "test";
-    // 补贴方账户号
-    // $dto["acct_id"] = "test";
-    // 补贴金额
-    // $dto["amount"] = "test";
+    // 分账信息列表
+    // $dto["acct_infos"] = getAcctInfosRucan();
 
-    $dtoList = array();
-    array_push($dtoList, $dto);
-    return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
 function getTerminalDeviceData() {
@@ -131,12 +123,20 @@ function getRiskCheckData() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function getAcctSplitBunchRucan() {
+function getCombinedpayData() {
     $dto = array();
-    // 分账信息列表
-    // $dto["acct_infos"] = getAcctInfosRucan();
+    // 补贴方汇付编号
+    // $dto["huifu_id"] = "test";
+    // 补贴方类型
+    // $dto["user_type"] = "test";
+    // 补贴方账户号
+    // $dto["acct_id"] = "test";
+    // 补贴金额
+    // $dto["amount"] = "test";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    $dtoList = array();
+    array_push($dtoList, $dto);
+    return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
 

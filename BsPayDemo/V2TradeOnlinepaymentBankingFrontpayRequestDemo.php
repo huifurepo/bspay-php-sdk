@@ -81,6 +81,18 @@ function getExtendInfos() {
     return $extendInfoMap;
 }
 
+function getExtendPayData() {
+    $dto = array();
+    // 商品简称
+    $dto["goods_short_name"] = "011111";
+    // 网关支付受理渠道
+    $dto["gw_chnnl_tp"] = "01";
+    // 业务种类
+    $dto["biz_tp"] = "123451";
+
+    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+}
+
 function getTerminalDeviceData() {
     $dto = array();
     // 交易设备类型
@@ -103,20 +115,6 @@ function getTerminalDeviceData() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function getRiskCheckData() {
-    $dto = array();
-    // ip地址
-    $dto["ip_addr"] = "1";
-    // 基站地址
-    // $dto["base_atation"] = "";
-    // 纬度
-    $dto["latitude"] = "3";
-    // 经度
-    $dto["longitude"] = "4";
-
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
-}
-
 function getAcctInfos() {
     $dto = array();
     // 分账金额
@@ -131,22 +129,24 @@ function getAcctInfos() {
     return $dtoList;
 }
 
-function getExtendPayData() {
-    $dto = array();
-    // 商品简称
-    $dto["goods_short_name"] = "011111";
-    // 网关支付受理渠道
-    $dto["gw_chnnl_tp"] = "01";
-    // 业务种类
-    $dto["biz_tp"] = "123451";
-
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
-}
-
 function getAcctSplitBunchRucan() {
     $dto = array();
     // 分账明细
     // $dto["acct_infos"] = getAcctInfos();
+
+    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+}
+
+function getRiskCheckData() {
+    $dto = array();
+    // ip地址
+    $dto["ip_addr"] = "1";
+    // 基站地址
+    // $dto["base_atation"] = "";
+    // 纬度
+    $dto["latitude"] = "3";
+    // 经度
+    $dto["longitude"] = "4";
 
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }

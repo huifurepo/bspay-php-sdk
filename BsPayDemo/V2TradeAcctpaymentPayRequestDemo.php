@@ -87,6 +87,20 @@ function getTerminalDeviceData() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
+function getAcctInfos() {
+    $dto = array();
+    // 分账金额
+    $dto["div_amt"] = "0.01";
+    // 被分账方ID
+    $dto["huifu_id"] = "6666000018344461";
+    // 被分账方账户号
+    // $dto["acct_id"] = "";
+
+    $dtoList = array();
+    array_push($dtoList, $dto);
+    return $dtoList;
+}
+
 function getAcctSplitBunch() {
     $dto = array();
     // 分账明细
@@ -111,20 +125,6 @@ function getRiskCheckData() {
     // $dto["ip_addr"] = "";
 
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
-}
-
-function getAcctInfos() {
-    $dto = array();
-    // 分账金额
-    $dto["div_amt"] = "0.01";
-    // 被分账方ID
-    $dto["huifu_id"] = "6666000018344461";
-    // 被分账方账户号
-    // $dto["acct_id"] = "";
-
-    $dtoList = array();
-    array_push($dtoList, $dto);
-    return $dtoList;
 }
 
 

@@ -135,24 +135,98 @@ function getExtendInfos() {
     return $extendInfoMap;
 }
 
-function getWxConfList() {
+function getAgreementInfo() {
+    $dto = array();
+    // 协议类型
+    $dto["agreement_type"] = "0";
+    // 协议号
+    $dto["agreement_no"] = "202106070100000380";
+    // 协议模板号
+    $dto["agreement_model"] = "202106070100000380";
+    // 协议模板名称
+    $dto["agreement_name"] = "电子协议签约模板";
+    // 签约日期
+    $dto["sign_date"] = "20200325";
+    // 协议开始日期
+    $dto["agree_begin_date"] = "20200325";
+    // 协议结束日期
+    $dto["agree_end_date"] = "20400325";
+
+    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+}
+
+function getUnionConfList() {
+    $dto = array();
+    // 借记卡手续费1000以上（%）
+    $dto["debit_fee_rate_up"] = "0.55";
+    // 银联二维码业务贷记卡手续费1000以上（%）
+    $dto["credit_fee_rate_up"] = "0.56";
+    // 借记卡手续费1000以下（%）
+    $dto["debit_fee_rate_down"] = "0.38";
+    // 银联二维码业务贷记卡手续费1000以下（%）
+    $dto["credit_fee_rate_down"] = "0.38";
+    // 银联业务手续费类型
+    $dto["charge_cate_code"] = "03";
+    // 借记卡封顶1000以上
+    $dto["debit_fee_limit_up"] = "20";
+    // 借记卡封顶1000以下
+    $dto["debit_fee_limit_down"] = "10";
+    // 商户经营类目
+    $dto["mcc"] = "5411";
+
+    $dtoList = array();
+    array_push($dtoList, $dto);
+    return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+}
+
+function getUnionMicroInfo() {
+    $dto = array();
+    // 银联商户类别
+    // $dto["mchnt_type"] = "test";
+    // 商户经度
+    // $dto["mer_lng"] = "test";
+    // 商户纬度
+    // $dto["mer_lat"] = "test";
+    // 店铺名称
+    // $dto["shop_name"] = "test";
+    // 商户经营类目
+    // $dto["mcc"] = "test";
+
+    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+}
+
+function getAliConfList() {
     $dto = array();
     // 支付场景
     $dto["pay_scene"] = "1";
     // 手续费（%）
     $dto["fee_rate"] = "0.38";
-    // 费率规则号
-    $dto["fee_rule_id"] = "758";
-    // ~~商户经营类目~~
-    // $dto["~~mcc~~"] = "";
+    // 商户经营类目
+    $dto["mcc"] = "2015091000052157";
     // 子渠道号
-    $dto["pay_channel_id"] = "JP00001";
-    // 申请服务
-    $dto["service_codes"] = "";
+    $dto["pay_channel_id"] = "JQF00001";
+    // 拟申请的间联商户等级
+    $dto["indirect_level"] = "";
 
     $dtoList = array();
     array_push($dtoList, $dto);
     return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+}
+
+function getBalancePayConfig() {
+    $dto = array();
+    // 支付手续费(%)
+    $dto["fee_rate"] = "2";
+    // 支付固定手续费(元)
+    $dto["fee_fix_amt"] = "1";
+    // 交易手续费外扣时的账户类型
+    // $dto["out_fee_acct_type"] = "";
+    // 交易手续费外扣汇付ID
+    // $dto["out_fee_huifuid"] = "";
+    // 是否交易手续费外扣
+    // $dto["out_fee_flag"] = "";
+
+    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
 function getBankCardConf() {
@@ -189,20 +263,24 @@ function getBankCardConf() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function getUnionMicroInfo() {
+function getWxConfList() {
     $dto = array();
-    // 银联商户类别
-    // $dto["mchnt_type"] = "test";
-    // 商户经度
-    // $dto["mer_lng"] = "test";
-    // 商户纬度
-    // $dto["mer_lat"] = "test";
-    // 店铺名称
-    // $dto["shop_name"] = "test";
-    // 商户经营类目
-    // $dto["mcc"] = "test";
+    // 支付场景
+    $dto["pay_scene"] = "1";
+    // 手续费（%）
+    $dto["fee_rate"] = "0.38";
+    // 费率规则号
+    $dto["fee_rule_id"] = "758";
+    // ~~商户经营类目~~
+    // $dto["~~mcc~~"] = "";
+    // 子渠道号
+    $dto["pay_channel_id"] = "JP00001";
+    // 申请服务
+    $dto["service_codes"] = "";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    $dtoList = array();
+    array_push($dtoList, $dto);
+    return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
 function getCombinePayConfig() {
@@ -221,22 +299,24 @@ function getCombinePayConfig() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function getAgreementInfo() {
+function getHbFqFeeConfig() {
     $dto = array();
-    // 协议类型
-    $dto["agreement_type"] = "0";
-    // 协议号
-    $dto["agreement_no"] = "202106070100000380";
-    // 协议模板号
-    $dto["agreement_model"] = "202106070100000380";
-    // 协议模板名称
-    $dto["agreement_name"] = "电子协议签约模板";
-    // 签约日期
-    $dto["sign_date"] = "20200325";
-    // 协议开始日期
-    $dto["agree_begin_date"] = "20200325";
-    // 协议结束日期
-    $dto["agree_end_date"] = "20400325";
+    // 花呗收单分期3期（%）分期费率不为空时，收单费率必填，大于0，保留2位小数，不小于渠道商成本；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：1.0&lt;/font&gt;代表费率为1.00%
+    $dto["acq_three_period"] = "1.30";
+    // 花呗收单分期6期（%）分期费率不为空时，收单费率必填，大于0，保留2位小数，不小于渠道商成本；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：1.0&lt;/font&gt;代表费率为1.00%
+    $dto["acq_six_period"] = "4.60";
+    // 花呗收单分期12期（%）分期费率不为空时，收单费率必填，大于0，保留2位小数，不小于渠道商成本；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：1.0&lt;/font&gt;代表费率为1.00%
+    $dto["acq_twelve_period"] = "9.12";
+    // 花呗分期3期（%）
+    $dto["three_period"] = "1.80";
+    // 花呗分期6期（%）
+    $dto["six_period"] = "4.60";
+    // 花呗分期12期（%）
+    $dto["twelve_period"] = "9.12";
+    // 商户经营类目
+    $dto["ali_mcc"] = "5411";
+    // 支付场景
+    $dto["pay_scene"] = "1";
 
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
@@ -265,40 +345,6 @@ function getOnlineFeeConfList() {
     return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function getUnionConfList() {
-    $dto = array();
-    // 借记卡手续费1000以上（%）
-    $dto["debit_fee_rate_up"] = "0.55";
-    // 银联二维码业务贷记卡手续费1000以上（%）
-    $dto["credit_fee_rate_up"] = "0.56";
-    // 借记卡手续费1000以下（%）
-    $dto["debit_fee_rate_down"] = "0.38";
-    // 银联二维码业务贷记卡手续费1000以下（%）
-    $dto["credit_fee_rate_down"] = "0.38";
-    // 银联业务手续费类型
-    $dto["charge_cate_code"] = "03";
-    // 借记卡封顶1000以上
-    $dto["debit_fee_limit_up"] = "20";
-    // 借记卡封顶1000以下
-    $dto["debit_fee_limit_down"] = "10";
-    // 商户经营类目
-    $dto["mcc"] = "5411";
-
-    $dtoList = array();
-    array_push($dtoList, $dto);
-    return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
-}
-
-function getWxZlConf() {
-    $dto = array();
-    // 微信子商户号
-    // $dto["sub_mch_id"] = "test";
-    // 配置集合
-    // $dto["wx_zl_pay_conf_list"] = getWxZlPayConfList();
-
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
-}
-
 function getOnlinePayFeeConfList() {
     $dto = array();
     // 业务类型
@@ -313,22 +359,6 @@ function getOnlinePayFeeConfList() {
     $dtoList = array();
     array_push($dtoList, $dto);
     return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
-}
-
-function getBalancePayConfig() {
-    $dto = array();
-    // 支付手续费(%)
-    $dto["fee_rate"] = "2";
-    // 支付固定手续费(元)
-    $dto["fee_fix_amt"] = "1";
-    // 交易手续费外扣时的账户类型
-    // $dto["out_fee_acct_type"] = "";
-    // 交易手续费外扣汇付ID
-    // $dto["out_fee_huifuid"] = "";
-    // 是否交易手续费外扣
-    // $dto["out_fee_flag"] = "";
-
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
 function getBankBigAmtPayConfig() {
@@ -369,44 +399,14 @@ function getWxZlPayConfList() {
     return $dtoList;
 }
 
-function getHbFqFeeConfig() {
+function getWxZlConf() {
     $dto = array();
-    // 花呗收单分期3期（%）分期费率不为空时，收单费率必填，大于0，保留2位小数，不小于渠道商成本；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：1.0&lt;/font&gt;代表费率为1.00%
-    $dto["acq_three_period"] = "1.30";
-    // 花呗收单分期6期（%）分期费率不为空时，收单费率必填，大于0，保留2位小数，不小于渠道商成本；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：1.0&lt;/font&gt;代表费率为1.00%
-    $dto["acq_six_period"] = "4.60";
-    // 花呗收单分期12期（%）分期费率不为空时，收单费率必填，大于0，保留2位小数，不小于渠道商成本；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：1.0&lt;/font&gt;代表费率为1.00%
-    $dto["acq_twelve_period"] = "9.12";
-    // 花呗分期3期（%）
-    $dto["three_period"] = "1.80";
-    // 花呗分期6期（%）
-    $dto["six_period"] = "4.60";
-    // 花呗分期12期（%）
-    $dto["twelve_period"] = "9.12";
-    // 商户经营类目
-    $dto["ali_mcc"] = "5411";
-    // 支付场景
-    $dto["pay_scene"] = "1";
+    // 微信子商户号
+    // $dto["sub_mch_id"] = "test";
+    // 配置集合
+    // $dto["wx_zl_pay_conf_list"] = getWxZlPayConfList();
 
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
-}
-
-function getAliConfList() {
-    $dto = array();
-    // 支付场景
-    $dto["pay_scene"] = "1";
-    // 手续费（%）
-    $dto["fee_rate"] = "0.38";
-    // 商户经营类目
-    $dto["mcc"] = "2015091000052157";
-    // 子渠道号
-    $dto["pay_channel_id"] = "JQF00001";
-    // 拟申请的间联商户等级
-    $dto["indirect_level"] = "";
-
-    $dtoList = array();
-    array_push($dtoList, $dto);
-    return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
 

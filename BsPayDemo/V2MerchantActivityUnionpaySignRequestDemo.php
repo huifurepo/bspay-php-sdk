@@ -57,22 +57,6 @@ function getExtendInfos() {
     return $extendInfoMap;
 }
 
-function getEnlistImgMakings() {
-    $dto = array();
-    // 活动材料编号
-    $dto["makings_id"] = "18";
-    // 活动材料类型
-    $dto["makings_type"] = "IMG";
-    // 活动材料名称
-    $dto["makings_name"] = "门头照片";
-    // 材料值
-    $dto["makings_value"] = "42204258-967e-373c-88d2-1afa4c7bb8ef";
-
-    $dtoList = array();
-    array_push($dtoList, $dto);
-    return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
-}
-
 function getEnlistTxtMakings() {
     $dto = array();
     // 活动材料编号
@@ -83,6 +67,22 @@ function getEnlistTxtMakings() {
     $dto["makings_name"] = "银联云闪付商户号";
     // 材料值
     $dto["makings_value"] = "82339SP5411019L";
+
+    $dtoList = array();
+    array_push($dtoList, $dto);
+    return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+}
+
+function getEnlistImgMakings() {
+    $dto = array();
+    // 活动材料编号
+    $dto["makings_id"] = "18";
+    // 活动材料类型
+    $dto["makings_type"] = "IMG";
+    // 活动材料名称
+    $dto["makings_name"] = "门头照片";
+    // 材料值
+    $dto["makings_value"] = "42204258-967e-373c-88d2-1afa4c7bb8ef";
 
     $dtoList = array();
     array_push($dtoList, $dto);

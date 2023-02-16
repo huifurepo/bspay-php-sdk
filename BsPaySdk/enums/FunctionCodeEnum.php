@@ -5,6 +5,14 @@ namespace BsPaySdk\enums;
 class FunctionCodeEnum
 {
     /**
+     * 一键绑卡
+     */
+    static $V2_QUICKBUCKLE_ONEKEY_CARDBIND = 'v2/quickbuckle/onekey/cardbind';
+    /**
+     * DM取现额度查询
+     */
+    static $V2_TRADE_SETTLEMENT_ENCHASHMENT_DMAMT_QUERY = 'v2/trade/settlement/enchashment/dmamt/query';
+    /**
      * 子账户开通配置
      */
     static $V2_MERCHANT_SETTLE_CONFIG = 'v2/merchant/settle/config';
@@ -61,7 +69,7 @@ class FunctionCodeEnum
      */
     static $V2_MERCHANT_COMPLAINT_LIST_INFO_QUERY = 'v2/merchant/complaint/list/info/query';
     /**
-     * 图片下载
+     * 投诉图片下载
      */
     static $V2_MERCHANT_COMPLAINT_DOWNLOAD_PICTURE = 'v2/merchant/complaint/download/picture';
     /**

@@ -87,46 +87,6 @@ function getExtendInfos() {
     return $extendInfoMap;
 }
 
-function getGoodsDetail() {
-    $dto = array();
-    // 商品的编号
-    // $dto["goods_id"] = "test";
-    // 商品名称
-    // $dto["goods_name"] = "test";
-    // 商品数量
-    // $dto["quantity"] = "test";
-    // 商品单价
-    // $dto["price"] = "test";
-    // 商品类目树
-    // $dto["categories_tree"] = "";
-    // 商品类目
-    // $dto["goods_category"] = "";
-    // 商品描述信息
-    // $dto["body"] = "";
-    // 商品的展示地址
-    // $dto["show_url"] = "";
-
-    $dtoList = array();
-    array_push($dtoList, $dto);
-    return $dtoList;
-}
-
-function getStoreInfo() {
-    $dto = array();
-    // 门店id
-    // $dto["id"] = "";
-    // 门店名称
-    // $dto["name"] = "";
-    // 门店行政区划码
-    // $dto["area_code"] = "";
-    // 门店详细地址
-    // $dto["address"] = "";
-
-    $dtoList = array();
-    array_push($dtoList, $dto);
-    return $dtoList;
-}
-
 function getCombinedpayData() {
     $dto = array();
     // 补贴方汇付编号
@@ -155,6 +115,180 @@ function getAcctInfosRucan() {
     $dtoList = array();
     array_push($dtoList, $dto);
     return $dtoList;
+}
+
+function getAcctSplitBunch() {
+    $dto = array();
+    // 分账明细
+    // $dto["acct_infos"] = getAcctInfosRucan();
+
+    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+}
+
+function getGoodsDetailWxRucan() {
+    $dto = array();
+    // 商品编码
+    // $dto["goods_id"] = "";
+    // 商品名称
+    // $dto["goods_name"] = "";
+    // 商品单价
+    // $dto["price"] = "";
+    // 商品数量
+    // $dto["quantity"] = "";
+    // 微信侧商品编码
+    // $dto["wxpay_goods_id"] = "";
+
+    $dtoList = array();
+    array_push($dtoList, $dto);
+    return $dtoList;
+}
+
+function getDetail() {
+    $dto = array();
+    // 单品列表
+    // $dto["goods_detail"] = getGoodsDetailWxRucan();
+    // 订单原价
+    // $dto["cost_price"] = "";
+    // 商品小票ID
+    // $dto["receipt_id"] = "";
+
+    return $dto;
+}
+
+function getStoreInfo() {
+    $dto = array();
+    // 门店id
+    // $dto["id"] = "";
+    // 门店名称
+    // $dto["name"] = "";
+    // 门店行政区划码
+    // $dto["area_code"] = "";
+    // 门店详细地址
+    // $dto["address"] = "";
+
+    $dtoList = array();
+    array_push($dtoList, $dto);
+    return $dtoList;
+}
+
+function getSceneInfo() {
+    $dto = array();
+    // 门店信息
+    // $dto["store_info"] = getStoreInfo();
+
+    return $dto;
+}
+
+function getWxData() {
+    $dto = array();
+    // 子商户公众账号id
+    // $dto["sub_appid"] = "";
+    // 用户标识
+    // $dto["openid"] = "";
+    // 子商户用户标识
+    // $dto["sub_openid"] = "";
+    // 设备号
+    // $dto["device_info"] = "";
+    // 附加数据
+    // $dto["attach"] = "";
+    // 商品详情
+    // $dto["detail"] = getDetail();
+    // 场景信息
+    // $dto["scene_info"] = getSceneInfo();
+
+    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+}
+
+function getGoodsDetail() {
+    $dto = array();
+    // 商品的编号
+    // $dto["goods_id"] = "test";
+    // 商品名称
+    // $dto["goods_name"] = "test";
+    // 商品数量
+    // $dto["quantity"] = "test";
+    // 商品单价
+    // $dto["price"] = "test";
+    // 商品类目树
+    // $dto["categories_tree"] = "";
+    // 商品类目
+    // $dto["goods_category"] = "";
+    // 商品描述信息
+    // $dto["body"] = "";
+    // 商品的展示地址
+    // $dto["show_url"] = "";
+
+    $dtoList = array();
+    array_push($dtoList, $dto);
+    return $dtoList;
+}
+
+function getExtendParams() {
+    $dto = array();
+    // 卡类型
+    // $dto["card_type"] = "";
+    // 支付宝点餐场景类型
+    // $dto["food_order_type"] = "";
+    // 花呗分期数
+    // $dto["hb_fq_num"] = "";
+    // 花呗卖家承担的手续费百分比
+    // $dto["hb_fq_seller_percent"] = "";
+    // 行业数据回流信息
+    // $dto["industry_reflux_info"] = "";
+    // 停车场id
+    // $dto["parking_id"] = "";
+    // 系统商编号
+    // $dto["sys_service_provider_id"] = "";
+
+    return $dto;
+}
+
+function getAlipayData() {
+    $dto = array();
+    // 支付宝的店铺编号
+    $dto["alipay_store_id"] = "";
+    // 订单包含的商品列表信息
+    // $dto["goods_detail"] = getGoodsDetail();
+    // 业务扩展参数
+    // $dto["extend_params"] = getExtendParams();
+    // 商户操作员编号
+    // $dto["operator_id"] = "";
+    // 商户门店编号
+    $dto["store_id"] = "";
+
+    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+}
+
+function getUnionpayData() {
+    $dto = array();
+    // 币种
+    // $dto["currency_code"] = "";
+    // 支持发票
+    // $dto["invoice_st"] = "";
+    // 商户类别
+    // $dto["mer_cat_code"] = "";
+    // 银联参数集合
+    // $dto["pnrins_id_cd"] = "";
+    // 特殊计费信息
+    // $dto["specfeeinfo"] = "";
+    // 终端号
+    // $dto["term_id"] = "";
+
+    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+}
+
+function getRiskCheckData() {
+    $dto = array();
+    // ip地址
+    // $dto["ip_addr"] = "";
+    // 基站地址
+    // $dto["base_atation"] = "";
+    // 纬度
+    $dto["latitude"] = "2";
+    // 经度
+    $dto["longitude"] = "1";
+
+    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
 function getTerminalDeviceInfo() {
@@ -201,140 +335,6 @@ function getTerminalDeviceInfo() {
     // $dto["serial_num"] = "";
 
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
-}
-
-function getAcctSplitBunch() {
-    $dto = array();
-    // 分账明细
-    // $dto["acct_infos"] = getAcctInfosRucan();
-
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
-}
-
-function getRiskCheckData() {
-    $dto = array();
-    // ip地址
-    // $dto["ip_addr"] = "";
-    // 基站地址
-    // $dto["base_atation"] = "";
-    // 纬度
-    $dto["latitude"] = "2";
-    // 经度
-    $dto["longitude"] = "1";
-
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
-}
-
-function getUnionpayData() {
-    $dto = array();
-    // 币种
-    // $dto["currency_code"] = "";
-    // 支持发票
-    // $dto["invoice_st"] = "";
-    // 商户类别
-    // $dto["mer_cat_code"] = "";
-    // 银联参数集合
-    // $dto["pnrins_id_cd"] = "";
-    // 特殊计费信息
-    // $dto["specfeeinfo"] = "";
-    // 终端号
-    // $dto["term_id"] = "";
-
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
-}
-
-function getSceneInfo() {
-    $dto = array();
-    // 门店信息
-    // $dto["store_info"] = getStoreInfo();
-
-    return $dto;
-}
-
-function getWxData() {
-    $dto = array();
-    // 子商户公众账号id
-    // $dto["sub_appid"] = "";
-    // 用户标识
-    // $dto["openid"] = "";
-    // 子商户用户标识
-    // $dto["sub_openid"] = "";
-    // 设备号
-    // $dto["device_info"] = "";
-    // 附加数据
-    // $dto["attach"] = "";
-    // 商品详情
-    // $dto["detail"] = getDetail();
-    // 场景信息
-    // $dto["scene_info"] = getSceneInfo();
-
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
-}
-
-function getExtendParams() {
-    $dto = array();
-    // 卡类型
-    // $dto["card_type"] = "";
-    // 支付宝点餐场景类型
-    // $dto["food_order_type"] = "";
-    // 花呗分期数
-    // $dto["hb_fq_num"] = "";
-    // 花呗卖家承担的手续费百分比
-    // $dto["hb_fq_seller_percent"] = "";
-    // 行业数据回流信息
-    // $dto["industry_reflux_info"] = "";
-    // 停车场id
-    // $dto["parking_id"] = "";
-    // 系统商编号
-    // $dto["sys_service_provider_id"] = "";
-
-    return $dto;
-}
-
-function getAlipayData() {
-    $dto = array();
-    // 支付宝的店铺编号
-    $dto["alipay_store_id"] = "";
-    // 订单包含的商品列表信息
-    // $dto["goods_detail"] = getGoodsDetail();
-    // 业务扩展参数
-    // $dto["extend_params"] = getExtendParams();
-    // 商户操作员编号
-    // $dto["operator_id"] = "";
-    // 商户门店编号
-    $dto["store_id"] = "";
-
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
-}
-
-function getDetail() {
-    $dto = array();
-    // 单品列表
-    // $dto["goods_detail"] = getGoodsDetailWxRucan();
-    // 订单原价
-    // $dto["cost_price"] = "";
-    // 商品小票ID
-    // $dto["receipt_id"] = "";
-
-    return $dto;
-}
-
-function getGoodsDetailWxRucan() {
-    $dto = array();
-    // 商品编码
-    // $dto["goods_id"] = "";
-    // 商品名称
-    // $dto["goods_name"] = "";
-    // 商品单价
-    // $dto["price"] = "";
-    // 商品数量
-    // $dto["quantity"] = "";
-    // 微信侧商品编码
-    // $dto["wxpay_goods_id"] = "";
-
-    $dtoList = array();
-    array_push($dtoList, $dto);
-    return $dtoList;
 }
 
 

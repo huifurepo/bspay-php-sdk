@@ -71,20 +71,6 @@ function getExtendInfos() {
     return $extendInfoMap;
 }
 
-function getRiskCheckData() {
-    $dto = array();
-    // 基站地址
-    $dto["base_station"] = "7";
-    // ip地址
-    // $dto["ip_addr"] = "";
-    // 纬度
-    $dto["latitude"] = "4";
-    // 经度
-    $dto["longitude"] = "3";
-
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
-}
-
 function getAcctInfos() {
     $dto = array();
     // 分账金额
@@ -103,6 +89,20 @@ function getAcctSplitBunchRucan() {
     $dto = array();
     // 分账明细
     // $dto["acct_infos"] = getAcctInfos();
+
+    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+}
+
+function getRiskCheckData() {
+    $dto = array();
+    // 基站地址
+    $dto["base_station"] = "7";
+    // ip地址
+    // $dto["ip_addr"] = "";
+    // 纬度
+    $dto["latitude"] = "4";
+    // 经度
+    $dto["longitude"] = "3";
 
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }

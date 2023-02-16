@@ -91,60 +91,6 @@ function getExtendInfos() {
     return $extendInfoMap;
 }
 
-function getPayeeInfo() {
-    $dto = array();
-    // 商户类别
-    // $dto["mer_cat_code"] = "";
-    // 二级商户代码
-    // $dto["sub_id"] = "";
-    // 二级商户名称
-    // $dto["sub_name"] = "";
-    // 终端号
-    // $dto["term_id"] = "";
-
-    return $dto;
-}
-
-function getGoodsDetail() {
-    $dto = array();
-    // 商品的编号
-    $dto["goods_id"] = "12312321";
-    // 商品名称(元)
-    $dto["goods_name"] = "阿里";
-    // 商品单价
-    $dto["price"] = "0.01";
-    // 商品数量
-    $dto["quantity"] = "20";
-    // 商品描述信息
-    $dto["body"] = "";
-    // 商品类目树
-    $dto["categories_tree"] = "string";
-    // 商品类目
-    $dto["goods_category"] = "";
-    // 商品的展示地址
-    $dto["show_url"] = "";
-
-    $dtoList = array();
-    array_push($dtoList, $dto);
-    return $dtoList;
-}
-
-function getStoreInfo() {
-    $dto = array();
-    // 门店id
-    // $dto["id"] = "";
-    // 门店名称
-    // $dto["name"] = "";
-    // 门店行政区划码
-    // $dto["area_code"] = "";
-    // 门店详细地址
-    // $dto["address"] = "";
-
-    $dtoList = array();
-    array_push($dtoList, $dto);
-    return $dtoList;
-}
-
 function getCombinedpayData() {
     $dto = array();
     // 补贴方汇付编号
@@ -161,18 +107,18 @@ function getCombinedpayData() {
     return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function getAcctInfosRucan() {
+function getRiskCheckData() {
     $dto = array();
-    // 分账金额
-    // $dto["div_amt"] = "test";
-    // 被分账方ID
-    // $dto["huifu_id"] = "test";
-    // 账户号
-    // $dto["acct_id"] = "";
+    // ip地址
+    $dto["ip_addr"] = "180.167.105.130";
+    // 基站地址
+    $dto["base_station"] = "192.168.1.1";
+    // 纬度
+    $dto["latitude"] = "33.3";
+    // 经度
+    $dto["longitude"] = "33.3";
 
-    $dtoList = array();
-    array_push($dtoList, $dto);
-    return $dtoList;
+    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
 function getTerminalDeviceData() {
@@ -217,6 +163,20 @@ function getTerminalDeviceData() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
+function getAcctInfosRucan() {
+    $dto = array();
+    // 分账金额
+    // $dto["div_amt"] = "test";
+    // 被分账方ID
+    // $dto["huifu_id"] = "test";
+    // 账户号
+    // $dto["acct_id"] = "";
+
+    $dtoList = array();
+    array_push($dtoList, $dto);
+    return $dtoList;
+}
+
 function getAcctSplitBunch() {
     $dto = array();
     // 分账明细
@@ -225,54 +185,50 @@ function getAcctSplitBunch() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function getRiskCheckData() {
+function getGoodsDetailWxRucan() {
     $dto = array();
-    // ip地址
-    $dto["ip_addr"] = "180.167.105.130";
-    // 基站地址
-    $dto["base_station"] = "192.168.1.1";
-    // 纬度
-    $dto["latitude"] = "33.3";
-    // 经度
-    $dto["longitude"] = "33.3";
+    // 商品编码
+    // $dto["goods_id"] = "";
+    // 商品名称
+    // $dto["goods_name"] = "";
+    // 商品单价(元)
+    // $dto["price"] = "";
+    // 商品数量
+    // $dto["quantity"] = "";
+    // 微信侧商品编码
+    // $dto["wxpay_goods_id"] = "";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    $dtoList = array();
+    array_push($dtoList, $dto);
+    return $dtoList;
 }
 
-function getUnionpayData() {
+function getDetail() {
     $dto = array();
-    // 收款方附加数据
-    // $dto["acq_addn_data"] = "";
-    // 地区信息
-    // $dto["area_info"] = "";
-    // 持卡人ip
-    // $dto["customer_ip"] = "";
-    // 前台通知地址
-    // $dto["front_url"] = "";
-    // 订单描述
-    // $dto["order_desc"] = "";
-    // 收款方附言
-    // $dto["payee_comments"] = "";
-    // 收款方信息
-    // $dto["payee_info"] = getPayeeInfo();
-    // 银联分配的服务商机构标识码
-    // $dto["pnr_ins_id_cd"] = "";
-    // 请求方自定义域
-    // $dto["req_reserved"] = "";
-    // 终端信息
-    // $dto["term_info"] = "";
-    // 云闪付用户标识
-    // $dto["user_id"] = "";
+    // 单品列表
+    // $dto["goods_detail"] = getGoodsDetailWxRucan();
+    // 订单原价(元)
+    // $dto["cost_price"] = "";
+    // 商品小票ID
+    // $dto["receipt_id"] = "";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return $dto;
 }
 
-function getDcData() {
+function getStoreInfo() {
     $dto = array();
-    // 数字货币银行编号
-    // $dto["digital_bank_no"] = "";
+    // 门店id
+    // $dto["id"] = "";
+    // 门店名称
+    // $dto["name"] = "";
+    // 门店行政区划码
+    // $dto["area_code"] = "";
+    // 门店详细地址
+    // $dto["address"] = "";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    $dtoList = array();
+    array_push($dtoList, $dto);
+    return $dtoList;
 }
 
 function getSceneInfo() {
@@ -335,6 +291,30 @@ function getExtendParams() {
     return $dto;
 }
 
+function getGoodsDetail() {
+    $dto = array();
+    // 商品的编号
+    $dto["goods_id"] = "12312321";
+    // 商品名称(元)
+    $dto["goods_name"] = "阿里";
+    // 商品单价
+    $dto["price"] = "0.01";
+    // 商品数量
+    $dto["quantity"] = "20";
+    // 商品描述信息
+    $dto["body"] = "";
+    // 商品类目树
+    $dto["categories_tree"] = "string";
+    // 商品类目
+    $dto["goods_category"] = "";
+    // 商品的展示地址
+    $dto["show_url"] = "";
+
+    $dtoList = array();
+    array_push($dtoList, $dto);
+    return $dtoList;
+}
+
 function getAlipayData() {
     $dto = array();
     // 买家的支付宝唯一用户号
@@ -361,34 +341,54 @@ function getAlipayData() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function getDetail() {
+function getPayeeInfo() {
     $dto = array();
-    // 单品列表
-    // $dto["goods_detail"] = getGoodsDetailWxRucan();
-    // 订单原价(元)
-    // $dto["cost_price"] = "";
-    // 商品小票ID
-    // $dto["receipt_id"] = "";
+    // 商户类别
+    // $dto["mer_cat_code"] = "";
+    // 二级商户代码
+    // $dto["sub_id"] = "";
+    // 二级商户名称
+    // $dto["sub_name"] = "";
+    // 终端号
+    // $dto["term_id"] = "";
 
     return $dto;
 }
 
-function getGoodsDetailWxRucan() {
+function getUnionpayData() {
     $dto = array();
-    // 商品编码
-    // $dto["goods_id"] = "";
-    // 商品名称
-    // $dto["goods_name"] = "";
-    // 商品单价(元)
-    // $dto["price"] = "";
-    // 商品数量
-    // $dto["quantity"] = "";
-    // 微信侧商品编码
-    // $dto["wxpay_goods_id"] = "";
+    // 收款方附加数据
+    // $dto["acq_addn_data"] = "";
+    // 地区信息
+    // $dto["area_info"] = "";
+    // 持卡人ip
+    // $dto["customer_ip"] = "";
+    // 前台通知地址
+    // $dto["front_url"] = "";
+    // 订单描述
+    // $dto["order_desc"] = "";
+    // 收款方附言
+    // $dto["payee_comments"] = "";
+    // 收款方信息
+    // $dto["payee_info"] = getPayeeInfo();
+    // 银联分配的服务商机构标识码
+    // $dto["pnr_ins_id_cd"] = "";
+    // 请求方自定义域
+    // $dto["req_reserved"] = "";
+    // 终端信息
+    // $dto["term_info"] = "";
+    // 云闪付用户标识
+    // $dto["user_id"] = "";
 
-    $dtoList = array();
-    array_push($dtoList, $dto);
-    return $dtoList;
+    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+}
+
+function getDcData() {
+    $dto = array();
+    // 数字货币银行编号
+    // $dto["digital_bank_no"] = "";
+
+    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
 

@@ -68,7 +68,31 @@ function getExtendInfos() {
     // $extendInfoMap["acct_split_bunch"]= getAcctSplitBunchRucan();
     // 页面跳转地址
     $extendInfoMap["front_url"]= "http://www.chinapnr.com";
+    // 延时标记
+    // $extendInfoMap["delay_acct_flag"]= "";
     return $extendInfoMap;
+}
+
+function getAcctInfos() {
+    $dto = array();
+    // 被分账对象ID
+    // $dto["huifu_id"] = "test";
+    // 分账金额
+    // $dto["div_amt"] = "test";
+    // 账户号
+    // $dto["acct_id"] = "";
+
+    $dtoList = array();
+    array_push($dtoList, $dto);
+    return $dtoList;
+}
+
+function getAcctSplitBunchRucan() {
+    $dto = array();
+    // 分账明细
+    // $dto["acct_infos"] = getAcctInfos();
+
+    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
 function getTerminalDeviceData() {
@@ -93,34 +117,6 @@ function getTerminalDeviceData() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function getRiskCheckData() {
-    $dto = array();
-    // ip地址
-    $dto["ip_addr"] = "127.0.0.1";
-    // 基站地址
-    // $dto["base_atation"] = "";
-    // 纬度
-    // $dto["latitude"] = "";
-    // 经度
-    // $dto["longitude"] = "";
-
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
-}
-
-function getAcctInfos() {
-    $dto = array();
-    // 被分账对象ID
-    // $dto["huifu_id"] = "test";
-    // 分账金额
-    // $dto["div_amt"] = "test";
-    // 账户号
-    // $dto["acct_id"] = "";
-
-    $dtoList = array();
-    array_push($dtoList, $dto);
-    return $dtoList;
-}
-
 function getExtendPayData() {
     $dto = array();
     // 网关支付受理渠道
@@ -133,10 +129,16 @@ function getExtendPayData() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function getAcctSplitBunchRucan() {
+function getRiskCheckData() {
     $dto = array();
-    // 分账明细
-    // $dto["acct_infos"] = getAcctInfos();
+    // ip地址
+    $dto["ip_addr"] = "127.0.0.1";
+    // 基站地址
+    // $dto["base_atation"] = "";
+    // 纬度
+    // $dto["latitude"] = "";
+    // 经度
+    // $dto["longitude"] = "";
 
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }

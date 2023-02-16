@@ -61,6 +61,18 @@ function getExtendInfos() {
     return $extendInfoMap;
 }
 
+function getAcctInfos() {
+    $dto = array();
+    // 退款金额
+    // $dto["div_amt"] = "test";
+    // 退款方ID
+    // $dto["huifu_id"] = "test";
+
+    $dtoList = array();
+    array_push($dtoList, $dto);
+    return $dtoList;
+}
+
 function getAcctSplitBunch() {
     $dto = array();
     // 退账明细
@@ -77,18 +89,6 @@ function getRiskCheckData() {
     $dto["sub_product"] = "卡券推广类";
 
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
-}
-
-function getAcctInfos() {
-    $dto = array();
-    // 退款金额
-    // $dto["div_amt"] = "test";
-    // 退款方ID
-    // $dto["huifu_id"] = "test";
-
-    $dtoList = array();
-    array_push($dtoList, $dto);
-    return $dtoList;
 }
 
 

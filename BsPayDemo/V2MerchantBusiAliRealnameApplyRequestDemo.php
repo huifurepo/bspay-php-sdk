@@ -59,18 +59,6 @@ function getExtendInfos() {
     return $extendInfoMap;
 }
 
-function getQualificationInfoList() {
-    $dto = array();
-    // 行业类目id
-    $dto["mcc_code"] = "2015050700000000";
-    // 行业经营许可证资质照片
-    $dto["image_list"] = "a5d373f6-3e79-405f-9993-fb7ea051c372";
-
-    $dtoList = array();
-    array_push($dtoList, $dto);
-    return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
-}
-
 function getContactPersonInfo() {
     $dto = array();
     // 联系人身份证号码
@@ -79,52 +67,6 @@ function getContactPersonInfo() {
     $dto["name"] = "谢季";
     // 联系人手机号
     $dto["mobile"] = "18900400032";
-
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
-}
-
-function getCertificateInfo() {
-    $dto = array();
-    // 登记证书类型**证照类型为登记证书时(certificate_type&#x3D;REGISTER_CERT)必填**。枚举：&lt;br/&gt;统一社会信用代码证书(CERTIFICATE_TYPE_2389)&lt;br/&gt;慈善组织公开募捐资格证书(CERTIFICATE_TYPE_2397)&lt;br/&gt;社会团体法人登记证书(CERTIFICATE_TYPE_2394)&lt;br/&gt;民办非企业单位登记证书(CERTIFICATE_TYPE_2395)&lt;br/&gt;基金会法人登记证书(CERTIFICATE_TYPE_2396)&lt;br/&gt;农民专业合作社法人营业执照(CERTIFICATE_TYPE_2398)&lt;br/&gt;宗教活动场所登记证(CERTIFICATE_TYPE_2399)&lt;br/&gt;其他证书/批文/证明(CERTIFICATE_TYPE_2400)&lt;br/&gt;&lt;font color&#x3D;&quot;green&quot;&gt;示例值：CERTIFICATE_TYPE_2389&lt;/font&gt;
-    $dto["cert_type"] = "CERTIFICATE_TYPE_2389";
-    // 证照编号
-    $dto["cert_number"] = "9111000071093465XC";
-    // 证照图片
-    $dto["cert_copy"] = "afce08c5-1548-30f8-bf70-1752c3012f66";
-    // 证照商户名称
-    $dto["cert_merchant_name"] = "新新饭店";
-    // 证照法人姓名
-    $dto["cert_legal_person"] = "李四";
-    // 证照注册地址
-    $dto["cert_company_address"] = "浙江省杭州市西湖区1街道10号";
-    // 证照生效时间
-    $dto["effect_time"] = "19990101";
-    // 证照过期时间
-    $dto["expire_time"] = "长期";
-
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
-}
-
-function getAuthIdentityInfo() {
-    $dto = array();
-    // 主体类型
-    $dto["business_type"] = "2";
-    // 是否金融机构
-    $dto["finance_institution_flag"] = "N";
-    // 金融机构类型
-    $dto["financial_type"] = "INST";
-    // 金融机构许可证图片
-    $dto["finance_license_pics"] = "a5d373f6-3e79-405f-9993-fb7ea051c372";
-    // 证照类型
-    $dto["certificate_type"] = "BUSINESS_CERT";
-    // 登记证书信息
-    $dto["certificate_info"] = getCertificateInfo();
-    // 单位证明函照片
-    $dto["company_prove_copy"] = "71da066c-5d15-3658-a86d-4e85ee67808a";
-    // 辅助证明材料信息
-    $dto["support_credentials"] = getSupportCredentials();
-    // 经营许可证
-    $dto["qualification_info_list"] = getQualificationInfoList();
 
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
@@ -155,22 +97,24 @@ function getLegalPersonInfo() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function getUboInfo() {
+function getCertificateInfo() {
     $dto = array();
-    // 证件姓名
-    $dto["ubo_id_doc_name"] = "消化";
-    // 证件类型
-    $dto["ubo_id_doc_type"] = "00";
-    // 证件号码
-    $dto["ubo_id_doc_number"] = "110101199909291419";
-    // 证件有效期开始时间
-    $dto["ubo_period_begin"] = "19990101";
-    // 证件有效期结束时间
-    $dto["ubo_period_end"] = "20260606";
-    // 证件正面照片
-    $dto["ubo_id_doc_copy"] = "afce08c5-1548-30f8-bf70-1752c3012f66";
-    // 证件反面照片
-    $dto["ubo_id_doc_copy_back"] = "51dd13bb-6268-36d0-ac84-c4cdc19eccba";
+    // 登记证书类型**证照类型为登记证书时(certificate_type&#x3D;REGISTER_CERT)必填**。枚举：&lt;br/&gt;统一社会信用代码证书(CERTIFICATE_TYPE_2389)&lt;br/&gt;慈善组织公开募捐资格证书(CERTIFICATE_TYPE_2397)&lt;br/&gt;社会团体法人登记证书(CERTIFICATE_TYPE_2394)&lt;br/&gt;民办非企业单位登记证书(CERTIFICATE_TYPE_2395)&lt;br/&gt;基金会法人登记证书(CERTIFICATE_TYPE_2396)&lt;br/&gt;农民专业合作社法人营业执照(CERTIFICATE_TYPE_2398)&lt;br/&gt;宗教活动场所登记证(CERTIFICATE_TYPE_2399)&lt;br/&gt;其他证书/批文/证明(CERTIFICATE_TYPE_2400)&lt;br/&gt;&lt;font color&#x3D;&quot;green&quot;&gt;示例值：CERTIFICATE_TYPE_2389&lt;/font&gt;
+    $dto["cert_type"] = "CERTIFICATE_TYPE_2389";
+    // 证照编号
+    $dto["cert_number"] = "9111000071093465XC";
+    // 证照图片
+    $dto["cert_copy"] = "afce08c5-1548-30f8-bf70-1752c3012f66";
+    // 证照商户名称
+    $dto["cert_merchant_name"] = "新新饭店";
+    // 证照法人姓名
+    $dto["cert_legal_person"] = "李四";
+    // 证照注册地址
+    $dto["cert_company_address"] = "浙江省杭州市西湖区1街道10号";
+    // 证照生效时间
+    $dto["effect_time"] = "19990101";
+    // 证照过期时间
+    $dto["expire_time"] = "长期";
 
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
@@ -199,6 +143,62 @@ function getSupportCredentials() {
     $dto["store_door_img"] = "afce08c5-1548-30f8-bf70-1752c3012f66";
     // 门店店内照片或者摊位照侧面
     $dto["store_inner_img"] = "51dd13bb-6268-36d0-ac84-c4cdc19eccba";
+
+    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+}
+
+function getQualificationInfoList() {
+    $dto = array();
+    // 行业类目id
+    $dto["mcc_code"] = "2015050700000000";
+    // 行业经营许可证资质照片
+    $dto["image_list"] = "a5d373f6-3e79-405f-9993-fb7ea051c372";
+
+    $dtoList = array();
+    array_push($dtoList, $dto);
+    return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+}
+
+function getAuthIdentityInfo() {
+    $dto = array();
+    // 主体类型
+    $dto["business_type"] = "2";
+    // 是否金融机构
+    $dto["finance_institution_flag"] = "N";
+    // 金融机构类型
+    $dto["financial_type"] = "INST";
+    // 金融机构许可证图片
+    $dto["finance_license_pics"] = "a5d373f6-3e79-405f-9993-fb7ea051c372";
+    // 证照类型
+    $dto["certificate_type"] = "BUSINESS_CERT";
+    // 登记证书信息
+    $dto["certificate_info"] = getCertificateInfo();
+    // 单位证明函照片
+    $dto["company_prove_copy"] = "71da066c-5d15-3658-a86d-4e85ee67808a";
+    // 辅助证明材料信息
+    $dto["support_credentials"] = getSupportCredentials();
+    // 经营许可证
+    $dto["qualification_info_list"] = getQualificationInfoList();
+
+    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+}
+
+function getUboInfo() {
+    $dto = array();
+    // 证件姓名
+    $dto["ubo_id_doc_name"] = "消化";
+    // 证件类型
+    $dto["ubo_id_doc_type"] = "00";
+    // 证件号码
+    $dto["ubo_id_doc_number"] = "110101199909291419";
+    // 证件有效期开始时间
+    $dto["ubo_period_begin"] = "19990101";
+    // 证件有效期结束时间
+    $dto["ubo_period_end"] = "20260606";
+    // 证件正面照片
+    $dto["ubo_id_doc_copy"] = "afce08c5-1548-30f8-bf70-1752c3012f66";
+    // 证件反面照片
+    $dto["ubo_id_doc_copy_back"] = "51dd13bb-6268-36d0-ac84-c4cdc19eccba";
 
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }

@@ -59,6 +59,16 @@ function getExtendInfos() {
     return $extendInfoMap;
 }
 
+function getBindAppIdConfList() {
+    $dto = array();
+    // 关联APPID
+    $dto["sub_appid"] = "oQOa46X2FxRqEy6F4YmwIRCrA7Mk";
+
+    $dtoList = array();
+    array_push($dtoList, $dto);
+    return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+}
+
 function getSubscribeConfList() {
     $dto = array();
     // 关联APPID
@@ -67,16 +77,6 @@ function getSubscribeConfList() {
     $dto["subscribe_appid"] = "oQOa46X2FxRqEy6F4YmwIRCrA7Mk";
     // 支付凭证推荐小程序appid需为通过微信认证的小程序appid，且认证主体与服务商主体一致；与subscribe_appid二选一；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：wx852a790f100000fe&lt;/font&gt;
     $dto["receipt_appid"] = "wx852a790f100000fe";
-
-    $dtoList = array();
-    array_push($dtoList, $dto);
-    return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
-}
-
-function getBindAppIdConfList() {
-    $dto = array();
-    // 关联APPID
-    $dto["sub_appid"] = "oQOa46X2FxRqEy6F4YmwIRCrA7Mk";
 
     $dtoList = array();
     array_push($dtoList, $dto);

@@ -61,20 +61,6 @@ function getExtendInfos() {
     return $extendInfoMap;
 }
 
-function getFileList() {
-    $dto = array();
-    // 文件类型
-    $dto["file_type"] = "F02";
-    // 文件jfileID
-    $dto["file_id"] = "99e00421-dad7-3334-9538-4f2ad10612d5";
-    // 文件名称
-    $dto["file_name"] = "企业营业执照1.jpg";
-
-    $dtoList = array();
-    array_push($dtoList, $dto);
-    return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
-}
-
 function getSettleConfig() {
     $dto = array();
     // 开通状态
@@ -157,6 +143,20 @@ function getCashConfig() {
     $dto["out_fee_huifu_id"] = "6666000104633228";
     // 交易手续费外扣的账户类型
     $dto["out_fee_acct_type"] = "05";
+
+    $dtoList = array();
+    array_push($dtoList, $dto);
+    return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+}
+
+function getFileList() {
+    $dto = array();
+    // 文件类型
+    $dto["file_type"] = "F02";
+    // 文件jfileID
+    $dto["file_id"] = "99e00421-dad7-3334-9538-4f2ad10612d5";
+    // 文件名称
+    $dto["file_name"] = "企业营业执照1.jpg";
 
     $dtoList = array();
     array_push($dtoList, $dto);

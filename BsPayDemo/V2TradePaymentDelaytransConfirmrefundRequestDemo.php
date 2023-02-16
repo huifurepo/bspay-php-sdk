@@ -59,14 +59,6 @@ function getExtendInfos() {
     return $extendInfoMap;
 }
 
-function getAcctSplitBunch() {
-    $dto = array();
-    // 分账明细
-    $dto["acct_infos"] = getAcctInfos();
-
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
-}
-
 function getAcctInfos() {
     $dto = array();
     // 被分账方ID
@@ -79,6 +71,14 @@ function getAcctInfos() {
     $dtoList = array();
     array_push($dtoList, $dto);
     return $dtoList;
+}
+
+function getAcctSplitBunch() {
+    $dto = array();
+    // 分账明细
+    $dto["acct_infos"] = getAcctInfos();
+
+    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
 

@@ -79,6 +79,20 @@ function getExtendInfos() {
     return $extendInfoMap;
 }
 
+function getRiskCheckData() {
+    $dto = array();
+    // 基站地址
+    $dto["base_station"] = "192.168.1.1";
+    // ip地址
+    $dto["ip_addr"] = "180.167.105.130";
+    // 纬度
+    $dto["latitude"] = "33.3";
+    // 经度
+    $dto["longitude"] = "33.3";
+
+    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+}
+
 function getTerminalDeviceData() {
     $dto = array();
     // 商户终端序列号
@@ -117,20 +131,6 @@ function getTerminalDeviceData() {
     $dto["network_license"] = "P3111";
     // 商户终端序列号
     $dto["serial_num"] = "";
-
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
-}
-
-function getRiskCheckData() {
-    $dto = array();
-    // 基站地址
-    $dto["base_station"] = "192.168.1.1";
-    // ip地址
-    $dto["ip_addr"] = "180.167.105.130";
-    // 纬度
-    $dto["latitude"] = "33.3";
-    // 经度
-    $dto["longitude"] = "33.3";
 
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }

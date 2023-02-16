@@ -77,20 +77,20 @@ function getAcctInfosRucan() {
     return $dtoList;
 }
 
+function getAcctSplitBunchRucan() {
+    $dto = array();
+    // 分账明细
+    $dto["acct_infos"] = getAcctInfosRucan();
+
+    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+}
+
 function getAppData() {
     $dto = array();
     // 小程序返回码
     $dto["app_schema"] = "app跳转链接";
     // 私有信息
     // $dto["private_info"] = "";
-
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
-}
-
-function getAcctSplitBunchRucan() {
-    $dto = array();
-    // 分账明细
-    $dto["acct_infos"] = getAcctInfosRucan();
 
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }

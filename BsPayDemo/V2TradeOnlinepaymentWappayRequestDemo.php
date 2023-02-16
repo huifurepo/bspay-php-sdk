@@ -73,24 +73,36 @@ function getExtendInfos() {
     return $extendInfoMap;
 }
 
-function getTerminalDeviceData() {
+function getAcctInfos() {
     $dto = array();
-    // 交易设备ip
-    $dto["device_ip"] = "127.0.0.1";
-    // 设备类型
-    $dto["device_type"] = "1";
-    // 交易设备gps
-    // $dto["device_gps"] = "";
-    // 交易设备iccid
-    // $dto["device_icc_id"] = "";
-    // 交易设备imei
-    // $dto["device_imei"] = "";
-    // 交易设备imsi
-    // $dto["device_imsi"] = "";
-    // 交易设备mac
-    // $dto["device_mac"] = "";
-    // 交易设备wifimac
-    // $dto["device_wifi_mac"] = "";
+    // 支付金额
+    // $dto["div_amt"] = "";
+    // 被分账方ID
+    // $dto["huifu_id"] = "";
+    // 账户号
+    // $dto["acct_id"] = "";
+
+    $dtoList = array();
+    array_push($dtoList, $dto);
+    return $dtoList;
+}
+
+function getAcctSplitBunchRucan() {
+    $dto = array();
+    // 分账信息列表
+    $dto["acct_infos"] = getAcctInfos();
+
+    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+}
+
+function getExtendPayData() {
+    $dto = array();
+    // 商品简称
+    $dto["goods_short_name"] = "一般商品";
+    // 网关支付受理渠道
+    $dto["gw_chnnl_tp"] = "01";
+    // 业务种类
+    $dto["biz_tp"] = "123456";
 
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
@@ -109,36 +121,24 @@ function getRiskCheckData() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function getAcctInfos() {
+function getTerminalDeviceData() {
     $dto = array();
-    // 支付金额
-    // $dto["div_amt"] = "";
-    // 被分账方ID
-    // $dto["huifu_id"] = "";
-    // 账户号
-    // $dto["acct_id"] = "";
-
-    $dtoList = array();
-    array_push($dtoList, $dto);
-    return $dtoList;
-}
-
-function getExtendPayData() {
-    $dto = array();
-    // 商品简称
-    $dto["goods_short_name"] = "一般商品";
-    // 网关支付受理渠道
-    $dto["gw_chnnl_tp"] = "01";
-    // 业务种类
-    $dto["biz_tp"] = "123456";
-
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
-}
-
-function getAcctSplitBunchRucan() {
-    $dto = array();
-    // 分账信息列表
-    $dto["acct_infos"] = getAcctInfos();
+    // 交易设备ip
+    $dto["device_ip"] = "127.0.0.1";
+    // 设备类型
+    $dto["device_type"] = "1";
+    // 交易设备gps
+    // $dto["device_gps"] = "";
+    // 交易设备iccid
+    // $dto["device_icc_id"] = "";
+    // 交易设备imei
+    // $dto["device_imei"] = "";
+    // 交易设备imsi
+    // $dto["device_imsi"] = "";
+    // 交易设备mac
+    // $dto["device_mac"] = "";
+    // 交易设备wifimac
+    // $dto["device_wifi_mac"] = "";
 
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }

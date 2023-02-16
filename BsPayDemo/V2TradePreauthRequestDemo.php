@@ -89,6 +89,150 @@ function getExtendInfos() {
     return $extendInfoMap;
 }
 
+function getExtendParams() {
+    $dto = array();
+    // 卡类型
+    $dto["card_type"] = "";
+    // 支付宝点餐场景类型
+    $dto["food_order_type"] = "qr_order";
+    // 花呗分期数
+    $dto["hb_fq_num"] = "";
+    // 手续费百分比
+    $dto["hb_fq_seller_percent"] = "";
+    // 行业数据回流信息
+    $dto["industry_reflux_info"] = "";
+    // 停车场ID
+    $dto["parking_id"] = "123wsx";
+    // 系统商编号
+    $dto["sys_service_provider_id"] = "";
+
+    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+}
+
+function getAliGoodsDetail() {
+    $dto = array();
+    // 商品的编号
+    $dto["goods_id"] = "12345678901234567890123456789012";
+    // 商品名称
+    $dto["goods_name"] = "111";
+    // 商品单价
+    $dto["price"] = "1.01";
+    // 商品数量
+    $dto["quantity"] = "1";
+    // 商品描述信息
+    $dto["body"] = "";
+    // 商品类目树
+    $dto["categories_tree"] = "";
+    // 商品类目
+    $dto["goods_category"] = "";
+    // 商品的展示地址
+    $dto["show_url"] = "321313";
+
+    $dtoList = array();
+    array_push($dtoList, $dto);
+    return $dtoList;
+}
+
+function getAlipayData() {
+    $dto = array();
+    // 支付宝的店铺编号
+    $dto["alipay_store_id"] = "";
+    // 业务扩展参数
+    $dto["extend_params"] = getExtendParams();
+    // 订单包含的商品列表信息
+    $dto["goods_detail"] = getAliGoodsDetail();
+    // 商户操作员编号
+    $dto["operator_id"] = "1234567890123456789012345678";
+    // 商户门店编号
+    $dto["store_id"] = "";
+
+    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+}
+
+function getWxGoodsDetailRucan() {
+    $dto = array();
+    // 商品编码
+    $dto["goods_id"] = "1232131";
+    // 商品名称
+    $dto["goods_name"] = "汇付天下";
+    // 商品单价
+    $dto["price"] = "0.50";
+    // 商品数量
+    $dto["quantity"] = 0;
+    // 微信侧商品编码
+    $dto["wxpay_goods_id"] = "";
+
+    $dtoList = array();
+    array_push($dtoList, $dto);
+    return $dtoList;
+}
+
+function getWxGoodsRucan() {
+    $dto = array();
+    // 单品列表
+    $dto["goods_detail"] = getWxGoodsDetailRucan();
+    // 订单原价
+    $dto["cost_price"] = "1";
+    // 商品小票ID
+    $dto["receipt_id"] = "";
+
+    return $dto;
+}
+
+function getWxStoreRucan() {
+    $dto = array();
+    // 门店详细地址
+    $dto["address"] = "汇付天下桂林路";
+    // 门店行政区划码
+    $dto["area_code"] = "310";
+    // 门店id
+    $dto["id"] = "1232131";
+    // 门店名称
+    $dto["name"] = "测试";
+
+    return $dto;
+}
+
+function getWxSceneRucan() {
+    $dto = array();
+    // 门店信息
+    $dto["store_info"] = getWxStoreRucan();
+
+    return $dto;
+}
+
+function getWxData() {
+    $dto = array();
+    // 附加数据
+    $dto["attach"] = "";
+    // 商品详情
+    $dto["detail"] = getWxGoodsRucan();
+    // 设备号
+    $dto["device_info"] = "";
+    // 订单优惠标记
+    $dto["goods_tag"] = "12321312";
+    // 场景信息
+    $dto["scene_info"] = getWxSceneRucan();
+    // 子商户公众账号ID
+    $dto["sub_appid"] = "wx48abf94e085e98e1";
+
+    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+}
+
+function getRiskCheckData() {
+    $dto = array();
+    // 基站地址
+    $dto["base_station"] = "192.168.1.1";
+    // ip地址
+    $dto["ip_addr"] = "180.167.105.130";
+    // 纬度
+    $dto["latitude"] = "33.3";
+    // 经度
+    $dto["longitude"] = "33.3";
+
+    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+}
+
 function getTerminalDeviceData() {
     $dto = array();
     // 商户终端版本号
@@ -129,150 +273,6 @@ function getTerminalDeviceData() {
     $dto["serial_num"] = "";
 
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
-}
-
-function getWxSceneRucan() {
-    $dto = array();
-    // 门店信息
-    $dto["store_info"] = getWxStoreRucan();
-
-    return $dto;
-}
-
-function getRiskCheckData() {
-    $dto = array();
-    // 基站地址
-    $dto["base_station"] = "192.168.1.1";
-    // ip地址
-    $dto["ip_addr"] = "180.167.105.130";
-    // 纬度
-    $dto["latitude"] = "33.3";
-    // 经度
-    $dto["longitude"] = "33.3";
-
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
-}
-
-function getWxGoodsDetailRucan() {
-    $dto = array();
-    // 商品编码
-    $dto["goods_id"] = "1232131";
-    // 商品名称
-    $dto["goods_name"] = "汇付天下";
-    // 商品单价
-    $dto["price"] = "0.50";
-    // 商品数量
-    $dto["quantity"] = 0;
-    // 微信侧商品编码
-    $dto["wxpay_goods_id"] = "";
-
-    $dtoList = array();
-    array_push($dtoList, $dto);
-    return $dtoList;
-}
-
-function getWxData() {
-    $dto = array();
-    // 附加数据
-    $dto["attach"] = "";
-    // 商品详情
-    $dto["detail"] = getWxGoodsRucan();
-    // 设备号
-    $dto["device_info"] = "";
-    // 订单优惠标记
-    $dto["goods_tag"] = "12321312";
-    // 场景信息
-    $dto["scene_info"] = getWxSceneRucan();
-    // 子商户公众账号ID
-    $dto["sub_appid"] = "wx48abf94e085e98e1";
-
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
-}
-
-function getExtendParams() {
-    $dto = array();
-    // 卡类型
-    $dto["card_type"] = "";
-    // 支付宝点餐场景类型
-    $dto["food_order_type"] = "qr_order";
-    // 花呗分期数
-    $dto["hb_fq_num"] = "";
-    // 手续费百分比
-    $dto["hb_fq_seller_percent"] = "";
-    // 行业数据回流信息
-    $dto["industry_reflux_info"] = "";
-    // 停车场ID
-    $dto["parking_id"] = "123wsx";
-    // 系统商编号
-    $dto["sys_service_provider_id"] = "";
-
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
-}
-
-function getWxStoreRucan() {
-    $dto = array();
-    // 门店详细地址
-    $dto["address"] = "汇付天下桂林路";
-    // 门店行政区划码
-    $dto["area_code"] = "310";
-    // 门店id
-    $dto["id"] = "1232131";
-    // 门店名称
-    $dto["name"] = "测试";
-
-    return $dto;
-}
-
-function getAlipayData() {
-    $dto = array();
-    // 支付宝的店铺编号
-    $dto["alipay_store_id"] = "";
-    // 业务扩展参数
-    $dto["extend_params"] = getExtendParams();
-    // 订单包含的商品列表信息
-    $dto["goods_detail"] = getAliGoodsDetail();
-    // 商户操作员编号
-    $dto["operator_id"] = "1234567890123456789012345678";
-    // 商户门店编号
-    $dto["store_id"] = "";
-
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
-}
-
-function getWxGoodsRucan() {
-    $dto = array();
-    // 单品列表
-    $dto["goods_detail"] = getWxGoodsDetailRucan();
-    // 订单原价
-    $dto["cost_price"] = "1";
-    // 商品小票ID
-    $dto["receipt_id"] = "";
-
-    return $dto;
-}
-
-function getAliGoodsDetail() {
-    $dto = array();
-    // 商品的编号
-    $dto["goods_id"] = "12345678901234567890123456789012";
-    // 商品名称
-    $dto["goods_name"] = "111";
-    // 商品单价
-    $dto["price"] = "1.01";
-    // 商品数量
-    $dto["quantity"] = "1";
-    // 商品描述信息
-    $dto["body"] = "";
-    // 商品类目树
-    $dto["categories_tree"] = "";
-    // 商品类目
-    $dto["goods_category"] = "";
-    // 商品的展示地址
-    $dto["show_url"] = "321313";
-
-    $dtoList = array();
-    array_push($dtoList, $dto);
-    return $dtoList;
 }
 
 
