@@ -5,6 +5,14 @@ namespace BsPaySdk\enums;
 class FunctionCodeEnum
 {
     /**
+     * 汇付入账确认
+     */
+    static $V2_TRADE_ONLINEPAYMENT_TRANSFER_REMITTANCE = 'v2/trade/onlinepayment/transfer/remittance';
+    /**
+     * 汇付入账查询
+     */
+    static $V2_TRADE_ONLINEPAYMENT_TRANSFER_REMITTANCEORDER = 'v2/trade/onlinepayment/transfer/remittanceorder';
+    /**
      * 一键绑卡
      */
     static $V2_QUICKBUCKLE_ONEKEY_CARDBIND = 'v2/quickbuckle/onekey/cardbind';

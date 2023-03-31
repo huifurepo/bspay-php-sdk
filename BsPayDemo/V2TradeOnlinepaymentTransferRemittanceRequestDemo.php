@@ -1,7 +1,7 @@
 <?php
 
 /**
- * 商户统一进件（页面版） - 示例
+ * 汇付入账确认 - 示例
  *
  * @author sdk-generator
  * @Description
@@ -10,21 +10,27 @@ namespace BsPayDemo;
 
 // 1. 资源及配置加载
 require_once dirname(__FILE__) . "/loader.php";
-require_once  dirname(__FILE__). "/../BsPaySdk/request/V2MerchantUrlForwardRequest.php";
+require_once  dirname(__FILE__). "/../BsPaySdk/request/V2TradeOnlinepaymentTransferRemittanceRequest.php";
 
 use BsPaySdk\core\BsPayClient;
-use BsPaySdk\request\V2MerchantUrlForwardRequest;
+use BsPaySdk\request\V2TradeOnlinepaymentTransferRemittanceRequest;
 
 // 2.组装请求参数
-$request = new V2MerchantUrlForwardRequest();
+$request = new V2TradeOnlinepaymentTransferRemittanceRequest();
 // 请求流水号
 $request->setReqSeqId(date("YmdHis").mt_rand());
 // 请求日期
 $request->setReqDate(date("Ymd"));
-// 渠道商号
-$request->setUpperHuifuId("6666000123123123");
-// 门店号
-// $request->setStoreId("test");
+// 商户号
+$request->setHuifuId("6666000106521787");
+// 交易金额
+$request->setTransAmt("1019.00");
+// 异步通知地址
+$request->setNotifyUrl("http://C_TOPAT_NOTIFY");
+// 原汇款订单号
+$request->setOrgRemittanceOrderId("20230214170030defaultit656505030");
+// 商品描述
+$request->setGoodsDesc("商品描述001");
 
 // 设置非必填字段
 $extendInfoMap = getExtendInfos();
@@ -46,14 +52,8 @@ if (!$result || $result->isError()) {  //失败处理
 function getExtendInfos() {
     // 设置非必填字段
     $extendInfoMap = array();
-    // 手机号
-    $extendInfoMap["phone"]= "13917352618";
-    // 跳转地址失效时间
-    $extendInfoMap["expires"]= "50000";
-    // 返回页面URL
-    // $extendInfoMap["back_page_url"]= "";
-    // 异步接收URL
-    // $extendInfoMap["async_receive_url"]= "";
+    // 备注
+    $extendInfoMap["remark"]= "标记123";
     return $extendInfoMap;
 }
 

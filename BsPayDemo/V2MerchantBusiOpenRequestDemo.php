@@ -98,40 +98,44 @@ function getExtendInfos() {
     $extendInfoMap["forced_delay_flag"]= "Y";
     // 是否开通预授权
     $extendInfoMap["alipay_pre_auth_flag"]= "N";
-    // 银联配置对象
-    $extendInfoMap["union_conf_list"]= getUnionConfList();
-    // 银联小微入驻信息实体
-    // $extendInfoMap["union_micro_info"]= getUnionMicroInfo();
-    // 支付宝配置对象
-    $extendInfoMap["ali_conf_list"]= getAliConfList();
-    // 余额支付配置实体
-    $extendInfoMap["balance_pay_config"]= getBalancePayConfig();
-    // 银行卡业务配置实体
-    $extendInfoMap["bank_card_conf"]= getBankCardConf();
-    // 微信配置对象
-    $extendInfoMap["wx_conf_list"]= getWxConfList();
     // 开通微信预授权
     $extendInfoMap["wechatpay_pre_auth_flag"]= "N";
+    // 商户业务类型
+    // $extendInfoMap["mer_bus_type"]= "";
+    // 线上费率配置
+    // $extendInfoMap["online_fee_conf_list"]= getOnlineFeeConfList();
+    // 支付宝配置对象
+    $extendInfoMap["ali_conf_list"]= getAliConfList();
+    // 微信配置对象
+    $extendInfoMap["wx_conf_list"]= getWxConfList();
+    // 银联二维码配置
+    $extendInfoMap["union_conf_list"]= getUnionConfList();
+    // 银行卡业务配置
+    $extendInfoMap["bank_card_conf"]= getBankCardConf();
+    // 银联小微入驻信息实体
+    // $extendInfoMap["union_micro_info"]= getUnionMicroInfo();
+    // 余额支付配置实体
+    $extendInfoMap["balance_pay_config"]= getBalancePayConfig();
     // 营销补贴
     $extendInfoMap["combine_pay_config"]= getCombinePayConfig();
     // 花呗分期费率配置实体
     $extendInfoMap["hb_fq_fee_config"]= getHbFqFeeConfig();
-    // 异步消息接收地址
-    $extendInfoMap["async_return_url"]= "[http://192.168.85.157:30031/sspm/testVirgo](http://192.168.85.157:30031/sspm/testVirgo)";
-    // 业务开通结果异步消息接收地址
-    $extendInfoMap["busi_async_return_url"]= "";
-    // 交易异步应答地址
-    $extendInfoMap["recon_resp_addr"]= "[http://192.168.85.157:30031/sspm/testVirgo](http://192.168.85.157:30031/sspm/testVirgo)";
-    // 线上费率配置
-    // $extendInfoMap["online_fee_conf_list"]= getOnlineFeeConfList();
-    // 商户业务类型
-    // $extendInfoMap["mer_bus_type"]= "";
     // 线上手续费承担方配置
     // $extendInfoMap["online_pay_fee_conf_list"]= getOnlinePayFeeConfList();
     // 银行大额转账对象
     // $extendInfoMap["bank_big_amt_pay_config"]= getBankBigAmtPayConfig();
     // 微信直连配置对象
     // $extendInfoMap["wx_zl_conf"]= getWxZlConf();
+    // 是否使用总部交易信息
+    // $extendInfoMap["use_chains_flag"]= "";
+    // 异步消息接收地址
+    $extendInfoMap["async_return_url"]= "[http://192.168.85.157:30031/sspm/testVirgo](http://192.168.85.157:30031/sspm/testVirgo)";
+    // 业务开通结果异步消息接收地址
+    $extendInfoMap["busi_async_return_url"]= "";
+    // 交易异步应答地址
+    $extendInfoMap["recon_resp_addr"]= "[http://192.168.85.157:30031/sspm/testVirgo](http://192.168.85.157:30031/sspm/testVirgo)";
+    // 平台收款资金归集配置
+    // $extendInfoMap["out_order_funds_config"]= getOutOrderFundsConfig();
     return $extendInfoMap;
 }
 
@@ -153,6 +157,68 @@ function getAgreementInfo() {
     $dto["agree_end_date"] = "20400325";
 
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+}
+
+function getOnlineFeeConfList() {
+    $dto = array();
+    // 业务类型
+    // $dto["fee_type"] = "test";
+    // 银行编码
+    // $dto["bank_id"] = "test";
+    // 借贷标志
+    // $dto["dc_flag"] = "test";
+    // 费率状态
+    // $dto["stat_flag"] = "test";
+    // 手续费（固定/元）
+    // $dto["fix_amt"] = "";
+    // 费率（百分比/%）
+    // $dto["fee_rate"] = "";
+    // 银行名称
+    // $dto["bank_name"] = "";
+    // 银行中文简称
+    // $dto["bank_short_chn"] = "";
+
+    $dtoList = array();
+    array_push($dtoList, $dto);
+    return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+}
+
+function getAliConfList() {
+    $dto = array();
+    // 支付场景
+    $dto["pay_scene"] = "1";
+    // 手续费（%）
+    $dto["fee_rate"] = "0.38";
+    // 商户经营类目
+    $dto["mcc"] = "2015091000052157";
+    // 子渠道号
+    $dto["pay_channel_id"] = "JQF00001";
+    // 拟申请的间联商户等级
+    $dto["indirect_level"] = "";
+
+    $dtoList = array();
+    array_push($dtoList, $dto);
+    return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+}
+
+function getWxConfList() {
+    $dto = array();
+    // 支付场景
+    $dto["pay_scene"] = "1";
+    // 手续费（%）
+    $dto["fee_rate"] = "0.38";
+    // 费率规则号
+    $dto["fee_rule_id"] = "758";
+    // ~~商户经营类目~~
+    // $dto["~~mcc~~"] = "";
+    // 子渠道号
+    $dto["pay_channel_id"] = "JP00001";
+    // 申请服务
+    $dto["service_codes"] = "";
+
+    $dtoList = array();
+    array_push($dtoList, $dto);
+    return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
 function getUnionConfList() {
@@ -177,56 +243,6 @@ function getUnionConfList() {
     $dtoList = array();
     array_push($dtoList, $dto);
     return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
-}
-
-function getUnionMicroInfo() {
-    $dto = array();
-    // 银联商户类别
-    // $dto["mchnt_type"] = "test";
-    // 商户经度
-    // $dto["mer_lng"] = "test";
-    // 商户纬度
-    // $dto["mer_lat"] = "test";
-    // 店铺名称
-    // $dto["shop_name"] = "test";
-    // 商户经营类目
-    // $dto["mcc"] = "test";
-
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
-}
-
-function getAliConfList() {
-    $dto = array();
-    // 支付场景
-    $dto["pay_scene"] = "1";
-    // 手续费（%）
-    $dto["fee_rate"] = "0.38";
-    // 商户经营类目
-    $dto["mcc"] = "2015091000052157";
-    // 子渠道号
-    $dto["pay_channel_id"] = "JQF00001";
-    // 拟申请的间联商户等级
-    $dto["indirect_level"] = "";
-
-    $dtoList = array();
-    array_push($dtoList, $dto);
-    return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
-}
-
-function getBalancePayConfig() {
-    $dto = array();
-    // 支付手续费(%)
-    $dto["fee_rate"] = "2";
-    // 支付固定手续费(元)
-    $dto["fee_fix_amt"] = "1";
-    // 交易手续费外扣时的账户类型
-    // $dto["out_fee_acct_type"] = "";
-    // 交易手续费外扣汇付ID
-    // $dto["out_fee_huifuid"] = "";
-    // 是否交易手续费外扣
-    // $dto["out_fee_flag"] = "";
-
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
 function getBankCardConf() {
@@ -263,24 +279,36 @@ function getBankCardConf() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function getWxConfList() {
+function getUnionMicroInfo() {
     $dto = array();
-    // 支付场景
-    $dto["pay_scene"] = "1";
-    // 手续费（%）
-    $dto["fee_rate"] = "0.38";
-    // 费率规则号
-    $dto["fee_rule_id"] = "758";
-    // ~~商户经营类目~~
-    // $dto["~~mcc~~"] = "";
-    // 子渠道号
-    $dto["pay_channel_id"] = "JP00001";
-    // 申请服务
-    $dto["service_codes"] = "";
+    // 银联商户类别
+    // $dto["mchnt_type"] = "test";
+    // 商户经度
+    // $dto["mer_lng"] = "test";
+    // 商户纬度
+    // $dto["mer_lat"] = "test";
+    // 店铺名称
+    // $dto["shop_name"] = "test";
+    // 商户经营类目
+    // $dto["mcc"] = "test";
 
-    $dtoList = array();
-    array_push($dtoList, $dto);
-    return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+}
+
+function getBalancePayConfig() {
+    $dto = array();
+    // 支付手续费(%)
+    $dto["fee_rate"] = "2";
+    // 支付固定手续费(元)
+    $dto["fee_fix_amt"] = "1";
+    // 交易手续费外扣时的账户类型
+    // $dto["out_fee_acct_type"] = "";
+    // 交易手续费外扣汇付ID
+    // $dto["out_fee_huifuid"] = "";
+    // 是否交易手续费外扣
+    // $dto["out_fee_flag"] = "";
+
+    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
 function getCombinePayConfig() {
@@ -319,30 +347,6 @@ function getHbFqFeeConfig() {
     $dto["pay_scene"] = "1";
 
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
-}
-
-function getOnlineFeeConfList() {
-    $dto = array();
-    // 业务类型
-    // $dto["fee_type"] = "test";
-    // 银行编码
-    // $dto["bank_id"] = "test";
-    // 借贷标志
-    // $dto["dc_flag"] = "test";
-    // 费率状态
-    // $dto["stat_flag"] = "test";
-    // 手续费（固定/元）
-    // $dto["fix_amt"] = "";
-    // 费率（百分比/%）
-    // $dto["fee_rate"] = "";
-    // 银行名称
-    // $dto["bank_name"] = "";
-    // 银行中文简称
-    // $dto["bank_short_chn"] = "";
-
-    $dtoList = array();
-    array_push($dtoList, $dto);
-    return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
 function getOnlinePayFeeConfList() {
@@ -405,6 +409,24 @@ function getWxZlConf() {
     // $dto["sub_mch_id"] = "test";
     // 配置集合
     // $dto["wx_zl_pay_conf_list"] = getWxZlPayConfList();
+
+    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+}
+
+function getOutOrderFundsConfig() {
+    $dto = array();
+    // 自动入账开关
+    // $dto["out_order_auto_acct_flag"] = "test";
+    // 支付手续费(%)
+    // $dto["fee_rate"] = "";
+    // 支付固定手续费(元)
+    // $dto["fee_fix_amt"] = "";
+    // 交易手续费外扣时的账户类型
+    // $dto["out_fee_acct_type"] = "";
+    // 交易手续费外扣标记
+    // $dto["out_fee_flag"] = "";
+    // 交易手续费外扣汇付ID
+    // $dto["out_fee_huifuid"] = "";
 
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }

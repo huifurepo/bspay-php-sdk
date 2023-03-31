@@ -26,13 +26,9 @@ class V2MerchantUrlForwardRequest extends BaseRequest
      */
     private $upperHuifuId;
     /**
-     * 手机号
-     */
-    private $phone;
-    /**
      * 门店号
      */
-    private $storeid;
+    private $storeId;
 
     public function getFunctionCode() {
         return FunctionCodeEnum::$V2_MERCHANT_URL_FORWARD;
@@ -63,20 +59,12 @@ class V2MerchantUrlForwardRequest extends BaseRequest
         $this->upperHuifuId = $upperHuifuId;
     }
 
-    public function getPhone() {
-        return $this->phone;
+    public function getStoreId() {
+        return $this->storeId;
     }
 
-    public function setPhone($phone) {
-        $this->phone = $phone;
-    }
-
-    public function getStoreid() {
-        return $this->storeid;
-    }
-
-    public function setStoreid($storeid) {
-        $this->storeid = $storeid;
+    public function setStoreId($storeId) {
+        $this->storeId = $storeId;
     }
 
 }

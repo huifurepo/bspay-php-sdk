@@ -72,6 +72,8 @@ function getExtendInfos() {
     $extendInfoMap["protocol_no"]= "";
     // 风控信息
     // $extendInfoMap["risk_info"]= getRiskInfo();
+    // 回调页面地址
+    // $extendInfoMap["verify_front_url"]= "";
     return $extendInfoMap;
 }
 

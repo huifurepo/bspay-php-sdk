@@ -70,6 +70,8 @@ function getExtendInfos() {
     $extendInfoMap["front_url"]= "http://www.chinapnr.com";
     // 延时标记
     // $extendInfoMap["delay_acct_flag"]= "";
+    // 手续费扣款标志
+    // $extendInfoMap["fee_flag"]= "";
     return $extendInfoMap;
 }
 
