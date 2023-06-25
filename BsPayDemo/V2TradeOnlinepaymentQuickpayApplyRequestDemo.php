@@ -64,7 +64,7 @@ function getExtendInfos() {
     // $extendInfoMap["remark"]= "";
     // 订单失效时间
     // $extendInfoMap["time_expire"]= "";
-    // 营销补贴信息
+    // 补贴支付信息
     // $extendInfoMap["combinedpay_data"]= getCombinedpayData();
     // 分账对象
     // $extendInfoMap["acct_split_bunch"]= getAcctSplitBunchRucan();
@@ -80,7 +80,7 @@ function getRiskCheckData() {
     // ip地址
     $dto["ip_addr"] = "106.33.180.238";
     // 基站地址
-    // $dto["base_atation"] = "";
+    // $dto["base_station"] = "";
     // 纬度
     // $dto["latitude"] = "";
     // 经度

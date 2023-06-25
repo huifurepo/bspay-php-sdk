@@ -1,7 +1,7 @@
 <?php
 
 /**
- * 银联活动列表查询 - 示例
+ * 快捷支付短信预校验 - 示例
  *
  * @author sdk-generator
  * @Description
@@ -10,17 +10,25 @@ namespace BsPayDemo;
 
 // 1. 资源及配置加载
 require_once dirname(__FILE__) . "/loader.php";
-require_once  dirname(__FILE__). "/../BsPaySdk/request/V2MerchantActivityUnionpayQueryRequest.php";
+require_once  dirname(__FILE__). "/../BsPaySdk/request/V2TradeOnlinepaymentQuickpaySmscheckRequest.php";
 
 use BsPaySdk\core\BsPayClient;
-use BsPaySdk\request\V2MerchantActivityUnionpayQueryRequest;
+use BsPaySdk\request\V2TradeOnlinepaymentQuickpaySmscheckRequest;
 
 // 2.组装请求参数
-$request = new V2MerchantActivityUnionpayQueryRequest();
+$request = new V2TradeOnlinepaymentQuickpaySmscheckRequest();
 // 请求流水号
 $request->setReqSeqId(date("YmdHis").mt_rand());
 // 请求日期
 $request->setReqDate(date("Ymd"));
+// 商户号
+$request->setHuifuId("6666000109812884");
+// 原请求流水号
+$request->setOrgReqSeqId("20230418223666178210001");
+// 原请求日期
+$request->setOrgReqDate("20230418");
+// 短信验证码
+$request->setSmsCode("657631");
 
 // 设置非必填字段
 $extendInfoMap = getExtendInfos();

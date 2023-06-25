@@ -62,7 +62,7 @@ function getExtendInfos() {
     $extendInfoMap["delay_acct_flag"]= "Y";
     // 渠道号
     $extendInfoMap["channel_no"]= "";
-    // 营销补贴信息
+    // 补贴支付信息
     // $extendInfoMap["combinedpay_data"]= getCombinedpayData();
     // 场景类型
     $extendInfoMap["pay_scene"]= "";
@@ -282,7 +282,7 @@ function getRiskCheckData() {
     // ip地址
     // $dto["ip_addr"] = "";
     // 基站地址
-    // $dto["base_atation"] = "";
+    $dto["base_station"] = "3";
     // 纬度
     $dto["latitude"] = "2";
     // 经度

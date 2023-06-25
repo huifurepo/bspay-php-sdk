@@ -5,12 +5,12 @@ namespace BsPaySdk\request;
 use BsPaySdk\enums\FunctionCodeEnum;
 
 /**
- * 修改子账户配置
+ * 创建修改小票自定义入口
  *
  * @author sdk-generator
  * @Description
  */
-class V2MerchantSettleModifyRequest extends BaseRequest
+class V2TradeElectronReceiptsCustomentrancesCreateRequest extends BaseRequest
 {
 
     /**
@@ -22,20 +22,16 @@ class V2MerchantSettleModifyRequest extends BaseRequest
      */
     private $reqDate;
     /**
-     * 商户/用户汇付Id
+     * 商户号
      */
     private $huifuId;
     /**
-     * 上级汇付Id
+     * 操作类型
      */
-    private $upperHuifuId;
-    /**
-     * 子账户号
-     */
-    private $acctId;
+    private $operateType;
 
     public function getFunctionCode() {
-        return FunctionCodeEnum::$V2_MERCHANT_SETTLE_MODIFY;
+        return FunctionCodeEnum::$V2_TRADE_ELECTRON_RECEIPTS_CUSTOMENTRANCES_CREATE;
     }
 
 
@@ -63,20 +59,12 @@ class V2MerchantSettleModifyRequest extends BaseRequest
         $this->huifuId = $huifuId;
     }
 
-    public function getUpperHuifuId() {
-        return $this->upperHuifuId;
+    public function getOperateType() {
+        return $this->operateType;
     }
 
-    public function setUpperHuifuId($upperHuifuId) {
-        $this->upperHuifuId = $upperHuifuId;
-    }
-
-    public function getAcctId() {
-        return $this->acctId;
-    }
-
-    public function setAcctId($acctId) {
-        $this->acctId = $acctId;
+    public function setOperateType($operateType) {
+        $this->operateType = $operateType;
     }
 
 }

@@ -112,7 +112,7 @@ function getRiskCheckData() {
     // ip地址
     $dto["ip_addr"] = "111";
     // 基站地址
-    // $dto["base_atation"] = "";
+    // $dto["base_station"] = "";
     // 纬度
     // $dto["latitude"] = "";
     // 经度

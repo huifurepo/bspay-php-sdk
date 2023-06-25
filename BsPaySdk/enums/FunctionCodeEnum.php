@@ -5,6 +5,62 @@ namespace BsPaySdk\enums;
 class FunctionCodeEnum
 {
     /**
+     * 统一进件页面版查询
+     */
+    static $V2_MERCHANT_BUSI_STATUS_QUERY = 'v2/merchant/busi/status/query';
+    /**
+     * 银行列表查询
+     */
+    static $V2_QUICKBUCKLE_BANK_QUERY = 'v2/quickbuckle/bank/query';
+    /**
+     * 商户短信发送
+     */
+    static $V2_MERCHANT_BASICDATA_SMS_SEND = 'v2/merchant/basicdata/sms/send';
+    /**
+     * 批量出金交易查询
+     */
+    static $V2_TRADE_BATCHTRANSLOG_QUERY = 'v2/trade/batchtranslog/query';
+    /**
+     * 快捷支付页面版接口
+     */
+    static $V2_TRADE_ONLINEPAYMENT_QUICKPAY_FRONTPAY = 'v2/trade/onlinepayment/quickpay/frontpay';
+    /**
+     * 快捷支付短信预校验
+     */
+    static $V2_TRADE_ONLINEPAYMENT_QUICKPAY_SMSCHECK = 'v2/trade/onlinepayment/quickpay/smscheck';
+    /**
+     * 跳转电子小票页面
+     */
+    static $V2_TRADE_ELECTRON_RECEIPTS_JUMPINFO = 'v2/trade/electron/receipts/jumpinfo';
+    /**
+     * 图片上传
+     */
+    static $V2_TRADE_ELECTRON_RECEIPTS_PICTURE_UPLOAD = 'v2/trade/electron/receipts/picture/upload';
+    /**
+     * 上传电子小票图片
+     */
+    static $V2_TRADE_ELECTRON_RECEIPTS_UPLOAD = 'v2/trade/electron/receipts/upload';
+    /**
+     * 查询小票自定义入口
+     */
+    static $V2_TRADE_ELECTRON_RECEIPTS_CUSTOMENTRANCES_QUERY = 'v2/trade/electron/receipts/customentrances/query';
+    /**
+     * 创建修改小票自定义入口
+     */
+    static $V2_TRADE_ELECTRON_RECEIPTS_CUSTOMENTRANCES_CREATE = 'v2/trade/electron/receipts/customentrances/create';
+    /**
+     * 代扣支付
+     */
+    static $V2_TRADE_ONLINEPAYMENT_WITHHOLDPAY = 'v2/trade/onlinepayment/withholdpay';
+    /**
+     * 代扣绑卡申请
+     */
+    static $V2_QUICKBUCKLE_WITHHOLD_APPLY = 'v2/quickbuckle/withhold/apply';
+    /**
+     * 代扣绑卡查询
+     */
+    static $V2_QUICKBUCKLE_WITHHOLD_QUERY = 'v2/quickbuckle/withhold/query';
+    /**
      * 汇付入账确认
      */
     static $V2_TRADE_ONLINEPAYMENT_TRANSFER_REMITTANCE = 'v2/trade/onlinepayment/transfer/remittance';

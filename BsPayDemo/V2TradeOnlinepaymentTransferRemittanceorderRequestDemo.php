@@ -54,6 +54,8 @@ function getExtendInfos() {
     $extendInfoMap["page_size"]= "1";
     // 分页页码
     $extendInfoMap["page_no"]= "1";
+    // 入账批次号
+    // $extendInfoMap["org_batch_no"]= "";
     return $extendInfoMap;
 }
 

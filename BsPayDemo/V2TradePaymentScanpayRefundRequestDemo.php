@@ -72,7 +72,7 @@ function getExtendInfos() {
     // $extendInfoMap["loan_undertaker"]= "";
     // 垫资账户类型
     // $extendInfoMap["loan_acct_type"]= "";
-    // 营销补贴信息
+    // 补贴支付信息
     // $extendInfoMap["combinedpay_data"]= getCombinedpayData();
     return $extendInfoMap;
 }
@@ -82,7 +82,7 @@ function getRiskCheckData() {
     // ip地址
     // $dto["ip_addr"] = "";
     // 基站地址
-    // $dto["base_atation"] = "";
+    // $dto["base_station"] = "";
     // 纬度
     // $dto["latitude"] = "";
     // 经度

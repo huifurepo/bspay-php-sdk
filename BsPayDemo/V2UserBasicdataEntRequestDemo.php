@@ -90,6 +90,8 @@ function getExtendInfos() {
     $extendInfoMap["expand_id"]= "";
     // 文件列表
     // $extendInfoMap["file_list"]= getFileList();
+    // 公司类型
+    // $extendInfoMap["ent_type"]= "";
     return $extendInfoMap;
 }
 

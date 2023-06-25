@@ -1,7 +1,7 @@
 <?php
 
 /**
- * 银联活动商户入驻状态查询 - 示例
+ * 批量出金交易查询 - 示例
  *
  * @author sdk-generator
  * @Description
@@ -10,21 +10,19 @@ namespace BsPayDemo;
 
 // 1. 资源及配置加载
 require_once dirname(__FILE__) . "/loader.php";
-require_once  dirname(__FILE__). "/../BsPaySdk/request/V2MerchantActivityUnionpayRegisteStatusQueryRequest.php";
+require_once  dirname(__FILE__). "/../BsPaySdk/request/V2TradeBatchtranslogQueryRequest.php";
 
 use BsPaySdk\core\BsPayClient;
-use BsPaySdk\request\V2MerchantActivityUnionpayRegisteStatusQueryRequest;
+use BsPaySdk\request\V2TradeBatchtranslogQueryRequest;
 
 // 2.组装请求参数
-$request = new V2MerchantActivityUnionpayRegisteStatusQueryRequest();
-// 请求流水号
-$request->setReqSeqId(date("YmdHis").mt_rand());
-// 请求日期
-$request->setReqDate(date("Ymd"));
-// 汇付客户Id
-$request->setHuifuId("6666000103391467");
-// 工单号
-$request->setSerialNo("WK541961804599095296");
+$request = new V2TradeBatchtranslogQueryRequest();
+// 商户号
+$request->setHuifuId("6666000000041651");
+// 开始日期
+$request->setBeginDate("20230315");
+// 结束日期
+$request->setEndDate("20230316");
 
 // 设置非必填字段
 $extendInfoMap = getExtendInfos();
@@ -46,6 +44,12 @@ if (!$result || $result->isError()) {  //失败处理
 function getExtendInfos() {
     // 设置非必填字段
     $extendInfoMap = array();
+    // 交易类型
+    $extendInfoMap["batch_trans_type"]= "";
+    // 分页页码
+    $extendInfoMap["page_num"]= "1";
+    // 分页条数
+    $extendInfoMap["page_size"]= "10";
     return $extendInfoMap;
 }
 

@@ -5,12 +5,12 @@ namespace BsPaySdk\request;
 use BsPaySdk\enums\FunctionCodeEnum;
 
 /**
- * 子账户开通配置
+ * 图片上传
  *
  * @author sdk-generator
  * @Description
  */
-class V2MerchantSettleConfigRequest extends BaseRequest
+class V2TradeElectronReceiptsPictureUploadRequest extends BaseRequest
 {
 
     /**
@@ -22,24 +22,24 @@ class V2MerchantSettleConfigRequest extends BaseRequest
      */
     private $reqDate;
     /**
-     * 商户/用户汇付Id
+     * 商户号
      */
     private $huifuId;
     /**
-     * 上级汇付Id
+     * 三方通道类型
      */
-    private $upperHuifuId;
+    private $thirdChannelType;
     /**
-     * 子账户类型
+     * 文件名称
      */
-    private $acctType;
+    private $fileName;
     /**
-     * 账户名称
+     * 图片内容
      */
-    private $acctName;
+    private $imageContent;
 
     public function getFunctionCode() {
-        return FunctionCodeEnum::$V2_MERCHANT_SETTLE_CONFIG;
+        return FunctionCodeEnum::$V2_TRADE_ELECTRON_RECEIPTS_PICTURE_UPLOAD;
     }
 
 
@@ -67,28 +67,28 @@ class V2MerchantSettleConfigRequest extends BaseRequest
         $this->huifuId = $huifuId;
     }
 
-    public function getUpperHuifuId() {
-        return $this->upperHuifuId;
+    public function getThirdChannelType() {
+        return $this->thirdChannelType;
     }
 
-    public function setUpperHuifuId($upperHuifuId) {
-        $this->upperHuifuId = $upperHuifuId;
+    public function setThirdChannelType($thirdChannelType) {
+        $this->thirdChannelType = $thirdChannelType;
     }
 
-    public function getAcctType() {
-        return $this->acctType;
+    public function getFileName() {
+        return $this->fileName;
     }
 
-    public function setAcctType($acctType) {
-        $this->acctType = $acctType;
+    public function setFileName($fileName) {
+        $this->fileName = $fileName;
     }
 
-    public function getAcctName() {
-        return $this->acctName;
+    public function getImageContent() {
+        return $this->imageContent;
     }
 
-    public function setAcctName($acctName) {
-        $this->acctName = $acctName;
+    public function setImageContent($imageContent) {
+        $this->imageContent = $imageContent;
     }
 
 }

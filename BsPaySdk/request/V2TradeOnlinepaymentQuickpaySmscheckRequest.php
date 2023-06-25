@@ -5,12 +5,12 @@ namespace BsPaySdk\request;
 use BsPaySdk\enums\FunctionCodeEnum;
 
 /**
- * 修改子账户配置
+ * 快捷支付短信预校验
  *
  * @author sdk-generator
  * @Description
  */
-class V2MerchantSettleModifyRequest extends BaseRequest
+class V2TradeOnlinepaymentQuickpaySmscheckRequest extends BaseRequest
 {
 
     /**
@@ -22,20 +22,24 @@ class V2MerchantSettleModifyRequest extends BaseRequest
      */
     private $reqDate;
     /**
-     * 商户/用户汇付Id
+     * 商户号
      */
     private $huifuId;
     /**
-     * 上级汇付Id
+     * 原请求流水号
      */
-    private $upperHuifuId;
+    private $orgReqSeqId;
     /**
-     * 子账户号
+     * 原请求日期
      */
-    private $acctId;
+    private $orgReqDate;
+    /**
+     * 短信验证码
+     */
+    private $smsCode;
 
     public function getFunctionCode() {
-        return FunctionCodeEnum::$V2_MERCHANT_SETTLE_MODIFY;
+        return FunctionCodeEnum::$V2_TRADE_ONLINEPAYMENT_QUICKPAY_SMSCHECK;
     }
 
 
@@ -63,20 +67,28 @@ class V2MerchantSettleModifyRequest extends BaseRequest
         $this->huifuId = $huifuId;
     }
 
-    public function getUpperHuifuId() {
-        return $this->upperHuifuId;
+    public function getOrgReqSeqId() {
+        return $this->orgReqSeqId;
     }
 
-    public function setUpperHuifuId($upperHuifuId) {
-        $this->upperHuifuId = $upperHuifuId;
+    public function setOrgReqSeqId($orgReqSeqId) {
+        $this->orgReqSeqId = $orgReqSeqId;
     }
 
-    public function getAcctId() {
-        return $this->acctId;
+    public function getOrgReqDate() {
+        return $this->orgReqDate;
     }
 
-    public function setAcctId($acctId) {
-        $this->acctId = $acctId;
+    public function setOrgReqDate($orgReqDate) {
+        $this->orgReqDate = $orgReqDate;
+    }
+
+    public function getSmsCode() {
+        return $this->smsCode;
+    }
+
+    public function setSmsCode($smsCode) {
+        $this->smsCode = $smsCode;
     }
 
 }

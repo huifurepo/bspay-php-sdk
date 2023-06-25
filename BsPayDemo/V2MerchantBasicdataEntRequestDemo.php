@@ -108,7 +108,7 @@ function getExtendInfos() {
     $extendInfoMap = array();
     // 营业执照类型
     $extendInfoMap["license_type"]= "";
-    // 商户短信通知标识
+    // 商户通知标识
     $extendInfoMap["sms_send_flag"]= "Y";
     // 管理员账号
     $extendInfoMap["login_name"]= "LG20220422267883697";
@@ -138,9 +138,9 @@ function getExtendInfos() {
     // $extendInfoMap["settle_card_front_pic"]= "";
     // 结算卡反面
     // $extendInfoMap["settle_card_back_pic"]= "";
-    // 结算人身份证反面
+    // 结算人身份证人像面
     // $extendInfoMap["settle_cert_back_pic"]= "";
-    // 结算人身份证正面
+    // 结算人身份证国徽面
     // $extendInfoMap["settle_cert_front_pic"]= "";
     // 税务登记证
     // $extendInfoMap["tax_reg_pic"]= "";
@@ -185,7 +185,7 @@ function getCardInfo() {
     $dto["cert_validity_type"] = "1";
     // 持卡人证件有效期开始日期
     $dto["cert_begin_date"] = "20121201";
-    // 银行卡绑定手机号
+    // 结算人手机号
     $dto["mp"] = "13700000214";
 
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);

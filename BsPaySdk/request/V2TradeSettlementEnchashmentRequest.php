@@ -26,7 +26,7 @@ class V2TradeSettlementEnchashmentRequest extends BaseRequest
      */
     private $cashAmt;
     /**
-     * 商户号
+     * 取现方ID号
      */
     private $huifuId;
     /**

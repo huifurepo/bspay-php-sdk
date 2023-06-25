@@ -10,7 +10,7 @@ use BsPaySdk\enums\FunctionCodeEnum;
  * @author sdk-generator
  * @Description
  */
-class V2TradeOnlinepaymentQuickpayPageinfoRequest extends BaseRequest
+class V2TradeOnlinepaymentQuickpayFrontpayRequest extends BaseRequest
 {
 
     /**
@@ -30,24 +30,24 @@ class V2TradeOnlinepaymentQuickpayPageinfoRequest extends BaseRequest
      */
     private $transAmt;
     /**
-     * 设备信息
+     * 异步通知地址
      */
-    private $terminalDeviceData;
+    private $notifyUrl;
     /**
      * 银行扩展信息
      */
     private $extendPayData;
     /**
+     * 设备信息
+     */
+    private $terminalDeviceData;
+    /**
      * 安全信息
      */
     private $riskCheckData;
-    /**
-     * 异步通知地址
-     */
-    private $notifyUrl;
 
     public function getFunctionCode() {
-        return FunctionCodeEnum::$V2_TRADE_ONLINEPAYMENT_QUICKPAY_PAGEINFO;
+        return FunctionCodeEnum::$V2_TRADE_ONLINEPAYMENT_QUICKPAY_FRONTPAY;
     }
 
 
@@ -83,12 +83,12 @@ class V2TradeOnlinepaymentQuickpayPageinfoRequest extends BaseRequest
         $this->transAmt = $transAmt;
     }
 
-    public function getTerminalDeviceData() {
-        return $this->terminalDeviceData;
+    public function getNotifyUrl() {
+        return $this->notifyUrl;
     }
 
-    public function setTerminalDeviceData($terminalDeviceData) {
-        $this->terminalDeviceData = $terminalDeviceData;
+    public function setNotifyUrl($notifyUrl) {
+        $this->notifyUrl = $notifyUrl;
     }
 
     public function getExtendPayData() {
@@ -99,20 +99,20 @@ class V2TradeOnlinepaymentQuickpayPageinfoRequest extends BaseRequest
         $this->extendPayData = $extendPayData;
     }
 
+    public function getTerminalDeviceData() {
+        return $this->terminalDeviceData;
+    }
+
+    public function setTerminalDeviceData($terminalDeviceData) {
+        $this->terminalDeviceData = $terminalDeviceData;
+    }
+
     public function getRiskCheckData() {
         return $this->riskCheckData;
     }
 
     public function setRiskCheckData($riskCheckData) {
         $this->riskCheckData = $riskCheckData;
-    }
-
-    public function getNotifyUrl() {
-        return $this->notifyUrl;
-    }
-
-    public function setNotifyUrl($notifyUrl) {
-        $this->notifyUrl = $notifyUrl;
     }
 
 }
