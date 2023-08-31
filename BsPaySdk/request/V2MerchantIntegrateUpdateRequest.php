@@ -5,7 +5,7 @@ namespace BsPaySdk\request;
 use BsPaySdk\enums\FunctionCodeEnum;
 
 /**
- * 商户统一变更接口
+ * 商户统一变更接口(2022)
  *
  * @author sdk-generator
  * @Description

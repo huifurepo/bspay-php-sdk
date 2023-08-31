@@ -38,10 +38,6 @@ class V2TradeOnlinepaymentTransferAccountRequest extends BaseRequest
      */
     private $transAmt;
     /**
-     * 异步通知地址
-     */
-    private $notifyUrl;
-    /**
      * 商品描述
      */
     private $goodsDesc;
@@ -97,14 +93,6 @@ class V2TradeOnlinepaymentTransferAccountRequest extends BaseRequest
 
     public function setTransAmt($transAmt) {
         $this->transAmt = $transAmt;
-    }
-
-    public function getNotifyUrl() {
-        return $this->notifyUrl;
-    }
-
-    public function setNotifyUrl($notifyUrl) {
-        $this->notifyUrl = $notifyUrl;
     }
 
     public function getGoodsDesc() {

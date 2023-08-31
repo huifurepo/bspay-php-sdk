@@ -44,14 +44,18 @@ if (!$result || $result->isError()) {  //失败处理
 function getExtendInfos() {
     // 设置非必填字段
     $extendInfoMap = array();
+    // 企业用户名称
+    // $extendInfoMap["reg_name"]= "";
     // 经营简称
     $extendInfoMap["short_name"]= "企业商户测试22";
+    // 公司类型
+    // $extendInfoMap["ent_type"]= "";
     // 法人姓名
-    $extendInfoMap["legal_name"]= "陈立健";
+    $extendInfoMap["legal_name"]= "陈立一";
     // 法人证件类型
     $extendInfoMap["legal_cert_type"]= "00";
     // 法人证件号码
-    $extendInfoMap["legal_cert_no"]= "370684198903061155";
+    $extendInfoMap["legal_cert_no"]= "370684198903061000";
     // 法人证件有效期类型
     $extendInfoMap["legal_cert_validity_type"]= "0";
     // 法人证件有效期开始日期
@@ -63,7 +67,7 @@ function getExtendInfos() {
     // 联系人电子邮箱
     $extendInfoMap["contact_email"]= "chang@huifu.com";
     // 联系人手机号
-    $extendInfoMap["contact_mobile"]= "13764462288";
+    $extendInfoMap["contact_mobile"]= "13764462000";
     // 证照有效期类型
     $extendInfoMap["license_validity_type"]= "1";
     // 证照有效期起始日期

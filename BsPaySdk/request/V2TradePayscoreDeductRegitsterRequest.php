@@ -5,39 +5,31 @@ namespace BsPaySdk\request;
 use BsPaySdk\enums\FunctionCodeEnum;
 
 /**
- * 商户业务开通修改(2022)
+ * 登记扣款信息
  *
  * @author sdk-generator
  * @Description
  */
-class V2MerchantBusiModifyRequest extends BaseRequest
+class V2TradePayscoreDeductRegitsterRequest extends BaseRequest
 {
 
-    /**
-     * 请求流水号
-     */
-    private $reqSeqId;
     /**
      * 请求日期
      */
     private $reqDate;
     /**
-     * 汇付客户Id
+     * 商户申请单号
+     */
+    private $reqSeqId;
+    /**
+     * 汇付商户号
      */
     private $huifuId;
 
     public function getFunctionCode() {
-        return FunctionCodeEnum::$V2_MERCHANT_BUSI_MODIFY;
+        return FunctionCodeEnum::$V2_TRADE_PAYSCORE_DEDUCT_REGITSTER;
     }
 
-
-    public function getReqSeqId() {
-        return $this->reqSeqId;
-    }
-
-    public function setReqSeqId($reqSeqId) {
-        $this->reqSeqId = $reqSeqId;
-    }
 
     public function getReqDate() {
         return $this->reqDate;
@@ -45,6 +37,14 @@ class V2MerchantBusiModifyRequest extends BaseRequest
 
     public function setReqDate($reqDate) {
         $this->reqDate = $reqDate;
+    }
+
+    public function getReqSeqId() {
+        return $this->reqSeqId;
+    }
+
+    public function setReqSeqId($reqSeqId) {
+        $this->reqSeqId = $reqSeqId;
     }
 
     public function getHuifuId() {

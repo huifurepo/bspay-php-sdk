@@ -1,7 +1,7 @@
 <?php
 
 /**
- * 商户分账配置 - 示例
+ * 商户分账配置(2022) - 示例
  *
  * @author sdk-generator
  * @Description

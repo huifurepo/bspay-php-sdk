@@ -30,11 +30,15 @@ class V2MerchantBusiConfigRequest extends BaseRequest
      */
     private $feeType;
     /**
-     * 公众号支付Appid条件必填，&lt;font color&#x3D;&quot;green&quot;&gt;示例值：wx3767c5bd01df5061&lt;/font&gt; ；wx_woa_app_id 和 wx_applet_app_id两者不能同时为空
+     * 公众号支付Appid条件必填，&lt;font color&#x3D;&quot;green&quot;&gt;示例值：wx3767c5bd01df5061&lt;/font&gt; ；wx_woa_app_id 、wx_woa_path和 wx_applet_app_id三者不能同时为空
      */
     private $wxWoaAppId;
     /**
-     * 微信小程序APPID条件必填，&lt;font color&#x3D;&quot;green&quot;&gt;示例值：wx8523175fea790f10&lt;/font&gt; ；wx_woa_app_id，wx_applet_app_id两者不能同时为空
+     * 微信公众号授权目录条件必填，&lt;font color&#x3D;&quot;green&quot;&gt;示例值：https://paas.huifu.com/shouyintai/demo/h5/&lt;/font&gt;；wx_woa_app_id 、wx_woa_path和 wx_applet_app_id三者不能同时为空
+     */
+    private $wxWoaPath;
+    /**
+     * 微信小程序APPID条件必填，&lt;font color&#x3D;&quot;green&quot;&gt;示例值：wx8523175fea790f10&lt;/font&gt; ；wx_woa_app_id 、wx_woa_path和 wx_applet_app_id三者不能同时为空
      */
     private $wxAppletAppId;
 
@@ -81,6 +85,14 @@ class V2MerchantBusiConfigRequest extends BaseRequest
 
     public function setWxWoaAppId($wxWoaAppId) {
         $this->wxWoaAppId = $wxWoaAppId;
+    }
+
+    public function getWxWoaPath() {
+        return $this->wxWoaPath;
+    }
+
+    public function setWxWoaPath($wxWoaPath) {
+        $this->wxWoaPath = $wxWoaPath;
     }
 
     public function getWxAppletAppId() {

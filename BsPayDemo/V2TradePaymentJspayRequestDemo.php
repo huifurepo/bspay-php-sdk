@@ -265,6 +265,10 @@ function getWxData() {
     // $dto["scene_info"] = getSceneInfo();
     // 终端ip
     // $dto["spbill_create_ip"] = "";
+    // 单品优惠标识
+    // $dto["promotion_flag"] = "";
+    // 新增商品ID
+    // $dto["product_id"] = "";
 
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }

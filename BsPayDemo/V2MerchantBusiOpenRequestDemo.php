@@ -1,7 +1,7 @@
 <?php
 
 /**
- * 商户业务开通 - 示例
+ * 商户业务开通(2022) - 示例
  *
  * @author sdk-generator
  * @Description
@@ -64,8 +64,6 @@ function getExtendInfos() {
     $extendInfoMap["license_pic"]= "de2f6e1d-d9e9-3898-9b66-af2a96054193";
     // 组织机构代码证
     $extendInfoMap["org_code_pic"]= "";
-    // 商务协议
-    $extendInfoMap["ba_pic"]= "de2f6e1d-d9e9-3898-9b66-af2a96054193 ";
     // 开户许可证
     $extendInfoMap["reg_acct_pic"]= "de2f6e1d-d9e9-3898-9b66-af2a96054193";
     // 结算卡反面
@@ -128,8 +126,6 @@ function getExtendInfos() {
     // $extendInfoMap["out_order_funds_config"]= getOutOrderFundsConfig();
     // 汇总结算配置实体
     // $extendInfoMap["collection_settle_config_list"]= getCollectionSettleConfigList();
-    // 微信直连配置对象
-    // $extendInfoMap["wx_zl_conf"]= getWxZlConf();
     // 是否使用总部交易信息
     // $extendInfoMap["use_chains_flag"]= "";
     // 异步消息接收地址
@@ -138,6 +134,10 @@ function getExtendInfos() {
     $extendInfoMap["busi_async_return_url"]= "";
     // 交易异步应答地址
     $extendInfoMap["recon_resp_addr"]= "[http://192.168.85.157:30031/sspm/testVirgo](http://192.168.85.157:30031/sspm/testVirgo)";
+    // 微信直连配置对象
+    // $extendInfoMap["wx_zl_conf"]= getWxZlConf();
+    // 支付宝直连配置对象
+    // $extendInfoMap["ali_zl_conf"]= getAliZlConf();
     return $extendInfoMap;
 }
 
@@ -427,7 +427,7 @@ function getOutOrderAcctCard() {
 
 function getOutOrderAcctOpenFees() {
     $dto = array();
-    // 支付固定手续费(元)
+    // 开户手续费(元)
     // $dto["fee_fix_amt"] = "test";
     // 开户手续费外扣时的账户类型
     // $dto["out_fee_acct_type"] = "test";
@@ -443,12 +443,14 @@ function getOutOrderFundsConfig() {
     // $dto["out_order_auto_acct_flag"] = "test";
     // 批次入账时间10:00-10点批次入账&lt;br/&gt;16:00-16点批次入账&lt;/br&gt;开通批次入账时必填 ，多个批次使用逗号分隔；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：10:00,16:00&lt;/font&gt;
     // $dto["batch_no"] = "test";
+    // 全域资金平台商户ID全域资金平台商户ID，渠道商在银行开通的平台商账号，若为众邦银行则必填，否则不填；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：XXXXXXXXX&lt;/font&gt;；
+    // $dto["platform_mer_id"] = "test";
+    //  商户与其他支付机构签署的收单协议或证明材料acquiringMode：收单模式时填写；涉及文件类型：F504-(全域资金)商户与其他支付机构签署的收单协议或证明材料；&lt;br/&gt;&lt;font color&#x3D;&quot;green&quot;&gt;示例值：57cc7f00-600a-33ab-b614-6221bbf2e529&lt;/font&gt;
+    // $dto["other_payment_institutions_pic"] = "test";
     // 批量入账开关
     // $dto["batch_auto_acct_flag"] = "";
     // 支付手续费(%)
     // $dto["fee_rate"] = "";
-    // 支付固定手续费(元)
-    // $dto["fee_fix_amt"] = "";
     // 手续费最小值(元)
     // $dto["fee_min_amt"] = "";
     // 交易手续费外扣时的账户类型
@@ -461,6 +463,8 @@ function getOutOrderFundsConfig() {
     // $dto["out_order_acct_card"] = getOutOrderAcctCard();
     // 全域资金开户手续费
     // $dto["out_order_acct_open_fees"] = getOutOrderAcctOpenFees();
+    // 全域支付业务模式
+    // $dto["business_model"] = "";
 
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
@@ -505,6 +509,48 @@ function getWxZlConf() {
     // $dto["sub_mch_id"] = "test";
     // 配置集合
     // $dto["wx_zl_pay_conf_list"] = getWxZlPayConfList();
+
+    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+}
+
+function getFileList() {
+    $dto = array();
+    // 文件类型
+    // $dto["file_type"] = "test";
+    // 文件jfileId
+    // $dto["file_id"] = "test";
+
+    $dtoList = array();
+    array_push($dtoList, $dto);
+    return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+}
+
+function getAliZlConf() {
+    $dto = array();
+    // 申请类型
+    // $dto["apply_type"] = "test";
+    // 商户支付宝账号
+    // $dto["account"] = "test";
+    // 服务费率仅支持渠道商。平台商户调用不支持该字段服务费率（%），0.38~3之间，精确到0.01。&lt;font color&#x3D;&quot;green&quot;&gt;示例值：0.06&lt;/font&gt;
+    // $dto["fee_rate"] = "test";
+    // 文件列表
+    // $dto["file_list"] = getFileList();
+    // 联系人姓名
+    // $dto["contact_name"] = "";
+    // 联系人手机号
+    // $dto["contact_mobile_no"] = "";
+    // 联系人电子邮箱
+    // $dto["contact_email"] = "";
+    // 订单授权凭证
+    // $dto["order_ticket"] = "";
+    // 营业执照编号
+    // $dto["license_code"] = "";
+    // 营业执照有效期类型
+    // $dto["license_validity_type"] = "";
+    // 营业执照有效期开始日期
+    // $dto["license_begin_date"] = "";
+    // 营业执照有效期截止日期
+    // $dto["license_end_date"] = "";
 
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }

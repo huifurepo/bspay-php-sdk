@@ -5,7 +5,7 @@ namespace BsPaySdk\request;
 use BsPaySdk\enums\FunctionCodeEnum;
 
 /**
- * 商户分账配置查询
+ * 商户分账配置查询(2022)
  *
  * @author sdk-generator
  * @Description

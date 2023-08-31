@@ -1,7 +1,7 @@
 <?php
 
 /**
- * 商户统一进件接口 - 示例
+ * 商户统一进件接口(2022) - 示例
  *
  * @author sdk-generator
  * @Description

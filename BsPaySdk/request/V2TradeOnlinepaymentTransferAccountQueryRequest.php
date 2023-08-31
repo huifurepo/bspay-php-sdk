@@ -37,6 +37,10 @@ class V2TradeOnlinepaymentTransferAccountQueryRequest extends BaseRequest
      * 打款结束日期
      */
     private $transEndDate;
+    /**
+     * 交易开始日期
+     */
+    private $transStartDate;
 
     public function getFunctionCode() {
         return FunctionCodeEnum::$V2_TRADE_ONLINEPAYMENT_TRANSFER_ACCOUNT_QUERY;
@@ -89,6 +93,14 @@ class V2TradeOnlinepaymentTransferAccountQueryRequest extends BaseRequest
 
     public function setTransEndDate($transEndDate) {
         $this->transEndDate = $transEndDate;
+    }
+
+    public function getTransStartDate() {
+        return $this->transStartDate;
+    }
+
+    public function setTransStartDate($transStartDate) {
+        $this->transStartDate = $transStartDate;
     }
 
 }

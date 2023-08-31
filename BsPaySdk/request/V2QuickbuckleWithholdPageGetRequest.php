@@ -5,12 +5,12 @@ namespace BsPaySdk\request;
 use BsPaySdk\enums\FunctionCodeEnum;
 
 /**
- * 修改子账户配置(2022)
+ * 代扣绑卡页面版
  *
  * @author sdk-generator
  * @Description
  */
-class V2MerchantSettleModifyRequest extends BaseRequest
+class V2QuickbuckleWithholdPageGetRequest extends BaseRequest
 {
 
     /**
@@ -18,24 +18,24 @@ class V2MerchantSettleModifyRequest extends BaseRequest
      */
     private $reqSeqId;
     /**
-     * 请求日期
+     * 请求时间
      */
     private $reqDate;
     /**
-     * 商户/用户汇付Id
+     * 汇付Id
      */
     private $huifuId;
     /**
-     * 上级汇付Id
+     * 订单号
      */
-    private $upperHuifuId;
+    private $orderId;
     /**
-     * 子账户号
+     * 订单日期
      */
-    private $acctId;
+    private $orderDate;
 
     public function getFunctionCode() {
-        return FunctionCodeEnum::$V2_MERCHANT_SETTLE_MODIFY;
+        return FunctionCodeEnum::$V2_QUICKBUCKLE_WITHHOLD_PAGE_GET;
     }
 
 
@@ -63,20 +63,20 @@ class V2MerchantSettleModifyRequest extends BaseRequest
         $this->huifuId = $huifuId;
     }
 
-    public function getUpperHuifuId() {
-        return $this->upperHuifuId;
+    public function getOrderId() {
+        return $this->orderId;
     }
 
-    public function setUpperHuifuId($upperHuifuId) {
-        $this->upperHuifuId = $upperHuifuId;
+    public function setOrderId($orderId) {
+        $this->orderId = $orderId;
     }
 
-    public function getAcctId() {
-        return $this->acctId;
+    public function getOrderDate() {
+        return $this->orderDate;
     }
 
-    public function setAcctId($acctId) {
-        $this->acctId = $acctId;
+    public function setOrderDate($orderDate) {
+        $this->orderDate = $orderDate;
     }
 
 }

@@ -50,8 +50,6 @@ if (!$result || $result->isError()) {  //失败处理
 function getExtendInfos() {
     // 设置非必填字段
     $extendInfoMap = array();
-    // 备注
-    $extendInfoMap["remark"]= "remark6";
     return $extendInfoMap;
 }
 

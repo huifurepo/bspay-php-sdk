@@ -1,7 +1,7 @@
 <?php
 
 /**
- * 子账户开通配置 - 示例
+ * 子账户开通配置(2022) - 示例
  *
  * @author sdk-generator
  * @Description

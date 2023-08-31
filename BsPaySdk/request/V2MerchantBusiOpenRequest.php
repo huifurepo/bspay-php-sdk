@@ -5,7 +5,7 @@ namespace BsPaySdk\request;
 use BsPaySdk\enums\FunctionCodeEnum;
 
 /**
- * 商户业务开通
+ * 商户业务开通(2022)
  *
  * @author sdk-generator
  * @Description

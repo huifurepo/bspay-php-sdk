@@ -26,9 +26,9 @@ class V2MerchantComplaintDownloadPictureRequest extends BaseRequest
      */
     private $mediaUrl;
     /**
-     * 微信商户号
+     * 投诉单号
      */
-    private $mchId;
+    private $complaintId;
 
     public function getFunctionCode() {
         return FunctionCodeEnum::$V2_MERCHANT_COMPLAINT_DOWNLOAD_PICTURE;
@@ -59,12 +59,12 @@ class V2MerchantComplaintDownloadPictureRequest extends BaseRequest
         $this->mediaUrl = $mediaUrl;
     }
 
-    public function getMchId() {
-        return $this->mchId;
+    public function getComplaintId() {
+        return $this->complaintId;
     }
 
-    public function setMchId($mchId) {
-        $this->mchId = $mchId;
+    public function setComplaintId($complaintId) {
+        $this->complaintId = $complaintId;
     }
 
 }

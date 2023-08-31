@@ -74,6 +74,8 @@ function getExtendInfos() {
     // $extendInfoMap["loan_acct_type"]= "";
     // 补贴支付信息
     // $extendInfoMap["combinedpay_data"]= getCombinedpayData();
+    // 聚合正扫微信拓展参数集合
+    // $extendInfoMap["wx_data"]= getWxData();
     return $extendInfoMap;
 }
 
@@ -157,6 +159,38 @@ function getCombinedpayData() {
     $dtoList = array();
     array_push($dtoList, $dto);
     return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+}
+
+function getGoodsDetail() {
+    $dto = array();
+    // 商品编码
+    // $dto["goods_id"] = "test";
+    // 优惠退款金额
+    // $dto["refund_amount"] = "test";
+    // 商品退货数量
+    // $dto["refund_quantity"] = "test";
+    // 商品单价
+    // $dto["price"] = "test";
+
+    $dtoList = array();
+    array_push($dtoList, $dto);
+    return $dtoList;
+}
+
+function getDetail() {
+    $dto = array();
+    // 商品详情列表
+    // $dto["goods_detail"] = getGoodsDetail();
+
+    return $dto;
+}
+
+function getWxData() {
+    $dto = array();
+    // 退款商品详情
+    // $dto["detail"] = getDetail();
+
+    return $dto;
 }
 
 
