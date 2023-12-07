@@ -14,6 +14,26 @@ class V2TradePayscorePayPayscorepayRequest extends BaseRequest
 {
 
     /**
+     * 请求日期
+     */
+    private $reqDate;
+    /**
+     * 请求流水号
+     */
+    private $reqSeqId;
+    /**
+     * 商户号
+     */
+    private $huifuId;
+    /**
+     * 扣款登记创建请求流水号deduct_req_seq_id与deduct_hf_seq_id二选一；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：2022012614120615001&lt;/font&gt;
+     */
+    private $deductReqSeqId;
+    /**
+     * 扣款登记返回的汇付全局流水号deduct_req_seq_id与deduct_hf_seq_id二选一；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：00470topo1A211015160805P090ac132fef00000&lt;/font&gt;
+     */
+    private $deductHfSeqId;
+    /**
      * 微信扣款单号
      */
     private $outTradeNo;
@@ -21,10 +41,6 @@ class V2TradePayscorePayPayscorepayRequest extends BaseRequest
      * 商品描述
      */
     private $goodsDesc;
-    /**
-     * 商户号
-     */
-    private $huifuId;
     /**
      * 安全信息
      */
@@ -34,6 +50,46 @@ class V2TradePayscorePayPayscorepayRequest extends BaseRequest
         return FunctionCodeEnum::$V2_TRADE_PAYSCORE_PAY_PAYSCOREPAY;
     }
 
+
+    public function getReqDate() {
+        return $this->reqDate;
+    }
+
+    public function setReqDate($reqDate) {
+        $this->reqDate = $reqDate;
+    }
+
+    public function getReqSeqId() {
+        return $this->reqSeqId;
+    }
+
+    public function setReqSeqId($reqSeqId) {
+        $this->reqSeqId = $reqSeqId;
+    }
+
+    public function getHuifuId() {
+        return $this->huifuId;
+    }
+
+    public function setHuifuId($huifuId) {
+        $this->huifuId = $huifuId;
+    }
+
+    public function getDeductReqSeqId() {
+        return $this->deductReqSeqId;
+    }
+
+    public function setDeductReqSeqId($deductReqSeqId) {
+        $this->deductReqSeqId = $deductReqSeqId;
+    }
+
+    public function getDeductHfSeqId() {
+        return $this->deductHfSeqId;
+    }
+
+    public function setDeductHfSeqId($deductHfSeqId) {
+        $this->deductHfSeqId = $deductHfSeqId;
+    }
 
     public function getOutTradeNo() {
         return $this->outTradeNo;
@@ -49,14 +105,6 @@ class V2TradePayscorePayPayscorepayRequest extends BaseRequest
 
     public function setGoodsDesc($goodsDesc) {
         $this->goodsDesc = $goodsDesc;
-    }
-
-    public function getHuifuId() {
-        return $this->huifuId;
-    }
-
-    public function setHuifuId($huifuId) {
-        $this->huifuId = $huifuId;
     }
 
     public function getRiskCheckData() {

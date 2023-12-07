@@ -60,25 +60,47 @@ function getExtendInfos() {
     $extendInfoMap["acct_id"]= "";
     // 订单类型
     $extendInfoMap["order_type"]= "P";
+    // 付款方银行编号
+    $extendInfoMap["bank_id"]= "";
     // 卡类型
     $extendInfoMap["card_type"]= "D";
+    // 备注
+    $extendInfoMap["remark"]= "网银支付接口";
     // 订单失效时间
     $extendInfoMap["time_expire"]= "";
     // 网关支付类型
     $extendInfoMap["gate_type"]= "01";
-    // 付款方银行编号
-    $extendInfoMap["bank_id"]= "";
     // 延时标记
     $extendInfoMap["delay_acct_flag"]= "N";
     // 分账对象
     // $extendInfoMap["acct_split_bunch"]= getAcctSplitBunchRucan();
-    // 备注
-    $extendInfoMap["remark"]= "网银支付接口";
-    // 页面跳转地址
-    $extendInfoMap["front_url"]= "http://www.chinapnr.com";
     // 手续费扣款标志
     // $extendInfoMap["fee_flag"]= "";
+    // 页面跳转地址
+    $extendInfoMap["front_url"]= "http://www.chinapnr.com";
     return $extendInfoMap;
+}
+
+function getAcctInfos() {
+    $dto = array();
+    // 分账金额
+    // $dto["div_amt"] = "";
+    // 被分账方ID
+    // $dto["huifu_id"] = "";
+    // 被分账户号
+    // $dto["acct_id"] = "";
+
+    $dtoList = array();
+    array_push($dtoList, $dto);
+    return $dtoList;
+}
+
+function getAcctSplitBunchRucan() {
+    $dto = array();
+    // 分账明细
+    // $dto["acct_infos"] = getAcctInfos();
+
+    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
 function getExtendPayData() {
@@ -111,28 +133,6 @@ function getTerminalDeviceData() {
     // $dto["device_wifi_mac"] = "";
     // 交易设备GPS
     // $dto["device_gps"] = "";
-
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
-}
-
-function getAcctInfos() {
-    $dto = array();
-    // 分账金额
-    // $dto["div_amt"] = "";
-    // 被分账方ID
-    // $dto["huifu_id"] = "";
-    // 被分账户号
-    // $dto["acct_id"] = "";
-
-    $dtoList = array();
-    array_push($dtoList, $dto);
-    return $dtoList;
-}
-
-function getAcctSplitBunchRucan() {
-    $dto = array();
-    // 分账明细
-    // $dto["acct_infos"] = getAcctInfos();
 
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }

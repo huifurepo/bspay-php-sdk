@@ -25,6 +25,10 @@ $request->setReqSeqId(date("YmdHis").mt_rand());
 $request->setHuifuId("6666000103124174");
 // 交易金额
 $request->setTransAmt("300.01");
+// 分期期数分期支付时必填；支持：03、06、12、24；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：03&lt;/font&gt;；&lt;br/&gt;空值时是wap支付；
+$request->setInstalmentsNum("03");
+// 银行卡号instalments_num不为空时必填；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：6228480031509440000&lt;/font&gt;
+$request->setBankCardNo("6222021102043040313");
 // 网联扩展数据
 $request->setExtendPayData(getExtendPayData());
 // 安全信息
@@ -56,21 +60,29 @@ if (!$result || $result->isError()) {  //失败处理
 function getExtendInfos() {
     // 设置非必填字段
     $extendInfoMap = array();
-    // 分账对象
-    $extendInfoMap["acct_split_bunch"]= getAcctSplitBunchRucan();
-    // 银行卡号
-    $extendInfoMap["bank_card_no"]= "6222021102043040313";
     // 延时标记
     $extendInfoMap["delay_acct_flag"]= "N";
     // 交易有效期
     $extendInfoMap["time_expire"]= "20220406210038";
-    // 分期期数
-    $extendInfoMap["instalments_num"]= "03";
-    // 页面失败跳转地址
-    $extendInfoMap["front_fail_url"]= "http://www.baidu.com";
+    // 分账对象
+    $extendInfoMap["acct_split_bunch"]= getAcctSplitBunchRucan();
     // 备注
     $extendInfoMap["remark"]= "";
+    // 页面失败跳转地址
+    $extendInfoMap["front_fail_url"]= "http://www.baidu.com";
     return $extendInfoMap;
+}
+
+function getExtendPayData() {
+    $dto = array();
+    // 商品简称
+    $dto["goods_short_name"] = "一般商品";
+    // 网关支付受理渠道
+    $dto["gw_chnnl_tp"] = "01";
+    // 业务种类
+    $dto["biz_tp"] = "123456";
+
+    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
 function getAcctInfos() {
@@ -91,18 +103,6 @@ function getAcctSplitBunchRucan() {
     $dto = array();
     // 分账信息列表
     $dto["acct_infos"] = getAcctInfos();
-
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
-}
-
-function getExtendPayData() {
-    $dto = array();
-    // 商品简称
-    $dto["goods_short_name"] = "一般商品";
-    // 网关支付受理渠道
-    $dto["gw_chnnl_tp"] = "01";
-    // 业务种类
-    $dto["biz_tp"] = "123456";
 
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }

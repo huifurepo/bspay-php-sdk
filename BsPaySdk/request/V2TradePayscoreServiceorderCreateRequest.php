@@ -14,10 +14,6 @@ class V2TradePayscoreServiceorderCreateRequest extends BaseRequest
 {
 
     /**
-     * 汇付商户号
-     */
-    private $huifuId;
-    /**
      * 请求日期
      */
     private $reqDate;
@@ -25,6 +21,10 @@ class V2TradePayscoreServiceorderCreateRequest extends BaseRequest
      * 商户申请单号
      */
     private $reqSeqId;
+    /**
+     * 汇付商户号
+     */
+    private $huifuId;
     /**
      * 服务信息
      */
@@ -47,14 +47,6 @@ class V2TradePayscoreServiceorderCreateRequest extends BaseRequest
     }
 
 
-    public function getHuifuId() {
-        return $this->huifuId;
-    }
-
-    public function setHuifuId($huifuId) {
-        $this->huifuId = $huifuId;
-    }
-
     public function getReqDate() {
         return $this->reqDate;
     }
@@ -69,6 +61,14 @@ class V2TradePayscoreServiceorderCreateRequest extends BaseRequest
 
     public function setReqSeqId($reqSeqId) {
         $this->reqSeqId = $reqSeqId;
+    }
+
+    public function getHuifuId() {
+        return $this->huifuId;
+    }
+
+    public function setHuifuId($huifuId) {
+        $this->huifuId = $huifuId;
     }
 
     public function getServiceIntroduction() {

@@ -23,24 +23,24 @@ $request->setReqDate(date("Ymd"));
 $request->setReqSeqId(date("YmdHis").mt_rand());
 // 商户号
 $request->setHuifuId("6666000109812884");
-// 异步通知地址
-$request->setNotifyUrl("http://www.chinapnr.com/");
-// 订单金额
-$request->setTransAmt("0.01");
-// 绑卡id
-$request->setCardBindId("10024597199");
 // 用户客户号
 $request->setUserHuifuId("6666000109818115");
+// 绑卡id
+$request->setCardBindId("10024597199");
+// 订单金额
+$request->setTransAmt("0.01");
 // 商品描述
 $request->setGoodsDesc("代扣test");
+// 代扣类型
+$request->setWithholdType("2");
+// 银行扩展数据
+$request->setExtendPayData(getExtendPayData());
 // 风控信息
 $request->setRiskCheckData(getRiskCheckData());
 // 设备信息数据
 $request->setTerminalDeviceData(getTerminalDeviceData());
-// 银行扩展数据
-$request->setExtendPayData(getExtendPayData());
-// 代扣类型
-$request->setWithholdType("2");
+// 异步通知地址
+$request->setNotifyUrl("http://www.chinapnr.com/");
 
 // 设置非必填字段
 $extendInfoMap = getExtendInfos();
@@ -64,13 +64,45 @@ function getExtendInfos() {
     $extendInfoMap = array();
     // 备注
     $extendInfoMap["remark"]= "reamrk123";
+    // 账户号
+    // $extendInfoMap["acct_id"]= "";
     // 订单失效时间
     $extendInfoMap["time_expire"]= "20221212121212";
     // 分账对象
     // $extendInfoMap["acct_split_bunch"]= getAcctSplitBunch();
-    // 账户号
-    // $extendInfoMap["acct_id"]= "";
     return $extendInfoMap;
+}
+
+function getAcctInfos() {
+    $dto = array();
+    // 支付金额
+    // $dto["div_amt"] = "";
+    // 商户号
+    // $dto["huifu_id"] = "";
+
+    $dtoList = array();
+    array_push($dtoList, $dto);
+    return $dtoList;
+}
+
+function getAcctSplitBunch() {
+    $dto = array();
+    // 分账信息列表
+    // $dto["acct_infos"] = getAcctInfos();
+
+    return $dto;
+}
+
+function getExtendPayData() {
+    $dto = array();
+    // 业务种类
+    $dto["biz_tp"] = "012345";
+    // 商品简称
+    $dto["goods_short_name"] = "看看";
+    // 网关支付受理渠道
+    // $dto["gw_chnnl_tp"] = "test";
+
+    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
 function getRiskCheckData() {
@@ -105,38 +137,6 @@ function getTerminalDeviceData() {
     // $dto["device_mac"] = "";
     // 交易设备wifimac
     // $dto["device_wifi_mac"] = "";
-
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
-}
-
-function getAcctInfos() {
-    $dto = array();
-    // 支付金额
-    // $dto["div_amt"] = "";
-    // 商户号
-    // $dto["huifu_id"] = "";
-
-    $dtoList = array();
-    array_push($dtoList, $dto);
-    return $dtoList;
-}
-
-function getAcctSplitBunch() {
-    $dto = array();
-    // 分账信息列表
-    // $dto["acct_infos"] = getAcctInfos();
-
-    return $dto;
-}
-
-function getExtendPayData() {
-    $dto = array();
-    // 业务种类
-    $dto["biz_tp"] = "012345";
-    // 商品简称
-    $dto["goods_short_name"] = "看看";
-    // 网关支付受理渠道
-    // $dto["gw_chnnl_tp"] = "test";
 
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }

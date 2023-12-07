@@ -54,29 +54,107 @@ function getExtendInfos() {
     // $extendInfoMap["org_party_order_id"]= "";
     // 原交易请求流水号
     // $extendInfoMap["org_req_seq_id"]= "";
-    // 安全信息
-    // $extendInfoMap["risk_check_data"]= getRiskCheckData();
-    // 设备信息
-    // $extendInfoMap["terminal_device_data"]= getTerminalDeviceData();
     // 分账对象
     // $extendInfoMap["acct_split_bunch"]= getAcctSplitBunchRucan();
+    // 聚合正扫微信拓展参数集合
+    // $extendInfoMap["wx_data"]= getWxData();
     // 数字货币扩展参数集合
     // $extendInfoMap["digital_currency_data"]= getDigitalCurrencyData();
+    // 补贴支付信息
+    // $extendInfoMap["combinedpay_data"]= getCombinedpayData();
     // 备注
     // $extendInfoMap["remark"]= "";
-    // 异步通知地址
-    // $extendInfoMap["notify_url"]= "";
     // 是否垫资退款
     // $extendInfoMap["loan_flag"]= "";
     // 垫资承担者
     // $extendInfoMap["loan_undertaker"]= "";
     // 垫资账户类型
     // $extendInfoMap["loan_acct_type"]= "";
-    // 补贴支付信息
-    // $extendInfoMap["combinedpay_data"]= getCombinedpayData();
-    // 聚合正扫微信拓展参数集合
-    // $extendInfoMap["wx_data"]= getWxData();
+    // 安全信息
+    // $extendInfoMap["risk_check_data"]= getRiskCheckData();
+    // 设备信息
+    // $extendInfoMap["terminal_device_data"]= getTerminalDeviceData();
+    // 异步通知地址
+    // $extendInfoMap["notify_url"]= "";
     return $extendInfoMap;
+}
+
+function getAcctInfosRucan() {
+    $dto = array();
+    // 分账金额
+    // $dto["div_amt"] = "test";
+    // 被分账方ID
+    // $dto["huifu_id"] = "test";
+    // 垫资金额
+    // $dto["part_loan_amt"] = "";
+
+    $dtoList = array();
+    array_push($dtoList, $dto);
+    return $dtoList;
+}
+
+function getAcctSplitBunchRucan() {
+    $dto = array();
+    // 分账信息列表
+    // $dto["acct_infos"] = getAcctInfosRucan();
+
+    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+}
+
+function getGoodsDetail() {
+    $dto = array();
+    // 商品编码
+    // $dto["goods_id"] = "test";
+    // 优惠退款金额
+    // $dto["refund_amount"] = "test";
+    // 商品退货数量
+    // $dto["refund_quantity"] = "test";
+    // 商品单价
+    // $dto["price"] = "test";
+
+    $dtoList = array();
+    array_push($dtoList, $dto);
+    return $dtoList;
+}
+
+function getDetail() {
+    $dto = array();
+    // 商品详情列表
+    // $dto["goods_detail"] = getGoodsDetail();
+
+    return $dto;
+}
+
+function getWxData() {
+    $dto = array();
+    // 退款商品详情
+    // $dto["detail"] = getDetail();
+
+    return $dto;
+}
+
+function getDigitalCurrencyData() {
+    $dto = array();
+    // 退款原因
+    // $dto["refund_desc"] = "";
+
+    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+}
+
+function getCombinedpayData() {
+    $dto = array();
+    // 补贴方汇付编号
+    // $dto["huifu_id"] = "test";
+    // 补贴方类型
+    // $dto["user_type"] = "test";
+    // 补贴方账户号
+    // $dto["acct_id"] = "test";
+    // 补贴金额
+    // $dto["amount"] = "test";
+
+    $dtoList = array();
+    array_push($dtoList, $dto);
+    return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
 function getRiskCheckData() {
@@ -113,84 +191,6 @@ function getTerminalDeviceData() {
     // $dto["device_gps"] = "";
 
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
-}
-
-function getAcctInfosRucan() {
-    $dto = array();
-    // 分账金额
-    // $dto["div_amt"] = "test";
-    // 被分账方ID
-    // $dto["huifu_id"] = "test";
-    // 垫资金额
-    // $dto["part_loan_amt"] = "";
-
-    $dtoList = array();
-    array_push($dtoList, $dto);
-    return $dtoList;
-}
-
-function getAcctSplitBunchRucan() {
-    $dto = array();
-    // 分账信息列表
-    // $dto["acct_infos"] = getAcctInfosRucan();
-
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
-}
-
-function getDigitalCurrencyData() {
-    $dto = array();
-    // 退款原因
-    // $dto["refund_desc"] = "";
-
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
-}
-
-function getCombinedpayData() {
-    $dto = array();
-    // 补贴方汇付编号
-    // $dto["huifu_id"] = "test";
-    // 补贴方类型
-    // $dto["user_type"] = "test";
-    // 补贴方账户号
-    // $dto["acct_id"] = "test";
-    // 补贴金额
-    // $dto["amount"] = "test";
-
-    $dtoList = array();
-    array_push($dtoList, $dto);
-    return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
-}
-
-function getGoodsDetail() {
-    $dto = array();
-    // 商品编码
-    // $dto["goods_id"] = "test";
-    // 优惠退款金额
-    // $dto["refund_amount"] = "test";
-    // 商品退货数量
-    // $dto["refund_quantity"] = "test";
-    // 商品单价
-    // $dto["price"] = "test";
-
-    $dtoList = array();
-    array_push($dtoList, $dto);
-    return $dtoList;
-}
-
-function getDetail() {
-    $dto = array();
-    // 商品详情列表
-    // $dto["goods_detail"] = getGoodsDetail();
-
-    return $dto;
-}
-
-function getWxData() {
-    $dto = array();
-    // 退款商品详情
-    // $dto["detail"] = getDetail();
-
-    return $dto;
 }
 
 

@@ -26,10 +26,6 @@ class V2UserBasicdataEntRequest extends BaseRequest
      */
     private $regName;
     /**
-     * 经营简称
-     */
-    private $shortName;
-    /**
      * 营业执照编号
      */
     private $licenseCode;
@@ -121,14 +117,6 @@ class V2UserBasicdataEntRequest extends BaseRequest
 
     public function setRegName($regName) {
         $this->regName = $regName;
-    }
-
-    public function getShortName() {
-        return $this->shortName;
-    }
-
-    public function setShortName($shortName) {
-        $this->shortName = $shortName;
     }
 
     public function getLicenseCode() {

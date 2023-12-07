@@ -26,21 +26,21 @@ class V2TradeOnlinepaymentQuickpayApplyRequest extends BaseRequest
      */
     private $huifuId;
     /**
-     * 订单金额
+     * 用户客户号
      */
-    private $transAmt;
+    private $userHuifuId;
     /**
      * 绑卡id
      */
     private $cardBindId;
     /**
-     * 异步通知地址
+     * 订单金额
      */
-    private $notifyUrl;
+    private $transAmt;
     /**
-     * 用户客户号
+     * 银行扩展字段
      */
-    private $userHuifuId;
+    private $extendPayData;
     /**
      * 安全信息
      */
@@ -50,9 +50,9 @@ class V2TradeOnlinepaymentQuickpayApplyRequest extends BaseRequest
      */
     private $terminalDeviceData;
     /**
-     * 银行扩展字段
+     * 异步通知地址
      */
-    private $extendPayData;
+    private $notifyUrl;
 
     public function getFunctionCode() {
         return FunctionCodeEnum::$V2_TRADE_ONLINEPAYMENT_QUICKPAY_APPLY;
@@ -83,12 +83,12 @@ class V2TradeOnlinepaymentQuickpayApplyRequest extends BaseRequest
         $this->huifuId = $huifuId;
     }
 
-    public function getTransAmt() {
-        return $this->transAmt;
+    public function getUserHuifuId() {
+        return $this->userHuifuId;
     }
 
-    public function setTransAmt($transAmt) {
-        $this->transAmt = $transAmt;
+    public function setUserHuifuId($userHuifuId) {
+        $this->userHuifuId = $userHuifuId;
     }
 
     public function getCardBindId() {
@@ -99,20 +99,20 @@ class V2TradeOnlinepaymentQuickpayApplyRequest extends BaseRequest
         $this->cardBindId = $cardBindId;
     }
 
-    public function getNotifyUrl() {
-        return $this->notifyUrl;
+    public function getTransAmt() {
+        return $this->transAmt;
     }
 
-    public function setNotifyUrl($notifyUrl) {
-        $this->notifyUrl = $notifyUrl;
+    public function setTransAmt($transAmt) {
+        $this->transAmt = $transAmt;
     }
 
-    public function getUserHuifuId() {
-        return $this->userHuifuId;
+    public function getExtendPayData() {
+        return $this->extendPayData;
     }
 
-    public function setUserHuifuId($userHuifuId) {
-        $this->userHuifuId = $userHuifuId;
+    public function setExtendPayData($extendPayData) {
+        $this->extendPayData = $extendPayData;
     }
 
     public function getRiskCheckData() {
@@ -131,12 +131,12 @@ class V2TradeOnlinepaymentQuickpayApplyRequest extends BaseRequest
         $this->terminalDeviceData = $terminalDeviceData;
     }
 
-    public function getExtendPayData() {
-        return $this->extendPayData;
+    public function getNotifyUrl() {
+        return $this->notifyUrl;
     }
 
-    public function setExtendPayData($extendPayData) {
-        $this->extendPayData = $extendPayData;
+    public function setNotifyUrl($notifyUrl) {
+        $this->notifyUrl = $notifyUrl;
     }
 
 }

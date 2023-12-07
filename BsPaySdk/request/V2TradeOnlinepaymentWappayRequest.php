@@ -30,6 +30,14 @@ class V2TradeOnlinepaymentWappayRequest extends BaseRequest
      */
     private $transAmt;
     /**
+     * 分期期数分期支付时必填；支持：03、06、12、24；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：03&lt;/font&gt;；&lt;br/&gt;空值时是wap支付；
+     */
+    private $instalmentsNum;
+    /**
+     * 银行卡号instalments_num不为空时必填；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：6228480031509440000&lt;/font&gt;
+     */
+    private $bankCardNo;
+    /**
      * 网联扩展数据
      */
     private $extendPayData;
@@ -85,6 +93,22 @@ class V2TradeOnlinepaymentWappayRequest extends BaseRequest
 
     public function setTransAmt($transAmt) {
         $this->transAmt = $transAmt;
+    }
+
+    public function getInstalmentsNum() {
+        return $this->instalmentsNum;
+    }
+
+    public function setInstalmentsNum($instalmentsNum) {
+        $this->instalmentsNum = $instalmentsNum;
+    }
+
+    public function getBankCardNo() {
+        return $this->bankCardNo;
+    }
+
+    public function setBankCardNo($bankCardNo) {
+        $this->bankCardNo = $bankCardNo;
     }
 
     public function getExtendPayData() {

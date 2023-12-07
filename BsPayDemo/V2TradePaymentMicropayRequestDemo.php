@@ -249,6 +249,26 @@ function getExtendParams() {
     return $dto;
 }
 
+function getExtUserInfo() {
+    $dto = array();
+    // 姓名
+    // $dto["name"] = "";
+    // 手机号
+    // $dto["mobile"] = "";
+    // 证件类型
+    // $dto["cert_type"] = "";
+    // 证件号
+    // $dto["cert_no"] = "";
+    // 允许的最小买家年龄
+    // $dto["min_age"] = "";
+    // 是否强制校验付款人身份信息
+    // $dto["fix_buyer"] = "";
+    // 是否强制校验身份信息
+    // $dto["need_check_info"] = "";
+
+    return $dto;
+}
+
 function getAlipayData() {
     $dto = array();
     // 支付宝的店铺编号
@@ -261,6 +281,8 @@ function getAlipayData() {
     // $dto["operator_id"] = "";
     // 商户门店编号
     $dto["store_id"] = "";
+    // 外部指定买家
+    // $dto["ext_user_info"] = getExtUserInfo();
 
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }

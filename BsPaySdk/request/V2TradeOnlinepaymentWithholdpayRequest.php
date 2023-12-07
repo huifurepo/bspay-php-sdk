@@ -26,25 +26,29 @@ class V2TradeOnlinepaymentWithholdpayRequest extends BaseRequest
      */
     private $huifuId;
     /**
-     * 异步通知地址
+     * 用户客户号
      */
-    private $notifyUrl;
-    /**
-     * 订单金额
-     */
-    private $transAmt;
+    private $userHuifuId;
     /**
      * 绑卡id
      */
     private $cardBindId;
     /**
-     * 用户客户号
+     * 订单金额
      */
-    private $userHuifuId;
+    private $transAmt;
     /**
      * 商品描述
      */
     private $goodsDesc;
+    /**
+     * 代扣类型
+     */
+    private $withholdType;
+    /**
+     * 银行扩展数据
+     */
+    private $extendPayData;
     /**
      * 风控信息
      */
@@ -54,13 +58,9 @@ class V2TradeOnlinepaymentWithholdpayRequest extends BaseRequest
      */
     private $terminalDeviceData;
     /**
-     * 银行扩展数据
+     * 异步通知地址
      */
-    private $extendPayData;
-    /**
-     * 代扣类型
-     */
-    private $withholdType;
+    private $notifyUrl;
 
     public function getFunctionCode() {
         return FunctionCodeEnum::$V2_TRADE_ONLINEPAYMENT_WITHHOLDPAY;
@@ -91,20 +91,12 @@ class V2TradeOnlinepaymentWithholdpayRequest extends BaseRequest
         $this->huifuId = $huifuId;
     }
 
-    public function getNotifyUrl() {
-        return $this->notifyUrl;
+    public function getUserHuifuId() {
+        return $this->userHuifuId;
     }
 
-    public function setNotifyUrl($notifyUrl) {
-        $this->notifyUrl = $notifyUrl;
-    }
-
-    public function getTransAmt() {
-        return $this->transAmt;
-    }
-
-    public function setTransAmt($transAmt) {
-        $this->transAmt = $transAmt;
+    public function setUserHuifuId($userHuifuId) {
+        $this->userHuifuId = $userHuifuId;
     }
 
     public function getCardBindId() {
@@ -115,12 +107,12 @@ class V2TradeOnlinepaymentWithholdpayRequest extends BaseRequest
         $this->cardBindId = $cardBindId;
     }
 
-    public function getUserHuifuId() {
-        return $this->userHuifuId;
+    public function getTransAmt() {
+        return $this->transAmt;
     }
 
-    public function setUserHuifuId($userHuifuId) {
-        $this->userHuifuId = $userHuifuId;
+    public function setTransAmt($transAmt) {
+        $this->transAmt = $transAmt;
     }
 
     public function getGoodsDesc() {
@@ -129,6 +121,22 @@ class V2TradeOnlinepaymentWithholdpayRequest extends BaseRequest
 
     public function setGoodsDesc($goodsDesc) {
         $this->goodsDesc = $goodsDesc;
+    }
+
+    public function getWithholdType() {
+        return $this->withholdType;
+    }
+
+    public function setWithholdType($withholdType) {
+        $this->withholdType = $withholdType;
+    }
+
+    public function getExtendPayData() {
+        return $this->extendPayData;
+    }
+
+    public function setExtendPayData($extendPayData) {
+        $this->extendPayData = $extendPayData;
     }
 
     public function getRiskCheckData() {
@@ -147,20 +155,12 @@ class V2TradeOnlinepaymentWithholdpayRequest extends BaseRequest
         $this->terminalDeviceData = $terminalDeviceData;
     }
 
-    public function getExtendPayData() {
-        return $this->extendPayData;
+    public function getNotifyUrl() {
+        return $this->notifyUrl;
     }
 
-    public function setExtendPayData($extendPayData) {
-        $this->extendPayData = $extendPayData;
-    }
-
-    public function getWithholdType() {
-        return $this->withholdType;
-    }
-
-    public function setWithholdType($withholdType) {
-        $this->withholdType = $withholdType;
+    public function setNotifyUrl($notifyUrl) {
+        $this->notifyUrl = $notifyUrl;
     }
 
 }

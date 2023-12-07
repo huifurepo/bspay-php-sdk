@@ -30,10 +30,6 @@ class V2TradeOnlinepaymentQuickpayFrontpayRequest extends BaseRequest
      */
     private $transAmt;
     /**
-     * 异步通知地址
-     */
-    private $notifyUrl;
-    /**
      * 银行扩展信息
      */
     private $extendPayData;
@@ -45,6 +41,10 @@ class V2TradeOnlinepaymentQuickpayFrontpayRequest extends BaseRequest
      * 安全信息
      */
     private $riskCheckData;
+    /**
+     * 异步通知地址
+     */
+    private $notifyUrl;
 
     public function getFunctionCode() {
         return FunctionCodeEnum::$V2_TRADE_ONLINEPAYMENT_QUICKPAY_FRONTPAY;
@@ -83,14 +83,6 @@ class V2TradeOnlinepaymentQuickpayFrontpayRequest extends BaseRequest
         $this->transAmt = $transAmt;
     }
 
-    public function getNotifyUrl() {
-        return $this->notifyUrl;
-    }
-
-    public function setNotifyUrl($notifyUrl) {
-        $this->notifyUrl = $notifyUrl;
-    }
-
     public function getExtendPayData() {
         return $this->extendPayData;
     }
@@ -113,6 +105,14 @@ class V2TradeOnlinepaymentQuickpayFrontpayRequest extends BaseRequest
 
     public function setRiskCheckData($riskCheckData) {
         $this->riskCheckData = $riskCheckData;
+    }
+
+    public function getNotifyUrl() {
+        return $this->notifyUrl;
+    }
+
+    public function setNotifyUrl($notifyUrl) {
+        $this->notifyUrl = $notifyUrl;
     }
 
 }

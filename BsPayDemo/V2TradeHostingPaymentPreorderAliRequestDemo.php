@@ -58,10 +58,12 @@ function getExtendInfos() {
     $extendInfoMap["delay_acct_flag"]= "N";
     // 分账对象
     $extendInfoMap["acct_split_bunch"]= getAcctSplitBunchRucan();
-    // 异步通知地址
-    $extendInfoMap["notify_url"]= "https://callback.service.com/xx";
     // 交易失效时间
     // $extendInfoMap["time_expire"]= "";
+    // 业务信息
+    // $extendInfoMap["biz_info"]= getBizInfo();
+    // 异步通知地址
+    $extendInfoMap["notify_url"]= "https://callback.service.com/xx";
     return $extendInfoMap;
 }
 
@@ -91,6 +93,42 @@ function getAppData() {
     $dto["app_schema"] = "app跳转链接";
     // 私有信息
     // $dto["private_info"] = "";
+
+    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+}
+
+function getPayerCheckAli() {
+    $dto = array();
+    // 是否提供校验身份信息
+    // $dto["need_check_info"] = "";
+    // 允许的最小买家年龄
+    // $dto["min_age"] = "";
+    // 是否强制校验付款人身份信息
+    // $dto["fix_buyer"] = "";
+
+    return $dto;
+}
+
+function getPersonPayer() {
+    $dto = array();
+    // 姓名
+    // $dto["name"] = "";
+    // 证件类型
+    // $dto["cert_type"] = "";
+    // 证件号
+    // $dto["cert_no"] = "";
+    // 手机号
+    // $dto["mobile"] = "";
+
+    return $dto;
+}
+
+function getBizInfo() {
+    $dto = array();
+    // 付款人验证（支付宝）
+    // $dto["payer_check_ali"] = getPayerCheckAli();
+    // 个人付款人信息
+    // $dto["person_payer"] = getPersonPayer();
 
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }

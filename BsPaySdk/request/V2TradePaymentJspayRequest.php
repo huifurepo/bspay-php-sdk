@@ -26,6 +26,10 @@ class V2TradePaymentJspayRequest extends BaseRequest
      */
     private $huifuId;
     /**
+     * 商品描述
+     */
+    private $goodsDesc;
+    /**
      * 交易类型
      */
     private $tradeType;
@@ -33,10 +37,6 @@ class V2TradePaymentJspayRequest extends BaseRequest
      * 交易金额
      */
     private $transAmt;
-    /**
-     * 商品描述
-     */
-    private $goodsDesc;
 
     public function getFunctionCode() {
         return FunctionCodeEnum::$V2_TRADE_PAYMENT_JSPAY;
@@ -67,6 +67,14 @@ class V2TradePaymentJspayRequest extends BaseRequest
         $this->huifuId = $huifuId;
     }
 
+    public function getGoodsDesc() {
+        return $this->goodsDesc;
+    }
+
+    public function setGoodsDesc($goodsDesc) {
+        $this->goodsDesc = $goodsDesc;
+    }
+
     public function getTradeType() {
         return $this->tradeType;
     }
@@ -81,14 +89,6 @@ class V2TradePaymentJspayRequest extends BaseRequest
 
     public function setTransAmt($transAmt) {
         $this->transAmt = $transAmt;
-    }
-
-    public function getGoodsDesc() {
-        return $this->goodsDesc;
-    }
-
-    public function setGoodsDesc($goodsDesc) {
-        $this->goodsDesc = $goodsDesc;
     }
 
 }

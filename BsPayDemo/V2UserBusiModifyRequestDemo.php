@@ -95,7 +95,7 @@ function getSettleConfig() {
 
 function getCardInfo() {
     $dto = array();
-    // 结算类型
+    // 卡类型
     $dto["card_type"] = "0";
     // 卡户名
     $dto["card_name"] = "陈立一";
@@ -109,7 +109,7 @@ function getCardInfo() {
     $dto["bank_code"] = "01050000";
     // 支行联行号对公时联行号、支行名称二选一必填，[点击查看](https://paas.huifu.com/partners/api/#/csfl/api_csfl_yhzhbm)；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：102290026507&lt;/font&gt;
     $dto["branch_code"] = "105305264815";
-    // 支行名称对公时联行号、支行名称二选一必填，&lt;font color&#x3D;&quot;green&quot;&gt;示例值：中国工商银行上海市中山北路支行&lt;/font&gt;
+    // 支行名称对公时联行号、支行名称二选一必填，&lt;br/&gt;&lt;font color&#x3D;&quot;green&quot;&gt;示例值：中国工商银行上海市中山北路支行&lt;/font&gt;
     $dto["branch_name"] = "中国建设银行股份有限公司上海平凉路支行";
     // 持卡人证件类型
     $dto["cert_type"] = "00";
@@ -143,6 +143,8 @@ function getCashConfig() {
     $dto["out_fee_huifu_id"] = "6666000104633228";
     // 交易手续费外扣的账户类型
     $dto["out_fee_acct_type"] = "05";
+    // 是否优先到账
+    // $dto["is_priority_receipt"] = "";
 
     $dtoList = array();
     array_push($dtoList, $dto);

@@ -17,12 +17,12 @@ use BsPaySdk\request\V2TradePayscoreServiceorderCreateRequest;
 
 // 2.组装请求参数
 $request = new V2TradePayscoreServiceorderCreateRequest();
-// 汇付商户号
-$request->setHuifuId("6666000108854952");
 // 请求日期
 $request->setReqDate(date("Ymd"));
 // 商户申请单号
 $request->setReqSeqId(date("YmdHis").mt_rand());
+// 汇付商户号
+$request->setHuifuId("6666000108854952");
 // 服务信息
 // $request->setServiceIntroduction("test");
 // 服务风险金
@@ -56,22 +56,22 @@ function getExtendInfos() {
     // $extendInfoMap["service_id"]= "";
     // 子商户公众号ID
     // $extendInfoMap["sub_appid"]= "";
+    // 场景类型
+    // $extendInfoMap["trade_scene"]= "";
+    // 费率类型
+    // $extendInfoMap["pay_scene"]= "";
+    // 从业机构公众号下的用户标识
+    // $extendInfoMap["openid"]= "";
+    // 子商户公众号下的用户标识
+    // $extendInfoMap["sub_openid"]= "";
     // 后付费项目
     // $extendInfoMap["post_payments"]= getPostPayments();
     // 商户优惠
     // $extendInfoMap["post_discounts"]= getPostDiscounts();
     // 服务位置
     // $extendInfoMap["location"]= getLocation();
-    // 从业机构公众号下的用户标识
-    // $extendInfoMap["openid"]= "";
-    // 子商户公众号下的用户标识
-    // $extendInfoMap["sub_openid"]= "";
     // 附加数据
     // $extendInfoMap["attach"]= "";
-    // 场景类型
-    // $extendInfoMap["trade_scene"]= "";
-    // 费率类型
-    // $extendInfoMap["pay_scene"]= "";
     return $extendInfoMap;
 }
 

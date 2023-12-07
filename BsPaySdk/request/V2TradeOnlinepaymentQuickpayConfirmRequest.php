@@ -30,13 +30,13 @@ class V2TradeOnlinepaymentQuickpayConfirmRequest extends BaseRequest
      */
     private $smsCode;
     /**
-     * 外部地址
-     */
-    private $notifyUrl;
-    /**
      * 商品描述
      */
     private $goodsDesc;
+    /**
+     * 外部地址
+     */
+    private $notifyUrl;
 
     public function getFunctionCode() {
         return FunctionCodeEnum::$V2_TRADE_ONLINEPAYMENT_QUICKPAY_CONFIRM;
@@ -75,20 +75,20 @@ class V2TradeOnlinepaymentQuickpayConfirmRequest extends BaseRequest
         $this->smsCode = $smsCode;
     }
 
-    public function getNotifyUrl() {
-        return $this->notifyUrl;
-    }
-
-    public function setNotifyUrl($notifyUrl) {
-        $this->notifyUrl = $notifyUrl;
-    }
-
     public function getGoodsDesc() {
         return $this->goodsDesc;
     }
 
     public function setGoodsDesc($goodsDesc) {
         $this->goodsDesc = $goodsDesc;
+    }
+
+    public function getNotifyUrl() {
+        return $this->notifyUrl;
+    }
+
+    public function setNotifyUrl($notifyUrl) {
+        $this->notifyUrl = $notifyUrl;
     }
 
 }

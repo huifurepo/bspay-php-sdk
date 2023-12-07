@@ -23,8 +23,6 @@ $request->setReqSeqId(date("YmdHis").mt_rand());
 $request->setReqDate(date("Ymd"));
 // 企业用户名称
 $request->setRegName("企业商户名称8225");
-// 经营简称
-$request->setShortName("企业商户");
 // 营业执照编号
 $request->setLicenseCode("20220222013747149");
 // 证照有效期类型
@@ -78,6 +76,8 @@ if (!$result || $result->isError()) {  //失败处理
 function getExtendInfos() {
     // 设置非必填字段
     $extendInfoMap = array();
+    // 经营简称
+    $extendInfoMap["short_name"]= "企业商户";
     // 联系人电子邮箱
     $extendInfoMap["contact_email"]= "jeff.peng@huifu.com";
     // 管理员账号

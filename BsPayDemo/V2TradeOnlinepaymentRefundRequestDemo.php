@@ -50,20 +50,22 @@ if (!$result || $result->isError()) {  //失败处理
 function getExtendInfos() {
     // 设置非必填字段
     $extendInfoMap = array();
+    // 原交易请求日期
+    $extendInfoMap["org_req_date"]= "20221110";
     // 原交易全局流水号
     $extendInfoMap["org_hf_seq_id"]= "";
     // 原交易请求流水号
     $extendInfoMap["org_req_seq_id"]= "RQ1212333113";
-    // 原交易请求日期
-    $extendInfoMap["org_req_date"]= "20221110";
-    // 异步通知地址
-    $extendInfoMap["notify_url"]= "http://www.baidu.com";
-    // 备注
-    $extendInfoMap["remark"]= "remark123";
     // 分账对象
     $extendInfoMap["acct_split_bunch"]= getAcctSplitBunchRucan();
     // 补贴支付信息
     $extendInfoMap["combinedpay_data"]= getCombinedpayData();
+    // 大额转账支付账户信息数据
+    // $extendInfoMap["bank_info_data"]= getBankInfoData();
+    // 备注
+    $extendInfoMap["remark"]= "remark123";
+    // 异步通知地址
+    $extendInfoMap["notify_url"]= "http://www.baidu.com";
     return $extendInfoMap;
 }
 
@@ -83,6 +85,38 @@ function getAcctSplitBunchRucan() {
     $dto = array();
     // 分账信息列表
     // $dto["acct_infos"] = getAcctInfosRucan();
+
+    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+}
+
+function getCombinedpayData() {
+    $dto = array();
+    // 补贴方汇付编号
+    // $dto["huifu_id"] = "test";
+    // 补贴方类型
+    // $dto["user_type"] = "test";
+    // 补贴方账户号
+    // $dto["acct_id"] = "test";
+    // 补贴金额
+    // $dto["amount"] = "test";
+
+    $dtoList = array();
+    array_push($dtoList, $dto);
+    return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+}
+
+function getBankInfoData() {
+    $dto = array();
+    // 付款方账户类型
+    // $dto["card_acct_type"] = "test";
+    // 省份
+    // $dto["province"] = "";
+    // 地区
+    // $dto["area"] = "";
+    // 银行编号
+    // $dto["bank_code"] = "";
+    // 联行号
+    // $dto["correspondent_code"] = "";
 
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
@@ -121,22 +155,6 @@ function getRiskCheckData() {
     // $dto["longitude"] = "";
 
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
-}
-
-function getCombinedpayData() {
-    $dto = array();
-    // 补贴方汇付编号
-    // $dto["huifu_id"] = "test";
-    // 补贴方类型
-    // $dto["user_type"] = "test";
-    // 补贴方账户号
-    // $dto["acct_id"] = "test";
-    // 补贴金额
-    // $dto["amount"] = "test";
-
-    $dtoList = array();
-    array_push($dtoList, $dto);
-    return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
 

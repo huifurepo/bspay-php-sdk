@@ -25,14 +25,14 @@ $request->setReqDate(date("Ymd"));
 $request->setHuifuId("6666000109812884");
 // 订单金额
 $request->setTransAmt("0.01");
-// 异步通知地址
-$request->setNotifyUrl("http://www.baidu.com");
 // 银行扩展信息
 $request->setExtendPayData(getExtendPayData());
 // 设备信息
 $request->setTerminalDeviceData(getTerminalDeviceData());
 // 安全信息
 $request->setRiskCheckData(getRiskCheckData());
+// 异步通知地址
+$request->setNotifyUrl("http://www.baidu.com");
 
 // 设置非必填字段
 $extendInfoMap = getExtendInfos();
@@ -66,15 +66,37 @@ function getExtendInfos() {
     $extendInfoMap["request_type"]= "P";
     // 延时标记
     // $extendInfoMap["delay_acct_flag"]= "";
+    // 分账串
+    $extendInfoMap["acct_split_bunch"]= getAcctSplitBunchRucan();
     // 手续费扣款标志
     $extendInfoMap["fee_flag"]= "2";
     // 备注
     $extendInfoMap["remark"]= "remark快捷支付接口";
     // 页面跳转地址
     $extendInfoMap["front_url"]= "http://www.baidu.com";
-    // 分账串
-    $extendInfoMap["acct_split_bunch"]= getAcctSplitBunchRucan();
     return $extendInfoMap;
+}
+
+function getAcctInfos() {
+    $dto = array();
+    // 被分账对象ID
+    $dto["huifu_id"] = "6666000109812884";
+    // 分账金额
+    $dto["div_amt"] = "0.01";
+    // 账户号
+    // $dto["acct_id"] = "";
+
+    $dtoList = array();
+    array_push($dtoList, $dto);
+    return $dtoList;
+}
+
+function getAcctSplitBunchRucan() {
+    $dto = array();
+    // 分账明细
+    $dto["acct_infos"] = getAcctInfos();
+
+    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
 function getExtendPayData() {
@@ -107,28 +129,6 @@ function getTerminalDeviceData() {
     // $dto["device_wifi_mac"] = "";
     // 交易设备GPS
     // $dto["device_gps"] = "";
-
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
-}
-
-function getAcctInfos() {
-    $dto = array();
-    // 被分账对象ID
-    $dto["huifu_id"] = "6666000109812884";
-    // 分账金额
-    $dto["div_amt"] = "0.01";
-    // 账户号
-    // $dto["acct_id"] = "";
-
-    $dtoList = array();
-    array_push($dtoList, $dto);
-    return $dtoList;
-}
-
-function getAcctSplitBunchRucan() {
-    $dto = array();
-    // 分账明细
-    $dto["acct_infos"] = getAcctInfos();
 
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
