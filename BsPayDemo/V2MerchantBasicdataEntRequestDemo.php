@@ -21,7 +21,7 @@ $request = new V2MerchantBasicdataEntRequest();
 $request->setReqSeqId(date("YmdHis").mt_rand());
 // 请求日期
 $request->setReqDate(date("Ymd"));
-// 上级主体ID
+// 直属渠道号
 $request->setUpperHuifuId("6666000003080000");
 // 商户名称
 $request->setRegName("集成企业商户8664");

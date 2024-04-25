@@ -22,7 +22,7 @@ class V2MerchantBasicdataEntRequest extends BaseRequest
      */
     private $reqDate;
     /**
-     * 上级主体ID
+     * 直属渠道号
      */
     private $upperHuifuId;
     /**

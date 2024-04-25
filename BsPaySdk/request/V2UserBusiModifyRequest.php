@@ -22,7 +22,7 @@ class V2UserBusiModifyRequest extends BaseRequest
      */
     private $reqDate;
     /**
-     * 渠道商汇付Id
+     * 渠道商/商户汇付Id
      */
     private $upperHuifuId;
     /**

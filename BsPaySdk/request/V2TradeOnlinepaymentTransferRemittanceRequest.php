@@ -34,7 +34,7 @@ class V2TradeOnlinepaymentTransferRemittanceRequest extends BaseRequest
      */
     private $notifyUrl;
     /**
-     * 原汇款订单号
+     * 原汇付通道流水号
      */
     private $orgRemittanceOrderId;
     /**

@@ -5,7 +5,7 @@ namespace BsPaySdk\request;
 use BsPaySdk\enums\FunctionCodeEnum;
 
 /**
- * 银行大额转账差错申请查询
+ * 银行大额支付差错申请查询
  *
  * @author sdk-generator
  * @Description

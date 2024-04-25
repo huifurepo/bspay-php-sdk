@@ -52,8 +52,8 @@ if (!$result || $result->isError()) {  //失败处理
 function getExtendInfos() {
     // 设置非必填字段
     $extendInfoMap = array();
-    // 收银台ID
-    $extendInfoMap["checkout_id"]= "";
+    // 收银台样式
+    // $extendInfoMap["style_id"]= "";
     // 是否延迟交易
     $extendInfoMap["delay_acct_flag"]= "N";
     // 分账对象
@@ -71,7 +71,7 @@ function getAcctInfosRucan() {
     $dto = array();
     // 分账金额
     $dto["div_amt"] = "0.08";
-    // 被分账方ID
+    // 分账接收方ID
     $dto["huifu_id"] = "6666000111546360";
 
     $dtoList = array();

@@ -26,13 +26,13 @@ class V2MerchantBusiAliRealnameApplyRequest extends BaseRequest
      */
     private $huifuId;
     /**
-     * 联系人信息
-     */
-    private $contactPersonInfo;
-    /**
      * 主体信息
      */
     private $authIdentityInfo;
+    /**
+     * 联系人信息
+     */
+    private $contactPersonInfo;
 
     public function getFunctionCode() {
         return FunctionCodeEnum::$V2_MERCHANT_BUSI_ALI_REALNAME_APPLY;
@@ -63,20 +63,20 @@ class V2MerchantBusiAliRealnameApplyRequest extends BaseRequest
         $this->huifuId = $huifuId;
     }
 
-    public function getContactPersonInfo() {
-        return $this->contactPersonInfo;
-    }
-
-    public function setContactPersonInfo($contactPersonInfo) {
-        $this->contactPersonInfo = $contactPersonInfo;
-    }
-
     public function getAuthIdentityInfo() {
         return $this->authIdentityInfo;
     }
 
     public function setAuthIdentityInfo($authIdentityInfo) {
         $this->authIdentityInfo = $authIdentityInfo;
+    }
+
+    public function getContactPersonInfo() {
+        return $this->contactPersonInfo;
+    }
+
+    public function setContactPersonInfo($contactPersonInfo) {
+        $this->contactPersonInfo = $contactPersonInfo;
     }
 
 }

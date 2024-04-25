@@ -27,7 +27,7 @@ $request->setHuifuId("6666000106521787");
 $request->setTransAmt("1019.00");
 // 异步通知地址
 $request->setNotifyUrl("http://C_TOPAT_NOTIFY");
-// 原汇款订单号
+// 原汇付通道流水号
 $request->setOrgRemittanceOrderId("20230214170030defaultit656505030");
 // 商品描述
 $request->setGoodsDesc("商品描述001");

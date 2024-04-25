@@ -14,57 +14,81 @@ class V2WalletTradePayBalanceRequest extends BaseRequest
 {
 
     /**
-     * 系统号
+     * 请求流水号
      */
-    private $sysId;
+    private $reqSeqId;
     /**
-     * 产品号
+     * 请求日期
      */
-    private $productId;
+    private $reqDate;
     /**
-     * 加签结果
+     * 商户号
      */
-    private $sign;
+    private $huifuId;
     /**
-     * 数据
+     * 钱包用户ID
      */
-    private $data;
+    private $userHuifuId;
+    /**
+     * 订单金额
+     */
+    private $transAmt;
+    /**
+     * 跳转地址
+     */
+    private $frontUrl;
 
     public function getFunctionCode() {
         return FunctionCodeEnum::$V2_WALLET_TRADE_PAY_BALANCE;
     }
 
 
-    public function getSysId() {
-        return $this->sysId;
+    public function getReqSeqId() {
+        return $this->reqSeqId;
     }
 
-    public function setSysId($sysId) {
-        $this->sysId = $sysId;
+    public function setReqSeqId($reqSeqId) {
+        $this->reqSeqId = $reqSeqId;
     }
 
-    public function getProductId() {
-        return $this->productId;
+    public function getReqDate() {
+        return $this->reqDate;
     }
 
-    public function setProductId($productId) {
-        $this->productId = $productId;
+    public function setReqDate($reqDate) {
+        $this->reqDate = $reqDate;
     }
 
-    public function getSign() {
-        return $this->sign;
+    public function getHuifuId() {
+        return $this->huifuId;
     }
 
-    public function setSign($sign) {
-        $this->sign = $sign;
+    public function setHuifuId($huifuId) {
+        $this->huifuId = $huifuId;
     }
 
-    public function getData() {
-        return $this->data;
+    public function getUserHuifuId() {
+        return $this->userHuifuId;
     }
 
-    public function setData($data) {
-        $this->data = $data;
+    public function setUserHuifuId($userHuifuId) {
+        $this->userHuifuId = $userHuifuId;
+    }
+
+    public function getTransAmt() {
+        return $this->transAmt;
+    }
+
+    public function setTransAmt($transAmt) {
+        $this->transAmt = $transAmt;
+    }
+
+    public function getFrontUrl() {
+        return $this->frontUrl;
+    }
+
+    public function setFrontUrl($frontUrl) {
+        $this->frontUrl = $frontUrl;
     }
 
 }

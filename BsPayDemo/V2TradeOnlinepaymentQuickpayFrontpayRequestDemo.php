@@ -1,7 +1,7 @@
 <?php
 
 /**
- * 快捷支付页面版接口 - 示例
+ * 快捷支付页面版 - 示例
  *
  * @author sdk-generator
  * @Description
@@ -79,7 +79,7 @@ function getExtendInfos() {
 
 function getAcctInfos() {
     $dto = array();
-    // 被分账对象ID
+    // 分账接收方ID
     $dto["huifu_id"] = "6666000109812884";
     // 分账金额
     $dto["div_amt"] = "0.01";

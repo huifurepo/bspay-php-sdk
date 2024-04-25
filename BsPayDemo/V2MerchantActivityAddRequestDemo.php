@@ -110,6 +110,12 @@ function getExtendInfos() {
     $extendInfoMap["legal_person_auth_photo"]= "";
     // 食堂经营相关资质
     // $extendInfoMap["food_qualification_proof"]= "";
+    // 活动费率%
+    // $extendInfoMap["preferential_rate"]= "";
+    // 活动到期后费率%
+    // $extendInfoMap["expiration_rate"]= "";
+    // 学校号
+    // $extendInfoMap["school_id"]= "";
     return $extendInfoMap;
 }
 

@@ -25,6 +25,10 @@ class V2TradePaymentDelaytransConfirmRequest extends BaseRequest
      * 商户号
      */
     private $huifuId;
+    /**
+     * 交易类型**原交易为快捷支付必填：QUICK_PAY**，&lt;br/&gt;**原交易为余额支付必填：ACCT_PAYMENT**；&lt;br/&gt;&lt;font color&#x3D;&quot;green&quot;&gt;示例值：ACCT_PAYMENT&lt;/font&gt;
+     */
+    private $payType;
 
     public function getFunctionCode() {
         return FunctionCodeEnum::$V2_TRADE_PAYMENT_DELAYTRANS_CONFIRM;
@@ -53,6 +57,14 @@ class V2TradePaymentDelaytransConfirmRequest extends BaseRequest
 
     public function setHuifuId($huifuId) {
         $this->huifuId = $huifuId;
+    }
+
+    public function getPayType() {
+        return $this->payType;
+    }
+
+    public function setPayType($payType) {
+        $this->payType = $payType;
     }
 
 }

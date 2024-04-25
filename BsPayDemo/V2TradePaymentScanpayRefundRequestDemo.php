@@ -76,6 +76,8 @@ function getExtendInfos() {
     // $extendInfoMap["terminal_device_data"]= getTerminalDeviceData();
     // 异步通知地址
     // $extendInfoMap["notify_url"]= "";
+    // 银联参数集合
+    // $extendInfoMap["unionpay_data"]= getUnionpayData();
     return $extendInfoMap;
 }
 
@@ -83,7 +85,7 @@ function getAcctInfosRucan() {
     $dto = array();
     // 分账金额
     // $dto["div_amt"] = "test";
-    // 被分账方ID
+    // 分账接收方ID
     // $dto["huifu_id"] = "test";
     // 垫资金额
     // $dto["part_loan_amt"] = "";
@@ -189,6 +191,14 @@ function getTerminalDeviceData() {
     // $dto["device_wifi_mac"] = "";
     // 交易设备GPS
     // $dto["device_gps"] = "";
+
+    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+}
+
+function getUnionpayData() {
+    $dto = array();
+    // 收款方附加数据
+    // $dto["addn_data"] = "";
 
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }

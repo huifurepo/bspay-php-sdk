@@ -87,7 +87,7 @@ function getAcctInfos() {
     $dto = array();
     // 分账金额
     // $dto["div_amt"] = "test";
-    // 分账商户号
+    // 分账接收方ID
     // $dto["huifu_id"] = "test";
 
     $dtoList = array();

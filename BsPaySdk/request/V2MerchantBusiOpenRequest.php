@@ -26,7 +26,7 @@ class V2MerchantBusiOpenRequest extends BaseRequest
      */
     private $huifuId;
     /**
-     * 上级主体ID
+     * 直属渠道号
      */
     private $upperHuifuId;
 

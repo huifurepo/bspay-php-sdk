@@ -63,7 +63,7 @@ function getExtendInfos() {
     // 渠道号
     $extendInfoMap["channel_no"]= "";
     // 补贴支付信息
-    // $extendInfoMap["combinedpay_data"]= getCombinedpayData();
+    // $extendInfoMap["combinedpay_data"]= "";
     // 场景类型
     $extendInfoMap["pay_scene"]= "";
     // 分账对象
@@ -87,27 +87,11 @@ function getExtendInfos() {
     return $extendInfoMap;
 }
 
-function getCombinedpayData() {
-    $dto = array();
-    // 补贴方汇付编号
-    // $dto["huifu_id"] = "test";
-    // 补贴方类型
-    // $dto["user_type"] = "test";
-    // 补贴方账户号
-    // $dto["acct_id"] = "test";
-    // 补贴金额
-    // $dto["amount"] = "test";
-
-    $dtoList = array();
-    array_push($dtoList, $dto);
-    return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
-}
-
 function getAcctInfosRucan() {
     $dto = array();
     // 分账金额
     // $dto["div_amt"] = "test";
-    // 被分账方ID
+    // 分账接收方ID
     // $dto["huifu_id"] = "test";
     // 账户号
     // $dto["acct_id"] = "";
@@ -185,10 +169,6 @@ function getWxData() {
     // $dto["spbill_create_ip"] = "test";
     // 子商户公众账号id
     // $dto["sub_appid"] = "";
-    // 用户标识
-    // $dto["openid"] = "";
-    // 子商户用户标识
-    // $dto["sub_openid"] = "";
     // 设备号
     // $dto["device_info"] = "";
     // 附加数据
@@ -283,6 +263,8 @@ function getAlipayData() {
     $dto["store_id"] = "";
     // 外部指定买家
     // $dto["ext_user_info"] = getExtUserInfo();
+    // 商户业务信息
+    // $dto["ali_business_params"] = "";
 
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
@@ -301,6 +283,8 @@ function getUnionpayData() {
     // $dto["specfeeinfo"] = "";
     // 终端号
     // $dto["term_id"] = "";
+    // 收款方附加数据
+    // $dto["addn_data"] = "";
 
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }

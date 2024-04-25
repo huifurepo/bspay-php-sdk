@@ -63,8 +63,11 @@ class BsPayTools
     public static function verifySign_sort($signature, $data, $rsaPublicKey, $alg=OPENSSL_ALGO_SHA256){
         $key = "-----BEGIN PUBLIC KEY-----\n".wordwrap($rsaPublicKey, 64, "\n", true)."\n-----END PUBLIC KEY-----";
         ksort($data);
-        return openssl_verify(json_encode($data, JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE), base64_decode($signature), $key, $alg);
-    }
+        $data = json_encode($data, JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE);
+        $data = str_replace("\n","\\n",$data);
+        $data = str_replace('"enter_fee":0,','"enter_fee":0.00,',$data); // 单独替换指定类型格式不正确的字段 如 enter_fee
+        return openssl_verify($data, base64_decode($signature), $key, $alg);
+     }
 
     public static function checkEmpty($value) {
         return !isset($value) || trim($value) === "";
