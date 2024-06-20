@@ -5,7 +5,7 @@ namespace BsPaySdk\request;
 use BsPaySdk\enums\FunctionCodeEnum;
 
 /**
- * 全域资金管理配置
+ * 全渠道资金管理配置
  *
  * @author sdk-generator
  * @Description
@@ -50,9 +50,13 @@ class V2MerchantBusiEfpconfigRequest extends BaseRequest
      */
     private $outOrderAcctOpenFees;
     /**
-     * 商户与其他支付机构签署的收单协议文件id首次开通时必填；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：57cc7f00-600a-33ab-b614-6221bbf2e530&lt;/font&gt;
+     * 全渠道资金管理补充材料id首次开通时必填；涉及文件类型：[F504-全渠道资金管理补充材料](https://paas.huifu.com/partners/api/#/csfl/api_csfl_wjlx)；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：57cc7f00-600a-33ab-b614-6221bbf2e530&lt;/font&gt;
      */
     private $otherPaymentInstitutionsPic;
+    /**
+     * 新网银行数字证书及电子签名授权委托书out_funds_gate_id为xw0时必填；涉及文件类型：[F534-银行数字证书及电子签名授权委托书](https://paas.huifu.com/partners/api/#/csfl/api_csfl_wjlx)；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：57cc7f00-600a-33ab-b614-6221bbf2e530&lt;/font&gt;
+     */
+    private $xwDigitalCertificatePic;
     /**
      * 银行类型
      */
@@ -61,6 +65,10 @@ class V2MerchantBusiEfpconfigRequest extends BaseRequest
      * 签约人信息switch_state为1时必填 jsonObject格式
      */
     private $signUserInfo;
+    /**
+     * 入账来源
+     */
+    private $acctSource;
 
     public function getFunctionCode() {
         return FunctionCodeEnum::$V2_MERCHANT_BUSI_EFPCONFIG;
@@ -147,6 +155,14 @@ class V2MerchantBusiEfpconfigRequest extends BaseRequest
         $this->otherPaymentInstitutionsPic = $otherPaymentInstitutionsPic;
     }
 
+    public function getXwDigitalCertificatePic() {
+        return $this->xwDigitalCertificatePic;
+    }
+
+    public function setXwDigitalCertificatePic($xwDigitalCertificatePic) {
+        $this->xwDigitalCertificatePic = $xwDigitalCertificatePic;
+    }
+
     public function getOutFundsGateId() {
         return $this->outFundsGateId;
     }
@@ -161,6 +177,14 @@ class V2MerchantBusiEfpconfigRequest extends BaseRequest
 
     public function setSignUserInfo($signUserInfo) {
         $this->signUserInfo = $signUserInfo;
+    }
+
+    public function getAcctSource() {
+        return $this->acctSource;
+    }
+
+    public function setAcctSource($acctSource) {
+        $this->acctSource = $acctSource;
     }
 
 }

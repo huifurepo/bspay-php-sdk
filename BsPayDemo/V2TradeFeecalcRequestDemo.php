@@ -18,13 +18,13 @@ use BsPaySdk\request\V2TradeFeecalcRequest;
 // 2.组装请求参数
 $request = new V2TradeFeecalcRequest();
 // 商户号
-$request->setHuifuId("6666000116584429");
+$request->setHuifuId("6666000109133323");
 // 请求日期
 $request->setReqDate(date("Ymd"));
 // 请求流水号
 $request->setReqSeqId(date("YmdHis").mt_rand());
 // 交易类型
-$request->setTradeType("ENCASHMENT");
+$request->setTradeType("ONLINE_PAY");
 // 交易金额
 $request->setTransAmt("1000.00");
 
@@ -49,7 +49,7 @@ function getExtendInfos() {
     // 设置非必填字段
     $extendInfoMap = array();
     // 网银交易类型
-    $extendInfoMap["online_trans_type"]= "";
+    $extendInfoMap["online_trans_type"]= "3000";
     // 付款方银行编号
     $extendInfoMap["bank_id"]= "01020000";
     // 卡类型

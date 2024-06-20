@@ -22,7 +22,7 @@ $request->setReqDate(date("Ymd"));
 // 请求流水号
 $request->setReqSeqId(date("YmdHis").mt_rand());
 // 商户号
-$request->setHuifuId("6666000103423237");
+$request->setHuifuId("6666000109133323");
 // 交易类型**原交易为快捷支付必填：QUICK_PAY**，&lt;br/&gt;**原交易为余额支付必填：ACCT_PAYMENT**；&lt;br/&gt;&lt;font color&#x3D;&quot;green&quot;&gt;示例值：ACCT_PAYMENT&lt;/font&gt;
 // $request->setPayType("test");
 
@@ -47,9 +47,9 @@ function getExtendInfos() {
     // 设置非必填字段
     $extendInfoMap = array();
     // 原交易请求日期
-    $extendInfoMap["org_req_date"]= "20221108";
+    $extendInfoMap["org_req_date"]= "20220512";
     // 原交易请求流水号
-    $extendInfoMap["org_req_seq_id"]= "2022072724398620211667900766";
+    $extendInfoMap["org_req_seq_id"]= "20220512195832E06521";
     // 原交易商户订单号
     // $extendInfoMap["org_mer_ord_id"]= "";
     // 原交易全局流水号
@@ -78,9 +78,9 @@ function getAcctInfosRucan() {
     // 分账金额
     $dto["div_amt"] = "0.01";
     // 分账接收方ID
-    $dto["huifu_id"] = "6666000103423237";
+    $dto["huifu_id"] = "6666000109133323";
     // 分账接收方账户号
-    $dto["acct_id"] = "C01400109";
+    // $dto["acct_id"] = "";
 
     $dtoList = array();
     array_push($dtoList, $dto);

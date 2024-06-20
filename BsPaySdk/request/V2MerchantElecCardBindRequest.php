@@ -25,6 +25,10 @@ class V2MerchantElecCardBindRequest extends BaseRequest
      * 汇付Id
      */
     private $huifuId;
+    /**
+     * 电子卡信息
+     */
+    private $elecCardInfo;
 
     public function getFunctionCode() {
         return FunctionCodeEnum::$V2_MERCHANT_ELEC_CARD_BIND;
@@ -53,6 +57,14 @@ class V2MerchantElecCardBindRequest extends BaseRequest
 
     public function setHuifuId($huifuId) {
         $this->huifuId = $huifuId;
+    }
+
+    public function getElecCardInfo() {
+        return $this->elecCardInfo;
+    }
+
+    public function setElecCardInfo($elecCardInfo) {
+        $this->elecCardInfo = $elecCardInfo;
     }
 
 }

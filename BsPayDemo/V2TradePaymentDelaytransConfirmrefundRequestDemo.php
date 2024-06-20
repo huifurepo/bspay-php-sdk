@@ -22,11 +22,11 @@ $request->setReqDate(date("Ymd"));
 // 请求流水号
 $request->setReqSeqId(date("YmdHis").mt_rand());
 // 商户号
-$request->setHuifuId("6666000103423237");
+$request->setHuifuId("6666000109133323");
 // 原交易请求日期
-$request->setOrgReqDate("20221108");
+$request->setOrgReqDate("20240513");
 // 原交易请求流水号
-$request->setOrgReqSeqId("20221108349713659620211667908395");
+$request->setOrgReqSeqId("20240513105825239x0lp7ldbus4sji");
 
 // 设置非必填字段
 $extendInfoMap = getExtendInfos();
@@ -62,7 +62,7 @@ function getExtendInfos() {
 function getAcctInfos() {
     $dto = array();
     // 分账接收方ID
-    $dto["huifu_id"] = "6666000003109208";
+    $dto["huifu_id"] = "6666000109133323";
     // 分账金额(元)
     $dto["div_amt"] = "0.01";
     // 垫资金额(元)

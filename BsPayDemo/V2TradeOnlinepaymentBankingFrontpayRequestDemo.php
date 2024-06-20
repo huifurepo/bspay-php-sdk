@@ -1,7 +1,7 @@
 <?php
 
 /**
- * 网银支付接口 - 示例
+ * 网银支付 - 示例
  *
  * @author sdk-generator
  * @Description
@@ -22,7 +22,7 @@ $request->setReqSeqId(date("YmdHis").mt_rand());
 // 请求日期
 $request->setReqDate(date("Ymd"));
 // 商户号
-$request->setHuifuId("6666000108854952");
+$request->setHuifuId("6666000109133323");
 // 订单金额
 $request->setTransAmt("0.02");
 // 商品描述

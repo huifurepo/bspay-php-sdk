@@ -22,7 +22,7 @@ $request->setReqSeqId(date("YmdHis").mt_rand());
 // 交易日期
 $request->setReqDate(date("Ymd"));
 // 汇付机构编号
-$request->setHuifuId("6666000003099901");
+$request->setHuifuId("6666000109133323");
 // 文件类型
 $request->setFileType("2");
 

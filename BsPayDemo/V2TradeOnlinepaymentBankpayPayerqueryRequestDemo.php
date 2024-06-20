@@ -22,11 +22,11 @@ $request->setReqDate(date("Ymd"));
 // 请求流水号
 $request->setReqSeqId(date("YmdHis").mt_rand());
 // 商户号
-$request->setHuifuId("6666000003100615");
+$request->setHuifuId("6666000109133323");
 // 原交易请求日期
-$request->setOrgReqDate("20221104");
+$request->setOrgReqDate("20240401");
 // 原交易请求流水号
-$request->setOrgReqSeqId("6246684562803777");
+$request->setOrgReqSeqId("295700155481522176");
 
 // 设置非必填字段
 $extendInfoMap = getExtendInfos();

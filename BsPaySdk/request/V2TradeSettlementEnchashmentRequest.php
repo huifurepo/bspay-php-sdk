@@ -5,7 +5,7 @@ namespace BsPaySdk\request;
 use BsPaySdk\enums\FunctionCodeEnum;
 
 /**
- * 取现接口
+ * 取现
  *
  * @author sdk-generator
  * @Description

@@ -22,9 +22,9 @@ $request->setReqDate(date("Ymd"));
 // 请求流水号
 $request->setReqSeqId(date("YmdHis").mt_rand());
 // 商户号
-$request->setHuifuId("6666000018328947");
+$request->setHuifuId("6666000109133323");
 // 原交易请求日期
-$request->setOrgReqDate("20210918");
+$request->setOrgReqDate("20240328");
 
 // 设置非必填字段
 $extendInfoMap = getExtendInfos();
@@ -47,7 +47,7 @@ function getExtendInfos() {
     // 设置非必填字段
     $extendInfoMap = array();
     // 原交易请求流水号
-    $extendInfoMap["org_req_seq_id"]= "202109187312431237001";
+    $extendInfoMap["org_req_seq_id"]= "20240129555522220211711612931";
     // 原交易返回的全局流水号
     // $extendInfoMap["org_hf_seq_id"]= "";
     return $extendInfoMap;

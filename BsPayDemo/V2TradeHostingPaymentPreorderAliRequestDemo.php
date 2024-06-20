@@ -18,7 +18,7 @@ use BsPaySdk\request\V2TradeHostingPaymentPreorderAliRequest;
 // 2.组装请求参数
 $request = new V2TradeHostingPaymentPreorderAliRequest();
 // 商户号
-$request->setHuifuId("6666000111546360");
+$request->setHuifuId("6666000109133323");
 // 请求日期
 $request->setReqDate(date("Ymd"));
 // 请求流水号
@@ -72,7 +72,7 @@ function getAcctInfosRucan() {
     // 分账金额
     $dto["div_amt"] = "0.08";
     // 分账接收方ID
-    $dto["huifu_id"] = "6666000111546360";
+    $dto["huifu_id"] = "6666000109133323";
 
     $dtoList = array();
     array_push($dtoList, $dto);

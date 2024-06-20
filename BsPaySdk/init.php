@@ -9,7 +9,7 @@ if (!defined("SDK_BASE")) {
 
 # sdk 版本号
 if (!defined("SDK_VERSION")) {
-    define("SDK_VERSION", "php#v2.0.10");
+    define("SDK_VERSION", "php#v2.0.11");
 }
 
 # api 接口版本号

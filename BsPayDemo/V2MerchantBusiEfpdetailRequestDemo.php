@@ -1,7 +1,7 @@
 <?php
 
 /**
- * 全域资金管理配置查询 - 示例
+ * 全渠道资金管理配置查询 - 示例
  *
  * @author sdk-generator
  * @Description

@@ -24,7 +24,7 @@ $request->setReqDate(date("Ymd"));
 // 请求流水号
 $request->setReqSeqId(date("YmdHis").mt_rand());
 // 商户号
-$request->setHuifuId("6666000003100616");
+$request->setHuifuId("6666000109133323");
 // 交易金额
 $request->setTransAmt("0.13");
 // 商品描述
@@ -59,7 +59,7 @@ function getExtendInfos() {
     // 分账对象
     $extendInfoMap["acct_split_bunch"]= getAcctSplitBunchRucan();
     // 交易失效时间
-    $extendInfoMap["time_expire"]= "20231127233423";
+    // $extendInfoMap["time_expire"]= "";
     // 业务信息
     // $extendInfoMap["biz_info"]= getBizInfo();
     // 交易异步通知地址
@@ -72,7 +72,7 @@ function getAcctInfosRucan() {
     // 分账金额
     $dto["div_amt"] = "0.01";
     // 分账接收方ID
-    $dto["huifu_id"] = "6666000003100616";
+    $dto["huifu_id"] = "6666000109133323";
 
     $dtoList = array();
     array_push($dtoList, $dto);
@@ -92,7 +92,7 @@ function getMiniappDataRucan() {
     // 是否生成scheme_code
     $dto["need_scheme"] = "Y";
     // 应用ID
-    $dto["seq_id"] = "APP_2022033147154783";
+    $dto["seq_id"] = "APP_2022100912694428";
     // 私有信息
     $dto["private_info"] = "oppsHosting://";
 

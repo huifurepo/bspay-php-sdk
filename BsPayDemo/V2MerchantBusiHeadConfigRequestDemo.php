@@ -49,7 +49,7 @@ function getExtendInfos() {
     // 设置非必填字段
     $extendInfoMap = array();
     // 支付宝配置对象
-    // $extendInfoMap["ali_conf_list"]= getSubmberAliConfList();
+    // $extendInfoMap["ali_conf_list"]= getSubmerAliConfList();
     // 微信配置对象
     // $extendInfoMap["wx_conf_list"]= getSubmerWxConfList();
     // 银联二维码配置对象
@@ -65,7 +65,7 @@ function getExtendInfos() {
     // 线上配置对象
     // $extendInfoMap["online_fee_conf_list"]= getSubmerOnlineFeeConfList();
     // 余额支付配置对象
-    // $extendInfoMap["online_fee_conf_list"]= getSubmerBalancePayConfig();
+    // $extendInfoMap["balance_pay_config"]= getSubmerBalancePayConfig();
     // 补贴支付配置对象
     // $extendInfoMap["combine_pay_config"]= getSubmerCombinePayConfig();
     // 银行大额转账配置对象
@@ -95,7 +95,7 @@ function getExtendInfos() {
     return $extendInfoMap;
 }
 
-function getSubmberAliConfList() {
+function getSubmerAliConfList() {
     $dto = array();
     // 支付场景
     // $dto["pay_scene"] = "test";

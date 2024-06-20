@@ -22,7 +22,7 @@ $request->setReqDate(date("Ymd"));
 // 请求流水号
 $request->setReqSeqId(date("YmdHis").mt_rand());
 // 汇付机构编号
-$request->setHuifuId("6666000121363028");
+$request->setHuifuId("6666000109133323");
 
 // 设置非必填字段
 $extendInfoMap = getExtendInfos();
