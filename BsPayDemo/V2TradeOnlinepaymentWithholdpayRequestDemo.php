@@ -79,6 +79,8 @@ function getAcctInfos() {
     // $dto["div_amt"] = "";
     // 商户号
     // $dto["huifu_id"] = "";
+    // 分账百分比%
+    // $dto["percentage_div"] = "";
 
     $dtoList = array();
     array_push($dtoList, $dto);
@@ -89,6 +91,10 @@ function getAcctSplitBunch() {
     $dto = array();
     // 分账信息列表
     // $dto["acct_infos"] = getAcctInfos();
+    // 百分比分账标志
+    // $dto["percentage_flag"] = "";
+    // 是否净值分账
+    // $dto["is_clean_split"] = "";
 
     return $dto;
 }

@@ -41,6 +41,8 @@ $request->setContactPhoneNo("17621100776");
 $request->setOpenMode("2");
 // 所属省
 $request->setProvId("310000");
+// 所属市
+$request->setCityId("310100");
 
 // 设置非必填字段
 $extendInfoMap = getExtendInfos();
@@ -66,8 +68,6 @@ function getExtendInfos() {
     $extendInfoMap["contact"]= "王姗";
     // 联系人身份证号
     $extendInfoMap["id_card_no"]= "210123198702122747";
-    // 所属市
-    $extendInfoMap["city_id"]= "310100";
     // 业务到期年限
     $extendInfoMap["valid_period"]= "1";
     // 自动续约

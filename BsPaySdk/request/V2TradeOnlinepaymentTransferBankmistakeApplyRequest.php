@@ -66,9 +66,9 @@ class V2TradeOnlinepaymentTransferBankmistakeApplyRequest extends BaseRequest
      */
     private $goodsDesc;
     /**
-     * 汇款凭证文件内容
+     * 汇款凭证文件id
      */
-    private $certificateContent;
+    private $certificateFileId;
 
     public function getFunctionCode() {
         return FunctionCodeEnum::$V2_TRADE_ONLINEPAYMENT_TRANSFER_BANKMISTAKE_APPLY;
@@ -179,12 +179,12 @@ class V2TradeOnlinepaymentTransferBankmistakeApplyRequest extends BaseRequest
         $this->goodsDesc = $goodsDesc;
     }
 
-    public function getCertificateContent() {
-        return $this->certificateContent;
+    public function getCertificateFileId() {
+        return $this->certificateFileId;
     }
 
-    public function setCertificateContent($certificateContent) {
-        $this->certificateContent = $certificateContent;
+    public function setCertificateFileId($certificateFileId) {
+        $this->certificateFileId = $certificateFileId;
     }
 
 }

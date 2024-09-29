@@ -61,6 +61,10 @@ class V2InvoiceMerRegRequest extends BaseRequest
      * 所属省
      */
     private $provId;
+    /**
+     * 所属市
+     */
+    private $cityId;
 
     public function getFunctionCode() {
         return FunctionCodeEnum::$V2_INVOICE_MER_REG;
@@ -161,6 +165,14 @@ class V2InvoiceMerRegRequest extends BaseRequest
 
     public function setProvId($provId) {
         $this->provId = $provId;
+    }
+
+    public function getCityId() {
+        return $this->cityId;
+    }
+
+    public function setCityId($cityId) {
+        $this->cityId = $cityId;
     }
 
 }

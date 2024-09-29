@@ -33,6 +33,8 @@ $request->setCertValidityType("1");
 $request->setCertBeginDate("20200117");
 // 手机号
 $request->setMobileNo("13764462205");
+// 地址开通中信E管家必填
+// $request->setAddress("test");
 
 // 设置非必填字段
 $extendInfoMap = getExtendInfos();
@@ -66,8 +68,6 @@ function getExtendInfos() {
     $extendInfoMap["expand_id"]= "";
     // 文件列表
     $extendInfoMap["file_list"]= getFileList();
-    // 地址
-    // $extendInfoMap["**address**"]= "";
     return $extendInfoMap;
 }
 

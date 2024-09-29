@@ -62,12 +62,14 @@ function getExtendInfos() {
     $extendInfoMap["remark"]= "remark123";
     // 灵活用工标志
     // $extendInfoMap["hyc_flag"]= "";
+    // 灵活用工平台
+    // $extendInfoMap["lg_platform_type"]= "";
     // 代发模式
     // $extendInfoMap["salary_modle_type"]= "";
     // 落地公司商户号
     // $extendInfoMap["bmember_id"]= "";
-    // 灵活用工代发批次号
-    // $extendInfoMap["hyc_attach_id"]= "";
+    // 乐接活请求参数集合
+    // $extendInfoMap["ljh_data"]= getLjhData();
     // 异步通知地址
     // $extendInfoMap["notify_url"]= "";
     return $extendInfoMap;
@@ -75,10 +77,12 @@ function getExtendInfos() {
 
 function getAcctInfosRucan() {
     $dto = array();
-    // 分账金额
+    // 分账金额(元)单位元，需保留小数点后两位，最低传入0.01 ，&lt;font color&#x3D;&quot;green&quot;&gt;示例值：1.00&lt;/font&gt; ，percentage_flag非Y时必填；&lt;br/&gt;percentage_flag&#x3D;Y时div_amt不填，div_amt&#x3D;total_div_amt*percentage_div
     $dto["div_amt"] = "0.01";
     // 分账接收方ID
     $dto["huifu_id"] = "6666000109133323";
+    // 分账百分比%
+    // $dto["percentage_div"] = "";
     // 分账接收方账户号
     // $dto["acct_id"] = "";
 
@@ -89,6 +93,10 @@ function getAcctInfosRucan() {
 
 function getAcctSplitBunch() {
     $dto = array();
+    // 分账总金额（元）本次交易确认总额。需保留小数点后两位&lt;br/&gt;percentage_flag&#x3D;Y时必填。该金额与分账百分比用来计算分账金额。&lt;font color&#x3D;&quot;green&quot;&gt;示例值：10.00&lt;/font&gt;；
+    // $dto["total_div_amt"] = "test";
+    // 百分比分账标志
+    // $dto["percentage_flag"] = "";
     // 分账明细
     $dto["acct_infos"] = getAcctInfosRucan();
 
@@ -109,6 +117,16 @@ function getRiskCheckData() {
     // $dto["sub_product"] = "";
     // 转账原因
     // $dto["transfer_type"] = "";
+
+    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+}
+
+function getLjhData() {
+    $dto = array();
+    // 税源地ID
+    // $dto["tax_area_id"] = "";
+    // 任务模板ID
+    // $dto["template_id"] = "";
 
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }

@@ -57,7 +57,7 @@ function getExtendInfos() {
     // 文件列表
     // $extendInfoMap["file_list"]= getFileList();
     // 地址
-    // $extendInfoMap["**address**"]= "";
+    // $extendInfoMap["address"]= "";
     return $extendInfoMap;
 }
 

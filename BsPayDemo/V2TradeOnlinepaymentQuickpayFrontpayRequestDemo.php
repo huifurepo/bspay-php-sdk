@@ -22,7 +22,7 @@ $request->setReqSeqId(date("YmdHis").mt_rand());
 // 请求日期
 $request->setReqDate(date("Ymd"));
 // 商户号
-$request->setHuifuId("6666000109812884");
+$request->setHuifuId("6666000109133323");
 // 订单金额
 $request->setTransAmt("0.01");
 // 银行扩展信息
@@ -80,11 +80,13 @@ function getExtendInfos() {
 function getAcctInfos() {
     $dto = array();
     // 分账接收方ID
-    $dto["huifu_id"] = "6666000109812884";
+    $dto["huifu_id"] = "6666000109133323";
     // 分账金额
     $dto["div_amt"] = "0.01";
     // 账户号
     // $dto["acct_id"] = "";
+    // 分账百分比%
+    // $dto["percentage_div"] = "";
 
     $dtoList = array();
     array_push($dtoList, $dto);
@@ -95,6 +97,10 @@ function getAcctSplitBunchRucan() {
     $dto = array();
     // 分账明细
     $dto["acct_infos"] = getAcctInfos();
+    // 百分比分账标志
+    // $dto["percentage_flag"] = "";
+    // 是否净值分账
+    // $dto["is_clean_split"] = "";
 
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }

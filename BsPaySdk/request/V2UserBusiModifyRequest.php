@@ -29,6 +29,10 @@ class V2UserBusiModifyRequest extends BaseRequest
      * 汇付ID
      */
     private $huifuId;
+    /**
+     * 乐接活配置当合作平台为乐接活，必填
+     */
+    private $ljhData;
 
     public function getFunctionCode() {
         return FunctionCodeEnum::$V2_USER_BUSI_MODIFY;
@@ -65,6 +69,14 @@ class V2UserBusiModifyRequest extends BaseRequest
 
     public function setHuifuId($huifuId) {
         $this->huifuId = $huifuId;
+    }
+
+    public function getLjhData() {
+        return $this->ljhData;
+    }
+
+    public function setLjhData($ljhData) {
+        $this->ljhData = $ljhData;
     }
 
 }

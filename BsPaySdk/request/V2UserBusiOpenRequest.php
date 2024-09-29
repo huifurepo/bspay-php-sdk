@@ -29,6 +29,10 @@ class V2UserBusiOpenRequest extends BaseRequest
      * 渠道商/商户汇付Id
      */
     private $upperHuifuId;
+    /**
+     * 乐接活配置当合作平台为乐接活，必填
+     */
+    private $ljhData;
 
     public function getFunctionCode() {
         return FunctionCodeEnum::$V2_USER_BUSI_OPEN;
@@ -65,6 +69,14 @@ class V2UserBusiOpenRequest extends BaseRequest
 
     public function setUpperHuifuId($upperHuifuId) {
         $this->upperHuifuId = $upperHuifuId;
+    }
+
+    public function getLjhData() {
+        return $this->ljhData;
+    }
+
+    public function setLjhData($ljhData) {
+        $this->ljhData = $ljhData;
     }
 
 }

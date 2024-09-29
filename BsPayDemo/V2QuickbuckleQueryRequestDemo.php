@@ -22,9 +22,9 @@ $request->setReqDate(date("Ymd"));
 // 请求流水号
 $request->setReqSeqId(date("YmdHis").mt_rand());
 // 汇付商户Id
-$request->setHuifuId("6666000106023398");
+$request->setHuifuId("6666000109133323");
 // 用户id
-$request->setOutCustId("6666000103633618");
+$request->setOutCustId("6666000103637719");
 
 // 设置非必填字段
 $extendInfoMap = getExtendInfos();

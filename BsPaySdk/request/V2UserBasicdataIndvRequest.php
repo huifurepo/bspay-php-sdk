@@ -45,6 +45,10 @@ class V2UserBasicdataIndvRequest extends BaseRequest
      * 手机号
      */
     private $mobileNo;
+    /**
+     * 地址开通中信E管家必填
+     */
+    private $address;
 
     public function getFunctionCode() {
         return FunctionCodeEnum::$V2_USER_BASICDATA_INDV;
@@ -113,6 +117,14 @@ class V2UserBasicdataIndvRequest extends BaseRequest
 
     public function setMobileNo($mobileNo) {
         $this->mobileNo = $mobileNo;
+    }
+
+    public function getAddress() {
+        return $this->address;
+    }
+
+    public function setAddress($address) {
+        $this->address = $address;
     }
 
 }
