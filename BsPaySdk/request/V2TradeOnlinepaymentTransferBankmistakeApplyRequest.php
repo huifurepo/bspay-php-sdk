@@ -42,22 +42,6 @@ class V2TradeOnlinepaymentTransferBankmistakeApplyRequest extends BaseRequest
      */
     private $orgReqDate;
     /**
-     * 实际打款日期
-     */
-    private $remitDate;
-    /**
-     * 实际付款方姓名
-     */
-    private $certificateName;
-    /**
-     * 实际付款方银行卡号
-     */
-    private $bankCardNo;
-    /**
-     * 实际付款方银行名称
-     */
-    private $bankName;
-    /**
      * 异步通知地址
      */
     private $notifyUrl;
@@ -129,38 +113,6 @@ class V2TradeOnlinepaymentTransferBankmistakeApplyRequest extends BaseRequest
 
     public function setOrgReqDate($orgReqDate) {
         $this->orgReqDate = $orgReqDate;
-    }
-
-    public function getRemitDate() {
-        return $this->remitDate;
-    }
-
-    public function setRemitDate($remitDate) {
-        $this->remitDate = $remitDate;
-    }
-
-    public function getCertificateName() {
-        return $this->certificateName;
-    }
-
-    public function setCertificateName($certificateName) {
-        $this->certificateName = $certificateName;
-    }
-
-    public function getBankCardNo() {
-        return $this->bankCardNo;
-    }
-
-    public function setBankCardNo($bankCardNo) {
-        $this->bankCardNo = $bankCardNo;
-    }
-
-    public function getBankName() {
-        return $this->bankName;
-    }
-
-    public function setBankName($bankName) {
-        $this->bankName = $bankName;
     }
 
     public function getNotifyUrl() {

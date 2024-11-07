@@ -59,7 +59,7 @@ function getExtendInfos() {
     // 账单说明
     $extendInfoMap["bill_remark"]= "您本次 SaaS 服务周期为[开始日期]至[结束日期]。费用包括基础服务套餐[X]元，高级功能模块[X]元，总计[X]元。";
     // 汇总信息
-    // $extendInfoMap["bill_summary_info"]= "";
+    // $extendInfoMap["bill_summary_info"]= getBillSummaryInfo();
     // 更多信息
     // $extendInfoMap["bill_extend_info"]= getBillExtendInfo();
     // 账单推送方式
@@ -73,6 +73,16 @@ function getExtendInfos() {
     // 回调地址
     $extendInfoMap["front_url"]= "https://spin-test.cloudpnr.com/trade/billing/pcredit/status";
     return $extendInfoMap;
+}
+
+function getBillSummaryInfo() {
+    $dto = array();
+    // 字段名
+    // $dto["extend_name"] = "test";
+    // 字段值
+    // $dto["extend_value"] = "test";
+
+    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
 function getBillExtendInfo() {

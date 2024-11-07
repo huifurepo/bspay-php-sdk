@@ -70,8 +70,6 @@ function getExtendInfos() {
     // $extendInfoMap["bank_mode"]= "";
     // 延时标记
     // $extendInfoMap["delay_acct_flag"]= "";
-    // 分账对象
-    // $extendInfoMap["acct_split_bunch"]= getAcctSplitBunch();
     // 订单模式
     // $extendInfoMap["order_mode"]= "";
     // 原汇款订单号
@@ -81,26 +79,6 @@ function getExtendInfos() {
     // 订单失效时间
     // $extendInfoMap["time_expire"]= "";
     return $extendInfoMap;
-}
-
-function getAcctInfos() {
-    $dto = array();
-    // 支付金额
-    // $dto["div_amt"] = "";
-    // 商户号
-    // $dto["huifu_id"] = "";
-
-    $dtoList = array();
-    array_push($dtoList, $dto);
-    return $dtoList;
-}
-
-function getAcctSplitBunch() {
-    $dto = array();
-    // 分账信息列表
-    // $dto["acct_infos"] = getAcctInfos();
-
-    return $dto;
 }
 
 

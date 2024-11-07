@@ -62,6 +62,8 @@ function getExtendInfos() {
     // $extendInfoMap["remark"]= "";
     // 异步通知地址
     $extendInfoMap["notify_url"]= "http://www.baidu.com";
+    // 大额转账支付账户信息数据
+    // $extendInfoMap["bank_info_data"]= getBankInfoData();
     return $extendInfoMap;
 }
 
@@ -119,6 +121,22 @@ function getRiskCheckData() {
     // $dto["base_station"] = "test";
     // ip地址
     $dto["ip_addr"] = "172.1.1.1";
+
+    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+}
+
+function getBankInfoData() {
+    $dto = array();
+    // 付款方账户类型
+    // $dto["card_acct_type"] = "test";
+    // 省份
+    // $dto["province"] = "";
+    // 地区
+    // $dto["area"] = "";
+    // 银行编号
+    // $dto["bank_code"] = "";
+    // 联行号
+    // $dto["correspondent_code"] = "";
 
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }

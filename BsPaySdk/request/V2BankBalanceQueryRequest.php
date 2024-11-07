@@ -5,12 +5,12 @@ namespace BsPaySdk\request;
 use BsPaySdk\enums\FunctionCodeEnum;
 
 /**
- * 发票开具状态查询
+ * 电子账户余额查询
  *
  * @author sdk-generator
  * @Description
  */
-class V2InvoiceQueryapplyRequest extends BaseRequest
+class V2BankBalanceQueryRequest extends BaseRequest
 {
 
     /**
@@ -18,16 +18,16 @@ class V2InvoiceQueryapplyRequest extends BaseRequest
      */
     private $reqSeqId;
     /**
-     * 请求时间
+     * 请求日期
      */
     private $reqDate;
     /**
-     * 汇付商户号
+     * 汇付Id
      */
     private $huifuId;
 
     public function getFunctionCode() {
-        return FunctionCodeEnum::$V2_INVOICE_QUERYAPPLY;
+        return FunctionCodeEnum::$V2_BANK_BALANCE_QUERY;
     }
 
 

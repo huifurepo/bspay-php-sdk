@@ -5,12 +5,12 @@ namespace BsPaySdk\request;
 use BsPaySdk\enums\FunctionCodeEnum;
 
 /**
- * 发票开具状态查询
+ * 快捷支付
  *
  * @author sdk-generator
  * @Description
  */
-class V2InvoiceQueryapplyRequest extends BaseRequest
+class V3TradeOnlinepaymentQuickpayPayRequest extends BaseRequest
 {
 
     /**
@@ -18,16 +18,20 @@ class V2InvoiceQueryapplyRequest extends BaseRequest
      */
     private $reqSeqId;
     /**
-     * 请求时间
+     * 请求日期
      */
     private $reqDate;
     /**
-     * 汇付商户号
+     * 商户号
      */
     private $huifuId;
+    /**
+     * 短信验证码
+     */
+    private $smsCode;
 
     public function getFunctionCode() {
-        return FunctionCodeEnum::$V2_INVOICE_QUERYAPPLY;
+        return FunctionCodeEnum::$V3_TRADE_ONLINEPAYMENT_QUICKPAY_PAY;
     }
 
 
@@ -53,6 +57,14 @@ class V2InvoiceQueryapplyRequest extends BaseRequest
 
     public function setHuifuId($huifuId) {
         $this->huifuId = $huifuId;
+    }
+
+    public function getSmsCode() {
+        return $this->smsCode;
+    }
+
+    public function setSmsCode($smsCode) {
+        $this->smsCode = $smsCode;
     }
 
 }

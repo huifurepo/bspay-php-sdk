@@ -1,7 +1,7 @@
 <?php
 
 /**
- * 终端云MIS接入 - 示例
+ * 终端云MIS交易 - 示例
  *
  * @author sdk-generator
  * @Description

@@ -130,7 +130,7 @@ function getStoreInfo() {
     // 门店行政区划码
     // $dto["area_code"] = "";
     // 门店详细地址
-    // $dto["ass"] = "";
+    // $dto["address"] = "";
 
     return $dto;
 }
@@ -247,6 +247,8 @@ function getAlipayData() {
     $dto = array();
     // 买家的支付宝唯一用户号
     $dto["buyer_id"] = "2088702699908257";
+    // 优惠明细参数
+    // $dto["ali_promo_params"] = "test";
     // 支付宝的店铺编号
     $dto["alipay_store_id"] = "";
     // 买家支付宝账号
@@ -275,6 +277,8 @@ function getAlipayData() {
     // $dto["op_app_id"] = "";
     // 商户业务信息
     // $dto["ali_business_params"] = "";
+    // 订单描述
+    // $dto["body"] = "";
 
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }

@@ -1,7 +1,7 @@
 <?php
 
 /**
- * 发票开具状态查询 - 示例
+ * 电子账户余额查询 - 示例
  *
  * @author sdk-generator
  * @Description
@@ -10,19 +10,19 @@ namespace BsPayDemo;
 
 // 1. 资源及配置加载
 require_once dirname(__FILE__) . "/loader.php";
-require_once  dirname(__FILE__). "/../BsPaySdk/request/V2InvoiceQueryapplyRequest.php";
+require_once  dirname(__FILE__). "/../BsPaySdk/request/V2BankBalanceQueryRequest.php";
 
 use BsPaySdk\core\BsPayClient;
-use BsPaySdk\request\V2InvoiceQueryapplyRequest;
+use BsPaySdk\request\V2BankBalanceQueryRequest;
 
 // 2.组装请求参数
-$request = new V2InvoiceQueryapplyRequest();
+$request = new V2BankBalanceQueryRequest();
 // 请求流水号
 $request->setReqSeqId(date("YmdHis").mt_rand());
-// 请求时间
+// 请求日期
 $request->setReqDate(date("Ymd"));
-// 汇付商户号
-$request->setHuifuId("6666000103675282");
+// 汇付Id
+$request->setHuifuId("6666000151019730");
 
 // 设置非必填字段
 $extendInfoMap = getExtendInfos();
@@ -44,8 +44,8 @@ if (!$result || $result->isError()) {  //失败处理
 function getExtendInfos() {
     // 设置非必填字段
     $extendInfoMap = array();
-    // 开票系统流水号
-    // $extendInfoMap["seq_id"]= "";
+    // 操作类型
+    // $extendInfoMap["elect_acct_type"]= "";
     return $extendInfoMap;
 }
 

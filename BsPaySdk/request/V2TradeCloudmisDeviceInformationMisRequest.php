@@ -5,7 +5,7 @@ namespace BsPaySdk\request;
 use BsPaySdk\enums\FunctionCodeEnum;
 
 /**
- * 终端云MIS接入
+ * 终端云MIS交易
  *
  * @author sdk-generator
  * @Description

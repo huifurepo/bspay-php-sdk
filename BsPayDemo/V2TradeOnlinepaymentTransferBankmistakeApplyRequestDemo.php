@@ -31,14 +31,6 @@ $request->setOrderType("REFUND");
 $request->setOrgReqSeqId("202308312345678931");
 // 原请求日期
 $request->setOrgReqDate("20230831");
-// 实际打款日期
-$request->setRemitDate("20230615");
-// 实际付款方姓名
-$request->setCertificateName("孙洁");
-// 实际付款方银行卡号
-$request->setBankCardNo("V2olJv4Srh…………78M8A==");
-// 实际付款方银行名称
-$request->setBankName("招商银行");
 // 异步通知地址
 $request->setNotifyUrl("http://www.baidu.com");
 // 商品描述
@@ -66,6 +58,8 @@ if (!$result || $result->isError()) {  //失败处理
 function getExtendInfos() {
     // 设置非必填字段
     $extendInfoMap = array();
+    // 下单标识
+    // $extendInfoMap["order_flag"]= "";
     // 备注
     $extendInfoMap["remark"]= "大额支付补入账验证";
     // 银行信息数据
@@ -74,6 +68,8 @@ function getExtendInfos() {
     // $extendInfoMap["delay_acct_flag"]= "";
     // 分账对象
     // $extendInfoMap["acct_split_bunch"]= getAcctSplitBunch();
+    // 实际打款信息
+    // $extendInfoMap["actual_remit_data"]= getActualRemitData();
     return $extendInfoMap;
 }
 
@@ -89,16 +85,8 @@ function getBankInfoData() {
     $dto["correspondent_code"] = "103290076178";
     // 对公对私标识
     $dto["card_acct_type"] = "P";
-    // 证件类型
-    $dto["certificate_type"] = "01";
-    // 手机号
-    $dto["mobile_no"] = "oO6XYz…………Is3nZb/5dFj860Z+nQ==";
-    // 证件号
-    $dto["certify_no"] = "yL09mhS5…………WK04Kdfyg==";
     // 支行名
     $dto["subbranch_bank_name"] = "中国农业银行股份有限公司上海联洋支行";
-    // 付款方三证合一码
-    $dto["bank_acct_three_in_one"] = "92650109MA79R8E308";
 
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
@@ -121,6 +109,26 @@ function getAcctSplitBunch() {
     // $dto["acct_infos"] = getAcctInfos();
 
     return $dto;
+}
+
+function getActualRemitData() {
+    $dto = array();
+    // 实际打款日期
+    // $dto["actual_remit_date"] = "test";
+    // 实际打款方姓名
+    // $dto["actual_remit_name"] = "test";
+    // 实际打款金额
+    // $dto["actual_remit_amt"] = "test";
+    // 实际打款方银行卡号
+    // $dto["actual_remit_card_no"] = "test";
+    // 实际打款卡号银行名称
+    // $dto["actual_bank_name"] = "test";
+    // 汇款凭证文件ID
+    // $dto["certificate_file_id"] = "test";
+    // 退款卡标识
+    // $dto["refund_card_flag"] = "test";
+
+    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
 

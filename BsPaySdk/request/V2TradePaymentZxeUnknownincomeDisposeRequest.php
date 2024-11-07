@@ -5,12 +5,12 @@ namespace BsPaySdk\request;
 use BsPaySdk\enums\FunctionCodeEnum;
 
 /**
- * 发票开具状态查询
+ * 不明来账处理
  *
  * @author sdk-generator
  * @Description
  */
-class V2InvoiceQueryapplyRequest extends BaseRequest
+class V2TradePaymentZxeUnknownincomeDisposeRequest extends BaseRequest
 {
 
     /**
@@ -18,16 +18,24 @@ class V2InvoiceQueryapplyRequest extends BaseRequest
      */
     private $reqSeqId;
     /**
-     * 请求时间
+     * 请求日期
      */
     private $reqDate;
     /**
-     * 汇付商户号
+     * 商户号
      */
     private $huifuId;
+    /**
+     * 银行侧交易流水号
+     */
+    private $bankSerialNo;
+    /**
+     * 操作类型
+     */
+    private $operateType;
 
     public function getFunctionCode() {
-        return FunctionCodeEnum::$V2_INVOICE_QUERYAPPLY;
+        return FunctionCodeEnum::$V2_TRADE_PAYMENT_ZXE_UNKNOWNINCOME_DISPOSE;
     }
 
 
@@ -53,6 +61,22 @@ class V2InvoiceQueryapplyRequest extends BaseRequest
 
     public function setHuifuId($huifuId) {
         $this->huifuId = $huifuId;
+    }
+
+    public function getBankSerialNo() {
+        return $this->bankSerialNo;
+    }
+
+    public function setBankSerialNo($bankSerialNo) {
+        $this->bankSerialNo = $bankSerialNo;
+    }
+
+    public function getOperateType() {
+        return $this->operateType;
+    }
+
+    public function setOperateType($operateType) {
+        $this->operateType = $operateType;
     }
 
 }
