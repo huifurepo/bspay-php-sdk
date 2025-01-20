@@ -82,6 +82,10 @@ class V2UserBasicdataEntRequest extends BaseRequest
      */
     private $legalCertEndDate;
     /**
+     * 法人国籍法人的证件类型为外国人居留证时，必填，参见《[国籍编码](https://cloudpnrcdn.oss-cn-shanghai.aliyuncs.com/opps/api/prod/download_file/area/%E5%9B%BD%E7%B1%8D.xlsx)》&lt;font color&#x3D;&quot;green&quot;&gt;示例值：CHN&lt;/font&gt;
+     */
+    private $legalCertNationality;
+    /**
      * 联系人姓名
      */
     private $contactName;
@@ -233,6 +237,14 @@ class V2UserBasicdataEntRequest extends BaseRequest
 
     public function setLegalCertEndDate($legalCertEndDate) {
         $this->legalCertEndDate = $legalCertEndDate;
+    }
+
+    public function getLegalCertNationality() {
+        return $this->legalCertNationality;
+    }
+
+    public function setLegalCertNationality($legalCertNationality) {
+        $this->legalCertNationality = $legalCertNationality;
     }
 
     public function getContactName() {

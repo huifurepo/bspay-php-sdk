@@ -25,6 +25,10 @@ class V2UserBasicdataEntModifyRequest extends BaseRequest
      * 汇付客户Id
      */
     private $huifuId;
+    /**
+     * 法人国籍法人的证件类型为外国人居留证时，必填，参见《[国籍编码](https://cloudpnrcdn.oss-cn-shanghai.aliyuncs.com/opps/api/prod/download_file/area/%E5%9B%BD%E7%B1%8D.xlsx)》&lt;font color&#x3D;&quot;green&quot;&gt;示例值：CHN&lt;/font&gt;
+     */
+    private $legalCertNationality;
 
     public function getFunctionCode() {
         return FunctionCodeEnum::$V2_USER_BASICDATA_ENT_MODIFY;
@@ -53,6 +57,14 @@ class V2UserBasicdataEntModifyRequest extends BaseRequest
 
     public function setHuifuId($huifuId) {
         $this->huifuId = $huifuId;
+    }
+
+    public function getLegalCertNationality() {
+        return $this->legalCertNationality;
+    }
+
+    public function setLegalCertNationality($legalCertNationality) {
+        $this->legalCertNationality = $legalCertNationality;
     }
 
 }

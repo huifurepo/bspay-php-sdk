@@ -52,6 +52,8 @@ if (!$result || $result->isError()) {  //失败处理
 function getExtendInfos() {
     // 设置非必填字段
     $extendInfoMap = array();
+    // 收款汇付账户号
+    // $extendInfoMap["acct_id"]= "";
     // 收银台样式
     // $extendInfoMap["style_id"]= "";
     // 是否延迟交易
@@ -74,6 +76,8 @@ function getExtendInfos() {
     // $extendInfoMap["alipay_data"]= getAlipayData();
     // 银联参数集合
     // $extendInfoMap["unionpay_data"]= getUnionpayData();
+    // 设备信息
+    // $extendInfoMap["terminal_device_data"]= getTerminalDeviceData();
     return $extendInfoMap;
 }
 
@@ -83,6 +87,10 @@ function getAcctInfosRucan() {
     $dto["div_amt"] = "0.08";
     // 分账接收方ID
     $dto["huifu_id"] = "6666000111546360";
+    // 收款汇付账户号
+    // $dto["acct_id"] = "";
+    // 分账百分比%
+    // $dto["percentage_div"] = "";
 
     $dtoList = array();
     array_push($dtoList, $dto);
@@ -93,6 +101,10 @@ function getAcctSplitBunch() {
     $dto = array();
     // 分账明细
     $dto["acct_infos"] = getAcctInfosRucan();
+    // 百分比分账标志
+    // $dto["percentage_flag"] = "";
+    // 是否净值分账
+    // $dto["is_clean_split"] = "";
 
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
@@ -257,16 +269,22 @@ function getExtendParams() {
 
 function getGoodsDetail() {
     $dto = array();
-    // 商品编码
+    // 商品的编号
     // $dto["goods_id"] = "test";
-    // 商品优惠金额
-    // $dto["discount_amount"] = "test";
+    // 商品名称
+    // $dto["goods_name"] = "test";
+    // 商品单价(元)
+    // $dto["price"] = "test";
     // 商品数量
     // $dto["quantity"] = "test";
-    // 商品价格
-    // $dto["price"] = "test";
-    // 商品备注
-    // $dto["goods_remark"] = "";
+    // 商品描述信息
+    // $dto["body"] = "";
+    // 商品类目树
+    // $dto["categories_tree"] = "";
+    // 商品类目
+    // $dto["goods_category"] = "";
+    // 商品的展示地址
+    // $dto["show_url"] = "";
 
     $dtoList = array();
     array_push($dtoList, $dto);
@@ -333,6 +351,14 @@ function getUnionpayData() {
     // $dto["req_reserved"] = "";
     // 终端信息
     // $dto["term_info"] = "";
+
+    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+}
+
+function getTerminalDeviceData() {
+    $dto = array();
+    // 汇付机具号
+    // $dto["devs_id"] = "test";
 
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }

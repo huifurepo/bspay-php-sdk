@@ -23,6 +23,8 @@ $request->setReqDate(date("Ymd"));
 $request->setReqSeqId(date("YmdHis").mt_rand());
 // 汇付客户Id
 $request->setHuifuId("6666000103862211");
+// 法人国籍法人的证件类型为外国人居留证时，必填，参见《[国籍编码](https://cloudpnrcdn.oss-cn-shanghai.aliyuncs.com/opps/api/prod/download_file/area/%E5%9B%BD%E7%B1%8D.xlsx)》&lt;font color&#x3D;&quot;green&quot;&gt;示例值：CHN&lt;/font&gt;
+// $request->setLegalCertNationality("test");
 
 // 设置非必填字段
 $extendInfoMap = getExtendInfos();

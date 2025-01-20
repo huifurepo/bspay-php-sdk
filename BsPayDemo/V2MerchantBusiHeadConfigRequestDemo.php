@@ -72,7 +72,7 @@ function getExtendInfos() {
     // $extendInfoMap["bank_big_amt_pay_config"]= getSubmerBankBigAmtPayConfig();
     // 全域资金管理配置对象（华通银行）
     // $extendInfoMap["out_order_funds_config"]= getSubmerOutOrderFundsConfig();
-    // 全域资金管理配置(新网银行)
+    // 全域资金管理配置(XW银行)
     // $extendInfoMap["out_order_funds_new_net_config"]= getOutOrderFundsNewNetConfig();
     // 结算配置对象
     // $extendInfoMap["settle_config_list"]= getSubmerSettleConfigList();
@@ -96,6 +96,8 @@ function getExtendInfos() {
     // $extendInfoMap["large_amt_pay_config_list"]= getLargeAmtPayConfigList();
     // 全域资金管理配置(苏商)
     // $extendInfoMap["out_order_funds_su_shang_config"]= getOutOrderFundsSuShangConfig();
+    // 托管支付开关
+    // $extendInfoMap["half_pay_host_flag"]= "";
     return $extendInfoMap;
 }
 
@@ -293,7 +295,7 @@ function getOutOrderFundsNewNetConfig() {
     // $dto["public_fee_fix_amt"] = "test";
     // 对私固定手续费(元)
     // $dto["private_fee_fix_amt"] = "test";
-    // 允许开通全域资金业务(新网)
+    // 允许开通全域资金业务(XW)
     // $dto["open_flag"] = "test";
 
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
@@ -357,6 +359,8 @@ function getLargeAmtPayConfigList() {
     // $dto["allow_user_deposit_flag"] = "";
     // 银行卡绑定支付权限
     // $dto["mer_same_card_recharge_flag"] = "";
+    // 备付金固定账号模式自动退款
+    // $dto["provisions_auto_refund_flag"] = "";
 
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }

@@ -65,6 +65,14 @@ class V2InvoiceOpenRequest extends BaseRequest
      * 开票人信息
      */
     private $payerInfo;
+    /**
+     * 不动产销售特殊字段specialFlag为05时，必填；jsonArray格式
+     */
+    private $estateSales;
+    /**
+     * 不动产租赁特殊字段specialFlag为16时，必填；jsonArray格式
+     */
+    private $estateLease;
 
     public function getFunctionCode() {
         return FunctionCodeEnum::$V2_INVOICE_OPEN;
@@ -173,6 +181,22 @@ class V2InvoiceOpenRequest extends BaseRequest
 
     public function setPayerInfo($payerInfo) {
         $this->payerInfo = $payerInfo;
+    }
+
+    public function getEstateSales() {
+        return $this->estateSales;
+    }
+
+    public function setEstateSales($estateSales) {
+        $this->estateSales = $estateSales;
+    }
+
+    public function getEstateLease() {
+        return $this->estateLease;
+    }
+
+    public function setEstateLease($estateLease) {
+        $this->estateLease = $estateLease;
     }
 
 }

@@ -30,10 +30,6 @@ class V2TradePayafteruseCreditbizorderCreateRequest extends BaseRequest
      */
     private $transAmt;
     /**
-     * 追踪ID
-     */
-    private $sourceId;
-    /**
      * 支付宝用户ID
      */
     private $buyerId;
@@ -93,14 +89,6 @@ class V2TradePayafteruseCreditbizorderCreateRequest extends BaseRequest
 
     public function setTransAmt($transAmt) {
         $this->transAmt = $transAmt;
-    }
-
-    public function getSourceId() {
-        return $this->sourceId;
-    }
-
-    public function setSourceId($sourceId) {
-        $this->sourceId = $sourceId;
     }
 
     public function getBuyerId() {

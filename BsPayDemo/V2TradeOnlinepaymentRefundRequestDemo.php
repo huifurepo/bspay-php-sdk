@@ -127,8 +127,6 @@ function getRiskCheckData() {
 
 function getBankInfoData() {
     $dto = array();
-    // 付款方账户类型
-    // $dto["card_acct_type"] = "test";
     // 省份
     // $dto["province"] = "";
     // 地区
@@ -137,6 +135,8 @@ function getBankInfoData() {
     // $dto["bank_code"] = "";
     // 联行号
     // $dto["correspondent_code"] = "";
+    // 付款方账户类型
+    // $dto["card_acct_type"] = "";
 
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }

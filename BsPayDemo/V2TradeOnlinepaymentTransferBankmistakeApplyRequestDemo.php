@@ -27,16 +27,14 @@ $request->setHuifuId("6666000110468104");
 $request->setTransAmt("0.01");
 // 订单类型
 $request->setOrderType("REFUND");
-// 原请求流水号
+// 原请求流水号order_flag&#x3D;Y时必填；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：2022012514120615009&lt;/font&gt;
 $request->setOrgReqSeqId("202308312345678931");
-// 原请求日期
+// 原请求日期格式:yyyyMMdd；order_flag&#x3D;Y时必填；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：20220125&lt;/font&gt;
 $request->setOrgReqDate("20230831");
 // 异步通知地址
 $request->setNotifyUrl("http://www.baidu.com");
 // 商品描述
 // $request->setGoodsDesc("test");
-// 汇款凭证文件id
-// $request->setCertificateFileId("test");
 
 // 设置非必填字段
 $extendInfoMap = getExtendInfos();
@@ -121,14 +119,16 @@ function getActualRemitData() {
     // $dto["actual_remit_amt"] = "test";
     // 实际打款方银行卡号
     // $dto["actual_remit_card_no"] = "test";
-    // 实际打款卡号银行名称
-    // $dto["actual_bank_name"] = "test";
     // 汇款凭证文件ID
     // $dto["certificate_file_id"] = "test";
     // 退款卡标识
     // $dto["refund_card_flag"] = "test";
+    // 实际打款卡号银行名称
+    // $dto["actual_bank_name"] = "";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    $dtoList = array();
+    array_push($dtoList, $dto);
+    return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
 

@@ -41,6 +41,10 @@ class V2LargeamtBindcardBindRequest extends BaseRequest
      * 银行编码
      */
     private $bankCode;
+    /**
+     * 手机号
+     */
+    private $mobileNo;
 
     public function getFunctionCode() {
         return FunctionCodeEnum::$V2_LARGEAMT_BINDCARD_BIND;
@@ -101,6 +105,14 @@ class V2LargeamtBindcardBindRequest extends BaseRequest
 
     public function setBankCode($bankCode) {
         $this->bankCode = $bankCode;
+    }
+
+    public function getMobileNo() {
+        return $this->mobileNo;
+    }
+
+    public function setMobileNo($mobileNo) {
+        $this->mobileNo = $mobileNo;
     }
 
 }

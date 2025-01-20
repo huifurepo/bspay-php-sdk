@@ -52,6 +52,8 @@ if (!$result || $result->isError()) {  //失败处理
 function getExtendInfos() {
     // 设置非必填字段
     $extendInfoMap = array();
+    // 收款汇付账户号
+    // $extendInfoMap["acct_id"]= "";
     // 收银台样式
     // $extendInfoMap["style_id"]= "";
     // 是否延迟交易
@@ -64,8 +66,12 @@ function getExtendInfos() {
     // $extendInfoMap["biz_info"]= getBizInfo();
     // 交易异步通知地址
     $extendInfoMap["notify_url"]= "https://callback.service.com/xx";
+    // 回调地址
+    // $extendInfoMap["callback_url"]= "";
     // 微信参数集合
     // $extendInfoMap["wx_data"]= getWxData();
+    // 设备信息
+    // $extendInfoMap["terminal_device_data"]= getTerminalDeviceData();
     return $extendInfoMap;
 }
 
@@ -75,6 +81,10 @@ function getAcctInfosRucan() {
     $dto["div_amt"] = "0.01";
     // 分账接收方ID
     $dto["huifu_id"] = "6666000109133323";
+    // 收款汇付账户号
+    // $dto["acct_id"] = "";
+    // 分账百分比%
+    // $dto["percentage_div"] = "";
 
     $dtoList = array();
     array_push($dtoList, $dto);
@@ -85,6 +95,10 @@ function getAcctSplitBunchRucan() {
     $dto = array();
     // 分账明细
     $dto["acct_infos"] = getAcctInfosRucan();
+    // 百分比分账标志
+    // $dto["percentage_flag"] = "";
+    // 是否净值分账
+    // $dto["is_clean_split"] = "";
 
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
@@ -215,6 +229,14 @@ function getWxData() {
     // $dto["product_id"] = "";
     // 指定支付者
     // $dto["limit_payer"] = "";
+
+    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+}
+
+function getTerminalDeviceData() {
+    $dto = array();
+    // 汇付机具号
+    // $dto["devs_id"] = "test";
 
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }

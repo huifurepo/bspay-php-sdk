@@ -45,6 +45,10 @@ class V2TradeInstallmentPaymentRequest extends BaseRequest
      * 京东白条分期信息trans_type&#x3D;JDBT时，必填jsonObject字符串，京东白条分期相关信息通过该参数集上送
      */
     private $jdbtData;
+    /**
+     * 银联聚分期信息trans_type&#x3D;YLJFQ-银联聚分期时，必填jsonObject字符串，银联聚分期相关信息通过该参数集上送
+     */
+    private $yljfqData;
 
     public function getFunctionCode() {
         return FunctionCodeEnum::$V2_TRADE_INSTALLMENT_PAYMENT;
@@ -113,6 +117,14 @@ class V2TradeInstallmentPaymentRequest extends BaseRequest
 
     public function setJdbtData($jdbtData) {
         $this->jdbtData = $jdbtData;
+    }
+
+    public function getYljfqData() {
+        return $this->yljfqData;
+    }
+
+    public function setYljfqData($yljfqData) {
+        $this->yljfqData = $yljfqData;
     }
 
 }
