@@ -17,14 +17,16 @@ use BsPaySdk\request\V2TradeLgwxSurrogateQueryRequest;
 
 // 2.组装请求参数
 $request = new V2TradeLgwxSurrogateQueryRequest();
-// 系统号
-// $request->setSysId("test");
-// 产品号
-// $request->setProductId("test");
-// 加签结果
-// $request->setSign("test");
-// 数据
-// $request->setData("test");
+// 请求日期
+$request->setReqDate(date("Ymd"));
+// 请求流水号
+$request->setReqSeqId(date("YmdHis").mt_rand());
+// 原交易的商户号
+$request->setHuifuId("6666000107755175");
+// 原交易请求日期
+$request->setOrgReqDate("20240621");
+// 原交易请求流水号
+$request->setOrgReqSeqId("1399999316713470");
 
 // 设置非必填字段
 $extendInfoMap = getExtendInfos();

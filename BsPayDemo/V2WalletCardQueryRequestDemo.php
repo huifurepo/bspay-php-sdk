@@ -17,14 +17,14 @@ use BsPaySdk\request\V2WalletCardQueryRequest;
 
 // 2.组装请求参数
 $request = new V2WalletCardQueryRequest();
-// 系统号
-// $request->setSysId("test");
-// 产品号
-// $request->setProductId("test");
-// 加签结果
-// $request->setSign("test");
-// 数据
-// $request->setData("test");
+// 请求流水号
+$request->setReqSeqId(date("YmdHis").mt_rand());
+// 请求日期
+$request->setReqDate(date("Ymd"));
+// 商户号
+$request->setHuifuId("6666000103423237");
+// 原请求流水号
+$request->setOrgReqSeqId("RQHWJ169085715011");
 
 // 设置非必填字段
 $extendInfoMap = getExtendInfos();

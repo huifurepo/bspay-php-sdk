@@ -1,7 +1,7 @@
 <?php
 
 /**
- * 交易关单查询接口 - 示例
+ * 扫码交易关单查询 - 示例
  *
  * @author sdk-generator
  * @Description

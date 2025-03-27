@@ -26,9 +26,9 @@ $request->setOutHuifuId("6666000109133323");
 // 支付金额
 $request->setOrdAmt("0.01");
 // 分账对象
-$request->setAcctSplitBunch(getAcctSplitBunch());
+$request->setAcctSplitBunch(getD37742661e6048c3B305B86f6af02ff6());
 // 安全信息
-$request->setRiskCheckData(getRiskCheckData());
+$request->setRiskCheckData(get7e2f3a0329204bd7Af5b4b0e8e8e6e57());
 // 资金类型资金类型。支付渠道为中信E管家时，资金类型必填（[详见说明](https://paas.huifu.com/open/doc/api/#/yuer/api_zxegjzllx)）
 // $request->setFundType("test");
 // 手续费承担方标识余额支付手续费承担方标识；商户余额支付扣收规则为接口指定承担方时必填！枚举值：&lt;br/&gt;OUT：出款方；&lt;br/&gt;IN：分账接受方。&lt;br/&gt;&lt;font color&#x3D;&quot;green&quot;&gt;示例值：IN&lt;/font&gt;
@@ -54,8 +54,8 @@ if (!$result || $result->isError()) {  //失败处理
 function getExtendInfos() {
     // 设置非必填字段
     $extendInfoMap = array();
-    // ~~发起方商户号~~
-    // $extendInfoMap["~~huifu_id~~"]= "";
+    // 发起方商户号
+    // $extendInfoMap["huifu_id"]= "";
     // 商品描述
     // $extendInfoMap["good_desc"]= "";
     // 备注
@@ -75,13 +75,13 @@ function getExtendInfos() {
     // 落地公司商户号
     // $extendInfoMap["bmember_id"]= "";
     // 乐接活请求参数集合
-    // $extendInfoMap["ljh_data"]= getLjhData();
+    // $extendInfoMap["ljh_data"]= get5de9d033D391477aB3266dcce6b8b3e4();
     // 异步通知地址
     // $extendInfoMap["notify_url"]= "";
     return $extendInfoMap;
 }
 
-function getAcctInfos() {
+function getF21d3168F3f74616B096Bccba329d0b9() {
     $dto = array();
     // 分账接收方ID
     $dto["huifu_id"] = "6666000109133323";
@@ -97,10 +97,10 @@ function getAcctInfos() {
     return $dtoList;
 }
 
-function getAcctSplitBunch() {
+function getD37742661e6048c3B305B86f6af02ff6() {
     $dto = array();
     // 分账明细
-    $dto["acct_infos"] = getAcctInfos();
+    $dto["acct_infos"] = getF21d3168F3f74616B096Bccba329d0b9();
     // 百分比分账标志
     // $dto["percentage_flag"] = "";
     // 是否净值分账
@@ -109,7 +109,7 @@ function getAcctSplitBunch() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function getRiskCheckData() {
+function get7e2f3a0329204bd7Af5b4b0e8e8e6e57() {
     $dto = array();
     // 转账原因
     $dto["transfer_type"] = "04";
@@ -127,7 +127,7 @@ function getRiskCheckData() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function getLjhData() {
+function get5de9d033D391477aB3266dcce6b8b3e4() {
     $dto = array();
     // 税源地ID
     // $dto["tax_area_id"] = "";

@@ -5,7 +5,7 @@ namespace BsPaySdk\request;
 use BsPaySdk\enums\FunctionCodeEnum;
 
 /**
- * 聚合反扫接口
+ * 聚合反扫
  *
  * @author sdk-generator
  * @Description

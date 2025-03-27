@@ -14,57 +14,81 @@ class V2WalletMobileVerifyRequest extends BaseRequest
 {
 
     /**
-     * 系统号
+     * 请求流水号
      */
-    private $sysId;
+    private $reqSeqId;
     /**
-     * 产品号
+     * 请求日期
      */
-    private $productId;
+    private $reqDate;
     /**
-     * 加签结果
+     * 商户号
      */
-    private $sign;
+    private $huifuId;
     /**
-     * 数据
+     * 钱包用户ID斗拱系统生成的钱包用户ID。&lt;font color&#x3D;&quot;green&quot;&gt;示例值：6666000123122343&lt;/font&gt;&lt;br/&gt;验证类型为2-密码修改和3-密码重置时，必须提供钱包用户的汇付ID。
      */
-    private $data;
+    private $userHuifuId;
+    /**
+     * 用户手机号
+     */
+    private $mobileNo;
+    /**
+     * 验证类型
+     */
+    private $type;
 
     public function getFunctionCode() {
         return FunctionCodeEnum::$V2_WALLET_MOBILE_VERIFY;
     }
 
 
-    public function getSysId() {
-        return $this->sysId;
+    public function getReqSeqId() {
+        return $this->reqSeqId;
     }
 
-    public function setSysId($sysId) {
-        $this->sysId = $sysId;
+    public function setReqSeqId($reqSeqId) {
+        $this->reqSeqId = $reqSeqId;
     }
 
-    public function getProductId() {
-        return $this->productId;
+    public function getReqDate() {
+        return $this->reqDate;
     }
 
-    public function setProductId($productId) {
-        $this->productId = $productId;
+    public function setReqDate($reqDate) {
+        $this->reqDate = $reqDate;
     }
 
-    public function getSign() {
-        return $this->sign;
+    public function getHuifuId() {
+        return $this->huifuId;
     }
 
-    public function setSign($sign) {
-        $this->sign = $sign;
+    public function setHuifuId($huifuId) {
+        $this->huifuId = $huifuId;
     }
 
-    public function getData() {
-        return $this->data;
+    public function getUserHuifuId() {
+        return $this->userHuifuId;
     }
 
-    public function setData($data) {
-        $this->data = $data;
+    public function setUserHuifuId($userHuifuId) {
+        $this->userHuifuId = $userHuifuId;
+    }
+
+    public function getMobileNo() {
+        return $this->mobileNo;
+    }
+
+    public function setMobileNo($mobileNo) {
+        $this->mobileNo = $mobileNo;
+    }
+
+    public function getType() {
+        return $this->type;
+    }
+
+    public function setType($type) {
+        $this->type = $type;
     }
 
 }

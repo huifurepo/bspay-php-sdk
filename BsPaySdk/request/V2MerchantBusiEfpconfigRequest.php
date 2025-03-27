@@ -30,14 +30,6 @@ class V2MerchantBusiEfpconfigRequest extends BaseRequest
      */
     private $upperHuifuId;
     /**
-     * 开关
-     */
-    private $switchState;
-    /**
-     * 自动入账开关0:关闭 1:开通；switch_state为1时必填；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：1&lt;/font&gt;
-     */
-    private $outOrderAutoAcctFlag;
-    /**
      * 支付手续费外扣汇付ID支付手续费外扣标记为1时必填；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：6666000109812123&lt;/font&gt;
      */
     private $outFeeHuifuid;
@@ -105,22 +97,6 @@ class V2MerchantBusiEfpconfigRequest extends BaseRequest
 
     public function setUpperHuifuId($upperHuifuId) {
         $this->upperHuifuId = $upperHuifuId;
-    }
-
-    public function getSwitchState() {
-        return $this->switchState;
-    }
-
-    public function setSwitchState($switchState) {
-        $this->switchState = $switchState;
-    }
-
-    public function getOutOrderAutoAcctFlag() {
-        return $this->outOrderAutoAcctFlag;
-    }
-
-    public function setOutOrderAutoAcctFlag($outOrderAutoAcctFlag) {
-        $this->outOrderAutoAcctFlag = $outOrderAutoAcctFlag;
     }
 
     public function getOutFeeHuifuid() {

@@ -25,6 +25,10 @@ class V2SupplementaryPictureRequest extends BaseRequest
      * 图片类型
      */
     private $fileType;
+    /**
+     * 图片名称
+     */
+    private $picture;
 
     public function getFunctionCode() {
         return FunctionCodeEnum::$V2_SUPPLEMENTARY_PICTURE;
@@ -53,6 +57,14 @@ class V2SupplementaryPictureRequest extends BaseRequest
 
     public function setFileType($fileType) {
         $this->fileType = $fileType;
+    }
+
+    public function getPicture() {
+        return $this->picture;
+    }
+
+    public function setPicture($picture) {
+        $this->picture = $picture;
     }
 
 }

@@ -37,6 +37,10 @@ class V2InvoiceClerkRegRequest extends BaseRequest
      * 登录密码
      */
     private $loginPassword;
+    /**
+     * 开票员手机号
+     */
+    private $clerkPhoneNo;
 
     public function getFunctionCode() {
         return FunctionCodeEnum::$V2_INVOICE_CLERK_REG;
@@ -89,6 +93,14 @@ class V2InvoiceClerkRegRequest extends BaseRequest
 
     public function setLoginPassword($loginPassword) {
         $this->loginPassword = $loginPassword;
+    }
+
+    public function getClerkPhoneNo() {
+        return $this->clerkPhoneNo;
+    }
+
+    public function setClerkPhoneNo($clerkPhoneNo) {
+        $this->clerkPhoneNo = $clerkPhoneNo;
     }
 
 }

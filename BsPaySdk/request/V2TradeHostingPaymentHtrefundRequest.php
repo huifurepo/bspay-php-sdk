@@ -41,6 +41,10 @@ class V2TradeHostingPaymentHtrefundRequest extends BaseRequest
      * 设备信息线上交易退款必填，参见线上退款接口；jsonObject字符串
      */
     private $terminalDeviceData;
+    /**
+     * 大额转账支付账户信息数据jsonObject格式；银行大额转账支付交易退款申请时必填
+     */
+    private $bankInfoData;
 
     public function getFunctionCode() {
         return FunctionCodeEnum::$V2_TRADE_HOSTING_PAYMENT_HTREFUND;
@@ -101,6 +105,14 @@ class V2TradeHostingPaymentHtrefundRequest extends BaseRequest
 
     public function setTerminalDeviceData($terminalDeviceData) {
         $this->terminalDeviceData = $terminalDeviceData;
+    }
+
+    public function getBankInfoData() {
+        return $this->bankInfoData;
+    }
+
+    public function setBankInfoData($bankInfoData) {
+        $this->bankInfoData = $bankInfoData;
     }
 
 }

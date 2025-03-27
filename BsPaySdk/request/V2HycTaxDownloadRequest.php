@@ -14,57 +14,57 @@ class V2HycTaxDownloadRequest extends BaseRequest
 {
 
     /**
-     * 系统号
+     * 请求流水号
      */
-    private $sysId;
+    private $reqSeqId;
     /**
-     * 产品号
+     * 请求日期
      */
-    private $productId;
+    private $reqDate;
     /**
-     * 加签结果
+     * 商户汇付id
      */
-    private $sign;
+    private $huifuId;
     /**
-     * 数据
+     * 附件编号
      */
-    private $data;
+    private $taxId;
 
     public function getFunctionCode() {
         return FunctionCodeEnum::$V2_HYC_TAX_DOWNLOAD;
     }
 
 
-    public function getSysId() {
-        return $this->sysId;
+    public function getReqSeqId() {
+        return $this->reqSeqId;
     }
 
-    public function setSysId($sysId) {
-        $this->sysId = $sysId;
+    public function setReqSeqId($reqSeqId) {
+        $this->reqSeqId = $reqSeqId;
     }
 
-    public function getProductId() {
-        return $this->productId;
+    public function getReqDate() {
+        return $this->reqDate;
     }
 
-    public function setProductId($productId) {
-        $this->productId = $productId;
+    public function setReqDate($reqDate) {
+        $this->reqDate = $reqDate;
     }
 
-    public function getSign() {
-        return $this->sign;
+    public function getHuifuId() {
+        return $this->huifuId;
     }
 
-    public function setSign($sign) {
-        $this->sign = $sign;
+    public function setHuifuId($huifuId) {
+        $this->huifuId = $huifuId;
     }
 
-    public function getData() {
-        return $this->data;
+    public function getTaxId() {
+        return $this->taxId;
     }
 
-    public function setData($data) {
-        $this->data = $data;
+    public function setTaxId($taxId) {
+        $this->taxId = $taxId;
     }
 
 }

@@ -69,11 +69,11 @@ function getExtendInfos() {
     // 拓展方字段
     $extendInfoMap["expand_id"]= "";
     // 文件列表
-    $extendInfoMap["file_list"]= getFileList();
+    $extendInfoMap["file_list"]= getA2b3ad80C6e54290Ad01D1bd6ad4753b();
     return $extendInfoMap;
 }
 
-function getFileList() {
+function getA2b3ad80C6e54290Ad01D1bd6ad4753b() {
     $dto = array();
     // 文件类型
     $dto["file_type"] = "F04";

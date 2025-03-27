@@ -30,7 +30,7 @@ $request->setGoodsDesc("123213213");
 // 支付授权码
 $request->setAuthCode("280426995846228615");
 // 安全信息
-$request->setRiskCheckData(getRiskCheckData());
+$request->setRiskCheckData(get88a48f6c221e4ff5B8006bf8874c4dd3());
 
 // 设置非必填字段
 $extendInfoMap = getExtendInfos();
@@ -67,9 +67,9 @@ function getExtendInfos() {
     // 传入分帐遇到优惠的处理规则
     $extendInfoMap["term_div_coupon_type"]= "1";
     // 支付宝扩展参数集合
-    $extendInfoMap["alipay_data"]= getAlipayData();
+    $extendInfoMap["alipay_data"]= get386c6c5f282c46f1A7232adc003f8634();
     // 微信扩展参数集合
-    $extendInfoMap["wx_data"]= getWxData();
+    $extendInfoMap["wx_data"]= get7dd691ab53b04a40Bc4085a152d039a5();
     // 商户扩展域
     $extendInfoMap["mer_priv"]= "{\"callType\":\"01\",\"lc\":\"12345678901234567890123456789012123\",\"softVersion\":\"6.5.3\"}";
     // 备注
@@ -83,13 +83,15 @@ function getExtendInfos() {
     // 输入密码提示
     // $extendInfoMap["password_trade"]= "";
     // 设备信息
-    $extendInfoMap["terminal_device_data"]= getTerminalDeviceData();
+    $extendInfoMap["terminal_device_data"]= get99f5455594464feeAa6a9f39230613f8();
     // 异步通知地址
     $extendInfoMap["notify_url"]= "http://www.baidu.com";
+    // 账户号
+    // $extendInfoMap["acct_id"]= "";
     return $extendInfoMap;
 }
 
-function getExtendParams() {
+function getFc5a9d0c6088469684325146af94fd15() {
     $dto = array();
     // 卡类型
     $dto["card_type"] = "";
@@ -104,10 +106,10 @@ function getExtendParams() {
     // 系统商编号
     $dto["sys_service_provider_id"] = "";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return $dto;
 }
 
-function getAliGoodsDetail() {
+function get334aa3af21e2449b9ef567aef6e832f3() {
     $dto = array();
     // 商品的编号
     $dto["goods_id"] = "12345678901234567890123456789012";
@@ -131,14 +133,14 @@ function getAliGoodsDetail() {
     return $dtoList;
 }
 
-function getAlipayData() {
+function get386c6c5f282c46f1A7232adc003f8634() {
     $dto = array();
     // 支付宝的店铺编号
     $dto["alipay_store_id"] = "";
     // 业务扩展参数
-    $dto["extend_params"] = getExtendParams();
+    $dto["extend_params"] = getFc5a9d0c6088469684325146af94fd15();
     // 订单包含的商品列表信息
-    $dto["goods_detail"] = getAliGoodsDetail();
+    $dto["goods_detail"] = get334aa3af21e2449b9ef567aef6e832f3();
     // 商户操作员编号
     $dto["operator_id"] = "1234567890123456789012345678";
     // 商户门店编号
@@ -147,7 +149,7 @@ function getAlipayData() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function getWxGoodsDetailRucan() {
+function get1475c6ac101f41fcBb3e7240e5b8b639() {
     $dto = array();
     // 商品编码
     $dto["goods_id"] = "1232131";
@@ -165,10 +167,10 @@ function getWxGoodsDetailRucan() {
     return $dtoList;
 }
 
-function getWxGoodsRucan() {
+function get0a4d393026664aa68b07Be0921a28479() {
     $dto = array();
     // 单品列表
-    $dto["goods_detail"] = getWxGoodsDetailRucan();
+    $dto["goods_detail"] = get1475c6ac101f41fcBb3e7240e5b8b639();
     // 订单原价
     $dto["cost_price"] = "1";
     // 商品小票ID
@@ -177,7 +179,7 @@ function getWxGoodsRucan() {
     return $dto;
 }
 
-function getWxStoreRucan() {
+function get77b20125Baf94a3dA333C5fdeb7033d0() {
     $dto = array();
     // 门店详细地址
     $dto["address"] = "汇付天下桂林路";
@@ -191,33 +193,33 @@ function getWxStoreRucan() {
     return $dto;
 }
 
-function getWxSceneRucan() {
+function get3f7b8679D63e470a90c9F1bda7adaa66() {
     $dto = array();
     // 门店信息
-    $dto["store_info"] = getWxStoreRucan();
+    $dto["store_info"] = get77b20125Baf94a3dA333C5fdeb7033d0();
 
     return $dto;
 }
 
-function getWxData() {
+function get7dd691ab53b04a40Bc4085a152d039a5() {
     $dto = array();
     // 附加数据
     $dto["attach"] = "";
     // 商品详情
-    $dto["detail"] = getWxGoodsRucan();
+    $dto["detail"] = get0a4d393026664aa68b07Be0921a28479();
     // 设备号
     $dto["device_info"] = "";
     // 订单优惠标记
     $dto["goods_tag"] = "12321312";
     // 场景信息
-    $dto["scene_info"] = getWxSceneRucan();
+    $dto["scene_info"] = get3f7b8679D63e470a90c9F1bda7adaa66();
     // 子商户公众账号ID
     $dto["sub_appid"] = "wx48abf94e085e98e1";
 
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function getRiskCheckData() {
+function get88a48f6c221e4ff5B8006bf8874c4dd3() {
     $dto = array();
     // 基站地址
     $dto["base_station"] = "192.168.1.1";
@@ -231,7 +233,7 @@ function getRiskCheckData() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function getTerminalDeviceData() {
+function get99f5455594464feeAa6a9f39230613f8() {
     $dto = array();
     // 商户终端版本号
     $dto["app_version"] = "";

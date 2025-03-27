@@ -28,11 +28,11 @@ $request->setTransAmt("0.01");
 // 商品描述
 $request->setGoodsDesc("聚合反扫消费");
 // 风控信息
-$request->setRiskCheckData(getRiskCheckData());
+$request->setRiskCheckData(getA47aa2696845419eB2099cf96a6f6b5c());
 // 交易有效期
 $request->setTimeExpire("");
 // 支付宝扩展参数集合
-$request->setAlipayData(getAlipayData());
+$request->setAlipayData(getA0329980Ebf143329e49D930384b1d02());
 
 // 设置非必填字段
 $extendInfoMap = getExtendInfos();
@@ -61,15 +61,15 @@ function getExtendInfos() {
     // 是否延迟交易
     // $extendInfoMap["delay_acct_flag"]= "";
     // 分账串
-    // $extendInfoMap["acct_split_bunch"]= getAcctSplitBunch();
+    // $extendInfoMap["acct_split_bunch"]= get86e4c05a19de4df4A69a51ebf28455f7();
     // 设备信息
-    $extendInfoMap["terminal_device_info"]= getTerminalDeviceInfo();
+    $extendInfoMap["terminal_device_info"]= getB176e55836034938A712A69c42883fa3();
     // 异步通知地址
     $extendInfoMap["notify_url"]= "http://www.baidu.com";
     return $extendInfoMap;
 }
 
-function getAcctInfos() {
+function get5993c742Db134c4eB6fe906df83a68de() {
     $dto = array();
     // 分账金额
     // $dto["div_amt"] = "test";
@@ -85,19 +85,19 @@ function getAcctInfos() {
     return $dtoList;
 }
 
-function getAcctSplitBunch() {
+function get86e4c05a19de4df4A69a51ebf28455f7() {
     $dto = array();
     // 百分比分账标志
     // $dto["percentage_flag"] = "";
     // 是否净值分账
     // $dto["is_clean_split"] = "";
     // 分账明细
-    // $dto["acct_infos"] = getAcctInfos();
+    // $dto["acct_infos"] = get5993c742Db134c4eB6fe906df83a68de();
 
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function getRiskCheckData() {
+function getA47aa2696845419eB2099cf96a6f6b5c() {
     $dto = array();
     // IP地址
     // $dto["ip_addr"] = "test";
@@ -109,7 +109,7 @@ function getRiskCheckData() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function getTerminalDeviceInfo() {
+function getB176e55836034938A712A69c42883fa3() {
     $dto = array();
     // 商户设备类型
     $dto["mer_device_type"] = "01";
@@ -133,13 +133,11 @@ function getTerminalDeviceInfo() {
     $dto["device_icc_id"] = "660035730311000126101";
     // 交易设备WIFIMAC
     $dto["device_wifi_mac"] = "968778695A4B";
-    // 交易设备GPS
-    $dto["device_gps"] = "20.346790";
 
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function getGoodsDetail() {
+function getA02ad04e759a4dc88d5fEeec63cc63ae() {
     $dto = array();
     // 商品的编号
     // $dto["goods_id"] = "test";
@@ -161,7 +159,7 @@ function getGoodsDetail() {
     return $dtoList;
 }
 
-function getExtendParams() {
+function getAedbe837F1c84b448795D02af16ff82c() {
     $dto = array();
     // 业务主单号
     $dto["trade_component_order_id"] = "2024101001502300000002570023887054";
@@ -173,10 +171,10 @@ function getExtendParams() {
     return $dto;
 }
 
-function getAlipayData() {
+function getA0329980Ebf143329e49D930384b1d02() {
     $dto = array();
     // 业务扩展参数
-    $dto["extend_params"] = getExtendParams();
+    $dto["extend_params"] = getAedbe837F1c84b448795D02af16ff82c();
     // 支付宝的店铺编号
     $dto["alipay_store_id"] = "";
     // 商户操作员编号
@@ -184,7 +182,7 @@ function getAlipayData() {
     // 商户业务信息
     // $dto["ali_business_params"] = "";
     // 订单包含的商品列表信息
-    // $dto["goods_detail"] = getGoodsDetail();
+    // $dto["goods_detail"] = getA02ad04e759a4dc88d5fEeec63cc63ae();
 
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }

@@ -45,10 +45,6 @@ class V2TradeOnlinepaymentTransferBankmistakeApplyRequest extends BaseRequest
      * 异步通知地址
      */
     private $notifyUrl;
-    /**
-     * 商品描述
-     */
-    private $goodsDesc;
 
     public function getFunctionCode() {
         return FunctionCodeEnum::$V2_TRADE_ONLINEPAYMENT_TRANSFER_BANKMISTAKE_APPLY;
@@ -117,14 +113,6 @@ class V2TradeOnlinepaymentTransferBankmistakeApplyRequest extends BaseRequest
 
     public function setNotifyUrl($notifyUrl) {
         $this->notifyUrl = $notifyUrl;
-    }
-
-    public function getGoodsDesc() {
-        return $this->goodsDesc;
-    }
-
-    public function setGoodsDesc($goodsDesc) {
-        $this->goodsDesc = $goodsDesc;
     }
 
 }

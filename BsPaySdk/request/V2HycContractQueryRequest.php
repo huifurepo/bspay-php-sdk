@@ -14,57 +14,33 @@ class V2HycContractQueryRequest extends BaseRequest
 {
 
     /**
-     * 系统号
+     * 请求流水号
      */
-    private $sysId;
+    private $reqSeqId;
     /**
-     * 产品号
+     * 请求日期
      */
-    private $productId;
-    /**
-     * 加签结果
-     */
-    private $sign;
-    /**
-     * 数据
-     */
-    private $data;
+    private $reqDate;
 
     public function getFunctionCode() {
         return FunctionCodeEnum::$V2_HYC_CONTRACT_QUERY;
     }
 
 
-    public function getSysId() {
-        return $this->sysId;
+    public function getReqSeqId() {
+        return $this->reqSeqId;
     }
 
-    public function setSysId($sysId) {
-        $this->sysId = $sysId;
+    public function setReqSeqId($reqSeqId) {
+        $this->reqSeqId = $reqSeqId;
     }
 
-    public function getProductId() {
-        return $this->productId;
+    public function getReqDate() {
+        return $this->reqDate;
     }
 
-    public function setProductId($productId) {
-        $this->productId = $productId;
-    }
-
-    public function getSign() {
-        return $this->sign;
-    }
-
-    public function setSign($sign) {
-        $this->sign = $sign;
-    }
-
-    public function getData() {
-        return $this->data;
-    }
-
-    public function setData($data) {
-        $this->data = $data;
+    public function setReqDate($reqDate) {
+        $this->reqDate = $reqDate;
     }
 
 }

@@ -30,11 +30,11 @@ $request->setInstalmentsNum("03");
 // 银行卡号instalments_num不为空时必填；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：6228480031509440000&lt;/font&gt;
 $request->setBankCardNo("6222021102043040313");
 // 网联扩展数据
-$request->setExtendPayData(getExtendPayData());
+$request->setExtendPayData(get1c945dd28edc49028e0680c1fb534f3f());
 // 安全信息
-$request->setRiskCheckData(getRiskCheckData());
+$request->setRiskCheckData(getD018c6c2109742049307945098bfbd51());
 // 设备信息
-$request->setTerminalDeviceData(getTerminalDeviceData());
+$request->setTerminalDeviceData(get4d2787cfA75f4d3a88da534c0127bbee());
 // 页面跳转地址
 $request->setFrontUrl("http://www.baidu.com");
 // 异步通知地址
@@ -65,7 +65,7 @@ function getExtendInfos() {
     // 交易有效期
     $extendInfoMap["time_expire"]= "20220406210038";
     // 分账对象
-    $extendInfoMap["acct_split_bunch"]= getAcctSplitBunchRucan();
+    $extendInfoMap["acct_split_bunch"]= getA275eacfEacc4bb0A7d3661c44bd5409();
     // 备注
     $extendInfoMap["remark"]= "";
     // 页面失败跳转地址
@@ -73,7 +73,7 @@ function getExtendInfos() {
     return $extendInfoMap;
 }
 
-function getExtendPayData() {
+function get1c945dd28edc49028e0680c1fb534f3f() {
     $dto = array();
     // 商品简称
     $dto["goods_short_name"] = "一般商品";
@@ -85,7 +85,7 @@ function getExtendPayData() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function getAcctInfos() {
+function get3e0798528f5e41ba97d2F42c4cffb13e() {
     $dto = array();
     // 支付金额
     // $dto["div_amt"] = "";
@@ -101,10 +101,10 @@ function getAcctInfos() {
     return $dtoList;
 }
 
-function getAcctSplitBunchRucan() {
+function getA275eacfEacc4bb0A7d3661c44bd5409() {
     $dto = array();
     // 分账信息列表
-    $dto["acct_infos"] = getAcctInfos();
+    $dto["acct_infos"] = get3e0798528f5e41ba97d2F42c4cffb13e();
     // 百分比分账标志
     // $dto["percentage_flag"] = "";
     // 是否净值分账
@@ -113,7 +113,7 @@ function getAcctSplitBunchRucan() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function getRiskCheckData() {
+function getD018c6c2109742049307945098bfbd51() {
     $dto = array();
     // ip地址
     $dto["ip_addr"] = "111";
@@ -127,7 +127,7 @@ function getRiskCheckData() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function getTerminalDeviceData() {
+function get4d2787cfA75f4d3a88da534c0127bbee() {
     $dto = array();
     // 交易设备ip
     $dto["device_ip"] = "127.0.0.1";

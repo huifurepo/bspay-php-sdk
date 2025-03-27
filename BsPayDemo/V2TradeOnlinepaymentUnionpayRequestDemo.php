@@ -28,9 +28,9 @@ $request->setTransAmt("0.11");
 // 商品描述
 $request->setOrderDesc("通用性商品1");
 // 安全信息
-$request->setRiskCheckData(getRiskCheckData());
+$request->setRiskCheckData(get039a5a632a524bedBdf01306634c96e2());
 // 三方支付数据jsonObject；pay_scene为云闪付公众号与云闪付小程序时必填
-// $request->setThirdPayData(getThirdPayData());
+// $request->setThirdPayData(getFd7b99d3543a4935Aece1411798bc9d5());
 
 // 设置非必填字段
 $extendInfoMap = getExtendInfos();
@@ -63,7 +63,7 @@ function getExtendInfos() {
     // 订单失效时间
     $extendInfoMap["time_expire"]= "";
     // 分账对象
-    // $extendInfoMap["acct_split_bunch"]= getAcctSplitBunchRucan();
+    // $extendInfoMap["acct_split_bunch"]= get962ca1cb6e3c44d8A1c13660223fe9fd();
     // 前端跳转地址
     $extendInfoMap["front_url"]= "https://www.service.com/getresp";
     // 异步通知地址
@@ -77,7 +77,7 @@ function getExtendInfos() {
     return $extendInfoMap;
 }
 
-function getAcctInfos() {
+function get634a1ff623df402fA0a621cd0982a65d() {
     $dto = array();
     // 分账金额
     // $dto["div_amt"] = "";
@@ -93,10 +93,10 @@ function getAcctInfos() {
     return $dtoList;
 }
 
-function getAcctSplitBunchRucan() {
+function get962ca1cb6e3c44d8A1c13660223fe9fd() {
     $dto = array();
     // 分账明细
-    // $dto["acct_infos"] = getAcctInfos();
+    // $dto["acct_infos"] = get634a1ff623df402fA0a621cd0982a65d();
     // 百分比分账标志
     // $dto["percentage_flag"] = "";
     // 是否净值分账
@@ -105,7 +105,7 @@ function getAcctSplitBunchRucan() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function getRiskCheckData() {
+function get039a5a632a524bedBdf01306634c96e2() {
     $dto = array();
     // 基站地址
     $dto["base_station"] = "7";
@@ -119,7 +119,7 @@ function getRiskCheckData() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function getThirdPayData() {
+function getFd7b99d3543a4935Aece1411798bc9d5() {
     $dto = array();
     // 小程序id
     // $dto["app_id"] = "";

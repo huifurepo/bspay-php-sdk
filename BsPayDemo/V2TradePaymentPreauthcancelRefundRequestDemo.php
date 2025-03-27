@@ -28,7 +28,7 @@ $request->setOrgReqDate("20221031");
 // 撤销金额
 $request->setOrdAmt("0.02");
 // 风控信息
-$request->setRiskCheckInfo(getRiskCheckInfo());
+$request->setRiskCheckInfo(getBa2f25bc65d74cb3988e7e446466b598());
 
 // 设置非必填字段
 $extendInfoMap = getExtendInfos();
@@ -75,13 +75,13 @@ function getExtendInfos() {
     // 扩展域
     // $extendInfoMap["mer_priv"]= "";
     // 设备信息
-    $extendInfoMap["terminal_device_info"]= getTerminalDeviceInfo();
+    $extendInfoMap["terminal_device_info"]= get79fb2f88C61b423e8bd8B4696ecef9d7();
     // 异步通知地址
     $extendInfoMap["notify_url"]= "http://www.baidu.com";
     return $extendInfoMap;
 }
 
-function getRiskCheckInfo() {
+function getBa2f25bc65d74cb3988e7e446466b598() {
     $dto = array();
     // 基站地址
     $dto["base_station"] = "192.168.1.1";
@@ -95,7 +95,7 @@ function getRiskCheckInfo() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function getTerminalDeviceInfo() {
+function get79fb2f88C61b423e8bd8B4696ecef9d7() {
     $dto = array();
     // 交易设备GPS
     $dto["device_gps"] = "192.168.0.0";
@@ -120,7 +120,7 @@ function getTerminalDeviceInfo() {
     // 逻辑终端号
     $dto["pnr_dev_id"] = "";
 
-    return $dto;
+    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
 

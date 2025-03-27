@@ -14,57 +14,33 @@ class V2WalletTradePayRefundQueryRequest extends BaseRequest
 {
 
     /**
-     * 系统号
+     * 原退款交易请求日期
      */
-    private $sysId;
+    private $orgReqDate;
     /**
-     * 产品号
+     * 原退款交易请求流水号
      */
-    private $productId;
-    /**
-     * 加签结果
-     */
-    private $sign;
-    /**
-     * 数据
-     */
-    private $data;
+    private $orgReqSeqId;
 
     public function getFunctionCode() {
         return FunctionCodeEnum::$V2_WALLET_TRADE_PAY_REFUND_QUERY;
     }
 
 
-    public function getSysId() {
-        return $this->sysId;
+    public function getOrgReqDate() {
+        return $this->orgReqDate;
     }
 
-    public function setSysId($sysId) {
-        $this->sysId = $sysId;
+    public function setOrgReqDate($orgReqDate) {
+        $this->orgReqDate = $orgReqDate;
     }
 
-    public function getProductId() {
-        return $this->productId;
+    public function getOrgReqSeqId() {
+        return $this->orgReqSeqId;
     }
 
-    public function setProductId($productId) {
-        $this->productId = $productId;
-    }
-
-    public function getSign() {
-        return $this->sign;
-    }
-
-    public function setSign($sign) {
-        $this->sign = $sign;
-    }
-
-    public function getData() {
-        return $this->data;
-    }
-
-    public function setData($data) {
-        $this->data = $data;
+    public function setOrgReqSeqId($orgReqSeqId) {
+        $this->orgReqSeqId = $orgReqSeqId;
     }
 
 }

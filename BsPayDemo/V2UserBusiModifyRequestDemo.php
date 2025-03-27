@@ -26,7 +26,7 @@ $request->setUpperHuifuId("6666000104633228");
 // 汇付ID
 $request->setHuifuId("6666000104896342");
 // 乐接活配置当合作平台为乐接活，必填
-// $request->setLjhData(getLjhData());
+// $request->setLjhData(get94ea55bf03c140758dc374fc50a21303());
 
 // 设置非必填字段
 $extendInfoMap = getExtendInfos();
@@ -49,19 +49,19 @@ function getExtendInfos() {
     // 设置非必填字段
     $extendInfoMap = array();
     // 结算信息配置
-    $extendInfoMap["settle_config"]= getSettleConfig();
+    $extendInfoMap["settle_config"]= getAdfbc8b12b664966Bea5Abf8caeb8b00();
     // 结算卡信息
-    $extendInfoMap["card_info"]= getCardInfo();
+    $extendInfoMap["card_info"]= getDc916bd4Eda84f59Ae0679539a1df4a8();
     // 取现配置列表
-    $extendInfoMap["cash_config"]= getCashConfig();
+    $extendInfoMap["cash_config"]= getA4bada0890b04c85A5a403dbd5a51896();
     // 文件列表
-    $extendInfoMap["file_list"]= getFileList();
+    $extendInfoMap["file_list"]= getF024548eB60840b9A9c4329753c4bccf();
     // 延迟入账开关
     // $extendInfoMap["delay_flag"]= "";
     // 异步请求地址
     $extendInfoMap["async_return_url"]= "//http://service.example.com/to/path";
     // 斗拱e账户功能配置
-    // $extendInfoMap["elec_acct_config"]= getElecAcctConfig();
+    // $extendInfoMap["elec_acct_config"]= get27ea7c7f43fc4cdd907d92473ec1b03d();
     // 灵活用工开关
     // $extendInfoMap["open_tax_flag"]= "";
     // 合作平台
@@ -69,7 +69,7 @@ function getExtendInfos() {
     return $extendInfoMap;
 }
 
-function getSettleConfig() {
+function getAdfbc8b12b664966Bea5Abf8caeb8b00() {
     $dto = array();
     // 开通状态
     $dto["settle_status"] = "1";
@@ -105,7 +105,7 @@ function getSettleConfig() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function getCardInfo() {
+function getDc916bd4Eda84f59Ae0679539a1df4a8() {
     $dto = array();
     // 卡类型
     $dto["card_type"] = "0";
@@ -139,7 +139,7 @@ function getCardInfo() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function getCashConfig() {
+function getA4bada0890b04c85A5a403dbd5a51896() {
     $dto = array();
     // 开通状态
     $dto["switch_state"] = "1";
@@ -167,7 +167,7 @@ function getCashConfig() {
     return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function getFileList() {
+function getF024548eB60840b9A9c4329753c4bccf() {
     $dto = array();
     // 文件类型
     $dto["file_type"] = "F02";
@@ -181,7 +181,7 @@ function getFileList() {
     return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function getElecCardList() {
+function getD3915a6728564172Aa3dDab4f1995aa7() {
     $dto = array();
     // 银行编码
     // $dto["bank_code"] = "test";
@@ -210,10 +210,10 @@ function getElecCardList() {
 
     $dtoList = array();
     array_push($dtoList, $dto);
-    return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return $dtoList;
 }
 
-function getElecAcctConfig() {
+function get27ea7c7f43fc4cdd907d92473ec1b03d() {
     $dto = array();
     // 电子账户开关
     // $dto["switch_state"] = "test";
@@ -228,14 +228,14 @@ function getElecAcctConfig() {
     // 电子账户开通状态
     // $dto["bank_status"] = "test";
     // 银行卡信息
-    // $dto["**elec_card_list**"] = getElecCardList();
+    // $dto["elec_card_list"] = getD3915a6728564172Aa3dDab4f1995aa7();
     // 银行信息
     // $dto["bank_message"] = "";
 
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function getLjhData() {
+function get94ea55bf03c140758dc374fc50a21303() {
     $dto = array();
     // 税源地id当合作平台为乐接活，必填
     // $dto["tax_area_id"] = "test";

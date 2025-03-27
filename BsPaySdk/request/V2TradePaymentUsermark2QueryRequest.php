@@ -26,9 +26,13 @@ class V2TradePaymentUsermark2QueryRequest extends BaseRequest
      */
     private $huifuId;
     /**
-     * 支付授权码
+     * 授权码
      */
     private $authCode;
+    /**
+     * 银联支付标识
+     */
+    private $appUpIdentifier;
 
     public function getFunctionCode() {
         return FunctionCodeEnum::$V2_TRADE_PAYMENT_USERMARK2_QUERY;
@@ -65,6 +69,14 @@ class V2TradePaymentUsermark2QueryRequest extends BaseRequest
 
     public function setAuthCode($authCode) {
         $this->authCode = $authCode;
+    }
+
+    public function getAppUpIdentifier() {
+        return $this->appUpIdentifier;
+    }
+
+    public function setAppUpIdentifier($appUpIdentifier) {
+        $this->appUpIdentifier = $appUpIdentifier;
     }
 
 }

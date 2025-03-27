@@ -34,7 +34,7 @@ $request->setSupportPayType("wx,alipay,online_b2c,online_b2b");
 // 账单截止日期
 $request->setBillEndDate("20990909");
 // 收款人信息
-$request->setPayeeInfo(getPayeeInfo());
+$request->setPayeeInfo(get7cb71210B6e945638ed7D26989882224());
 
 // 设置非必填字段
 $extendInfoMap = getExtendInfos();
@@ -59,9 +59,9 @@ function getExtendInfos() {
     // 账单说明
     $extendInfoMap["bill_remark"]= "您本次 SaaS 服务周期为[开始日期]至[结束日期]。费用包括基础服务套餐[X]元，高级功能模块[X]元，总计[X]元。";
     // 汇总信息
-    // $extendInfoMap["bill_summary_info"]= getBillSummaryInfo();
+    // $extendInfoMap["bill_summary_info"]= getB7fe106a1ade4660865e83374ad40fbf();
     // 更多信息
-    // $extendInfoMap["bill_extend_info"]= getBillExtendInfo();
+    // $extendInfoMap["bill_extend_info"]= get31ba075559984fd7B7d0C256e889b5c0();
     // 账单推送方式
     $extendInfoMap["push_type"]= "EMAIL";
     // 抄送邮箱
@@ -75,7 +75,7 @@ function getExtendInfos() {
     return $extendInfoMap;
 }
 
-function getBillSummaryInfo() {
+function getB7fe106a1ade4660865e83374ad40fbf() {
     $dto = array();
     // 字段名
     // $dto["extend_name"] = "test";
@@ -85,7 +85,7 @@ function getBillSummaryInfo() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function getBillExtendInfo() {
+function get31ba075559984fd7B7d0C256e889b5c0() {
     $dto = array();
     // 字段名
     // $dto["extend_name"] = "test";
@@ -95,7 +95,7 @@ function getBillExtendInfo() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function getPayeeInfo() {
+function get7cb71210B6e945638ed7D26989882224() {
     $dto = array();
     // 收款联系人姓名
     $dto["payee_name"] = "黄云";

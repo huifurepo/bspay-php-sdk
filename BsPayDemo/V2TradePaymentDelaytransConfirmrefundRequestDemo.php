@@ -1,7 +1,7 @@
 <?php
 
 /**
- * 交易确认退款接口 - 示例
+ * 交易确认退款 - 示例
  *
  * @author sdk-generator
  * @Description
@@ -49,17 +49,19 @@ function getExtendInfos() {
     // 设置非必填字段
     $extendInfoMap = array();
     // 分账对象
-    $extendInfoMap["acct_split_bunch"]= getAcctSplitBunch();
+    $extendInfoMap["acct_split_bunch"]= get04d3f49d20fe496f8d152c880fb07b78();
     // 是否垫资退款
     // $extendInfoMap["loan_flag"]= "";
     // 垫资承担者
     // $extendInfoMap["loan_undertaker"]= "";
     // 垫资账户类型
     // $extendInfoMap["loan_acct_type"]= "";
+    // 备注
+    // $extendInfoMap["remark"]= "";
     return $extendInfoMap;
 }
 
-function getAcctInfos() {
+function getF889ccf24ed3483fA4c053df49b5783f() {
     $dto = array();
     // 分账接收方ID
     $dto["huifu_id"] = "6666000109133323";
@@ -73,10 +75,10 @@ function getAcctInfos() {
     return $dtoList;
 }
 
-function getAcctSplitBunch() {
+function get04d3f49d20fe496f8d152c880fb07b78() {
     $dto = array();
     // 分账明细
-    $dto["acct_infos"] = getAcctInfos();
+    $dto["acct_infos"] = getF889ccf24ed3483fA4c053df49b5783f();
 
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }

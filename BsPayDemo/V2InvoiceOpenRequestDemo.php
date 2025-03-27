@@ -21,6 +21,10 @@ $request = new V2InvoiceOpenRequest();
 $request->setReqSeqId(date("YmdHis").mt_rand());
 // 请求时间
 $request->setReqDate(date("Ymd"));
+// 汇付商户号huifu_id与ext_mer_id二选一必填，汇付商户号优先；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：6666000109812123&lt;/font&gt;
+$request->setHuifuId("6666000107430944");
+// 外部商户号&lt;font color&#x3D;&quot;green&quot;&gt;示例值：&lt;/font&gt;
+$request->setExtMerId("");
 // 渠道号汇付商户号为空时，必传；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：6666000109812124&lt;/font&gt;
 // $request->setChannelId("test");
 // 发票类型
@@ -40,13 +44,13 @@ $request->setOriIvcCode("90222082");
 // 原发票号码openType&#x3D;1时必填；参见[发票右上角](https://paas.huifu.com/open/doc/api/#/fp/api_fp_yanglitu.md)；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：20685767&lt;/font&gt;
 $request->setOriIvcNumber("150000020026");
 // 开票商品信息
-$request->setGoodsInfos(getGoodsInfosRc());
+$request->setGoodsInfos(get9476d2713c3244c4B692Fc4dc2ab88fc());
 // 开票人信息
-$request->setPayerInfo(getPayerInfo());
+$request->setPayerInfo(getB0de2664C26e4b83Bf74A84943b22420());
 // 不动产销售特殊字段specialFlag为05时，必填；jsonArray格式
-// $request->setEstateSales(getEstateSales());
+// $request->setEstateSales(getE7dee3039b6647caA64d71b504bcfe9d());
 // 不动产租赁特殊字段specialFlag为16时，必填；jsonArray格式
-// $request->setEstateLease(getEstateLease());
+// $request->setEstateLease(get1c030e0f0c154a10Ba1563d6ffee6295());
 
 // 设置非必填字段
 $extendInfoMap = getExtendInfos();
@@ -68,10 +72,6 @@ if (!$result || $result->isError()) {  //失败处理
 function getExtendInfos() {
     // 设置非必填字段
     $extendInfoMap = array();
-    // 汇付商户号
-    $extendInfoMap["huifu_id"]= "6666000107430944";
-    // 外部商户号
-    $extendInfoMap["ext_mer_id"]= "";
     // 税控盘编号
     $extendInfoMap["tax_device_id"]= "661919694739";
     // 购方单位识别号
@@ -101,22 +101,24 @@ function getExtendInfos() {
     return $extendInfoMap;
 }
 
-function getGoodsInfosRc() {
+function get9476d2713c3244c4B692Fc4dc2ab88fc() {
     $dto = array();
     // 发票行性质
     $dto["ivc_nature"] = "0";
     // 商品序号ivc_type&#x3D;1 红票必填，要与开具的蓝票商品一致；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：备注&lt;/font&gt;
     $dto["goods_serial_num"] = "";
+    // 商品id二选一必填，税收分类编码优先；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：&lt;/font&gt;
+    $dto["goods_id"] = "";
+    // 商品税收分类编码&lt;font color&#x3D;&quot;green&quot;&gt;示例值：&lt;/font&gt;
+    $dto["goods_code"] = "6010000000000000000";
     // 商品名称goodsCode不为空时必填；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：&lt;/font&gt;
     $dto["goods_name"] = "预付卡";
     // 税率goodsCode不为空时必填，最多三位小数；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：0.130&lt;/font&gt;
     $dto["tax_rate"] = "0.03";
+    // 含税标识
+    $dto["is_price_con_tax"] = "1";
     // 金额(元)
     $dto["trans_amt"] = "70.00";
-    // 商品id
-    $dto["goods_id"] = "";
-    // 商品税收分类编码
-    $dto["goods_code"] = "6010000000000000000";
     // 规格型号
     $dto["goods_model"] = "";
     // 计量单位
@@ -127,8 +129,6 @@ function getGoodsInfosRc() {
     $dto["zero_tax_rate_flag"] = "";
     // 增值税特殊管理
     $dto["add_tax_spec_manage"] = "";
-    // 含税标识
-    $dto["is_price_con_tax"] = "1";
     // 商品数量
     $dto["goods_count"] = "7";
     // 单价
@@ -141,7 +141,7 @@ function getGoodsInfosRc() {
     return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function getPayerInfo() {
+function getB0de2664C26e4b83Bf74A84943b22420() {
     $dto = array();
     // 开票人
     $dto["payer_name"] = "开票人";
@@ -153,7 +153,29 @@ function getPayerInfo() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function getEstateSales() {
+function getE7dee3039b6647caA64d71b504bcfe9d() {
+    $dto = array();
+    // 不动产地址
+    // $dto["addr"] = "test";
+    // 不动产详细地址
+    // $dto["detail_addr"] = "test";
+    // 跨地（市）标志
+    // $dto["area_flag"] = "test";
+    // 租赁日期起
+    // $dto["start_date"] = "test";
+    // 租赁日期止
+    // $dto["end_date"] = "test";
+    // 房屋产权证书/不动产产权号
+    // $dto["estate_no"] = "test";
+    // 不动产单位
+    // $dto["unit"] = "test";
+
+    $dtoList = array();
+    array_push($dtoList, $dto);
+    return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+}
+
+function get1c030e0f0c154a10Ba1563d6ffee6295() {
     $dto = array();
     // 不动产地址
     // $dto["addr"] = "test";
@@ -169,28 +191,6 @@ function getEstateSales() {
     // $dto["total_amt"] = "test";
     // 实际成交含税金额
     // $dto["deal_amt"] = "test";
-    // 房屋产权证书/不动产产权号
-    // $dto["estate_no"] = "test";
-    // 不动产单位
-    // $dto["unit"] = "test";
-
-    $dtoList = array();
-    array_push($dtoList, $dto);
-    return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
-}
-
-function getEstateLease() {
-    $dto = array();
-    // 不动产地址
-    // $dto["addr"] = "test";
-    // 不动产详细地址
-    // $dto["detail_addr"] = "test";
-    // 跨地（市）标志
-    // $dto["area_flag"] = "test";
-    // 租赁日期起
-    // $dto["start_date"] = "test";
-    // 租赁日期止
-    // $dto["end_date"] = "test";
     // 房屋产权证书/不动产产权号
     // $dto["estate_no"] = "test";
     // 不动产单位

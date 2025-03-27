@@ -5,7 +5,7 @@ namespace BsPaySdk\request;
 use BsPaySdk\enums\FunctionCodeEnum;
 
 /**
- * 个人商户基本信息入驻(2022)
+ * 个人商户进件
  *
  * @author sdk-generator
  * @Description
@@ -22,7 +22,7 @@ class V2MerchantBasicdataIndvRequest extends BaseRequest
      */
     private $reqDate;
     /**
-     * 上级主体ID
+     * 直属渠道号
      */
     private $upperHuifuId;
     /**
@@ -30,37 +30,81 @@ class V2MerchantBasicdataIndvRequest extends BaseRequest
      */
     private $regName;
     /**
-     * 经营省
+     * *所属行业*
      */
-    private $provId;
+    private $mcc;
     /**
-     * 经营市
+     * *场景类型*
      */
-    private $areaId;
+    private $sceneType;
     /**
      * 经营区
      */
     private $districtId;
     /**
-     * 经营详细地址
+     * 经营详细地址scene_type字段含有线下场景时必填；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：上海市徐汇区XX路XX号&lt;/font&gt;
      */
     private $detailAddr;
     /**
-     * 联系人姓名
+     * *负责人证件号码*
      */
-    private $contactName;
+    private $legalCertNo;
     /**
-     * 联系人手机号
+     * *负责人证件有效期开始日期*
+     */
+    private $legalCertBeginDate;
+    /**
+     * *负责人证件有效期截止日期*
+     */
+    private $legalCertEndDate;
+    /**
+     * *负责人身份证地址*
+     */
+    private $legalAddr;
+    /**
+     * 负责人身份证国徽面
+     */
+    private $legalCertBackPic;
+    /**
+     * 负责人身份证人像面
+     */
+    private $legalCertFrontPic;
+    /**
+     * 负责人手机号
      */
     private $contactMobileNo;
     /**
-     * 联系人电子邮箱
+     * 负责人电子邮箱
      */
     private $contactEmail;
     /**
      * 结算卡信息配置
      */
     private $cardInfo;
+    /**
+     * 结算卡正面
+     */
+    private $settleCardFrontPic;
+    /**
+     * *商户ICP备案编号*商户ICP备案编号或网站许可证号；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：沪ICP备06046402号-28 &lt;/font&gt;&lt;br/&gt;类型为PC网站时，且为企业商户，且开通快捷或网银，或大额转账，或余额支付或分账业务（20%（不含）-100%），或为个人商户开通分账业务（10%（不含）-100%），必填
+     */
+    private $merIcp;
+    /**
+     * 店铺门头照文件类型：F22；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：57cc7f00-600a-33ab-b614-6221bbf2e530&lt;/font&gt;&lt;br/&gt;微信/支付宝实名认证个人商户，门头照也使用此字段； &lt;br/&gt;门店场所：提交门店门口照片，要求招牌清晰可见; &lt;br/&gt;小微商户流动经营/便民服务：提交经营/服务现场照片
+     */
+    private $storeHeaderPic;
+    /**
+     * 店铺内景/工作区域照文件类型：F24；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：57cc7f00-600a-33ab-b614-6221bbf2e530&lt;/font&gt;&lt;br/&gt;微信/支付宝实名认证个人商户，内景照也使用此字段； &lt;br/&gt;门店场所：提交店内环境照片 &lt;br/&gt;小微商户流动经营/便民服务：可提交另一张经营/服务现场照片
+     */
+    private $storeIndoorPic;
+    /**
+     * 店铺收银台/公司前台照商户线下场景需要提供；文件类型：F105；&lt;br/&gt;&lt;font color&#x3D;&quot;green&quot;&gt;示例值：57cc7f00-600a-33ab-b614-6221bbf2e530&lt;/font&gt;
+     */
+    private $storeCashierDeskPic;
+    /**
+     * 上级商户汇付ID如果head_office_flag&#x3D;0，则字段必填&lt;font color&#x3D;&quot;green&quot;&gt;示例值：6666000123123123&lt;/font&gt;
+     */
+    private $headHuifuId;
 
     public function getFunctionCode() {
         return FunctionCodeEnum::$V2_MERCHANT_BASICDATA_INDV;
@@ -99,20 +143,20 @@ class V2MerchantBasicdataIndvRequest extends BaseRequest
         $this->regName = $regName;
     }
 
-    public function getProvId() {
-        return $this->provId;
+    public function getMcc() {
+        return $this->mcc;
     }
 
-    public function setProvId($provId) {
-        $this->provId = $provId;
+    public function setMcc($mcc) {
+        $this->mcc = $mcc;
     }
 
-    public function getAreaId() {
-        return $this->areaId;
+    public function getSceneType() {
+        return $this->sceneType;
     }
 
-    public function setAreaId($areaId) {
-        $this->areaId = $areaId;
+    public function setSceneType($sceneType) {
+        $this->sceneType = $sceneType;
     }
 
     public function getDistrictId() {
@@ -131,12 +175,52 @@ class V2MerchantBasicdataIndvRequest extends BaseRequest
         $this->detailAddr = $detailAddr;
     }
 
-    public function getContactName() {
-        return $this->contactName;
+    public function getLegalCertNo() {
+        return $this->legalCertNo;
     }
 
-    public function setContactName($contactName) {
-        $this->contactName = $contactName;
+    public function setLegalCertNo($legalCertNo) {
+        $this->legalCertNo = $legalCertNo;
+    }
+
+    public function getLegalCertBeginDate() {
+        return $this->legalCertBeginDate;
+    }
+
+    public function setLegalCertBeginDate($legalCertBeginDate) {
+        $this->legalCertBeginDate = $legalCertBeginDate;
+    }
+
+    public function getLegalCertEndDate() {
+        return $this->legalCertEndDate;
+    }
+
+    public function setLegalCertEndDate($legalCertEndDate) {
+        $this->legalCertEndDate = $legalCertEndDate;
+    }
+
+    public function getLegalAddr() {
+        return $this->legalAddr;
+    }
+
+    public function setLegalAddr($legalAddr) {
+        $this->legalAddr = $legalAddr;
+    }
+
+    public function getLegalCertBackPic() {
+        return $this->legalCertBackPic;
+    }
+
+    public function setLegalCertBackPic($legalCertBackPic) {
+        $this->legalCertBackPic = $legalCertBackPic;
+    }
+
+    public function getLegalCertFrontPic() {
+        return $this->legalCertFrontPic;
+    }
+
+    public function setLegalCertFrontPic($legalCertFrontPic) {
+        $this->legalCertFrontPic = $legalCertFrontPic;
     }
 
     public function getContactMobileNo() {
@@ -161,6 +245,54 @@ class V2MerchantBasicdataIndvRequest extends BaseRequest
 
     public function setCardInfo($cardInfo) {
         $this->cardInfo = $cardInfo;
+    }
+
+    public function getSettleCardFrontPic() {
+        return $this->settleCardFrontPic;
+    }
+
+    public function setSettleCardFrontPic($settleCardFrontPic) {
+        $this->settleCardFrontPic = $settleCardFrontPic;
+    }
+
+    public function getMerIcp() {
+        return $this->merIcp;
+    }
+
+    public function setMerIcp($merIcp) {
+        $this->merIcp = $merIcp;
+    }
+
+    public function getStoreHeaderPic() {
+        return $this->storeHeaderPic;
+    }
+
+    public function setStoreHeaderPic($storeHeaderPic) {
+        $this->storeHeaderPic = $storeHeaderPic;
+    }
+
+    public function getStoreIndoorPic() {
+        return $this->storeIndoorPic;
+    }
+
+    public function setStoreIndoorPic($storeIndoorPic) {
+        $this->storeIndoorPic = $storeIndoorPic;
+    }
+
+    public function getStoreCashierDeskPic() {
+        return $this->storeCashierDeskPic;
+    }
+
+    public function setStoreCashierDeskPic($storeCashierDeskPic) {
+        $this->storeCashierDeskPic = $storeCashierDeskPic;
+    }
+
+    public function getHeadHuifuId() {
+        return $this->headHuifuId;
+    }
+
+    public function setHeadHuifuId($headHuifuId) {
+        $this->headHuifuId = $headHuifuId;
     }
 
 }

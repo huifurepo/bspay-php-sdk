@@ -28,7 +28,7 @@ $request->setPayWay("W");
 // 开发者的应用ID
 $request->setAppId("20220818198665087");
 // 文件列表
-$request->setFileList(getFileList());
+$request->setFileList(getD3445b35252c4ebd855b4f1aeb23cfbc());
 
 // 设置非必填字段
 $extendInfoMap = getExtendInfos();
@@ -61,7 +61,7 @@ function getExtendInfos() {
     return $extendInfoMap;
 }
 
-function getFileList() {
+function getD3445b35252c4ebd855b4f1aeb23cfbc() {
     $dto = array();
     // 文件类型
     $dto["file_type"] = "F53";

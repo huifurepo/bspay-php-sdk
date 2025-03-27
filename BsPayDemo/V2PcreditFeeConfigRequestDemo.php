@@ -45,17 +45,17 @@ function getExtendInfos() {
     // 异步通知地址
     $extendInfoMap["async_return_url"]= "http://192.168.85.157:30031/sspm/testVirgo";
     // 银行分期费率
-    $extendInfoMap["bank_fq_list"]= getBankFqList();
+    $extendInfoMap["bank_fq_list"]= get4fb8cc07Dcf34749Ba678a7a3d56ec62();
     // 花呗分期费率
-    $extendInfoMap["hb_fq_fee_list"]= getHbFqFeeList();
+    $extendInfoMap["hb_fq_fee_list"]= getF679bb7cD1da48449f62A76fda90cd35();
     // 白条分期配置对象
-    // $extendInfoMap["jdbt_data"]= getJdbtData();
+    // $extendInfoMap["jdbt_data"]= get72e57141A7df493eA43eCd5375e866e9();
     // 银联聚分期配置对象
-    // $extendInfoMap["yljfq_data"]= getYljfqData();
+    // $extendInfoMap["yljfq_data"]= get2d12f633Dee949f897d48200985f520d();
     return $extendInfoMap;
 }
 
-function getBankFqFeeList() {
+function get4001bbdcDb50466191ab9541fac18128() {
     $dto = array();
     // 银行编号
     $dto["bank_code"] = "01040000";
@@ -87,7 +87,7 @@ function getBankFqFeeList() {
     return $dtoList;
 }
 
-function getBankFqList() {
+function get4fb8cc07Dcf34749Ba678a7a3d56ec62() {
     $dto = array();
     // 银联入网模式
     $dto["ent_way"] = "1";
@@ -96,7 +96,7 @@ function getBankFqList() {
     // 银行卡分期状态
     $dto["bank_card_fq_status"] = "1";
     // 银行卡分期费率
-    $dto["bank_fq_fee_list"] = getBankFqFeeList();
+    $dto["bank_fq_fee_list"] = get4001bbdcDb50466191ab9541fac18128();
     // 贴息模式
     $dto["fee_model"] = "1";
 
@@ -105,7 +105,7 @@ function getBankFqList() {
     return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function getHbFqFeeList() {
+function getF679bb7cD1da48449f62A76fda90cd35() {
     $dto = array();
     // 商户汇付Id
     $dto["huifu_id"] = "6666000003156435";
@@ -139,7 +139,7 @@ function getHbFqFeeList() {
     return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function getJdbtFeeData() {
+function getB7932aa31ea947479e26D0111688ef67() {
     $dto = array();
     // 支付场景
     // $dto["pay_scene"] = "test";
@@ -158,10 +158,10 @@ function getJdbtFeeData() {
 
     $dtoList = array();
     array_push($dtoList, $dto);
-    return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return $dtoList;
 }
 
-function getJdbtData() {
+function get72e57141A7df493eA43eCd5375e866e9() {
     $dto = array();
     // 商户汇付Id
     // $dto["huifu_id"] = "test";
@@ -169,17 +169,21 @@ function getJdbtData() {
     // $dto["sign_user_type"] = "test";
     // 签约人手机号
     // $dto["mobile_no"] = "test";
+    // 挂网协议地址3-挂网协议必填；示例值：https://cloudpnrcdn.oss-cn-shanghai.aliyuncs.com/opps/api/prod/dg_gwxy/PaymentServiceAgreement_xxxx.html
+    // $dto["agreement_url"] = "test";
     // 京东白条费率数据
-    // $dto["jdbt_fee_data"] = getJdbtFeeData();
+    // $dto["jdbt_fee_data"] = getB7932aa31ea947479e26D0111688ef67();
     // 签约人姓名
     // $dto["name"] = "";
     // 签约人身份证号
     // $dto["cert_no"] = "";
+    // 协议类型
+    // $dto["agreement_type"] = "";
 
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function getYljfqFeeData() {
+function get2aee432225064626A6152ba2edc80431() {
     $dto = array();
     // 支付场景
     // $dto["pay_scene"] = "test";
@@ -200,10 +204,10 @@ function getYljfqFeeData() {
 
     $dtoList = array();
     array_push($dtoList, $dto);
-    return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return $dtoList;
 }
 
-function getFileList() {
+function getF1bf35fa515e401dA366599b0ff5a993() {
     $dto = array();
     // 文件id
     // $dto["file_id"] = "test";
@@ -215,7 +219,7 @@ function getFileList() {
     return $dtoList;
 }
 
-function getYljfqData() {
+function get2d12f633Dee949f897d48200985f520d() {
     $dto = array();
     // 商户汇付Id
     // $dto["huifu_id"] = "test";
@@ -224,13 +228,13 @@ function getYljfqData() {
     // 签约人手机号
     // $dto["mobile_no"] = "test";
     // 银联聚分期费率数据
-    // $dto["yljfq_fee_data"] = getYljfqFeeData();
+    // $dto["yljfq_fee_data"] = get2aee432225064626A6152ba2edc80431();
     // 签约人姓名
     // $dto["name"] = "";
     // 签约人身份证号
     // $dto["cert_no"] = "";
     // 补充业务信息
-    // $dto["file_list"] = getFileList();
+    // $dto["file_list"] = getF1bf35fa515e401dA366599b0ff5a993();
 
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }

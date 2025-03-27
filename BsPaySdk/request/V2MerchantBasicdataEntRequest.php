@@ -5,7 +5,7 @@ namespace BsPaySdk\request;
 use BsPaySdk\enums\FunctionCodeEnum;
 
 /**
- * 企业商户基本信息入驻(2022)
+ * 企业商户进件
  *
  * @author sdk-generator
  * @Description
@@ -22,7 +22,7 @@ class V2MerchantBasicdataEntRequest extends BaseRequest
      */
     private $reqDate;
     /**
-     * 直属渠道号
+     * 渠道商号
      */
     private $upperHuifuId;
     /**
@@ -34,33 +34,53 @@ class V2MerchantBasicdataEntRequest extends BaseRequest
      */
     private $shortName;
     /**
+     * 小票名称
+     */
+    private $receiptName;
+    /**
      * 公司类型
      */
     private $entType;
     /**
-     * 营业执照编号
+     * 所属行业参考[汇付MCC编码](https://paas.huifu.com/open/doc/api/#/csfl/api_csfl_hfmccbm) ；当use_head_info_flag&#x3D;Y时不填&lt;br/&gt;&lt;font color&#x3D;&quot;green&quot;&gt;示例值：5311&lt;/font&gt;
+     */
+    private $mcc;
+    /**
+     * 经营类型1：实体，2：虚拟 ；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：1&lt;/font&gt; ；当use_head_info_flag&#x3D;Y时不填
+     */
+    private $busiType;
+    /**
+     * 场景类型
+     */
+    private $sceneType;
+    /**
+     * 证照图片
+     */
+    private $licensePic;
+    /**
+     * 证照编号
      */
     private $licenseCode;
     /**
-     * 营业执照有效期类型
+     * 证照有效期类型
      */
     private $licenseValidityType;
     /**
-     * 营业执照有效期开始日期
+     * 证照有效期开始日期
      */
     private $licenseBeginDate;
     /**
-     * 营业执照有效期截止日期日期格式：yyyyMMdd，以北京时间为准。&lt;font color&#x3D;&quot;green&quot;&gt;示例值：20220125&lt;/font&gt;&lt;br/&gt;  当license_validity_type&#x3D;0时必填  ;当license_validity_type&#x3D;1时为空；当使用总部资质时不填
+     * 证照有效期截止日期格式：yyyyMMdd。&lt;font color&#x3D;&quot;green&quot;&gt;示例值：20220125&lt;/font&gt;&lt;br/&gt;  当license_validity_type&#x3D;0时必填；当license_validity_type&#x3D;1时为空；当use_head_info_flag&#x3D;Y时不填
      */
     private $licenseEndDate;
     /**
-     * 注册省
+     * 成立时间
      */
-    private $regProvId;
+    private $foundDate;
     /**
-     * 注册市
+     * 注册资本保留两位小数；条件选填，国营企业、私营企业、外资企业、事业单位、其他、集体经济必填，政府机构、个体工商户可为空；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：100.00&lt;/font&gt;
      */
-    private $regAreaId;
+    private $regCapital;
     /**
      * 注册区
      */
@@ -69,6 +89,14 @@ class V2MerchantBasicdataEntRequest extends BaseRequest
      * 注册详细地址
      */
     private $regDetail;
+    /**
+     * 经营区
+     */
+    private $districtId;
+    /**
+     * 经营详细地址scene_type&#x3D;OFFLINE/ALL时必填；&lt;br/&gt;&lt;font color&#x3D;&quot;green&quot;&gt;示例值：上海市徐汇区XX路XX号&lt;/font&gt;
+     */
+    private $detailAddr;
     /**
      * 法人姓名
      */
@@ -90,29 +118,21 @@ class V2MerchantBasicdataEntRequest extends BaseRequest
      */
     private $legalCertBeginDate;
     /**
-     * 法人证件有效期截止日期日期格式：yyyyMMdd，以北京时间为准。  &lt;font color&#x3D;&quot;green&quot;&gt;示例值：20220125&lt;/font&gt;&lt;br/&gt;当legal_cert_validity_type&#x3D;0时必填 ；当legal_cert_validity_type&#x3D;1时为空 ；当使用总部资质时不填
+     * 法人证件有效期截止日期日期格式：yyyyMMdd， &lt;font color&#x3D;&quot;green&quot;&gt;示例值：20220125&lt;/font&gt;&lt;br/&gt;当legal_cert_validity_type&#x3D;0时必填；&lt;br/&gt;当legal_cert_validity_type&#x3D;1时为空；&lt;br/&gt;当use_head_info_flag&#x3D;Y时不填
      */
     private $legalCertEndDate;
     /**
-     * 经营省
+     * 法人证件地址
      */
-    private $provId;
+    private $legalAddr;
     /**
-     * 经营市
+     * 法人身份证国徽面
      */
-    private $areaId;
+    private $legalCertBackPic;
     /**
-     * 经营区
+     * 法人身份证人像面
      */
-    private $districtId;
-    /**
-     * 经营详细地址
-     */
-    private $detailAddr;
-    /**
-     * 联系人姓名
-     */
-    private $contactName;
+    private $legalCertFrontPic;
     /**
      * 联系人手机号
      */
@@ -122,33 +142,57 @@ class V2MerchantBasicdataEntRequest extends BaseRequest
      */
     private $contactEmail;
     /**
-     * 客服电话
+     * 管理员账号
      */
-    private $servicePhone;
+    private $loginName;
     /**
-     * 经营类型
+     * 开户许可证企业商户需要，结算账号为对公账户必填；通过[图片上传接口](https://paas.huifu.com/open/doc/api/#/shgl/shjj/api_shjj_shtpsc)上传材料；文件类型：F08；&lt;br/&gt;&lt;font color&#x3D;&quot;green&quot;&gt;示例值：57cc7f00-600a-33ab-b614-6221bbf2e530&lt;/font&gt;
      */
-    private $busiType;
+    private $regAcctPic;
     /**
-     * 小票名称
-     */
-    private $receiptName;
-    /**
-     * 所属行业
-     */
-    private $mcc;
-    /**
-     * 结算卡信息配置
-     */
-    private $cardInfo;
-    /**
-     * 基本存款账户编号或核准号基本存款账户信息请填写基本存款账户编号；开户许可证请填写核准号 ；&lt;br/&gt;当注册地址或经营地址为如下地区时必填：浙江,海南,重庆,河南,江苏,宁波市,黑龙江,吉林,湖南,贵州,陕西,湖北 &lt;br/&gt;当使用总部资质时不填 ；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：J2900123456789&lt;/font&gt;
+     * 基本存款账户编号或核准号条件选填；当use_head_info_flag&#x3D;Y时不填 ；&lt;br/&gt;基本存款账户信息请填写基本存款账户编号；开户许可证请填写核准号。&lt;br/&gt;当注册地址或经营地址为如下地区时必填：江苏省、浙江省、湖南省、湖北省、云南省、贵州省、陕西省、河南省、吉林省、黑龙江省、福建省、海南省、重庆市、青海省、宁夏回族自治区；&lt;br/&gt;&lt;font color&#x3D;&quot;green&quot;&gt;示例值：J2900123456789&lt;/font&gt;
      */
     private $openLicenceNo;
     /**
-     * 总部汇付Id如果headOfficeFlag&#x3D;0，useHeadInfoFlag&#x3D;Y,且head_huifu_id不为空则基本信息部分复用总部的基本信息。&lt;br/&gt;如果head_office_flag&#x3D;0，则字段必填,如果head_office_flag&#x3D;1，总部汇付Id不可传&lt;br/&gt;&lt;font color&#x3D;&quot;green&quot;&gt;示例值：6666000123123123&lt;/font&gt;
+     * 银行卡信息配置
+     */
+    private $cardInfo;
+    /**
+     * 卡正面对私必填。通过[图片上传接口](https://paas.huifu.com/open/doc/api/#/shgl/shjj/api_shjj_shtpsc)上传材料；文件类型：F13 ；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：57cc7f00-600a-33ab-b614-6221bbf2e530&lt;/font&gt;
+     */
+    private $settleCardFrontPic;
+    /**
+     * 持卡人身份证国徽面**对私必填**。通过[图片上传接口](https://paas.huifu.com/open/doc/api/#/shgl/shjj/api_shjj_shtpsc)上传材料；文件类型：F56；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：57cc7f00-600a-33ab-b614-6221bbf2e530&lt;/font&gt;
+     */
+    private $settleCertBackPic;
+    /**
+     * 持卡人身份证人像面**对私必填**。通过[图片上传接口](https://paas.huifu.com/open/doc/api/#/shgl/shjj/api_shjj_shtpsc)上传材料；文件类型：F55；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：57cc7f00-600a-33ab-b614-6221bbf2e530&lt;/font&gt;
+     */
+    private $settleCertFrontPic;
+    /**
+     * 授权委托书**对私非法人、对公非同名结算必填**；通过[图片上传接口](https://paas.huifu.com/open/doc/api/#/shgl/shjj/api_shjj_shtpsc)上传材料；文件类型：F15；开通银行电子账户（中信E管家）需提供F520；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：57cc7f00-600a-33ab-b614-6221bbf2e530&lt;/font&gt;
+     */
+    private $authEnturstPic;
+    /**
+     * 上级汇付Id如果head_office_flag&#x3D;0，则字段必填，如果head_office_flag&#x3D;1，上级汇付Id不可传&lt;br/&gt;如果headOfficeFlag&#x3D;0，useHeadInfoFlag&#x3D;Y,且head_huifu_id不为空则基本信息部分复用上级的基本信息。&lt;br/&gt;&lt;font color&#x3D;&quot;green&quot;&gt;示例值：6666000123123123&lt;/font&gt;
      */
     private $headHuifuId;
+    /**
+     * 商户ICP备案编号商户ICP备案编号或网站许可证号；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：沪ICP备06046402号-28 &lt;/font&gt;&lt;br/&gt;类型为PC网站时，且为企业商户，且开通快捷或网银，或大额转账，或余额支付或分账业务（20%（不含）-100%），或为个人商户开通分账业务（10%（不含）-100%），必填
+     */
+    private $merIcp;
+    /**
+     * 店铺门头照
+     */
+    private $storeHeaderPic;
+    /**
+     * 店铺内景/工作区域照
+     */
+    private $storeIndoorPic;
+    /**
+     * 店铺收银台/公司前台照
+     */
+    private $storeCashierDeskPic;
 
     public function getFunctionCode() {
         return FunctionCodeEnum::$V2_MERCHANT_BASICDATA_ENT;
@@ -195,12 +239,52 @@ class V2MerchantBasicdataEntRequest extends BaseRequest
         $this->shortName = $shortName;
     }
 
+    public function getReceiptName() {
+        return $this->receiptName;
+    }
+
+    public function setReceiptName($receiptName) {
+        $this->receiptName = $receiptName;
+    }
+
     public function getEntType() {
         return $this->entType;
     }
 
     public function setEntType($entType) {
         $this->entType = $entType;
+    }
+
+    public function getMcc() {
+        return $this->mcc;
+    }
+
+    public function setMcc($mcc) {
+        $this->mcc = $mcc;
+    }
+
+    public function getBusiType() {
+        return $this->busiType;
+    }
+
+    public function setBusiType($busiType) {
+        $this->busiType = $busiType;
+    }
+
+    public function getSceneType() {
+        return $this->sceneType;
+    }
+
+    public function setSceneType($sceneType) {
+        $this->sceneType = $sceneType;
+    }
+
+    public function getLicensePic() {
+        return $this->licensePic;
+    }
+
+    public function setLicensePic($licensePic) {
+        $this->licensePic = $licensePic;
     }
 
     public function getLicenseCode() {
@@ -235,20 +319,20 @@ class V2MerchantBasicdataEntRequest extends BaseRequest
         $this->licenseEndDate = $licenseEndDate;
     }
 
-    public function getRegProvId() {
-        return $this->regProvId;
+    public function getFoundDate() {
+        return $this->foundDate;
     }
 
-    public function setRegProvId($regProvId) {
-        $this->regProvId = $regProvId;
+    public function setFoundDate($foundDate) {
+        $this->foundDate = $foundDate;
     }
 
-    public function getRegAreaId() {
-        return $this->regAreaId;
+    public function getRegCapital() {
+        return $this->regCapital;
     }
 
-    public function setRegAreaId($regAreaId) {
-        $this->regAreaId = $regAreaId;
+    public function setRegCapital($regCapital) {
+        $this->regCapital = $regCapital;
     }
 
     public function getRegDistrictId() {
@@ -265,6 +349,22 @@ class V2MerchantBasicdataEntRequest extends BaseRequest
 
     public function setRegDetail($regDetail) {
         $this->regDetail = $regDetail;
+    }
+
+    public function getDistrictId() {
+        return $this->districtId;
+    }
+
+    public function setDistrictId($districtId) {
+        $this->districtId = $districtId;
+    }
+
+    public function getDetailAddr() {
+        return $this->detailAddr;
+    }
+
+    public function setDetailAddr($detailAddr) {
+        $this->detailAddr = $detailAddr;
     }
 
     public function getLegalName() {
@@ -315,44 +415,28 @@ class V2MerchantBasicdataEntRequest extends BaseRequest
         $this->legalCertEndDate = $legalCertEndDate;
     }
 
-    public function getProvId() {
-        return $this->provId;
+    public function getLegalAddr() {
+        return $this->legalAddr;
     }
 
-    public function setProvId($provId) {
-        $this->provId = $provId;
+    public function setLegalAddr($legalAddr) {
+        $this->legalAddr = $legalAddr;
     }
 
-    public function getAreaId() {
-        return $this->areaId;
+    public function getLegalCertBackPic() {
+        return $this->legalCertBackPic;
     }
 
-    public function setAreaId($areaId) {
-        $this->areaId = $areaId;
+    public function setLegalCertBackPic($legalCertBackPic) {
+        $this->legalCertBackPic = $legalCertBackPic;
     }
 
-    public function getDistrictId() {
-        return $this->districtId;
+    public function getLegalCertFrontPic() {
+        return $this->legalCertFrontPic;
     }
 
-    public function setDistrictId($districtId) {
-        $this->districtId = $districtId;
-    }
-
-    public function getDetailAddr() {
-        return $this->detailAddr;
-    }
-
-    public function setDetailAddr($detailAddr) {
-        $this->detailAddr = $detailAddr;
-    }
-
-    public function getContactName() {
-        return $this->contactName;
-    }
-
-    public function setContactName($contactName) {
-        $this->contactName = $contactName;
+    public function setLegalCertFrontPic($legalCertFrontPic) {
+        $this->legalCertFrontPic = $legalCertFrontPic;
     }
 
     public function getContactMobileNo() {
@@ -371,44 +455,20 @@ class V2MerchantBasicdataEntRequest extends BaseRequest
         $this->contactEmail = $contactEmail;
     }
 
-    public function getServicePhone() {
-        return $this->servicePhone;
+    public function getLoginName() {
+        return $this->loginName;
     }
 
-    public function setServicePhone($servicePhone) {
-        $this->servicePhone = $servicePhone;
+    public function setLoginName($loginName) {
+        $this->loginName = $loginName;
     }
 
-    public function getBusiType() {
-        return $this->busiType;
+    public function getRegAcctPic() {
+        return $this->regAcctPic;
     }
 
-    public function setBusiType($busiType) {
-        $this->busiType = $busiType;
-    }
-
-    public function getReceiptName() {
-        return $this->receiptName;
-    }
-
-    public function setReceiptName($receiptName) {
-        $this->receiptName = $receiptName;
-    }
-
-    public function getMcc() {
-        return $this->mcc;
-    }
-
-    public function setMcc($mcc) {
-        $this->mcc = $mcc;
-    }
-
-    public function getCardInfo() {
-        return $this->cardInfo;
-    }
-
-    public function setCardInfo($cardInfo) {
-        $this->cardInfo = $cardInfo;
+    public function setRegAcctPic($regAcctPic) {
+        $this->regAcctPic = $regAcctPic;
     }
 
     public function getOpenLicenceNo() {
@@ -419,12 +479,84 @@ class V2MerchantBasicdataEntRequest extends BaseRequest
         $this->openLicenceNo = $openLicenceNo;
     }
 
+    public function getCardInfo() {
+        return $this->cardInfo;
+    }
+
+    public function setCardInfo($cardInfo) {
+        $this->cardInfo = $cardInfo;
+    }
+
+    public function getSettleCardFrontPic() {
+        return $this->settleCardFrontPic;
+    }
+
+    public function setSettleCardFrontPic($settleCardFrontPic) {
+        $this->settleCardFrontPic = $settleCardFrontPic;
+    }
+
+    public function getSettleCertBackPic() {
+        return $this->settleCertBackPic;
+    }
+
+    public function setSettleCertBackPic($settleCertBackPic) {
+        $this->settleCertBackPic = $settleCertBackPic;
+    }
+
+    public function getSettleCertFrontPic() {
+        return $this->settleCertFrontPic;
+    }
+
+    public function setSettleCertFrontPic($settleCertFrontPic) {
+        $this->settleCertFrontPic = $settleCertFrontPic;
+    }
+
+    public function getAuthEnturstPic() {
+        return $this->authEnturstPic;
+    }
+
+    public function setAuthEnturstPic($authEnturstPic) {
+        $this->authEnturstPic = $authEnturstPic;
+    }
+
     public function getHeadHuifuId() {
         return $this->headHuifuId;
     }
 
     public function setHeadHuifuId($headHuifuId) {
         $this->headHuifuId = $headHuifuId;
+    }
+
+    public function getMerIcp() {
+        return $this->merIcp;
+    }
+
+    public function setMerIcp($merIcp) {
+        $this->merIcp = $merIcp;
+    }
+
+    public function getStoreHeaderPic() {
+        return $this->storeHeaderPic;
+    }
+
+    public function setStoreHeaderPic($storeHeaderPic) {
+        $this->storeHeaderPic = $storeHeaderPic;
+    }
+
+    public function getStoreIndoorPic() {
+        return $this->storeIndoorPic;
+    }
+
+    public function setStoreIndoorPic($storeIndoorPic) {
+        $this->storeIndoorPic = $storeIndoorPic;
+    }
+
+    public function getStoreCashierDeskPic() {
+        return $this->storeCashierDeskPic;
+    }
+
+    public function setStoreCashierDeskPic($storeCashierDeskPic) {
+        $this->storeCashierDeskPic = $storeCashierDeskPic;
     }
 
 }

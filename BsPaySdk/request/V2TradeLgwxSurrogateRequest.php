@@ -14,57 +14,117 @@ class V2TradeLgwxSurrogateRequest extends BaseRequest
 {
 
     /**
-     * 系统号
+     * 请求日期
      */
-    private $sysId;
+    private $reqDate;
     /**
-     * 产品号
+     * 请求流水号
      */
-    private $productId;
+    private $reqSeqId;
     /**
-     * 加签结果
+     * 出款方商户号
      */
-    private $sign;
+    private $huifuId;
     /**
-     * 数据
+     * 支付金额(元)
      */
-    private $data;
+    private $cashAmt;
+    /**
+     * 代发模式
+     */
+    private $salaryModleType;
+    /**
+     * 落地公司商户号
+     */
+    private $bmemberId;
+    /**
+     * 子商户应用ID
+     */
+    private $subAppid;
+    /**
+     * 异步通知地址
+     */
+    private $notifyUrl;
+    /**
+     * 分账明细
+     */
+    private $acctSplitBunch;
 
     public function getFunctionCode() {
         return FunctionCodeEnum::$V2_TRADE_LGWX_SURROGATE;
     }
 
 
-    public function getSysId() {
-        return $this->sysId;
+    public function getReqDate() {
+        return $this->reqDate;
     }
 
-    public function setSysId($sysId) {
-        $this->sysId = $sysId;
+    public function setReqDate($reqDate) {
+        $this->reqDate = $reqDate;
     }
 
-    public function getProductId() {
-        return $this->productId;
+    public function getReqSeqId() {
+        return $this->reqSeqId;
     }
 
-    public function setProductId($productId) {
-        $this->productId = $productId;
+    public function setReqSeqId($reqSeqId) {
+        $this->reqSeqId = $reqSeqId;
     }
 
-    public function getSign() {
-        return $this->sign;
+    public function getHuifuId() {
+        return $this->huifuId;
     }
 
-    public function setSign($sign) {
-        $this->sign = $sign;
+    public function setHuifuId($huifuId) {
+        $this->huifuId = $huifuId;
     }
 
-    public function getData() {
-        return $this->data;
+    public function getCashAmt() {
+        return $this->cashAmt;
     }
 
-    public function setData($data) {
-        $this->data = $data;
+    public function setCashAmt($cashAmt) {
+        $this->cashAmt = $cashAmt;
+    }
+
+    public function getSalaryModleType() {
+        return $this->salaryModleType;
+    }
+
+    public function setSalaryModleType($salaryModleType) {
+        $this->salaryModleType = $salaryModleType;
+    }
+
+    public function getBmemberId() {
+        return $this->bmemberId;
+    }
+
+    public function setBmemberId($bmemberId) {
+        $this->bmemberId = $bmemberId;
+    }
+
+    public function getSubAppid() {
+        return $this->subAppid;
+    }
+
+    public function setSubAppid($subAppid) {
+        $this->subAppid = $subAppid;
+    }
+
+    public function getNotifyUrl() {
+        return $this->notifyUrl;
+    }
+
+    public function setNotifyUrl($notifyUrl) {
+        $this->notifyUrl = $notifyUrl;
+    }
+
+    public function getAcctSplitBunch() {
+        return $this->acctSplitBunch;
+    }
+
+    public function setAcctSplitBunch($acctSplitBunch) {
+        $this->acctSplitBunch = $acctSplitBunch;
     }
 
 }

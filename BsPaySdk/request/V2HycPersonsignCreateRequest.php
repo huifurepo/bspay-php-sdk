@@ -14,57 +14,69 @@ class V2HycPersonsignCreateRequest extends BaseRequest
 {
 
     /**
-     * 系统号
+     * 请求流水号
      */
-    private $sysId;
+    private $reqSeqId;
     /**
-     * 产品号
+     * 请求日期
      */
-    private $productId;
+    private $reqDate;
     /**
-     * 加签结果
+     * 用户汇付id
      */
-    private $sign;
+    private $huifuId;
     /**
-     * 数据
+     * 落地公司机构号
      */
-    private $data;
+    private $minorAgentId;
+    /**
+     * 乐接活请求参数jsonObject格式 合作平台为乐接活时必传
+     */
+    private $ljhData;
 
     public function getFunctionCode() {
         return FunctionCodeEnum::$V2_HYC_PERSONSIGN_CREATE;
     }
 
 
-    public function getSysId() {
-        return $this->sysId;
+    public function getReqSeqId() {
+        return $this->reqSeqId;
     }
 
-    public function setSysId($sysId) {
-        $this->sysId = $sysId;
+    public function setReqSeqId($reqSeqId) {
+        $this->reqSeqId = $reqSeqId;
     }
 
-    public function getProductId() {
-        return $this->productId;
+    public function getReqDate() {
+        return $this->reqDate;
     }
 
-    public function setProductId($productId) {
-        $this->productId = $productId;
+    public function setReqDate($reqDate) {
+        $this->reqDate = $reqDate;
     }
 
-    public function getSign() {
-        return $this->sign;
+    public function getHuifuId() {
+        return $this->huifuId;
     }
 
-    public function setSign($sign) {
-        $this->sign = $sign;
+    public function setHuifuId($huifuId) {
+        $this->huifuId = $huifuId;
     }
 
-    public function getData() {
-        return $this->data;
+    public function getMinorAgentId() {
+        return $this->minorAgentId;
     }
 
-    public function setData($data) {
-        $this->data = $data;
+    public function setMinorAgentId($minorAgentId) {
+        $this->minorAgentId = $minorAgentId;
+    }
+
+    public function getLjhData() {
+        return $this->ljhData;
+    }
+
+    public function setLjhData($ljhData) {
+        $this->ljhData = $ljhData;
     }
 
 }

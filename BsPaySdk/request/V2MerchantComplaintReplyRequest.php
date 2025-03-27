@@ -34,14 +34,6 @@ class V2MerchantComplaintReplyRequest extends BaseRequest
      */
     private $responseContent;
     /**
-     * 跳转链接
-     */
-    private $jumpUrl;
-    /**
-     * 跳转链接文案
-     */
-    private $jumpUrlText;
-    /**
      * 微信商户号
      */
     private $mchId;
@@ -89,22 +81,6 @@ class V2MerchantComplaintReplyRequest extends BaseRequest
 
     public function setResponseContent($responseContent) {
         $this->responseContent = $responseContent;
-    }
-
-    public function getJumpUrl() {
-        return $this->jumpUrl;
-    }
-
-    public function setJumpUrl($jumpUrl) {
-        $this->jumpUrl = $jumpUrl;
-    }
-
-    public function getJumpUrlText() {
-        return $this->jumpUrlText;
-    }
-
-    public function setJumpUrlText($jumpUrlText) {
-        $this->jumpUrlText = $jumpUrlText;
     }
 
     public function getMchId() {

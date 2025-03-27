@@ -23,8 +23,10 @@ $request->setReqDate(date("Ymd"));
 $request->setReqSeqId(date("YmdHis").mt_rand());
 // 商户号
 $request->setHuifuId("6666000018328947");
-// 支付授权码
+// 授权码
 $request->setAuthCode("6264664305553562612");
+// 银联支付标识
+$request->setAppUpIdentifier("UnionPay/1.0 CloudPay");
 
 // 设置非必填字段
 $extendInfoMap = getExtendInfos();
@@ -46,8 +48,6 @@ if (!$result || $result->isError()) {  //失败处理
 function getExtendInfos() {
     // 设置非必填字段
     $extendInfoMap = array();
-    // 银联支付标识
-    $extendInfoMap["app_up_identifier"]= "CloudPay";
     return $extendInfoMap;
 }
 

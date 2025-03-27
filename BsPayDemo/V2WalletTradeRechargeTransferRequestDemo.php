@@ -17,14 +17,16 @@ use BsPaySdk\request\V2WalletTradeRechargeTransferRequest;
 
 // 2.组装请求参数
 $request = new V2WalletTradeRechargeTransferRequest();
-// 系统号
-// $request->setSysId("test");
-// 产品号
-// $request->setProductId("test");
-// 加签结果
-// $request->setSign("test");
-// 数据
-// $request->setData("test");
+// 请求流水号
+$request->setReqSeqId(date("YmdHis").mt_rand());
+// 请求日期
+$request->setReqDate(date("Ymd"));
+// 出款方商户号
+$request->setHuifuId("6666000107309462");
+// 收款方用户号
+$request->setUserHuifuId("6666000187364826");
+// 转账金额
+$request->setTransAmt("0.01");
 
 // 设置非必填字段
 $extendInfoMap = getExtendInfos();
@@ -46,6 +48,12 @@ if (!$result || $result->isError()) {  //失败处理
 function getExtendInfos() {
     // 设置非必填字段
     $extendInfoMap = array();
+    // 出款方账户
+    $extendInfoMap["acct_id"]= "F00598600";
+    // 转账描述
+    $extendInfoMap["description"]= "用户补贴";
+    // 备注
+    $extendInfoMap["remark"]= "备注";
     return $extendInfoMap;
 }
 

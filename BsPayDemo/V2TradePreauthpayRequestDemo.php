@@ -30,7 +30,7 @@ $request->setTransAmt("0.02");
 // 商品描述
 $request->setGoodsDesc("1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567");
 // 安全信息
-$request->setRiskCheckData(getRiskCheckData());
+$request->setRiskCheckData(get4144db46B82147ec88aeE3e50491fe02());
 
 // 设置非必填字段
 $extendInfoMap = getExtendInfos();
@@ -69,13 +69,13 @@ function getExtendInfos() {
     // 扩展域
     // $extendInfoMap["mer_priv"]= "";
     // 设备信息
-    $extendInfoMap["terminal_device_data"]= getTerminalDeviceData();
+    $extendInfoMap["terminal_device_data"]= get4a4f4c37D30a405fB03aB630cd659632();
     // 异步通知地址
     $extendInfoMap["notify_url"]= "http://www.baidu.com";
     return $extendInfoMap;
 }
 
-function getRiskCheckData() {
+function get4144db46B82147ec88aeE3e50491fe02() {
     $dto = array();
     // 基站地址
     $dto["base_station"] = "192.168.1.1";
@@ -89,7 +89,7 @@ function getRiskCheckData() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function getTerminalDeviceData() {
+function get4a4f4c37D30a405fB03aB630cd659632() {
     $dto = array();
     // 商户终端序列号
     $dto["app_version"] = "";

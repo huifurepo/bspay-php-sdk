@@ -29,6 +29,8 @@ $request->setClerkIdentity("04");
 $request->setLoginAccount("31011520010");
 // 登录密码
 $request->setLoginPassword("1******5");
+// 开票员手机号
+$request->setClerkPhoneNo("17621100776");
 
 // 设置非必填字段
 $extendInfoMap = getExtendInfos();
@@ -50,8 +52,6 @@ if (!$result || $result->isError()) {  //失败处理
 function getExtendInfos() {
     // 设置非必填字段
     $extendInfoMap = array();
-    // 开票员手机号
-    $extendInfoMap["clerk_phone_no"]= "17621100776";
     return $extendInfoMap;
 }
 

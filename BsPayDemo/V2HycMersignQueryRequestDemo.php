@@ -17,14 +17,12 @@ use BsPaySdk\request\V2HycMersignQueryRequest;
 
 // 2.组装请求参数
 $request = new V2HycMersignQueryRequest();
-// 系统号
-// $request->setSysId("test");
-// 产品号
-// $request->setProductId("test");
-// 加签结果
-// $request->setSign("test");
-// 数据
-// $request->setData("test");
+// 请求流水号
+$request->setReqSeqId(date("YmdHis").mt_rand());
+// 请求日期
+$request->setReqDate(date("Ymd"));
+// 商户汇付id
+$request->setHuifuId("6666000144060581");
 
 // 设置非必填字段
 $extendInfoMap = getExtendInfos();
@@ -46,6 +44,10 @@ if (!$result || $result->isError()) {  //失败处理
 function getExtendInfos() {
     // 设置非必填字段
     $extendInfoMap = array();
+    // 开始时间
+    $extendInfoMap["start_date"]= "20240112";
+    // 结束时间
+    $extendInfoMap["end_date"]= "20240112";
     return $extendInfoMap;
 }
 

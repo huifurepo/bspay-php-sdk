@@ -45,7 +45,7 @@ function getExtendInfos() {
     // 设置非必填字段
     $extendInfoMap = array();
     // 操作类型
-    // $extendInfoMap["elect_acct_type"]= "";
+    $extendInfoMap["elect_acct_type"]= "MERCH";
     return $extendInfoMap;
 }
 

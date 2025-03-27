@@ -14,57 +14,69 @@ class V2TradeLgwxSurrogateQueryRequest extends BaseRequest
 {
 
     /**
-     * 系统号
+     * 请求日期
      */
-    private $sysId;
+    private $reqDate;
     /**
-     * 产品号
+     * 请求流水号
      */
-    private $productId;
+    private $reqSeqId;
     /**
-     * 加签结果
+     * 原交易的商户号
      */
-    private $sign;
+    private $huifuId;
     /**
-     * 数据
+     * 原交易请求日期
      */
-    private $data;
+    private $orgReqDate;
+    /**
+     * 原交易请求流水号
+     */
+    private $orgReqSeqId;
 
     public function getFunctionCode() {
         return FunctionCodeEnum::$V2_TRADE_LGWX_SURROGATE_QUERY;
     }
 
 
-    public function getSysId() {
-        return $this->sysId;
+    public function getReqDate() {
+        return $this->reqDate;
     }
 
-    public function setSysId($sysId) {
-        $this->sysId = $sysId;
+    public function setReqDate($reqDate) {
+        $this->reqDate = $reqDate;
     }
 
-    public function getProductId() {
-        return $this->productId;
+    public function getReqSeqId() {
+        return $this->reqSeqId;
     }
 
-    public function setProductId($productId) {
-        $this->productId = $productId;
+    public function setReqSeqId($reqSeqId) {
+        $this->reqSeqId = $reqSeqId;
     }
 
-    public function getSign() {
-        return $this->sign;
+    public function getHuifuId() {
+        return $this->huifuId;
     }
 
-    public function setSign($sign) {
-        $this->sign = $sign;
+    public function setHuifuId($huifuId) {
+        $this->huifuId = $huifuId;
     }
 
-    public function getData() {
-        return $this->data;
+    public function getOrgReqDate() {
+        return $this->orgReqDate;
     }
 
-    public function setData($data) {
-        $this->data = $data;
+    public function setOrgReqDate($orgReqDate) {
+        $this->orgReqDate = $orgReqDate;
+    }
+
+    public function getOrgReqSeqId() {
+        return $this->orgReqSeqId;
+    }
+
+    public function setOrgReqSeqId($orgReqSeqId) {
+        $this->orgReqSeqId = $orgReqSeqId;
     }
 
 }

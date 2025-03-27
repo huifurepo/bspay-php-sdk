@@ -14,57 +14,105 @@ class V2WalletCreateRequest extends BaseRequest
 {
 
     /**
-     * 系统号
+     * 请求流水号
      */
-    private $sysId;
+    private $reqSeqId;
     /**
-     * 产品号
+     * 请求日期
      */
-    private $productId;
+    private $reqDate;
     /**
-     * 加签结果
+     * 商户号
      */
-    private $sign;
+    private $huifuId;
     /**
-     * 数据
+     * 个人姓名钱包账户开户人的本人真实姓名；wallet_type&#x3D;1时必填；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：张三&lt;/font&gt;
      */
-    private $data;
+    private $name;
+    /**
+     * 钱包绑定手机号
+     */
+    private $mobileNo;
+    /**
+     * 手机短信验证码
+     */
+    private $verifyCode;
+    /**
+     * 短信验证流水号
+     */
+    private $verifySeqId;
+    /**
+     * 跳转地址
+     */
+    private $frontUrl;
 
     public function getFunctionCode() {
         return FunctionCodeEnum::$V2_WALLET_CREATE;
     }
 
 
-    public function getSysId() {
-        return $this->sysId;
+    public function getReqSeqId() {
+        return $this->reqSeqId;
     }
 
-    public function setSysId($sysId) {
-        $this->sysId = $sysId;
+    public function setReqSeqId($reqSeqId) {
+        $this->reqSeqId = $reqSeqId;
     }
 
-    public function getProductId() {
-        return $this->productId;
+    public function getReqDate() {
+        return $this->reqDate;
     }
 
-    public function setProductId($productId) {
-        $this->productId = $productId;
+    public function setReqDate($reqDate) {
+        $this->reqDate = $reqDate;
     }
 
-    public function getSign() {
-        return $this->sign;
+    public function getHuifuId() {
+        return $this->huifuId;
     }
 
-    public function setSign($sign) {
-        $this->sign = $sign;
+    public function setHuifuId($huifuId) {
+        $this->huifuId = $huifuId;
     }
 
-    public function getData() {
-        return $this->data;
+    public function getName() {
+        return $this->name;
     }
 
-    public function setData($data) {
-        $this->data = $data;
+    public function setName($name) {
+        $this->name = $name;
+    }
+
+    public function getMobileNo() {
+        return $this->mobileNo;
+    }
+
+    public function setMobileNo($mobileNo) {
+        $this->mobileNo = $mobileNo;
+    }
+
+    public function getVerifyCode() {
+        return $this->verifyCode;
+    }
+
+    public function setVerifyCode($verifyCode) {
+        $this->verifyCode = $verifyCode;
+    }
+
+    public function getVerifySeqId() {
+        return $this->verifySeqId;
+    }
+
+    public function setVerifySeqId($verifySeqId) {
+        $this->verifySeqId = $verifySeqId;
+    }
+
+    public function getFrontUrl() {
+        return $this->frontUrl;
+    }
+
+    public function setFrontUrl($frontUrl) {
+        $this->frontUrl = $frontUrl;
     }
 
 }

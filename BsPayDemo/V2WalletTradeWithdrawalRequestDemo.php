@@ -17,14 +17,24 @@ use BsPaySdk\request\V2WalletTradeWithdrawalRequest;
 
 // 2.组装请求参数
 $request = new V2WalletTradeWithdrawalRequest();
-// 系统号
-// $request->setSysId("test");
-// 产品号
-// $request->setProductId("test");
-// 加签结果
-// $request->setSign("test");
-// 数据
-// $request->setData("test");
+// 请求流水号
+$request->setReqSeqId(date("YmdHis").mt_rand());
+// 请求日期
+$request->setReqDate(date("Ymd"));
+// 商户号
+$request->setHuifuId("6666000135653240");
+// 钱包用户ID
+$request->setUserHuifuId("6666000136655020");
+// 银行卡序列号
+$request->setTokenNo("10043478052");
+// 提现金额
+// $request->setTransAmt("test");
+// 跳转地址
+$request->setFrontUrl("http://www.huifu.com");
+// 异步通知地址
+$request->setNotifyUrl("https://");
+// 到账日期类型
+$request->setIntoAcctDateType("D0");
 
 // 设置非必填字段
 $extendInfoMap = getExtendInfos();
@@ -46,6 +56,10 @@ if (!$result || $result->isError()) {  //失败处理
 function getExtendInfos() {
     // 设置非必填字段
     $extendInfoMap = array();
+    // 密码页面类型
+    $extendInfoMap["request_type"]= "M";
+    // 备注
+    $extendInfoMap["remark"]= "remark11";
     return $extendInfoMap;
 }
 

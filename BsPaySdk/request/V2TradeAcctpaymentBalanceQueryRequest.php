@@ -5,7 +5,7 @@ namespace BsPaySdk\request;
 use BsPaySdk\enums\FunctionCodeEnum;
 
 /**
- * 账户余额信息查询接口
+ * 账户余额信息查询
  *
  * @author sdk-generator
  * @Description

@@ -29,6 +29,10 @@ class V2TradePayafteruseInstallmentRefundRequest extends BaseRequest
      * 申请退款金额
      */
     private $ordAmt;
+    /**
+     * 原请求日期
+     */
+    private $orgReqDate;
 
     public function getFunctionCode() {
         return FunctionCodeEnum::$V2_TRADE_PAYAFTERUSE_INSTALLMENT_REFUND;
@@ -65,6 +69,14 @@ class V2TradePayafteruseInstallmentRefundRequest extends BaseRequest
 
     public function setOrdAmt($ordAmt) {
         $this->ordAmt = $ordAmt;
+    }
+
+    public function getOrgReqDate() {
+        return $this->orgReqDate;
+    }
+
+    public function setOrgReqDate($orgReqDate) {
+        $this->orgReqDate = $orgReqDate;
     }
 
 }

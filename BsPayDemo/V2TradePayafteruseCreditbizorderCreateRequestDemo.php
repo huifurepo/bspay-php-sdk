@@ -36,7 +36,7 @@ $request->setPath("https://www.baidu.com/");
 // 芝麻信用服务ID
 $request->setZmServiceId("2024081500001003000081751200");
 // 商品详细信息
-$request->setItemInfos(getItemInfos());
+$request->setItemInfos(get864f5a50D5064cea9423A5f3ca9e73a7());
 
 // 设置非必填字段
 $extendInfoMap = getExtendInfos();
@@ -75,7 +75,7 @@ function getExtendInfos() {
     return $extendInfoMap;
 }
 
-function getItemInstallmentInfo() {
+function get1efd507a9385411f80f998b1c37876d9() {
     $dto = array();
     // 总分期数
     $dto["period_num"] = 1;
@@ -87,7 +87,7 @@ function getItemInstallmentInfo() {
     return $dto;
 }
 
-function getItemInfos() {
+function get864f5a50D5064cea9423A5f3ca9e73a7() {
     $dto = array();
     // 商户商品ID
     $dto["out_item_id"] = "1234567";
@@ -100,7 +100,7 @@ function getItemInfos() {
     // 商品的编号
     $dto["goods_id"] = "Ldkc00001";
     // 商品分期信息
-    $dto["item_installment_info"] = getItemInstallmentInfo();
+    $dto["item_installment_info"] = get1efd507a9385411f80f998b1c37876d9();
 
     $dtoList = array();
     array_push($dtoList, $dto);

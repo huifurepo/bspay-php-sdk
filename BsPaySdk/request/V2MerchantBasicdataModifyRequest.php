@@ -5,7 +5,7 @@ namespace BsPaySdk\request;
 use BsPaySdk\enums\FunctionCodeEnum;
 
 /**
- * 商户基本信息修改(2022)
+ * 商户基本信息修改
  *
  * @author sdk-generator
  * @Description
@@ -22,13 +22,17 @@ class V2MerchantBasicdataModifyRequest extends BaseRequest
      */
     private $reqDate;
     /**
-     * 上级主体ID
+     * 直属渠道号
      */
     private $upperHuifuId;
     /**
      * 汇付客户Id
      */
     private $huifuId;
+    /**
+     * 签约人jsonObject格式；agreement_info中选择电子签约时必填；个人商户填本人信息。
+     */
+    private $signUserInfo;
 
     public function getFunctionCode() {
         return FunctionCodeEnum::$V2_MERCHANT_BASICDATA_MODIFY;
@@ -65,6 +69,14 @@ class V2MerchantBasicdataModifyRequest extends BaseRequest
 
     public function setHuifuId($huifuId) {
         $this->huifuId = $huifuId;
+    }
+
+    public function getSignUserInfo() {
+        return $this->signUserInfo;
+    }
+
+    public function setSignUserInfo($signUserInfo) {
+        $this->signUserInfo = $signUserInfo;
     }
 
 }

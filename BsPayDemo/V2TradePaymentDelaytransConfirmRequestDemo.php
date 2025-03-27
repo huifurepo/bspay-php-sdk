@@ -1,7 +1,7 @@
 <?php
 
 /**
- * 交易确认接口 - 示例
+ * 交易确认 - 示例
  *
  * @author sdk-generator
  * @Description
@@ -55,9 +55,9 @@ function getExtendInfos() {
     // 原交易全局流水号
     $extendInfoMap["org_hf_seq_id"]= "";
     // 分账对象
-    $extendInfoMap["acct_split_bunch"]= getAcctSplitBunch();
+    $extendInfoMap["acct_split_bunch"]= getA7256caaCe6b490680ba86babafe4967();
     // 安全信息
-    $extendInfoMap["risk_check_data"]= getRiskCheckData();
+    $extendInfoMap["risk_check_data"]= get5dc1f4fb2ca7478382dc4811aa4903f8();
     // 备注
     $extendInfoMap["remark"]= "remark123";
     // 灵活用工标志
@@ -69,13 +69,13 @@ function getExtendInfos() {
     // 落地公司商户号
     // $extendInfoMap["bmember_id"]= "";
     // 乐接活请求参数集合
-    // $extendInfoMap["ljh_data"]= getLjhData();
+    // $extendInfoMap["ljh_data"]= get4da1733e10a041c7Aa241338ac87fac0();
     // 异步通知地址
     // $extendInfoMap["notify_url"]= "";
     return $extendInfoMap;
 }
 
-function getAcctInfosRucan() {
+function getF77aaa99F28d44d5820628512e341eac() {
     $dto = array();
     // 分账金额(元)单位元，需保留小数点后两位，最低传入0.01 ，&lt;font color&#x3D;&quot;green&quot;&gt;示例值：1.00&lt;/font&gt; ，percentage_flag非Y时必填；&lt;br/&gt;percentage_flag&#x3D;Y时div_amt不填，div_amt&#x3D;total_div_amt*percentage_div
     $dto["div_amt"] = "0.01";
@@ -91,19 +91,19 @@ function getAcctInfosRucan() {
     return $dtoList;
 }
 
-function getAcctSplitBunch() {
+function getA7256caaCe6b490680ba86babafe4967() {
     $dto = array();
     // 分账总金额（元）本次交易确认总额。需保留小数点后两位&lt;br/&gt;percentage_flag&#x3D;Y时必填。该金额与分账百分比用来计算分账金额。&lt;font color&#x3D;&quot;green&quot;&gt;示例值：10.00&lt;/font&gt;；
     // $dto["total_div_amt"] = "test";
     // 百分比分账标志
     // $dto["percentage_flag"] = "";
     // 分账明细
-    $dto["acct_infos"] = getAcctInfosRucan();
+    $dto["acct_infos"] = getF77aaa99F28d44d5820628512e341eac();
 
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function getRiskCheckData() {
+function get5dc1f4fb2ca7478382dc4811aa4903f8() {
     $dto = array();
     // ip地址
     // $dto["ip_addr"] = "";
@@ -121,7 +121,7 @@ function getRiskCheckData() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function getLjhData() {
+function get4da1733e10a041c7Aa241338ac87fac0() {
     $dto = array();
     // 税源地ID
     // $dto["tax_area_id"] = "";

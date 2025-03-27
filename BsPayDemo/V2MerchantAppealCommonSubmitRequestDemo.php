@@ -87,11 +87,11 @@ function getExtendInfos() {
     // 员工人数
     $extendInfoMap["employee_cnt"]= "10";
     // 申诉文件列表
-    $extendInfoMap["appeal_file_list"]= getAppealFileList();
+    $extendInfoMap["appeal_file_list"]= get0c986afe8b424cad8c63F947666296c8();
     return $extendInfoMap;
 }
 
-function getAppealFileList() {
+function get0c986afe8b424cad8c63F947666296c8() {
     $dto = array();
     // 申诉文件名称
     $dto["item_name"] = "法人身份证正面";

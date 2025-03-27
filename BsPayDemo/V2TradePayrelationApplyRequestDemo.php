@@ -24,7 +24,7 @@ $request->setReqDate(date("Ymd"));
 // 请求流水号
 $request->setReqSeqId(date("YmdHis").mt_rand());
 // 付款关系明细
-$request->setPayRelations(getPayRelationsRc());
+$request->setPayRelations(getA4340f0d9f434de0910eC4522943e67d());
 
 // 设置非必填字段
 $extendInfoMap = getExtendInfos();
@@ -49,7 +49,7 @@ function getExtendInfos() {
     return $extendInfoMap;
 }
 
-function getPayRelationsRc() {
+function getA4340f0d9f434de0910eC4522943e67d() {
     $dto = array();
     // 入账方商户号
     $dto["in_huifu_id"] = "6666000104558835";

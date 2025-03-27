@@ -32,7 +32,7 @@ $request->setOutTradeNo("03212311224952047516172");
 // 商品描述
 $request->setGoodsDesc("bp充电");
 // 安全信息
-$request->setRiskCheckData(getRiskCheckData());
+$request->setRiskCheckData(get7b611856F3284acbB2b933e5277201fd());
 
 // 设置非必填字段
 $extendInfoMap = getExtendInfos();
@@ -55,13 +55,13 @@ function getExtendInfos() {
     // 设置非必填字段
     $extendInfoMap = array();
     // 聚合反扫微信参数集合
-    // $extendInfoMap["wx_data"]= getWxData();
+    // $extendInfoMap["wx_data"]= get26abfe33D15b4d88969eE4b82e981c40();
     // 是否延迟交易
     // $extendInfoMap["delay_acct_flag"]= "";
     // 分账对象
-    // $extendInfoMap["acct_split_bunch"]= getAcctSplitBunch();
+    // $extendInfoMap["acct_split_bunch"]= getB4a7c01e8049417cBfaf23cca015476e();
     // 设备信息
-    // $extendInfoMap["terminal_device_info"]= getTerminalDeviceInfo();
+    // $extendInfoMap["terminal_device_info"]= get18bf806b138f41fb9eb85470b909b79b();
     // 交易备注
     // $extendInfoMap["remark"]= "";
     // 商户回调地址
@@ -69,7 +69,7 @@ function getExtendInfos() {
     return $extendInfoMap;
 }
 
-function getWxData() {
+function get26abfe33D15b4d88969eE4b82e981c40() {
     $dto = array();
     // 子商户用户标识
     // $dto["sub_openid"] = "test";
@@ -83,7 +83,7 @@ function getWxData() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function getAcctInfos() {
+function get74fe15d7F3cf4781880dA528d270b475() {
     $dto = array();
     // 分账金额
     // $dto["div_amt"] = "test";
@@ -95,15 +95,15 @@ function getAcctInfos() {
     return $dtoList;
 }
 
-function getAcctSplitBunch() {
+function getB4a7c01e8049417cBfaf23cca015476e() {
     $dto = array();
     // 分账明细
-    // $dto["acct_infos"] = getAcctInfos();
+    // $dto["acct_infos"] = get74fe15d7F3cf4781880dA528d270b475();
 
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function getRiskCheckData() {
+function get7b611856F3284acbB2b933e5277201fd() {
     $dto = array();
     // ip地址
     $dto["ip_address"] = "127.0.0.1";
@@ -117,7 +117,7 @@ function getRiskCheckData() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function getTerminalDeviceInfo() {
+function get18bf806b138f41fb9eb85470b909b79b() {
     $dto = array();
     // 设备类型
     // $dto["device_type"] = "";

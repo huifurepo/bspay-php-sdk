@@ -22,6 +22,14 @@ class V2InvoiceOpenRequest extends BaseRequest
      */
     private $reqDate;
     /**
+     * 汇付商户号huifu_id与ext_mer_id二选一必填，汇付商户号优先；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：6666000109812123&lt;/font&gt;
+     */
+    private $huifuId;
+    /**
+     * 外部商户号&lt;font color&#x3D;&quot;green&quot;&gt;示例值：&lt;/font&gt;
+     */
+    private $extMerId;
+    /**
      * 渠道号汇付商户号为空时，必传；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：6666000109812124&lt;/font&gt;
      */
     private $channelId;
@@ -93,6 +101,22 @@ class V2InvoiceOpenRequest extends BaseRequest
 
     public function setReqDate($reqDate) {
         $this->reqDate = $reqDate;
+    }
+
+    public function getHuifuId() {
+        return $this->huifuId;
+    }
+
+    public function setHuifuId($huifuId) {
+        $this->huifuId = $huifuId;
+    }
+
+    public function getExtMerId() {
+        return $this->extMerId;
+    }
+
+    public function setExtMerId($extMerId) {
+        $this->extMerId = $extMerId;
     }
 
     public function getChannelId() {

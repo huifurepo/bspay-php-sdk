@@ -25,6 +25,8 @@ $request->setReqSeqId(date("YmdHis").mt_rand());
 $request->setHuifuId("6666000108281250");
 // 申请退款金额
 $request->setOrdAmt("0.01");
+// 原请求日期
+$request->setOrgReqDate("20241010");
 
 // 设置非必填字段
 $extendInfoMap = getExtendInfos();
@@ -47,11 +49,9 @@ function getExtendInfos() {
     // 设置非必填字段
     $extendInfoMap = array();
     // 分账串
-    // $extendInfoMap["acct_split_bunch"]= getAcctSplitBunch();
+    // $extendInfoMap["acct_split_bunch"]= get1313ce8b81ce4f5493a623949b89ffd3();
     // 原请求流水号
     $extendInfoMap["org_req_seq_id"]= "20241010test10000111qccrr";
-    // 原请求日期
-    $extendInfoMap["org_req_date"]= "20241010";
     // 原全局流水号
     // $extendInfoMap["org_hf_seq_id"]= "";
     // 交易备注
@@ -61,7 +61,7 @@ function getExtendInfos() {
     return $extendInfoMap;
 }
 
-function getAcctInfos() {
+function get5864fd7678e24596B3ce38dba15bb024() {
     $dto = array();
     // 分账金额
     // $dto["div_amt"] = "test";
@@ -75,16 +75,16 @@ function getAcctInfos() {
     return $dtoList;
 }
 
-function getAcctSplitBunch() {
+function get1313ce8b81ce4f5493a623949b89ffd3() {
     $dto = array();
     // 百分比分账标志
     // $dto["percentage_flag"] = "";
     // 是否净值分账
     // $dto["is_clean_split"] = "";
     // 分账明细
-    // $dto["acct_infos"] = getAcctInfos();
+    // $dto["acct_infos"] = get5864fd7678e24596B3ce38dba15bb024();
 
-    return $dto;
+    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
 

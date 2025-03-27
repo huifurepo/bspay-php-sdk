@@ -14,57 +14,57 @@ class V2WalletTradeQueryRequest extends BaseRequest
 {
 
     /**
-     * 系统号
+     * 商户号
      */
-    private $sysId;
+    private $huifuId;
     /**
-     * 产品号
+     * 原交易请求日期
      */
-    private $productId;
+    private $orgReqDate;
     /**
-     * 加签结果
+     * 原交易请求流水号
      */
-    private $sign;
+    private $orgReqSeqId;
     /**
-     * 数据
+     * 交易类型
      */
-    private $data;
+    private $transType;
 
     public function getFunctionCode() {
         return FunctionCodeEnum::$V2_WALLET_TRADE_QUERY;
     }
 
 
-    public function getSysId() {
-        return $this->sysId;
+    public function getHuifuId() {
+        return $this->huifuId;
     }
 
-    public function setSysId($sysId) {
-        $this->sysId = $sysId;
+    public function setHuifuId($huifuId) {
+        $this->huifuId = $huifuId;
     }
 
-    public function getProductId() {
-        return $this->productId;
+    public function getOrgReqDate() {
+        return $this->orgReqDate;
     }
 
-    public function setProductId($productId) {
-        $this->productId = $productId;
+    public function setOrgReqDate($orgReqDate) {
+        $this->orgReqDate = $orgReqDate;
     }
 
-    public function getSign() {
-        return $this->sign;
+    public function getOrgReqSeqId() {
+        return $this->orgReqSeqId;
     }
 
-    public function setSign($sign) {
-        $this->sign = $sign;
+    public function setOrgReqSeqId($orgReqSeqId) {
+        $this->orgReqSeqId = $orgReqSeqId;
     }
 
-    public function getData() {
-        return $this->data;
+    public function getTransType() {
+        return $this->transType;
     }
 
-    public function setData($data) {
-        $this->data = $data;
+    public function setTransType($transType) {
+        $this->transType = $transType;
     }
 
 }

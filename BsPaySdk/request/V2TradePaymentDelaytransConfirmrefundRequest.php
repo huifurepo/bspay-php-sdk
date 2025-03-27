@@ -5,7 +5,7 @@ namespace BsPaySdk\request;
 use BsPaySdk\enums\FunctionCodeEnum;
 
 /**
- * 交易确认退款接口
+ * 交易确认退款
  *
  * @author sdk-generator
  * @Description

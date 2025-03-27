@@ -91,13 +91,13 @@ function getExtendInfos() {
     // 扩展方字段
     $extendInfoMap["expand_id"]= "";
     // 文件列表
-    // $extendInfoMap["file_list"]= getFileList();
+    // $extendInfoMap["file_list"]= get20d74ac41da44b12Aeee688f03e91870();
     // 公司类型
     // $extendInfoMap["ent_type"]= "";
     return $extendInfoMap;
 }
 
-function getFileList() {
+function get20d74ac41da44b12Aeee688f03e91870() {
     $dto = array();
     // 文件类型
     // $dto["file_type"] = "test";

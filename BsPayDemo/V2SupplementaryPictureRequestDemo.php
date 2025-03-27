@@ -24,6 +24,8 @@ $request->setReqSeqId(date("YmdHis").mt_rand());
 $request->setReqDate(date("Ymd"));
 // 图片类型
 $request->setFileType("F01");
+// 图片名称
+// $request->setPicture("test");
 
 // 设置非必填字段
 $extendInfoMap = getExtendInfos();

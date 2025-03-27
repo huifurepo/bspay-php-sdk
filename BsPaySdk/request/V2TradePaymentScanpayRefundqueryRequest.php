@@ -5,7 +5,7 @@ namespace BsPaySdk\request;
 use BsPaySdk\enums\FunctionCodeEnum;
 
 /**
- * 交易退款查询接口
+ * 扫码交易退款查询
  *
  * @author sdk-generator
  * @Description
@@ -18,7 +18,7 @@ class V2TradePaymentScanpayRefundqueryRequest extends BaseRequest
      */
     private $huifuId;
     /**
-     * 退款请求日期
+     * 退款请求日期退款发生的日期，格式为yyyyMMdd，&lt;font color&#x3D;&quot;green&quot;&gt;示例值：20220925&lt;/font&gt;；&lt;/br&gt;传入退款全局流水号时，非必填，其他场景必填；
      */
     private $orgReqDate;
     /**

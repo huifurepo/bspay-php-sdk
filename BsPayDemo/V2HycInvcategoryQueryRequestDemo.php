@@ -17,14 +17,12 @@ use BsPaySdk\request\V2HycInvcategoryQueryRequest;
 
 // 2.组装请求参数
 $request = new V2HycInvcategoryQueryRequest();
-// 系统号
-// $request->setSysId("test");
-// 产品号
-// $request->setProductId("test");
-// 加签结果
-// $request->setSign("test");
-// 数据
-// $request->setData("test");
+// 请求流水号
+$request->setReqSeqId(date("YmdHis").mt_rand());
+// 请求日期
+$request->setReqDate(date("Ymd"));
+// 落地公司机构号
+$request->setMinorAgentId("L20210316173416881");
 
 // 设置非必填字段
 $extendInfoMap = getExtendInfos();

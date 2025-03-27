@@ -28,9 +28,11 @@ $request->setOrdAmt("0.01");
 // 原交易请求日期
 $request->setOrgReqDate("20240229");
 // 安全信息线上交易退款必填，参见线上退款接口；jsonObject字符串
-$request->setRiskCheckData(getRiskCheckData());
+$request->setRiskCheckData(get195595a868964f2bB023E9566fcd0297());
 // 设备信息线上交易退款必填，参见线上退款接口；jsonObject字符串
-$request->setTerminalDeviceData(getTerminalDeviceData());
+$request->setTerminalDeviceData(get8d8843c250f94e9b80a253d37ec6f80a());
+// 大额转账支付账户信息数据jsonObject格式；银行大额转账支付交易退款申请时必填
+// $request->setBankInfoData(getAa3a4591240343e2Bad5D6a0764f06dc());
 
 // 设置非必填字段
 $extendInfoMap = getExtendInfos();
@@ -59,7 +61,7 @@ function getExtendInfos() {
     // 原交易请求流水号
     $extendInfoMap["org_req_seq_id"]= "202207099803123123199941";
     // 分账对象
-    $extendInfoMap["acct_split_bunch"]= getAcctSplitBunch();
+    $extendInfoMap["acct_split_bunch"]= get4a68d378Cb6e41dfA9405a589b476160();
     // 备注
     // $extendInfoMap["remark"]= "";
     // 异步通知地址
@@ -67,7 +69,7 @@ function getExtendInfos() {
     return $extendInfoMap;
 }
 
-function getAcctInfosRucan() {
+function get33a52525B1614d3bBc18Ff7d935b2bca() {
     $dto = array();
     // 分账金额
     $dto["div_amt"] = "0.12";
@@ -79,15 +81,15 @@ function getAcctInfosRucan() {
     return $dtoList;
 }
 
-function getAcctSplitBunch() {
+function get4a68d378Cb6e41dfA9405a589b476160() {
     $dto = array();
     // 分账明细
-    $dto["acct_infos"] = getAcctInfosRucan();
+    $dto["acct_infos"] = get33a52525B1614d3bBc18Ff7d935b2bca();
 
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function getRiskCheckData() {
+function get195595a868964f2bB023E9566fcd0297() {
     $dto = array();
     // ip地址
     // $dto["ip_addr"] = "";
@@ -101,7 +103,7 @@ function getRiskCheckData() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function getTerminalDeviceData() {
+function get8d8843c250f94e9b80a253d37ec6f80a() {
     $dto = array();
     // 设备类型
     $dto["device_type"] = "4";
@@ -119,6 +121,22 @@ function getTerminalDeviceData() {
     // $dto["device_icc_id"] = "";
     // 交易设备WIFIMAC
     // $dto["device_wifi_mac"] = "";
+
+    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+}
+
+function getAa3a4591240343e2Bad5D6a0764f06dc() {
+    $dto = array();
+    // 省份付款方为对公账户时必填，参见省市地区码；示例值：0013
+    // $dto["province"] = "test";
+    // 地区付款方为对公账户时必填，参见省市地区码；示例值：1301
+    // $dto["area"] = "test";
+    // 银行编号付款方为对公账户时必填，参考：银行编码； 示例值：01040000
+    // $dto["bank_code"] = "test";
+    // 联行号付款方为对公账户时必填，参见：银行支行编码； 示例值：102290026507
+    // $dto["correspondent_code"] = "test";
+    // 付款方账户类型
+    // $dto["card_acct_type"] = "";
 
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }

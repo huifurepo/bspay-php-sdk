@@ -33,8 +33,6 @@ $request->setOrgReqSeqId("202308312345678931");
 $request->setOrgReqDate("20230831");
 // 异步通知地址
 $request->setNotifyUrl("http://www.baidu.com");
-// 商品描述
-// $request->setGoodsDesc("test");
 
 // 设置非必填字段
 $extendInfoMap = getExtendInfos();
@@ -61,17 +59,17 @@ function getExtendInfos() {
     // 备注
     $extendInfoMap["remark"]= "大额支付补入账验证";
     // 银行信息数据
-    $extendInfoMap["bank_info_data"]= getBankInfoData();
+    $extendInfoMap["bank_info_data"]= getB08e9ba8D88347f9A142D9b1fafb4e03();
     // 延时标记
     // $extendInfoMap["delay_acct_flag"]= "";
     // 分账对象
-    // $extendInfoMap["acct_split_bunch"]= getAcctSplitBunch();
+    // $extendInfoMap["acct_split_bunch"]= getEebc6e3a5eff4b11895cC49b66a59c30();
     // 实际打款信息
-    // $extendInfoMap["actual_remit_data"]= getActualRemitData();
+    // $extendInfoMap["actual_remit_data"]= get1e12e80a87644cb8964b58c5edbb79e6();
     return $extendInfoMap;
 }
 
-function getBankInfoData() {
+function getB08e9ba8D88347f9A142D9b1fafb4e03() {
     $dto = array();
     // 省份对公代发必填，[参见省市地区码](https://cloudpnrcdn.oss-cn-shanghai.aliyuncs.com/opps/api/prod/download_file/area/%E6%96%97%E6%8B%B1%E4%BB%A3%E5%8F%91%E7%9C%81%E4%BB%BD%E5%9C%B0%E5%8C%BA%E7%BC%96%E7%A0%81.xlsx)；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：0013&lt;/font&gt;
     $dto["province"] = "0031";
@@ -89,7 +87,7 @@ function getBankInfoData() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function getAcctInfos() {
+function getB01b07d9B4d94a099a60F25781cc910f() {
     $dto = array();
     // 支付金额
     // $dto["div_amt"] = "";
@@ -101,15 +99,15 @@ function getAcctInfos() {
     return $dtoList;
 }
 
-function getAcctSplitBunch() {
+function getEebc6e3a5eff4b11895cC49b66a59c30() {
     $dto = array();
     // 分账信息列表
-    // $dto["acct_infos"] = getAcctInfos();
+    // $dto["acct_infos"] = getB01b07d9B4d94a099a60F25781cc910f();
 
-    return $dto;
+    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function getActualRemitData() {
+function get1e12e80a87644cb8964b58c5edbb79e6() {
     $dto = array();
     // 实际打款日期
     // $dto["actual_remit_date"] = "test";
