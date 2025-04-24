@@ -70,10 +70,6 @@ class V2InvoiceOpenRequest extends BaseRequest
      */
     private $goodsInfos;
     /**
-     * 开票人信息
-     */
-    private $payerInfo;
-    /**
      * 不动产销售特殊字段specialFlag为05时，必填；jsonArray格式
      */
     private $estateSales;
@@ -197,14 +193,6 @@ class V2InvoiceOpenRequest extends BaseRequest
 
     public function setGoodsInfos($goodsInfos) {
         $this->goodsInfos = $goodsInfos;
-    }
-
-    public function getPayerInfo() {
-        return $this->payerInfo;
-    }
-
-    public function setPayerInfo($payerInfo) {
-        $this->payerInfo = $payerInfo;
     }
 
     public function getEstateSales() {

@@ -52,6 +52,8 @@ if (!$result || $result->isError()) {  //失败处理
 function getExtendInfos() {
     // 设置非必填字段
     $extendInfoMap = array();
+    // 开票员名字
+    $extendInfoMap["clerk_name"]= "张三";
     return $extendInfoMap;
 }
 

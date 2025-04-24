@@ -32,11 +32,11 @@ $request->setTransAmt("10.00");
 // 异步通知地址
 $request->setNotifyUrl("http://tianyi.demo.test.cn/core/extend/BsPaySdk/notify_quick.php");
 // 网联数据
-// $request->setNuccData(getNuccData());
+// $request->setNuccData(getA552c831Cd0846b8830f0ce1be990e53());
 // 设备数据
-$request->setTerminalDeviceData(getTerminalDeviceData());
+$request->setTerminalDeviceData(getEb10401d27a0468aA840Fd020391c341());
 // 安全信息
-$request->setRiskCheckData(getRiskCheckData());
+$request->setRiskCheckData(getBe09da814577476eA71c6d47f2fac2ac());
 
 // 设置非必填字段
 $extendInfoMap = getExtendInfos();
@@ -65,26 +65,24 @@ function getExtendInfos() {
     // 订单失效时间
     // $extendInfoMap["time_expire"]= "";
     // 分账对象
-    // $extendInfoMap["acct_split_bunch"]= getAcctSplitBunchRucan();
+    // $extendInfoMap["acct_split_bunch"]= get0fda4a7803b94a2fB5f17a083f8b015f();
     // 是否延迟交易
     // $extendInfoMap["delay_acct_flag"]= "";
     // 账户号
     // $extendInfoMap["acct_id"]= "";
     // 手续费扣款标志
     // $extendInfoMap["fee_flag"]= "";
-    // 备注
-    // $extendInfoMap["remark"]= "";
     // 补贴支付信息
-    // $extendInfoMap["combinedpay_data"]= getCombinedpayData();
+    // $extendInfoMap["combinedpay_data"]= get79bd2ee956e844ee8bb65e2f3ebf8096();
     return $extendInfoMap;
 }
 
-function getAcctInfos() {
+function getAdfb77e661f444deB2ddF0631bb7f4d4() {
     $dto = array();
+    // 分账接收方ID
+    // $dto["huifu_id"] = "test";
     // 分账金额
     // $dto["div_amt"] = "";
-    // 分账接收方ID
-    // $dto["huifu_id"] = "";
     // 账户号
     // $dto["acct_id"] = "";
     // 分账百分比%
@@ -95,19 +93,19 @@ function getAcctInfos() {
     return $dtoList;
 }
 
-function getAcctSplitBunchRucan() {
+function get0fda4a7803b94a2fB5f17a083f8b015f() {
     $dto = array();
     // 百分比分账标志
     // $dto["percentage_flag"] = "";
     // 是否净值分账
     // $dto["is_clean_split"] = "";
-    // 分账信息列表
-    // $dto["acct_infos"] = getAcctInfos();
+    // 分账信息列表，Array格式
+    // $dto["acct_infos"] = getAdfb77e661f444deB2ddF0631bb7f4d4();
 
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function getNuccData() {
+function getA552c831Cd0846b8830f0ce1be990e53() {
     $dto = array();
     // 商品简称
     // $dto["goods_short_name"] = "test";
@@ -119,7 +117,7 @@ function getNuccData() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function getTerminalDeviceData() {
+function getEb10401d27a0468aA840Fd020391c341() {
     $dto = array();
     // 设备类型
     $dto["device_type"] = "1";
@@ -141,7 +139,7 @@ function getTerminalDeviceData() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function getRiskCheckData() {
+function getBe09da814577476eA71c6d47f2fac2ac() {
     $dto = array();
     // ip地址
     $dto["ip_addr"] = "106.33.180.238";
@@ -155,7 +153,7 @@ function getRiskCheckData() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function getCombinedpayData() {
+function get79bd2ee956e844ee8bb65e2f3ebf8096() {
     $dto = array();
     // 补贴方汇付编号
     // $dto["huifu_id"] = "test";

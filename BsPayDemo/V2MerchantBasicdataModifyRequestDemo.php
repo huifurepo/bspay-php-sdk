@@ -26,7 +26,7 @@ $request->setUpperHuifuId("6666000021000000");
 // 汇付客户Id
 $request->setHuifuId("6666000107932702");
 // 签约人jsonObject格式；agreement_info中选择电子签约时必填；个人商户填本人信息。
-// $request->setSignUserInfo(get791c67b3Cce741158ece6eaaf530de10());
+// $request->setSignUserInfo(get9727fce600f548b6989eF4b876767087());
 
 // 设置非必填字段
 $extendInfoMap = getExtendInfos();
@@ -119,23 +119,23 @@ function getExtendInfos() {
     // 小票名称
     $extendInfoMap["receipt_name"]= "小票上的名称";
     // *结算卡信息配置*
-    $extendInfoMap["card_info"]= get3734abd86fec448dB3eeB2650b1e468c();
+    $extendInfoMap["card_info"]= getFa610945Ccc54f7aB3e9E11b6b189fb2();
     // 结算协议图片文件
     // $extendInfoMap["settle_agree_pic"]= "";
     // 基本存款账户编号或核准号
     // $extendInfoMap["open_licence_no"]= "";
     // 取现信息配置
-    $extendInfoMap["cash_config"]= getD8f62ec88c7340c8A8fe98e6be019538();
+    $extendInfoMap["cash_config"]= getA9ad242d0b334ede84aa7bcd3473a4af();
     // 结算规则配置
-    $extendInfoMap["settle_config"]= getBc88ac225ddb46a885bf7be8310e4a4f();
+    $extendInfoMap["settle_config"]= getEd1554992d0546ca9db46e24bf6d3b46();
     // 商户主页URL
     // $extendInfoMap["mer_url"]= "";
     // 商户ICP备案编号
     // $extendInfoMap["mer_icp"]= "";
     // 受益人列表
-    // $extendInfoMap["beneficiary_info"]= getB31f324178ea4ab5Bac8Df1e67a566f2();
+    // $extendInfoMap["beneficiary_info"]= getDc7f751a36fb4bba8a2cD330d5eaa4b3();
     // 协议信息
-    // $extendInfoMap["agreement_info"]= getDc09f955A7824544Aed2D92480b74027();
+    // $extendInfoMap["agreement_info"]= get307191896a9f4ed48418Ac7e1980e485();
     // 营业执照图片
     // $extendInfoMap["license_pic"]= "";
     // 授权委托书
@@ -149,13 +149,13 @@ function getExtendInfos() {
     // 店铺收银台/公司前台照
     // $extendInfoMap["store_cashier_desk_pic"]= "";
     // 扩展资料包
-    // $extendInfoMap["extended_material_list"]= get457c26e1370646d085ea7a5cb2f3dc6e();
+    // $extendInfoMap["extended_material_list"]= get2ac9cf4671404fbe9997D27236b556fe();
     // 异步通知地址
     $extendInfoMap["async_return_url"]= "archer://C_SSPM_NSPOSM_BUSIRESULT";
     // 斗拱e账户功能配置
-    // $extendInfoMap["elec_acct_config"]= get0c17625068a141abAe810df61d8514a4();
+    // $extendInfoMap["elec_acct_config"]= get0685f20c9ba545bd88c92138dfcb1afd();
     // 股东信息
-    // $extendInfoMap["share_holder_info_list"]= get03750dcb69b84148Ac0b225a1f2446d2();
+    // $extendInfoMap["share_holder_info_list"]= get3349bf64Eba543fa87b5351697d3a7e3();
     // 外部商户号
     // $extendInfoMap["ext_mer_id"]= "";
     // 备注
@@ -163,7 +163,7 @@ function getExtendInfos() {
     return $extendInfoMap;
 }
 
-function get3734abd86fec448dB3eeB2650b1e468c() {
+function getFa610945Ccc54f7aB3e9E11b6b189fb2() {
     $dto = array();
     // 结算账户类型
     $dto["card_type"] = "1";
@@ -219,7 +219,7 @@ function get3734abd86fec448dB3eeB2650b1e468c() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function getD8f62ec88c7340c8A8fe98e6be019538() {
+function getA9ad242d0b334ede84aa7bcd3473a4af() {
     $dto = array();
     // 状态
     $dto["switch_state"] = "1";
@@ -247,7 +247,7 @@ function getD8f62ec88c7340c8A8fe98e6be019538() {
     return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function getBc88ac225ddb46a885bf7be8310e4a4f() {
+function getEd1554992d0546ca9db46e24bf6d3b46() {
     $dto = array();
     // 结算开关
     $dto["settle_status"] = "1";
@@ -255,9 +255,9 @@ function getBc88ac225ddb46a885bf7be8310e4a4f() {
     $dto["settle_cycle"] = "T1";
     // 结算手续费外扣商户号结算手续费外扣商户号，填写承担手续费的汇付商户号；当out_settle_flag&#x3D;1时必填，否则非必填；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：6666000123123123&lt;/font&gt;
     // $dto["out_settle_huifuid"] = "test";
-    // 节假日结算手续费率settle_cycle为D1时必填。单位%，需保留小数点后两位。取值范围[0.00，100.00]，不收费请填写0.00；settle_cycle&#x3D;T1时，不生效 ；settle_cycle为D1时，遇节假日按此费率结算 ；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：0.05&lt;/font&gt;
+    // 节假日结算手续费率settle_cycle为D1、TS时必填。单位%，需保留小数点后两位。取值范围[0.00，100.00]，不收费请填写0.00；settle_cycle&#x3D;T1时，不生效 ；settle_cycle为D1时，遇节假日按此费率结算 ；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：0.05&lt;/font&gt;
     $dto["fixed_ratio"] = "0";
-    // 节假日结算手续费固定金额settle_cycle为D1时必填。单位元，需保留小数点后两位。不收费请填写0.00；settle_cycle结算周期为D1时，遇节假日按此费率结算 ；&lt;br/&gt; &lt;font color&#x3D;&quot;green&quot;&gt;示例值：1.00&lt;/font&gt;
+    // 节假日结算手续费固定金额settle_cycle为D1、TS时必填。单位元，需保留小数点后两位。不收费请填写0.00；settle_cycle结算周期为D1时，遇节假日按此费率结算 ；&lt;br/&gt; &lt;font color&#x3D;&quot;green&quot;&gt;示例值：1.00&lt;/font&gt;
     $dto["constant_amt"] = "0";
     // 起结金额
     // $dto["min_amt"] = "";
@@ -285,7 +285,7 @@ function getBc88ac225ddb46a885bf7be8310e4a4f() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function getB31f324178ea4ab5Bac8Df1e67a566f2() {
+function getDc7f751a36fb4bba8a2cD330d5eaa4b3() {
     $dto = array();
     // 受益人名称
     // $dto["bo_name"] = "test";
@@ -313,7 +313,7 @@ function getB31f324178ea4ab5Bac8Df1e67a566f2() {
     return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function get791c67b3Cce741158ece6eaaf530de10() {
+function get9727fce600f548b6989eF4b876767087() {
     $dto = array();
     // 签约人类型
     // $dto["type"] = "test";
@@ -327,7 +327,7 @@ function get791c67b3Cce741158ece6eaaf530de10() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function getDc09f955A7824544Aed2D92480b74027() {
+function get307191896a9f4ed48418Ac7e1980e485() {
     $dto = array();
     // 协议类型
     // $dto["agreement_type"] = "test";
@@ -343,7 +343,7 @@ function getDc09f955A7824544Aed2D92480b74027() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function get457c26e1370646d085ea7a5cb2f3dc6e() {
+function get2ac9cf4671404fbe9997D27236b556fe() {
     $dto = array();
     // 文件id
     // $dto["file_id"] = "test";
@@ -355,7 +355,7 @@ function get457c26e1370646d085ea7a5cb2f3dc6e() {
     return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function get6365130a554b468e8b227b293f0e7757() {
+function getAf91698b421f492c80990271e81e8d47() {
     $dto = array();
     // 银行编码
     // $dto["bank_code"] = "test";
@@ -387,7 +387,7 @@ function get6365130a554b468e8b227b293f0e7757() {
     return $dtoList;
 }
 
-function get0c17625068a141abAe810df61d8514a4() {
+function get0685f20c9ba545bd88c92138dfcb1afd() {
     $dto = array();
     // 电子账户开关
     // $dto["switch_state"] = "test";
@@ -400,12 +400,12 @@ function get0c17625068a141abAe810df61d8514a4() {
     // 角色类型
     // $dto["role_type"] = "test";
     // 银行卡信息
-    // $dto["elec_card_list"] = get6365130a554b468e8b227b293f0e7757();
+    // $dto["elec_card_list"] = getAf91698b421f492c80990271e81e8d47();
 
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function get03750dcb69b84148Ac0b225a1f2446d2() {
+function get3349bf64Eba543fa87b5351697d3a7e3() {
     $dto = array();
     // 股东姓名
     // $dto["name"] = "test";

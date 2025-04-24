@@ -5,12 +5,12 @@ namespace BsPaySdk\request;
 use BsPaySdk\enums\FunctionCodeEnum;
 
 /**
- * 分期扣款
+ * 应用场景
  *
  * @author sdk-generator
  * @Description
  */
-class V2TradePayafteruseInstallmentPayRequest extends BaseRequest
+class V3TradePaymentJspayRequest extends BaseRequest
 {
 
     /**
@@ -22,28 +22,24 @@ class V2TradePayafteruseInstallmentPayRequest extends BaseRequest
      */
     private $reqSeqId;
     /**
-     * 客户号
+     * 商户号
      */
     private $huifuId;
-    /**
-     * 交易金额
-     */
-    private $transAmt;
     /**
      * 商品描述
      */
     private $goodsDesc;
     /**
-     * 风控信息
+     * 交易类型
      */
-    private $riskCheckData;
+    private $tradeType;
     /**
-     * 支付宝扩展参数集合
+     * 交易金额
      */
-    private $alipayData;
+    private $transAmt;
 
     public function getFunctionCode() {
-        return FunctionCodeEnum::$V2_TRADE_PAYAFTERUSE_INSTALLMENT_PAY;
+        return FunctionCodeEnum::$V3_TRADE_PAYMENT_JSPAY;
     }
 
 
@@ -71,14 +67,6 @@ class V2TradePayafteruseInstallmentPayRequest extends BaseRequest
         $this->huifuId = $huifuId;
     }
 
-    public function getTransAmt() {
-        return $this->transAmt;
-    }
-
-    public function setTransAmt($transAmt) {
-        $this->transAmt = $transAmt;
-    }
-
     public function getGoodsDesc() {
         return $this->goodsDesc;
     }
@@ -87,20 +75,20 @@ class V2TradePayafteruseInstallmentPayRequest extends BaseRequest
         $this->goodsDesc = $goodsDesc;
     }
 
-    public function getRiskCheckData() {
-        return $this->riskCheckData;
+    public function getTradeType() {
+        return $this->tradeType;
     }
 
-    public function setRiskCheckData($riskCheckData) {
-        $this->riskCheckData = $riskCheckData;
+    public function setTradeType($tradeType) {
+        $this->tradeType = $tradeType;
     }
 
-    public function getAlipayData() {
-        return $this->alipayData;
+    public function getTransAmt() {
+        return $this->transAmt;
     }
 
-    public function setAlipayData($alipayData) {
-        $this->alipayData = $alipayData;
+    public function setTransAmt($transAmt) {
+        $this->transAmt = $transAmt;
     }
 
 }

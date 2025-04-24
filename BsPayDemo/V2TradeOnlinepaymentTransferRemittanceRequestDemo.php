@@ -1,7 +1,7 @@
 <?php
 
 /**
- * 汇付入账确认 - 示例
+ * 汇付入账通知 - 示例
  *
  * @author sdk-generator
  * @Description

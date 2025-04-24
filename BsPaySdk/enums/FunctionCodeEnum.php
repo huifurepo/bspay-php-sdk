@@ -5,6 +5,50 @@ namespace BsPaySdk\enums;
 class FunctionCodeEnum
 {
     /**
+     * 银联统一在线收银台签解约查询接口
+     */
+    static $V2_TRADE_ONLINEPAYMENT_UNIONSIGNQUERY = 'v2/trade/onlinepayment/unionsignquery';
+    /**
+     * 银联统一在线收银台签约接口
+     */
+    static $V2_TRADE_ONLINEPAYMENT_UNIONSIGN = 'v2/trade/onlinepayment/unionsign';
+    /**
+     * 银联统一在线收银台解约接口
+     */
+    static $V2_TRADE_ONLINEPAYMENT_UNIONCANCEL = 'v2/trade/onlinepayment/unioncancel';
+    /**
+     * 扫码交易退款
+     */
+    static $V3_TRADE_PAYMENT_SCANPAY_REFUND = 'v3/trade/payment/scanpay/refund';
+    /**
+     * 扫码交易退款查询
+     */
+    static $V3_TRADE_PAYMENT_SCANPAY_REFUNDQUERY = 'v3/trade/payment/scanpay/refundquery';
+    /**
+     * 扫码交易查询
+     */
+    static $V3_TRADE_PAYMENT_SCANPAY_QUERY = 'v3/trade/payment/scanpay/query';
+    /**
+     * 应用场景
+     */
+    static $V3_TRADE_PAYMENT_JSPAY = 'v3/trade/payment/jspay';
+    /**
+     * 聚合反扫
+     */
+    static $V3_TRADE_PAYMENT_MICROPAY = 'v3/trade/payment/micropay';
+    /**
+     * 全渠道资金付款到账户退款查询
+     */
+    static $V2_EFP_ACCTPAYMENT_REFUND_QUERY = 'v2/efp/acctpayment/refund/query';
+    /**
+     * 全渠道资金付款到账户退款
+     */
+    static $V2_EFP_ACCTPAYMENT_REFUND = 'v2/efp/acctpayment/refund';
+    /**
+     * 发票邮件重发接口
+     */
+    static $V2_INVOICE_RESENDMAIL = 'v2/invoice/resendMail';
+    /**
      * 防断链子商户号列表查询
      */
     static $V2_MERCHANT_ATPREVENT_QUERYSUBMERLIST = 'v2/merchant/atPrevent/querySubMerList';

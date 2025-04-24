@@ -5,12 +5,12 @@ namespace BsPaySdk\request;
 use BsPaySdk\enums\FunctionCodeEnum;
 
 /**
- * 分期扣款
+ * 聚合反扫
  *
  * @author sdk-generator
  * @Description
  */
-class V2TradePayafteruseInstallmentPayRequest extends BaseRequest
+class V3TradePaymentMicropayRequest extends BaseRequest
 {
 
     /**
@@ -22,7 +22,7 @@ class V2TradePayafteruseInstallmentPayRequest extends BaseRequest
      */
     private $reqSeqId;
     /**
-     * 客户号
+     * 商户号
      */
     private $huifuId;
     /**
@@ -34,16 +34,16 @@ class V2TradePayafteruseInstallmentPayRequest extends BaseRequest
      */
     private $goodsDesc;
     /**
-     * 风控信息
+     * 支付授权码
+     */
+    private $authCode;
+    /**
+     * 安全信息
      */
     private $riskCheckData;
-    /**
-     * 支付宝扩展参数集合
-     */
-    private $alipayData;
 
     public function getFunctionCode() {
-        return FunctionCodeEnum::$V2_TRADE_PAYAFTERUSE_INSTALLMENT_PAY;
+        return FunctionCodeEnum::$V3_TRADE_PAYMENT_MICROPAY;
     }
 
 
@@ -87,20 +87,20 @@ class V2TradePayafteruseInstallmentPayRequest extends BaseRequest
         $this->goodsDesc = $goodsDesc;
     }
 
+    public function getAuthCode() {
+        return $this->authCode;
+    }
+
+    public function setAuthCode($authCode) {
+        $this->authCode = $authCode;
+    }
+
     public function getRiskCheckData() {
         return $this->riskCheckData;
     }
 
     public function setRiskCheckData($riskCheckData) {
         $this->riskCheckData = $riskCheckData;
-    }
-
-    public function getAlipayData() {
-        return $this->alipayData;
-    }
-
-    public function setAlipayData($alipayData) {
-        $this->alipayData = $alipayData;
     }
 
 }

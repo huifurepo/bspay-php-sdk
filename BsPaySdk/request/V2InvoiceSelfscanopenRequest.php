@@ -41,10 +41,6 @@ class V2InvoiceSelfscanopenRequest extends BaseRequest
      * 开票商品信息
      */
     private $goodsInfos;
-    /**
-     * 开票人信息
-     */
-    private $payerInfo;
 
     public function getFunctionCode() {
         return FunctionCodeEnum::$V2_INVOICE_SELFSCANOPEN;
@@ -105,14 +101,6 @@ class V2InvoiceSelfscanopenRequest extends BaseRequest
 
     public function setGoodsInfos($goodsInfos) {
         $this->goodsInfos = $goodsInfos;
-    }
-
-    public function getPayerInfo() {
-        return $this->payerInfo;
-    }
-
-    public function setPayerInfo($payerInfo) {
-        $this->payerInfo = $payerInfo;
     }
 
 }

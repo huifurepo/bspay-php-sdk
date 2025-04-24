@@ -26,11 +26,11 @@ $request->setHuifuId("6666000109133323");
 // 订单金额
 $request->setTransAmt("0.01");
 // 银行扩展信息
-$request->setExtendPayData(getExtendPayData());
+$request->setExtendPayData(getA5a44257248146f586ec9275ef51ed56());
 // 设备信息
-$request->setTerminalDeviceData(getTerminalDeviceData());
+$request->setTerminalDeviceData(get843a86e56f334304Ac7c38c6524abd82());
 // 安全信息
-$request->setRiskCheckData(getRiskCheckData());
+$request->setRiskCheckData(getE7f925f2Ab5041919687F439e2fba4ad());
 // 异步通知地址
 $request->setNotifyUrl("http://www.baidu.com");
 
@@ -40,7 +40,7 @@ $request->setExtendInfo($extendInfoMap);
 
 // 3. 发起API调用
 $client = new BsPayClient();
-$result = $client->postRequest($request, true);
+$result = $client->postRequest($request);
 if (!$result || $result->isError()) {  //失败处理
     var_dump($result -> getErrorInfo());
 } else {    //成功处理
@@ -67,7 +67,7 @@ function getExtendInfos() {
     // 延时标记
     // $extendInfoMap["delay_acct_flag"]= "";
     // 分账串
-    $extendInfoMap["acct_split_bunch"]= getAcctSplitBunchRucan();
+    $extendInfoMap["acct_split_bunch"]= get82800b8cE35d42b9B688260754e5deef();
     // 手续费扣款标志
     $extendInfoMap["fee_flag"]= "2";
     // 备注
@@ -77,7 +77,7 @@ function getExtendInfos() {
     return $extendInfoMap;
 }
 
-function getAcctInfos() {
+function getDef0a935D6a343269064019353c3caf5() {
     $dto = array();
     // 分账接收方ID
     $dto["huifu_id"] = "6666000109133323";
@@ -93,10 +93,10 @@ function getAcctInfos() {
     return $dtoList;
 }
 
-function getAcctSplitBunchRucan() {
+function get82800b8cE35d42b9B688260754e5deef() {
     $dto = array();
     // 分账明细
-    $dto["acct_infos"] = getAcctInfos();
+    $dto["acct_infos"] = getDef0a935D6a343269064019353c3caf5();
     // 百分比分账标志
     // $dto["percentage_flag"] = "";
     // 是否净值分账
@@ -105,7 +105,7 @@ function getAcctSplitBunchRucan() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function getExtendPayData() {
+function getA5a44257248146f586ec9275ef51ed56() {
     $dto = array();
     // 商品简称
     $dto["goods_short_name"] = "01";
@@ -117,7 +117,7 @@ function getExtendPayData() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function getTerminalDeviceData() {
+function get843a86e56f334304Ac7c38c6524abd82() {
     $dto = array();
     // 设备类型
     $dto["device_type"] = "1";
@@ -139,7 +139,7 @@ function getTerminalDeviceData() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function getRiskCheckData() {
+function getE7f925f2Ab5041919687F439e2fba4ad() {
     $dto = array();
     // ip地址
     $dto["ip_addr"] = "127.0.0.1";

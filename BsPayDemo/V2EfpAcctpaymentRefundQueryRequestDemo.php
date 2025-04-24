@@ -1,7 +1,7 @@
 <?php
 
 /**
- * 分期证书配置 - 示例
+ * 全渠道资金付款到账户退款查询 - 示例
  *
  * @author sdk-generator
  * @Description
@@ -10,21 +10,23 @@ namespace BsPayDemo;
 
 // 1. 资源及配置加载
 require_once dirname(__FILE__) . "/loader.php";
-require_once  dirname(__FILE__). "/../BsPaySdk/request/V2PcreditCertificateConfigRequest.php";
+require_once  dirname(__FILE__). "/../BsPaySdk/request/V2EfpAcctpaymentRefundQueryRequest.php";
 
 use BsPaySdk\core\BsPayClient;
-use BsPaySdk\request\V2PcreditCertificateConfigRequest;
+use BsPaySdk\request\V2EfpAcctpaymentRefundQueryRequest;
 
 // 2.组装请求参数
-$request = new V2PcreditCertificateConfigRequest();
+$request = new V2EfpAcctpaymentRefundQueryRequest();
 // 请求流水号
 $request->setReqSeqId(date("YmdHis").mt_rand());
 // 请求日期
 $request->setReqDate(date("Ymd"));
-// 开发者的应用ID
-$request->setAppId("2019090666961966");
-// 证书文件列表
-$request->setFileList(getEbe71eceF1a04373A7e1C99bb697b700());
+// 汇付商户号
+$request->setHuifuId("6666000123123123");
+// 退款交易请求流水号
+$request->setOrgReqSeqId("2021091708126665002");
+// 退款交易请求日期
+$request->setOrgReqDate("20221022");
 
 // 设置非必填字段
 $extendInfoMap = getExtendInfos();
@@ -47,20 +49,6 @@ function getExtendInfos() {
     // 设置非必填字段
     $extendInfoMap = array();
     return $extendInfoMap;
-}
-
-function getEbe71eceF1a04373A7e1C99bb697b700() {
-    $dto = array();
-    // 文件类型
-    $dto["file_type"] = "F120";
-    // 文件jfileID
-    $dto["file_id"] = "57cc7f00-600a-33ab-b614-6221bbf2e529";
-    // 文件名称
-    $dto["file_name"] = "test420.jpg";
-
-    $dtoList = array();
-    array_push($dtoList, $dto);
-    return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
 

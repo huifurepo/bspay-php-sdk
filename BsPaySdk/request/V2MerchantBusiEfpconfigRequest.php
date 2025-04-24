@@ -42,15 +42,7 @@ class V2MerchantBusiEfpconfigRequest extends BaseRequest
      */
     private $outOrderAcctOpenFees;
     /**
-     * 全渠道资金管理补充材料id涉及文件类型：[F504-全渠道资金管理补充材料](https://paas.huifu.com/open/doc/api/#/csfl/api_csfl_wjlx)；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：57cc7f00-600a-33ab-b614-6221bbf2e530&lt;/font&gt;
-     */
-    private $otherPaymentInstitutionsPic;
-    /**
-     * XW银行数字证书及电子签名授权委托书out_funds_gate_id为xw0时必填；涉及文件类型：[F534-银行数字证书及电子签名授权委托书](https://paas.huifu.com/open/doc/api/#/csfl/api_csfl_wjlx)；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：57cc7f00-600a-33ab-b614-6221bbf2e530&lt;/font&gt;
-     */
-    private $xwDigitalCertificatePic;
-    /**
-     * 银行类型
+     * 银行类型switch_state有值时需填写； ht1-华通银行，xw0-XW银行，ss0-苏商银行；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：ht1&lt;/font&gt;
      */
     private $outFundsGateId;
     /**
@@ -58,9 +50,81 @@ class V2MerchantBusiEfpconfigRequest extends BaseRequest
      */
     private $signUserInfo;
     /**
-     * 入账来源
+     * 入账来源开通全域资金时需填写；01:抖音 02:美团 03:快手 04:拼多多 05:小红书 06:淘宝/天猫/飞猪 07:微信视频号/微信小店 08:京东 09:饿了么 11:得物 12:唯品会 13:携程 14:支付宝直连 15:微信直连 16:滴滴加油 17:团油 18:通联 19:易宝 多个逗号分隔；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：01,02,05&lt;/font&gt;；
      */
     private $acctSource;
+    /**
+     * 抖音合作证明材料入账来源包含01:抖音时必填 文件类型F535；详见[文件类型说明](https://paas.huifu.com/open/doc/api/#/csfl/api_csfl_wjlx)；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：57cc7f00-600a-33ab-b614-6221bbf2e530&lt;/font&gt;
+     */
+    private $dyCooperationProvePic;
+    /**
+     * 美团合作证明材料入账来源包含02:美团时必填 文件类型F536；详见[文件类型说明](https://paas.huifu.com/open/doc/api/#/csfl/api_csfl_wjlx)；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：57cc7f00-600a-33ab-b614-6221bbf2e530&lt;/font&gt;
+     */
+    private $mtCooperationProvePic;
+    /**
+     * 快手合作证明材料入账来源包含03:快手时必填 文件类型F537；详见[文件类型说明](https://paas.huifu.com/open/doc/api/#/csfl/api_csfl_wjlx)；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：57cc7f00-600a-33ab-b614-6221bbf2e530&lt;/font&gt;
+     */
+    private $ksCooperationProvePic;
+    /**
+     * 拼多多合作证明材料入账来源包含04:拼多多时必填 文件类型F538；详见[文件类型说明](https://paas.huifu.com/open/doc/api/#/csfl/api_csfl_wjlx)；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：57cc7f00-600a-33ab-b614-6221bbf2e530&lt;/font&gt;
+     */
+    private $pddCooperationProvePic;
+    /**
+     * 小红书合作证明材料入账来源包含05:小红书时必填 文件类型F539；详见[文件类型说明](https://paas.huifu.com/open/doc/api/#/csfl/api_csfl_wjlx)；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：57cc7f00-600a-33ab-b614-6221bbf2e530&lt;/font&gt;
+     */
+    private $xhsCooperationProvePic;
+    /**
+     * 淘宝天猫飞猪合作证明材料入账来源包含06:淘宝天猫飞猪时必填 文件类型F540；详见[文件类型说明](https://paas.huifu.com/open/doc/api/#/csfl/api_csfl_wjlx)；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：57cc7f00-600a-33ab-b614-6221bbf2e530&lt;/font&gt;
+     */
+    private $zfbCooperationProvePic;
+    /**
+     * 微信视频号合作证明材料入账来源包含07:微信视频号时必填 文件类型F541；详见[文件类型说明](https://paas.huifu.com/open/doc/api/#/csfl/api_csfl_wjlx)；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：57cc7f00-600a-33ab-b614-6221bbf2e530&lt;/font&gt;
+     */
+    private $wxCooperationProvePic;
+    /**
+     * 京东合作证明材料入账来源包含08:京东时必填 文件类型F542；详见[文件类型说明](https://paas.huifu.com/open/doc/api/#/csfl/api_csfl_wjlx)；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：57cc7f00-600a-33ab-b614-6221bbf2e530&lt;/font&gt;
+     */
+    private $jdCooperationProvePic;
+    /**
+     * 饿了么合作证明材料入账来源包含09:饿了么时必填 文件类型F543；详见[文件类型说明](https://paas.huifu.com/open/doc/api/#/csfl/api_csfl_wjlx)；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：57cc7f00-600a-33ab-b614-6221bbf2e530&lt;/font&gt;
+     */
+    private $elmCooperationProvePic;
+    /**
+     * 得物合作证明材料入账来源包含11:得物时必填 文件类型F591；详见[文件类型说明](https://paas.huifu.com/open/doc/api/#/csfl/api_csfl_wjlx)；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：57cc7f00-600a-33ab-b614-6221bbf2e530&lt;/font&gt;
+     */
+    private $dwCooperationProvePic;
+    /**
+     * 唯品会合作证明材料入账来源包含12:唯品会时必填 文件类型F592；详见[文件类型说明](https://paas.huifu.com/open/doc/api/#/csfl/api_csfl_wjlx)；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：57cc7f00-600a-33ab-b614-6221bbf2e530&lt;/font&gt;
+     */
+    private $wphCooperationProvePic;
+    /**
+     * 携程合作证明材料入账来源包含13:携程时必填 文件类型F593；详见[文件类型说明](https://paas.huifu.com/open/doc/api/#/csfl/api_csfl_wjlx)；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：57cc7f00-600a-33ab-b614-6221bbf2e530&lt;/font&gt;
+     */
+    private $xcCooperationProvePic;
+    /**
+     * 支付宝直连合作证明材料入账来源包含14:支付宝直连时必填 文件类型F594；详见[文件类型说明](https://paas.huifu.com/open/doc/api/#/csfl/api_csfl_wjlx)；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：57cc7f00-600a-33ab-b614-6221bbf2e530&lt;/font&gt;
+     */
+    private $zfbzlCooperationProvePic;
+    /**
+     * 微信直连合作证明材料入账来源包含15:微信直连时必填 文件类型F595；详见[文件类型说明](https://paas.huifu.com/open/doc/api/#/csfl/api_csfl_wjlx)；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：57cc7f00-600a-33ab-b614-6221bbf2e530&lt;/font&gt;
+     */
+    private $wxzlCooperationProvePic;
+    /**
+     * 滴滴加油合作证明材料入账来源包含16:滴滴加油时必填 文件类型F596；详见[文件类型说明](https://paas.huifu.com/open/doc/api/#/csfl/api_csfl_wjlx)；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：57cc7f00-600a-33ab-b614-6221bbf2e530&lt;/font&gt;
+     */
+    private $ddjyCooperationProvePic;
+    /**
+     * 团油合作证明材料入账来源包含17:团油时必填 文件类型F597；详见[文件类型说明](https://paas.huifu.com/open/doc/api/#/csfl/api_csfl_wjlx)；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：57cc7f00-600a-33ab-b614-6221bbf2e530&lt;/font&gt;
+     */
+    private $tyCooperationProvePic;
+    /**
+     * 通联合作证明材料入账来源包含18:通联时必填 文件类型F598；详见[文件类型说明](https://paas.huifu.com/open/doc/api/#/csfl/api_csfl_wjlx)；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：57cc7f00-600a-33ab-b614-6221bbf2e530&lt;/font&gt;
+     */
+    private $tlCooperationProvePic;
+    /**
+     * 易宝合作证明材料入账来源包含19:易宝时必填 文件类型F599；详见[文件类型说明](https://paas.huifu.com/open/doc/api/#/csfl/api_csfl_wjlx)；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：57cc7f00-600a-33ab-b614-6221bbf2e530&lt;/font&gt;
+     */
+    private $ybCooperationProvePic;
 
     public function getFunctionCode() {
         return FunctionCodeEnum::$V2_MERCHANT_BUSI_EFPCONFIG;
@@ -123,22 +187,6 @@ class V2MerchantBusiEfpconfigRequest extends BaseRequest
         $this->outOrderAcctOpenFees = $outOrderAcctOpenFees;
     }
 
-    public function getOtherPaymentInstitutionsPic() {
-        return $this->otherPaymentInstitutionsPic;
-    }
-
-    public function setOtherPaymentInstitutionsPic($otherPaymentInstitutionsPic) {
-        $this->otherPaymentInstitutionsPic = $otherPaymentInstitutionsPic;
-    }
-
-    public function getXwDigitalCertificatePic() {
-        return $this->xwDigitalCertificatePic;
-    }
-
-    public function setXwDigitalCertificatePic($xwDigitalCertificatePic) {
-        $this->xwDigitalCertificatePic = $xwDigitalCertificatePic;
-    }
-
     public function getOutFundsGateId() {
         return $this->outFundsGateId;
     }
@@ -161,6 +209,150 @@ class V2MerchantBusiEfpconfigRequest extends BaseRequest
 
     public function setAcctSource($acctSource) {
         $this->acctSource = $acctSource;
+    }
+
+    public function getDyCooperationProvePic() {
+        return $this->dyCooperationProvePic;
+    }
+
+    public function setDyCooperationProvePic($dyCooperationProvePic) {
+        $this->dyCooperationProvePic = $dyCooperationProvePic;
+    }
+
+    public function getMtCooperationProvePic() {
+        return $this->mtCooperationProvePic;
+    }
+
+    public function setMtCooperationProvePic($mtCooperationProvePic) {
+        $this->mtCooperationProvePic = $mtCooperationProvePic;
+    }
+
+    public function getKsCooperationProvePic() {
+        return $this->ksCooperationProvePic;
+    }
+
+    public function setKsCooperationProvePic($ksCooperationProvePic) {
+        $this->ksCooperationProvePic = $ksCooperationProvePic;
+    }
+
+    public function getPddCooperationProvePic() {
+        return $this->pddCooperationProvePic;
+    }
+
+    public function setPddCooperationProvePic($pddCooperationProvePic) {
+        $this->pddCooperationProvePic = $pddCooperationProvePic;
+    }
+
+    public function getXhsCooperationProvePic() {
+        return $this->xhsCooperationProvePic;
+    }
+
+    public function setXhsCooperationProvePic($xhsCooperationProvePic) {
+        $this->xhsCooperationProvePic = $xhsCooperationProvePic;
+    }
+
+    public function getZfbCooperationProvePic() {
+        return $this->zfbCooperationProvePic;
+    }
+
+    public function setZfbCooperationProvePic($zfbCooperationProvePic) {
+        $this->zfbCooperationProvePic = $zfbCooperationProvePic;
+    }
+
+    public function getWxCooperationProvePic() {
+        return $this->wxCooperationProvePic;
+    }
+
+    public function setWxCooperationProvePic($wxCooperationProvePic) {
+        $this->wxCooperationProvePic = $wxCooperationProvePic;
+    }
+
+    public function getJdCooperationProvePic() {
+        return $this->jdCooperationProvePic;
+    }
+
+    public function setJdCooperationProvePic($jdCooperationProvePic) {
+        $this->jdCooperationProvePic = $jdCooperationProvePic;
+    }
+
+    public function getElmCooperationProvePic() {
+        return $this->elmCooperationProvePic;
+    }
+
+    public function setElmCooperationProvePic($elmCooperationProvePic) {
+        $this->elmCooperationProvePic = $elmCooperationProvePic;
+    }
+
+    public function getDwCooperationProvePic() {
+        return $this->dwCooperationProvePic;
+    }
+
+    public function setDwCooperationProvePic($dwCooperationProvePic) {
+        $this->dwCooperationProvePic = $dwCooperationProvePic;
+    }
+
+    public function getWphCooperationProvePic() {
+        return $this->wphCooperationProvePic;
+    }
+
+    public function setWphCooperationProvePic($wphCooperationProvePic) {
+        $this->wphCooperationProvePic = $wphCooperationProvePic;
+    }
+
+    public function getXcCooperationProvePic() {
+        return $this->xcCooperationProvePic;
+    }
+
+    public function setXcCooperationProvePic($xcCooperationProvePic) {
+        $this->xcCooperationProvePic = $xcCooperationProvePic;
+    }
+
+    public function getZfbzlCooperationProvePic() {
+        return $this->zfbzlCooperationProvePic;
+    }
+
+    public function setZfbzlCooperationProvePic($zfbzlCooperationProvePic) {
+        $this->zfbzlCooperationProvePic = $zfbzlCooperationProvePic;
+    }
+
+    public function getWxzlCooperationProvePic() {
+        return $this->wxzlCooperationProvePic;
+    }
+
+    public function setWxzlCooperationProvePic($wxzlCooperationProvePic) {
+        $this->wxzlCooperationProvePic = $wxzlCooperationProvePic;
+    }
+
+    public function getDdjyCooperationProvePic() {
+        return $this->ddjyCooperationProvePic;
+    }
+
+    public function setDdjyCooperationProvePic($ddjyCooperationProvePic) {
+        $this->ddjyCooperationProvePic = $ddjyCooperationProvePic;
+    }
+
+    public function getTyCooperationProvePic() {
+        return $this->tyCooperationProvePic;
+    }
+
+    public function setTyCooperationProvePic($tyCooperationProvePic) {
+        $this->tyCooperationProvePic = $tyCooperationProvePic;
+    }
+
+    public function getTlCooperationProvePic() {
+        return $this->tlCooperationProvePic;
+    }
+
+    public function setTlCooperationProvePic($tlCooperationProvePic) {
+        $this->tlCooperationProvePic = $tlCooperationProvePic;
+    }
+
+    public function getYbCooperationProvePic() {
+        return $this->ybCooperationProvePic;
+    }
+
+    public function setYbCooperationProvePic($ybCooperationProvePic) {
+        $this->ybCooperationProvePic = $ybCooperationProvePic;
     }
 
 }

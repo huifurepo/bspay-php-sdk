@@ -5,7 +5,7 @@ namespace BsPaySdk\request;
 use BsPaySdk\enums\FunctionCodeEnum;
 
 /**
- * 汇付入账确认
+ * 汇付入账通知
  *
  * @author sdk-generator
  * @Description

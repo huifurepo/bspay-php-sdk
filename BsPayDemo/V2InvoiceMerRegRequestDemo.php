@@ -72,7 +72,7 @@ function getExtendInfos() {
     $extendInfoMap["valid_period"]= "1";
     // 自动续约
     $extendInfoMap["auto_renewal"]= "Y";
-    // 开票结果异步通知地址
+    // 商户入驻结果异步通知地址
     $extendInfoMap["callback_url"]= "http: //service.example.com/to/path";
     return $extendInfoMap;
 }

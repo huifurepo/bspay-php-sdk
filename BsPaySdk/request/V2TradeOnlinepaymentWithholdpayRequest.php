@@ -46,6 +46,10 @@ class V2TradeOnlinepaymentWithholdpayRequest extends BaseRequest
      */
     private $withholdType;
     /**
+     * 异步通知地址
+     */
+    private $notifyUrl;
+    /**
      * 银行扩展数据
      */
     private $extendPayData;
@@ -57,10 +61,6 @@ class V2TradeOnlinepaymentWithholdpayRequest extends BaseRequest
      * 设备信息数据
      */
     private $terminalDeviceData;
-    /**
-     * 异步通知地址
-     */
-    private $notifyUrl;
 
     public function getFunctionCode() {
         return FunctionCodeEnum::$V2_TRADE_ONLINEPAYMENT_WITHHOLDPAY;
@@ -131,6 +131,14 @@ class V2TradeOnlinepaymentWithholdpayRequest extends BaseRequest
         $this->withholdType = $withholdType;
     }
 
+    public function getNotifyUrl() {
+        return $this->notifyUrl;
+    }
+
+    public function setNotifyUrl($notifyUrl) {
+        $this->notifyUrl = $notifyUrl;
+    }
+
     public function getExtendPayData() {
         return $this->extendPayData;
     }
@@ -153,14 +161,6 @@ class V2TradeOnlinepaymentWithholdpayRequest extends BaseRequest
 
     public function setTerminalDeviceData($terminalDeviceData) {
         $this->terminalDeviceData = $terminalDeviceData;
-    }
-
-    public function getNotifyUrl() {
-        return $this->notifyUrl;
-    }
-
-    public function setNotifyUrl($notifyUrl) {
-        $this->notifyUrl = $notifyUrl;
     }
 
 }
