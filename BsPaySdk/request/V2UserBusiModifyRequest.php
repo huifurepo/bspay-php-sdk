@@ -33,6 +33,10 @@ class V2UserBusiModifyRequest extends BaseRequest
      * 乐接活配置当合作平台为乐接活，必填
      */
     private $ljhData;
+    /**
+     * 签约人信息当电子回单配置开关为开通时必填
+     */
+    private $signUserInfo;
 
     public function getFunctionCode() {
         return FunctionCodeEnum::$V2_USER_BUSI_MODIFY;
@@ -77,6 +81,14 @@ class V2UserBusiModifyRequest extends BaseRequest
 
     public function setLjhData($ljhData) {
         $this->ljhData = $ljhData;
+    }
+
+    public function getSignUserInfo() {
+        return $this->signUserInfo;
+    }
+
+    public function setSignUserInfo($signUserInfo) {
+        $this->signUserInfo = $signUserInfo;
     }
 
 }

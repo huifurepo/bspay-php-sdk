@@ -59,17 +59,17 @@ function getExtendInfos() {
     // 备注
     $extendInfoMap["remark"]= "大额支付补入账验证";
     // 银行信息数据
-    $extendInfoMap["bank_info_data"]= getAbecf41199e2427189e378ecb5bc0872();
+    $extendInfoMap["bank_info_data"]= get69940cb5C5a44806851224ad4bee6c98();
     // 延时标记
     // $extendInfoMap["delay_acct_flag"]= "";
     // 分账对象
-    // $extendInfoMap["acct_split_bunch"]= get887cec5eC9324ee3B2b5282eb708eb87();
+    // $extendInfoMap["acct_split_bunch"]= get50f05b5e5f6b41fc8cfa7b30b4fcf212();
     // 实际打款信息
-    // $extendInfoMap["actual_remit_data"]= get8bcd25edC7614d4181cf7d7f6bd6e4b5();
+    // $extendInfoMap["actual_remit_data"]= get17063808A8024a02A58aA0786ccadcc0();
     return $extendInfoMap;
 }
 
-function getAbecf41199e2427189e378ecb5bc0872() {
+function get69940cb5C5a44806851224ad4bee6c98() {
     $dto = array();
     // 银行编号
     $dto["bank_code"] = "03080000";
@@ -79,7 +79,7 @@ function getAbecf41199e2427189e378ecb5bc0872() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function get7cb41945E40f4907Ab1e1dd0dcfaee14() {
+function get142421f44e274e9eAb00Dc45474aa16f() {
     $dto = array();
     // 支付金额
     // $dto["div_amt"] = "";
@@ -91,15 +91,15 @@ function get7cb41945E40f4907Ab1e1dd0dcfaee14() {
     return $dtoList;
 }
 
-function get887cec5eC9324ee3B2b5282eb708eb87() {
+function get50f05b5e5f6b41fc8cfa7b30b4fcf212() {
     $dto = array();
     // 分账信息列表
-    // $dto["acct_infos"] = get7cb41945E40f4907Ab1e1dd0dcfaee14();
+    // $dto["acct_infos"] = get142421f44e274e9eAb00Dc45474aa16f();
 
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function get8bcd25edC7614d4181cf7d7f6bd6e4b5() {
+function get17063808A8024a02A58aA0786ccadcc0() {
     $dto = array();
     // 实际打款日期
     // $dto["actual_remit_date"] = "test";

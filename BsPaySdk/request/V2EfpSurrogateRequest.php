@@ -70,10 +70,6 @@ class V2EfpSurrogateRequest extends BaseRequest
      */
     private $licenceCode;
     /**
-     * 挂网协议地址
-     */
-    private $agreementUrl;
-    /**
      * 入账接收方对象json格式,到账类型标识为H时必填
      */
     private $acctSplitBunch;
@@ -193,14 +189,6 @@ class V2EfpSurrogateRequest extends BaseRequest
 
     public function setLicenceCode($licenceCode) {
         $this->licenceCode = $licenceCode;
-    }
-
-    public function getAgreementUrl() {
-        return $this->agreementUrl;
-    }
-
-    public function setAgreementUrl($agreementUrl) {
-        $this->agreementUrl = $agreementUrl;
     }
 
     public function getAcctSplitBunch() {

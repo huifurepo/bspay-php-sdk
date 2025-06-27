@@ -22,9 +22,9 @@ $request->setReqSeqId(date("YmdHis").mt_rand());
 // 请求日期
 $request->setReqDate(date("Ymd"));
 // 渠道商号
-$request->setUpperHuifuId("6666000123123123");
+$request->setUpperHuifuId("6666000108290240");
 // 门店号
-// $request->setStoreId("test");
+$request->setStoreId("store128");
 
 // 设置非必填字段
 $extendInfoMap = getExtendInfos();
@@ -54,6 +54,8 @@ function getExtendInfos() {
     // $extendInfoMap["back_page_url"]= "";
     // 异步接收URL
     // $extendInfoMap["async_receive_url"]= "";
+    // 模版编号
+    $extendInfoMap["template_id"]= "155625";
     return $extendInfoMap;
 }
 

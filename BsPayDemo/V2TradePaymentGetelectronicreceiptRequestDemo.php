@@ -54,6 +54,8 @@ function getExtendInfos() {
     // $extendInfoMap["template_type"]= "";
     // 是否分账
     // $extendInfoMap["is_div"]= "";
+    // 电子回单名称显示
+    // $extendInfoMap["payer_name"]= "";
     return $extendInfoMap;
 }
 

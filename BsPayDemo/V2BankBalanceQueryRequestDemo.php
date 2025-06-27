@@ -46,6 +46,8 @@ function getExtendInfos() {
     $extendInfoMap = array();
     // 操作类型
     $extendInfoMap["elect_acct_type"]= "MERCH";
+    // 登记簿类型
+    // $extendInfoMap["register_attr"]= "";
     return $extendInfoMap;
 }
 

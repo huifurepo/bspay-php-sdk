@@ -50,7 +50,7 @@ class V2MerchantBusiEfpconfigRequest extends BaseRequest
      */
     private $signUserInfo;
     /**
-     * 入账来源开通全域资金时需填写；01:抖音 02:美团 03:快手 04:拼多多 05:小红书 06:淘宝/天猫/飞猪 07:微信视频号/微信小店 08:京东 09:饿了么 11:得物 12:唯品会 13:携程 14:支付宝直连 15:微信直连 16:滴滴加油 17:团油 18:通联 19:易宝 多个逗号分隔；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：01,02,05&lt;/font&gt;；
+     * 入账来源开通全域资金时需填写；01:抖音 02:美团 03:快手 04:拼多多 05:小红书 06:淘宝/天猫/飞猪 07:微信视频号/微信小店 08:京东 09:饿了么 11:得物 12:唯品会 13:携程 14:支付宝直连 15:微信直连 16:滴滴加油 17:团油 18:通联 19:易宝 20:百度 多个逗号分隔；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：01,02,05&lt;/font&gt;；
      */
     private $acctSource;
     /**
@@ -125,6 +125,14 @@ class V2MerchantBusiEfpconfigRequest extends BaseRequest
      * 易宝合作证明材料入账来源包含19:易宝时必填 文件类型F599；详见[文件类型说明](https://paas.huifu.com/open/doc/api/#/csfl/api_csfl_wjlx)；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：57cc7f00-600a-33ab-b614-6221bbf2e530&lt;/font&gt;
      */
     private $ybCooperationProvePic;
+    /**
+     * 全渠道资金纸质协议文件协议类型为纸质时必填，文件类型F605；详见[文件类型说明](https://paas.huifu.com/open/doc/api/#/csfl/api_csfl_wjlx)；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：57cc7f00-600a-33ab-b614-6221bbf2e530&lt;/font&gt;
+     */
+    private $efpPaperAgreementFile;
+    /**
+     * 百度合作证明材料入账来源包含20:百度时必填 文件类型F616；详见[文件类型说明](https://paas.huifu.com/open/doc/api/#/csfl/api_csfl_wjlx)；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：57cc7f00-600a-33ab-b614-6221bbf2e530&lt;/font&gt;
+     */
+    private $bdCooperationProvePic;
 
     public function getFunctionCode() {
         return FunctionCodeEnum::$V2_MERCHANT_BUSI_EFPCONFIG;
@@ -353,6 +361,22 @@ class V2MerchantBusiEfpconfigRequest extends BaseRequest
 
     public function setYbCooperationProvePic($ybCooperationProvePic) {
         $this->ybCooperationProvePic = $ybCooperationProvePic;
+    }
+
+    public function getEfpPaperAgreementFile() {
+        return $this->efpPaperAgreementFile;
+    }
+
+    public function setEfpPaperAgreementFile($efpPaperAgreementFile) {
+        $this->efpPaperAgreementFile = $efpPaperAgreementFile;
+    }
+
+    public function getBdCooperationProvePic() {
+        return $this->bdCooperationProvePic;
+    }
+
+    public function setBdCooperationProvePic($bdCooperationProvePic) {
+        $this->bdCooperationProvePic = $bdCooperationProvePic;
     }
 
 }

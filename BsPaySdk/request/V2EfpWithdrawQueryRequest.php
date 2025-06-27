@@ -26,11 +26,11 @@ class V2EfpWithdrawQueryRequest extends BaseRequest
      */
     private $huifuId;
     /**
-     * 原请求流水号
+     * 付款或提现的请求流水号
      */
     private $orgReqSeqId;
     /**
-     * 原请求日期
+     * 付款或提现的请求日期
      */
     private $orgReqDate;
 
