@@ -14,6 +14,10 @@ class V2TradeCloudmisOrderDetailRequest extends BaseRequest
 {
 
     /**
+     * 请求流水号
+     */
+    private $reqId;
+    /**
      * 原MIS请求商户号
      */
     private $orgHuifuId;
@@ -30,6 +34,14 @@ class V2TradeCloudmisOrderDetailRequest extends BaseRequest
         return FunctionCodeEnum::$V2_TRADE_CLOUDMIS_ORDER_DETAIL;
     }
 
+
+    public function getReqId() {
+        return $this->reqId;
+    }
+
+    public function setReqId($reqId) {
+        $this->reqId = $reqId;
+    }
 
     public function getOrgHuifuId() {
         return $this->orgHuifuId;

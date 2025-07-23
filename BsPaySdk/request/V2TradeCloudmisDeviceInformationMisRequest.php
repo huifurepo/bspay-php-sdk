@@ -14,6 +14,10 @@ class V2TradeCloudmisDeviceInformationMisRequest extends BaseRequest
 {
 
     /**
+     * 请求流水号
+     */
+    private $reqId;
+    /**
      * 终端设备号
      */
     private $deviceId;
@@ -30,6 +34,14 @@ class V2TradeCloudmisDeviceInformationMisRequest extends BaseRequest
         return FunctionCodeEnum::$V2_TRADE_CLOUDMIS_DEVICE_INFORMATION_MIS;
     }
 
+
+    public function getReqId() {
+        return $this->reqId;
+    }
+
+    public function setReqId($reqId) {
+        $this->reqId = $reqId;
+    }
 
     public function getDeviceId() {
         return $this->deviceId;

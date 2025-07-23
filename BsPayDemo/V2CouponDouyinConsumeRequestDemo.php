@@ -57,11 +57,11 @@ function getExtendInfos() {
     // 操作人姓名
     // $extendInfoMap["operator_name"]= "";
     // 核销额外参数
-    // $extendInfoMap["verify_extra"]= getFb7a9cffD3d449df99461036235bce4c();
+    // $extendInfoMap["verify_extra"]= get11f3d825Aad642ec886f1867af6dfb8e();
     return $extendInfoMap;
 }
 
-function getFb7a9cffD3d449df99461036235bce4c() {
+function get11f3d825Aad642ec886f1867af6dfb8e() {
     $dto = array();
     // 开台时间（秒）
     // $dto["biz_time"] = "test";

@@ -28,11 +28,11 @@ $request->setTransAmt("0.02");
 // 商品描述
 $request->setGoodsDesc("网银支付下单");
 // 网联扩展数据
-$request->setExtendPayData(get3194e7baDdea4c7188127b568d867933());
+$request->setExtendPayData(get41a3882943be433986df896d5ad9bbc7());
 // 设备信息
-$request->setTerminalDeviceData(get311c0af960b243a4Ae3797b5e7958321());
+$request->setTerminalDeviceData(get6cbdad332b5f4dfe89d107e7e323b3ff());
 // 安全信息
-$request->setRiskCheckData(get3189111156d949719cc958f824f77fbd());
+$request->setRiskCheckData(get8334e31082524280943eE90c27c8c86e());
 // 异步通知地址
 $request->setNotifyUrl("http://www.chinapnr.com");
 
@@ -73,7 +73,7 @@ function getExtendInfos() {
     // 延时标记
     $extendInfoMap["delay_acct_flag"]= "N";
     // 分账对象
-    // $extendInfoMap["acct_split_bunch"]= get25c8debcE5ba43afAcd2738c16b98199();
+    // $extendInfoMap["acct_split_bunch"]= get2e3d17e1485d440aA68a0dede46dd8b3();
     // 手续费扣款标志
     // $extendInfoMap["fee_flag"]= "";
     // 页面跳转地址
@@ -81,7 +81,7 @@ function getExtendInfos() {
     return $extendInfoMap;
 }
 
-function getD0d7f539767c4784A84eA384d0e3ee19() {
+function getF5794a341ce740feB74dDfd50cfb54d0() {
     $dto = array();
     // 分账金额
     // $dto["div_amt"] = "";
@@ -97,10 +97,10 @@ function getD0d7f539767c4784A84eA384d0e3ee19() {
     return $dtoList;
 }
 
-function get25c8debcE5ba43afAcd2738c16b98199() {
+function get2e3d17e1485d440aA68a0dede46dd8b3() {
     $dto = array();
     // 分账明细
-    // $dto["acct_infos"] = getD0d7f539767c4784A84eA384d0e3ee19();
+    // $dto["acct_infos"] = getF5794a341ce740feB74dDfd50cfb54d0();
     // 百分比分账标志
     // $dto["percentage_flag"] = "";
     // 是否净值分账
@@ -109,7 +109,7 @@ function get25c8debcE5ba43afAcd2738c16b98199() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function get3194e7baDdea4c7188127b568d867933() {
+function get41a3882943be433986df896d5ad9bbc7() {
     $dto = array();
     // 商品简称
     $dto["goods_short_name"] = "011111";
@@ -121,7 +121,7 @@ function get3194e7baDdea4c7188127b568d867933() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function get311c0af960b243a4Ae3797b5e7958321() {
+function get6cbdad332b5f4dfe89d107e7e323b3ff() {
     $dto = array();
     // 交易设备类型
     $dto["device_type"] = "1";
@@ -143,7 +143,7 @@ function get311c0af960b243a4Ae3797b5e7958321() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function get3189111156d949719cc958f824f77fbd() {
+function get8334e31082524280943eE90c27c8c86e() {
     $dto = array();
     // ip地址
     $dto["ip_addr"] = "1";

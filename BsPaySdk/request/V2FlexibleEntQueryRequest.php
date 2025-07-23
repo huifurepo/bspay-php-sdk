@@ -5,12 +5,12 @@ namespace BsPaySdk\request;
 use BsPaySdk\enums\FunctionCodeEnum;
 
 /**
- * 申请开票
+ * 灵工企业商户信息查询
  *
  * @author sdk-generator
  * @Description
  */
-class V2HycInvoiceApplyRequest extends BaseRequest
+class V2FlexibleEntQueryRequest extends BaseRequest
 {
 
     /**
@@ -22,20 +22,12 @@ class V2HycInvoiceApplyRequest extends BaseRequest
      */
     private $reqDate;
     /**
-     * 商户汇付id
+     * 汇付商户号
      */
     private $huifuId;
-    /**
-     * 开票类目
-     */
-    private $invoiceCategory;
-    /**
-     * 汇付全局流水号集合
-     */
-    private $hfSeqIds;
 
     public function getFunctionCode() {
-        return FunctionCodeEnum::$V2_HYC_INVOICE_APPLY;
+        return FunctionCodeEnum::$V2_FLEXIBLE_ENT_QUERY;
     }
 
 
@@ -61,22 +53,6 @@ class V2HycInvoiceApplyRequest extends BaseRequest
 
     public function setHuifuId($huifuId) {
         $this->huifuId = $huifuId;
-    }
-
-    public function getInvoiceCategory() {
-        return $this->invoiceCategory;
-    }
-
-    public function setInvoiceCategory($invoiceCategory) {
-        $this->invoiceCategory = $invoiceCategory;
-    }
-
-    public function getHfSeqIds() {
-        return $this->hfSeqIds;
-    }
-
-    public function setHfSeqIds($hfSeqIds) {
-        $this->hfSeqIds = $hfSeqIds;
     }
 
 }

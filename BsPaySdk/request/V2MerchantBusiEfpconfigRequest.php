@@ -133,6 +133,10 @@ class V2MerchantBusiEfpconfigRequest extends BaseRequest
      * 百度合作证明材料入账来源包含20:百度时必填 文件类型F616；详见[文件类型说明](https://paas.huifu.com/open/doc/api/#/csfl/api_csfl_wjlx)；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：57cc7f00-600a-33ab-b614-6221bbf2e530&lt;/font&gt;
      */
     private $bdCooperationProvePic;
+    /**
+     * 主店商户号是否店群为是时必填
+     */
+    private $mainStoreHuifuId;
 
     public function getFunctionCode() {
         return FunctionCodeEnum::$V2_MERCHANT_BUSI_EFPCONFIG;
@@ -377,6 +381,14 @@ class V2MerchantBusiEfpconfigRequest extends BaseRequest
 
     public function setBdCooperationProvePic($bdCooperationProvePic) {
         $this->bdCooperationProvePic = $bdCooperationProvePic;
+    }
+
+    public function getMainStoreHuifuId() {
+        return $this->mainStoreHuifuId;
+    }
+
+    public function setMainStoreHuifuId($mainStoreHuifuId) {
+        $this->mainStoreHuifuId = $mainStoreHuifuId;
     }
 
 }

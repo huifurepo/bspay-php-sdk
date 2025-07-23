@@ -26,7 +26,7 @@ $request->setHuifuId("6666000106057033");
 // 门店绑定流水号
 $request->setBindId("9c2d91f68ba045a998df46ffe395a9ca");
 // 核销券
-$request->setReceiptCodeInfos(getBa1324ef265e44d99bc21f7e0e9846c1());
+$request->setReceiptCodeInfos(get1220ae0e014040c9Af4d128bcbe56d8a());
 // 登录账号
 $request->setAppShopAccount("123");
 // 登录用户名
@@ -61,7 +61,7 @@ function getExtendInfos() {
     return $extendInfoMap;
 }
 
-function getBa1324ef265e44d99bc21f7e0e9846c1() {
+function get1220ae0e014040c9Af4d128bcbe56d8a() {
     $dto = array();
     // 券码
     $dto["receipt_code"] = "5729740654";
@@ -70,7 +70,7 @@ function getBa1324ef265e44d99bc21f7e0e9846c1() {
 
     $dtoList = array();
     array_push($dtoList, $dto);
-    return $dtoList;
+    return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
 

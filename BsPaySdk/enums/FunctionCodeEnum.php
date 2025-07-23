@@ -5,6 +5,46 @@ namespace BsPaySdk\enums;
 class FunctionCodeEnum
 {
     /**
+     * 灵工支付退款查询
+     */
+    static $V2_FLEXIBLE_REFUND_QUERY = 'v2/flexible/refund/query';
+    /**
+     * 灵工支付退款
+     */
+    static $V2_FLEXIBLE_REFUND = 'v2/flexible/refund';
+    /**
+     * 灵工支付查询
+     */
+    static $V2_FLEXIBLE_TRADE_QUERY = 'v2/flexible/trade/query';
+    /**
+     * 灵工支付
+     */
+    static $V2_FLEXIBLE_TRADE = 'v2/flexible/trade';
+    /**
+     * 灵工企业商户业务修改
+     */
+    static $V2_FLEXIBLE_ENT_MODIFY = 'v2/flexible/ent/modify';
+    /**
+     * 灵工企业商户进件接口
+     */
+    static $V2_FLEXIBLE_ENT = 'v2/flexible/ent';
+    /**
+     * 灵工企业商户信息查询
+     */
+    static $V2_FLEXIBLE_ENT_QUERY = 'v2/flexible/ent/query';
+    /**
+     * 灵工个人用户修改
+     */
+    static $V2_FLEXIBLE_INDV_MODIFY = 'v2/flexible/indv/modify';
+    /**
+     * 灵工个人用户进件
+     */
+    static $V2_FLEXIBLE_INDV = 'v2/flexible/indv';
+    /**
+     * 灵工用户信息查询
+     */
+    static $V2_FLEXIBLE_INDV_QUERY = 'v2/flexible/indv/query';
+    /**
      * 电子账户资金清分
      */
     static $V2_TRADE_SETTLEMENT_CLEARING_ADD = 'v2/trade/settlement/clearing/add';

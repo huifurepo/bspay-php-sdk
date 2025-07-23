@@ -1,7 +1,7 @@
 <?php
 
 /**
- * 云MIS订单详情查询接口 - 示例
+ * 灵工支付退款查询 - 示例
  *
  * @author sdk-generator
  * @Description
@@ -10,21 +10,23 @@ namespace BsPayDemo;
 
 // 1. 资源及配置加载
 require_once dirname(__FILE__) . "/loader.php";
-require_once  dirname(__FILE__). "/../BsPaySdk/request/V2TradeCloudmisOrderDetailRequest.php";
+require_once  dirname(__FILE__). "/../BsPaySdk/request/V2FlexibleRefundQueryRequest.php";
 
 use BsPaySdk\core\BsPayClient;
-use BsPaySdk\request\V2TradeCloudmisOrderDetailRequest;
+use BsPaySdk\request\V2FlexibleRefundQueryRequest;
 
 // 2.组装请求参数
-$request = new V2TradeCloudmisOrderDetailRequest();
+$request = new V2FlexibleRefundQueryRequest();
 // 请求流水号
-// $request->setReqId("test");
-// 原MIS请求商户号
-$request->setOrgHuifuId("6666000141203565");
-// 原MIS请求终端号
-$request->setOrgDeviceId("310000011015000063677");
-// 原MIS请求日期
-$request->setOrgReqDate("20240715");
+$request->setReqSeqId(date("YmdHis").mt_rand());
+// 请求日期
+$request->setReqDate(date("Ymd"));
+// 退款请求流水号
+$request->setOrgReqSeqId("2025061871011243181811test001");
+// 退款请求日期
+$request->setOrgReqDate("20250617");
+// 汇付商户号
+$request->setHuifuId("6666000108903745");
 
 // 设置非必填字段
 $extendInfoMap = getExtendInfos();
@@ -46,10 +48,6 @@ if (!$result || $result->isError()) {  //失败处理
 function getExtendInfos() {
     // 设置非必填字段
     $extendInfoMap = array();
-    // 原MIS请求流水号
-    $extendInfoMap["org_req_id"]= "reqId20240624091729005";
-    // 原MIS请求jsonData中的三方单号
-    $extendInfoMap["org_third_order_id"]= "20240313115926539uf7cqcmwxl30";
     return $extendInfoMap;
 }
 

@@ -28,13 +28,13 @@ $request->setUpperHuifuId("6666000108120249");
 // 支付手续费外扣汇付ID支付手续费外扣标记为1时必填；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：6666000109812123&lt;/font&gt;
 $request->setOutFeeHuifuid("");
 // 全域资金开户使用的银行卡信息首次开通时必填 jsonObject格式
-$request->setOutOrderAcctCard(get14520082A0a54613882468ac3d7c7362());
+$request->setOutOrderAcctCard(getE87b0a0314c148faA254100625ae9787());
 // 全域资金开户手续费首次开通时必填 jsonObject格式
-$request->setOutOrderAcctOpenFees(get13968f834e49448a8af0397bd6d4682f());
+$request->setOutOrderAcctOpenFees(get652184f66c5f43f5Acb6185e66fd53ec());
 // 银行类型switch_state有值时需填写； ht1-华通银行，xw0-XW银行，ss0-苏商银行；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：ht1&lt;/font&gt;
 $request->setOutFundsGateId("xw0");
 // 签约人信息switch_state为1时必填 jsonObject格式
-$request->setSignUserInfo(getBfd021a17798400893686b61602c1265());
+$request->setSignUserInfo(get99d65aafAbb3475bA282C63b7361c884());
 // 入账来源开通全域资金时需填写；01:抖音 02:美团 03:快手 04:拼多多 05:小红书 06:淘宝/天猫/飞猪 07:微信视频号/微信小店 08:京东 09:饿了么 11:得物 12:唯品会 13:携程 14:支付宝直连 15:微信直连 16:滴滴加油 17:团油 18:通联 19:易宝 20:百度 多个逗号分隔；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：01,02,05&lt;/font&gt;；
 $request->setAcctSource("01");
 // 抖音合作证明材料入账来源包含01:抖音时必填 文件类型F535；详见[文件类型说明](https://paas.huifu.com/open/doc/api/#/csfl/api_csfl_wjlx)；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：57cc7f00-600a-33ab-b614-6221bbf2e530&lt;/font&gt;
@@ -77,6 +77,8 @@ $request->setAcctSource("01");
 // $request->setEfpPaperAgreementFile("test");
 // 百度合作证明材料入账来源包含20:百度时必填 文件类型F616；详见[文件类型说明](https://paas.huifu.com/open/doc/api/#/csfl/api_csfl_wjlx)；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：57cc7f00-600a-33ab-b614-6221bbf2e530&lt;/font&gt;
 // $request->setBdCooperationProvePic("test");
+// 主店商户号是否店群为是时必填
+// $request->setMainStoreHuifuId("test");
 
 // 设置非必填字段
 $extendInfoMap = getExtendInfos();
@@ -123,7 +125,7 @@ function getExtendInfos() {
     // 申请单日限额
     $extendInfoMap["pay_every_day"]= "";
     // 全域资金分账规则
-    // $extendInfoMap["efp_spb_config"]= get98526f80E7b24ce5Ba8aFaee6bd73c2b();
+    // $extendInfoMap["efp_spb_config"]= getAca242e9E64f48f9A44f2606e1ed17a0();
     // 客户ip地址
     // $extendInfoMap["ip_address"]= "";
     // 是否线上场景
@@ -139,17 +141,27 @@ function getExtendInfos() {
     // 协议类型
     // $extendInfoMap["agreement_type"]= "";
     // 全域资金取现手续费配置
-    // $extendInfoMap["efp_encash_fee_config"]= get470acb0d5dac44ccA85505961c4e64b3();
+    // $extendInfoMap["efp_encash_fee_config"]= get80fe7a4a0d904b3c95a8F96d865b9d5a();
     // 全域资金付款手续费配置
-    // $extendInfoMap["efp_payment_fee_config"]= get74de1e8fA38a428e989dF7622a3c69b2();
+    // $extendInfoMap["efp_payment_fee_config"]= getF4fd618742464a4b8148Ec80d19d7180();
     // 纸质协议开始日期
     // $extendInfoMap["agree_begin_date"]= "";
     // 纸质协议结束日期
     // $extendInfoMap["agree_end_date"]= "";
+    // 是否店群
+    // $extendInfoMap["store_group_flag"]= "";
+    // 商户经营类型
+    // $extendInfoMap["store_busi_type"]= "";
+    // 行业类型
+    // $extendInfoMap["store_industry_type"]= "";
+    // 经营信息材料
+    // $extendInfoMap["management_file"]= "";
+    // 全域资金分账手续费配置
+    // $extendInfoMap["efp_spb_fee_config"]= getEe78625d1bf14f97A6a9Ced2395345e6();
     return $extendInfoMap;
 }
 
-function get14520082A0a54613882468ac3d7c7362() {
+function getE87b0a0314c148faA254100625ae9787() {
     $dto = array();
     // 结算账户名
     $dto["card_name"] = "圆务铁白事";
@@ -185,7 +197,7 @@ function get14520082A0a54613882468ac3d7c7362() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function get13968f834e49448a8af0397bd6d4682f() {
+function get652184f66c5f43f5Acb6185e66fd53ec() {
     $dto = array();
     // 开户固定手续费(元)
     $dto["fee_fix_amt"] = "0";
@@ -197,7 +209,7 @@ function get13968f834e49448a8af0397bd6d4682f() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function getBfd021a17798400893686b61602c1265() {
+function get99d65aafAbb3475bA282C63b7361c884() {
     $dto = array();
     // 签约人类型
     $dto["type"] = "LEGAL";
@@ -211,7 +223,7 @@ function getBfd021a17798400893686b61602c1265() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function get4b9831faA55c4322931b319719621401() {
+function get1f83599f94ab4cf9Aebd4de126d4d028() {
     $dto = array();
     // 分账接收方汇付ID
     // $dto["huifu_id"] = "test";
@@ -225,7 +237,7 @@ function get4b9831faA55c4322931b319719621401() {
     return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function get98526f80E7b24ce5Ba8aFaee6bd73c2b() {
+function getAca242e9E64f48f9A44f2606e1ed17a0() {
     $dto = array();
     // 分账规则来源
     // $dto["rule_origin"] = "test";
@@ -238,12 +250,12 @@ function get98526f80E7b24ce5Ba8aFaee6bd73c2b() {
     // 全域资金分账手续费外扣账户类型交易手续费外扣标记为1时必填 01-基本户05-充值户 09-营销户；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：01&lt;/font&gt;；
     // $dto["out_fee_acct_type"] = "test";
     // 分账规则明细规则来源为01时必填 jsonArray格式 最多7条
-    // $dto["rule_detail"] = get4b9831faA55c4322931b319719621401();
+    // $dto["rule_detail"] = get1f83599f94ab4cf9Aebd4de126d4d028();
 
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function get470acb0d5dac44ccA85505961c4e64b3() {
+function get80fe7a4a0d904b3c95a8F96d865b9d5a() {
     $dto = array();
     // 全域资金取现手续费百分比
     // $dto["fee_rate"] = "test";
@@ -261,7 +273,7 @@ function get470acb0d5dac44ccA85505961c4e64b3() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function get74de1e8fA38a428e989dF7622a3c69b2() {
+function getF4fd618742464a4b8148Ec80d19d7180() {
     $dto = array();
     // 全域资金付款手续费百分比
     // $dto["fee_rate"] = "test";
@@ -275,6 +287,18 @@ function get74de1e8fA38a428e989dF7622a3c69b2() {
     // $dto["out_fee_huifuid"] = "test";
     // 全域资金付款手续费外扣子账户号全域资金付款手续费内外扣标记为1:外扣时必填；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：F00598600&lt;/font&gt;
     // $dto["out_fee_acctid"] = "test";
+
+    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+}
+
+function getEe78625d1bf14f97A6a9Ced2395345e6() {
+    $dto = array();
+    // 全域资金分账配置开关
+    // $dto["switch_state"] = "test";
+    // 全域资金分账手续费百分比全域资金分账配置开关为开时必填，0-100之间的数,&lt;font color&#x3D;&quot;green&quot;&gt;示例值：0.21&lt;/font&gt;
+    // $dto["fee_rate"] = "test";
+    // 全域资金分账手续费固定值全域资金分账配置开关为开时必填，整数位最多12位，小数位最多2位；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：1.00&lt;/font&gt;
+    // $dto["fee_fix_amt"] = "test";
 
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }

@@ -25,8 +25,10 @@ $request->setReqSeqId(date("YmdHis").mt_rand());
 $request->setHuifuId("6666000109133323");
 // 原交易请求日期
 $request->setOrgReqDate("20231020");
-// 原交易请求流水号
+// 原交易请求流水号与**party_order_id**二选一，必填；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：rQ2021121311173944&lt;/font&gt;
 $request->setOrgReqSeqId("202310201652361987182512");
+// 用户账单上的商户订单号与**org_req_seq_id**二选一，必填；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：03232109190255105603561&lt;/font&gt;
+// $request->setPartyOrderId("test");
 
 // 设置非必填字段
 $extendInfoMap = getExtendInfos();

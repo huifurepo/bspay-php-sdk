@@ -30,9 +30,13 @@ class V2TradeHostingPaymentQueryorderinfoRequest extends BaseRequest
      */
     private $orgReqDate;
     /**
-     * 原交易请求流水号
+     * 原交易请求流水号与**party_order_id**二选一，必填；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：rQ2021121311173944&lt;/font&gt;
      */
     private $orgReqSeqId;
+    /**
+     * 用户账单上的商户订单号与**org_req_seq_id**二选一，必填；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：03232109190255105603561&lt;/font&gt;
+     */
+    private $partyOrderId;
 
     public function getFunctionCode() {
         return FunctionCodeEnum::$V2_TRADE_HOSTING_PAYMENT_QUERYORDERINFO;
@@ -77,6 +81,14 @@ class V2TradeHostingPaymentQueryorderinfoRequest extends BaseRequest
 
     public function setOrgReqSeqId($orgReqSeqId) {
         $this->orgReqSeqId = $orgReqSeqId;
+    }
+
+    public function getPartyOrderId() {
+        return $this->partyOrderId;
+    }
+
+    public function setPartyOrderId($partyOrderId) {
+        $this->partyOrderId = $partyOrderId;
     }
 
 }
