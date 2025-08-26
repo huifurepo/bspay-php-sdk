@@ -64,9 +64,9 @@ function getExtendInfos() {
     // $extendInfoMap["account_name"]= "";
     // 登录账号密码
     // $extendInfoMap["account_password"]= "";
-    // 登录时选择的登录账号
+    // 门店名称
     // $extendInfoMap["shop_name"]= "";
-    // 管理员手机号，取现功能验证码从该手机号获取
+    // 管理员手机号
     // $extendInfoMap["admin_phone_num"]= "";
     return $extendInfoMap;
 }

@@ -26,10 +26,6 @@ class V2MerchantDirectZftRegRequest extends BaseRequest
      */
     private $huifuId;
     /**
-     * 开发者的应用ID
-     */
-    private $appId;
-    /**
      * 进件的二级商户名称
      */
     private $name;
@@ -157,14 +153,6 @@ class V2MerchantDirectZftRegRequest extends BaseRequest
 
     public function setHuifuId($huifuId) {
         $this->huifuId = $huifuId;
-    }
-
-    public function getAppId() {
-        return $this->appId;
-    }
-
-    public function setAppId($appId) {
-        $this->appId = $appId;
     }
 
     public function getName() {

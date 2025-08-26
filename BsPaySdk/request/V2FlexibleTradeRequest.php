@@ -26,10 +26,6 @@ class V2FlexibleTradeRequest extends BaseRequest
      */
     private $outHuifuId;
     /**
-     * 出款方账户号
-     */
-    private $outAcctId;
-    /**
      * 交易阶段操作类型
      */
     private $stageOperationType;
@@ -41,6 +37,10 @@ class V2FlexibleTradeRequest extends BaseRequest
      * 支付金额
      */
     private $ordAmt;
+    /**
+     * 分账对象
+     */
+    private $acctSplitBunch;
 
     public function getFunctionCode() {
         return FunctionCodeEnum::$V2_FLEXIBLE_TRADE;
@@ -71,14 +71,6 @@ class V2FlexibleTradeRequest extends BaseRequest
         $this->outHuifuId = $outHuifuId;
     }
 
-    public function getOutAcctId() {
-        return $this->outAcctId;
-    }
-
-    public function setOutAcctId($outAcctId) {
-        $this->outAcctId = $outAcctId;
-    }
-
     public function getStageOperationType() {
         return $this->stageOperationType;
     }
@@ -101,6 +93,14 @@ class V2FlexibleTradeRequest extends BaseRequest
 
     public function setOrdAmt($ordAmt) {
         $this->ordAmt = $ordAmt;
+    }
+
+    public function getAcctSplitBunch() {
+        return $this->acctSplitBunch;
+    }
+
+    public function setAcctSplitBunch($acctSplitBunch) {
+        $this->acctSplitBunch = $acctSplitBunch;
     }
 
 }

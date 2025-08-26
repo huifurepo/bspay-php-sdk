@@ -30,7 +30,7 @@ class V2CouponDouyinCancelRequest extends BaseRequest
      */
     private $bindId;
     /**
-     * 加密抖音券码
+     * 抖音券码
      */
     private $encryptedCode;
     /**

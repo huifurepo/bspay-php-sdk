@@ -44,6 +44,8 @@ function getExtendInfos() {
     $extendInfoMap = array();
     // 请求流水号
     $extendInfoMap["req_seq_id"]= date("YmdHis").mt_rand();
+    // 账务日期
+    // $extendInfoMap["acct_date"]= "";
     return $extendInfoMap;
 }
 

@@ -24,9 +24,9 @@ $request->setReqDate(date("Ymd"));
 // 渠道商/商户汇付Id
 $request->setUpperHuifuId("6666000108900391");
 // 基本信息
-$request->setBasicInfo(getCb18718f36334ed4859eC242d6402fc6());
+$request->setBasicInfo(getC5d70ad2Dabc4349A0cd524ed438f1df());
 // 卡信息
-$request->setCardInfo(get422a0b4910214f9f9356940fca9e771c());
+$request->setCardInfo(get71e41c34D4d04865Bc9eEd4922337ec7());
 
 // 设置非必填字段
 $extendInfoMap = getExtendInfos();
@@ -49,11 +49,11 @@ function getExtendInfos() {
     // 设置非必填字段
     $extendInfoMap = array();
     // 取现配置列表
-    $extendInfoMap["cash_config"]= get905315064b9044d3A4b8D77675b4815b();
+    $extendInfoMap["cash_config"]= get7a944d27D6f84205B5e52b5fd821eb88();
     return $extendInfoMap;
 }
 
-function getCb18718f36334ed4859eC242d6402fc6() {
+function getC5d70ad2Dabc4349A0cd524ed438f1df() {
     $dto = array();
     // 个人姓名
     $dto["name"] = "张三";
@@ -79,7 +79,7 @@ function getCb18718f36334ed4859eC242d6402fc6() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function get905315064b9044d3A4b8D77675b4815b() {
+function get7a944d27D6f84205B5e52b5fd821eb88() {
     $dto = array();
     // 提现手续费（固定/元）fix_amt与fee_rate至少填写一项， 需保留小数点后两位，不收费请填写0.00；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：1.00&lt;/font&gt;注：当cash_type&#x3D;D1时为节假日取现手续费
     $dto["fix_amt"] = "";
@@ -102,10 +102,10 @@ function get905315064b9044d3A4b8D77675b4815b() {
 
     $dtoList = array();
     array_push($dtoList, $dto);
-    return $dtoList;
+    return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function get422a0b4910214f9f9356940fca9e771c() {
+function get71e41c34D4d04865Bc9eEd4922337ec7() {
     $dto = array();
     // 卡号
     $dto["card_no"] = "6217001210064762890";

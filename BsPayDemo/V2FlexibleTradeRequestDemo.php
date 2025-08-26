@@ -23,14 +23,14 @@ $request->setReqSeqId(date("YmdHis").mt_rand());
 $request->setReqDate(date("Ymd"));
 // 出款方商户号
 $request->setOutHuifuId("6666000108903745");
-// 出款方账户号
-$request->setOutAcctId("C03117654");
 // 交易阶段操作类型
 $request->setStageOperationType("FIRST_STAGE");
 // 前段交易流水号** 当交易阶段操作类型为02时，该字段必填。填写的是交易阶段操作类型为01时交易已完成的交易全局流水号。 &lt;font color&#x3D;&quot;green&quot;&gt;示例值：20250620112533115566896&lt;/font&gt;
 $request->setPhaseHfSeqId("");
 // 支付金额
 $request->setOrdAmt("20");
+// 分账对象
+$request->setAcctSplitBunch(get5ff7863bFba14fd185823535ee0a9e52());
 
 // 设置非必填字段
 $extendInfoMap = getExtendInfos();
@@ -52,14 +52,14 @@ if (!$result || $result->isError()) {  //失败处理
 function getExtendInfos() {
     // 设置非必填字段
     $extendInfoMap = array();
+    // 出款方账户号
+    $extendInfoMap["out_acct_id"]= "C03117654";
     // 备注
     $extendInfoMap["remark"]= "";
-    // 分账对象
-    $extendInfoMap["acct_split_bunch"]= getD5cc6c3fD3854f9fB3eeF736df9fbbf8();
     return $extendInfoMap;
 }
 
-function get3fc17817Caf445dc8f13A2c315f6d1e8() {
+function get875acdbcEff4424dBa4551dffa06d840() {
     $dto = array();
     // 分账金额
     $dto["div_amt"] = "20.00";
@@ -71,12 +71,12 @@ function get3fc17817Caf445dc8f13A2c315f6d1e8() {
     return $dto;
 }
 
-function getD5cc6c3fD3854f9fB3eeF736df9fbbf8() {
+function get5ff7863bFba14fd185823535ee0a9e52() {
     $dto = array();
     // 分账明细
-    $dto["acct_info"] = get3fc17817Caf445dc8f13A2c315f6d1e8();
+    $dto["acct_info"] = get875acdbcEff4424dBa4551dffa06d840();
 
-    return $dto;
+    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
 

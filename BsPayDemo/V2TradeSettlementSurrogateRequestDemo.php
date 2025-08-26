@@ -70,6 +70,8 @@ if (!$result || $result->isError()) {  //失败处理
 function getExtendInfos() {
     // 设置非必填字段
     $extendInfoMap = array();
+    // 账户号
+    // $extendInfoMap["acct_id"]= "";
     // 支行名
     $extendInfoMap["subbranch_bank_name"]= "subbranchBankName";
     // 收款方三证合一码

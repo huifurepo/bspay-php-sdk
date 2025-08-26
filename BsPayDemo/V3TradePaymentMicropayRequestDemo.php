@@ -30,7 +30,7 @@ $request->setGoodsDesc("聚合反扫消费");
 // 支付授权码
 $request->setAuthCode("131135212661863252");
 // 安全信息
-$request->setRiskCheckData(getE40ed26aD5ea4274A45b341665c34232());
+$request->setRiskCheckData(get5532fa68450f46b58e3a179fcc348380());
 
 // 设置非必填字段
 $extendInfoMap = getExtendInfos();
@@ -63,21 +63,23 @@ function getExtendInfos() {
     // 渠道号
     // $extendInfoMap["channel_no"]= "";
     // 补贴支付信息
-    // $extendInfoMap["combinedpay_data"]= get3755bf2156a14f5085c5F73333052609();
+    // $extendInfoMap["combinedpay_data"]= get37ad64f6950c44719d83462c2615c98f();
+    // 补贴支付手续费承担方信息
+    // $extendInfoMap["combinedpay_data_fee_info"]= get4b527f2e91c14c7f9b5390820598e80c();
     // 场景类型
     // $extendInfoMap["pay_scene"]= "";
     // 分账对象
-    // $extendInfoMap["acct_split_bunch"]= getC92ca0c71c2b48b2A5c08c7808524604();
+    // $extendInfoMap["acct_split_bunch"]= getB8816aa2Eb074eb093c7F8981939a028();
     // 传入分帐遇到优惠的处理规则
     // $extendInfoMap["term_div_coupon_type"]= "";
     // 聚合反扫微信参数集合
-    // $extendInfoMap["wx_data"]= get66d783217b8a4ed28542C78430a8982b();
+    // $extendInfoMap["wx_data"]= get43ab2d7320984566Af4cA9d285a79624();
     // 支付宝扩展参数集合
-    // $extendInfoMap["alipay_data"]= get368d9bca5ec543a4Adb5273d6e4ed80c();
+    // $extendInfoMap["alipay_data"]= get985d922a84c74774Bb5621ce46000533();
     // 银联参数集合
-    // $extendInfoMap["unionpay_data"]= get7d4af3a608a546b59438D8b12b06273f();
+    // $extendInfoMap["unionpay_data"]= get85ec4d56988349c18016A14805976b6d();
     // 设备信息
-    // $extendInfoMap["terminal_device_info"]= getCaa0f1aeDed7495e896823d875a7898f();
+    // $extendInfoMap["terminal_device_info"]= getA0a2516292fd4b1e8c5a4b13bb444ccc();
     // 异步通知地址
     $extendInfoMap["notify_url"]= "http://www.baidu.com";
     // 交易备注
@@ -85,13 +87,13 @@ function getExtendInfos() {
     // 账户号
     // $extendInfoMap["acct_id"]= "";
     // 手续费补贴信息
-    // $extendInfoMap["trans_fee_allowance_info"]= getB1405e1010f64efcA785355ea6f2f549();
+    // $extendInfoMap["trans_fee_allowance_info"]= getBfc3ff1710df4b9cB94c1d4645bd6016();
     return $extendInfoMap;
 }
 
-function get3755bf2156a14f5085c5F73333052609() {
+function get37ad64f6950c44719d83462c2615c98f() {
     $dto = array();
-    // 补贴方汇付编号
+    // 补贴方汇付商户号
     // $dto["huifu_id"] = "test";
     // 补贴方类型
     // $dto["user_type"] = "test";
@@ -105,7 +107,17 @@ function get3755bf2156a14f5085c5F73333052609() {
     return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function getCd49f9a1077d4744Aa4209755867b7f9() {
+function get4b527f2e91c14c7f9b5390820598e80c() {
+    $dto = array();
+    // 补贴支付手续费承担方汇付编号
+    // $dto["huifu_id"] = "";
+    // 补贴支付手续费承担方账户号
+    // $dto["acct_id"] = "";
+
+    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+}
+
+function get26006cd40fdf48b299d3Fe6b9f1c7ae4() {
     $dto = array();
     // 分账接收方ID
     // $dto["huifu_id"] = "test";
@@ -121,10 +133,10 @@ function getCd49f9a1077d4744Aa4209755867b7f9() {
     return $dtoList;
 }
 
-function getC92ca0c71c2b48b2A5c08c7808524604() {
+function getB8816aa2Eb074eb093c7F8981939a028() {
     $dto = array();
     // 分账明细
-    // $dto["acct_infos"] = getCd49f9a1077d4744Aa4209755867b7f9();
+    // $dto["acct_infos"] = get26006cd40fdf48b299d3Fe6b9f1c7ae4();
     // 百分比分账标志
     // $dto["percentage_flag"] = "";
     // 是否净值分账
@@ -133,7 +145,7 @@ function getC92ca0c71c2b48b2A5c08c7808524604() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function get7151d576072740e8B37d867351dfcc78() {
+function getF4d1fa8474e649c586d8Ad12fa19ec79() {
     $dto = array();
     // 商品编码
     // $dto["goods_id"] = "test";
@@ -151,10 +163,10 @@ function get7151d576072740e8B37d867351dfcc78() {
     return $dtoList;
 }
 
-function get19e94a0184f747f6982948cf6ba48405() {
+function get0f7b40a9833441138aeeA7efa6b062bc() {
     $dto = array();
     // 单品列表
-    // $dto["goods_detail"] = get7151d576072740e8B37d867351dfcc78();
+    // $dto["goods_detail"] = getF4d1fa8474e649c586d8Ad12fa19ec79();
     // 订单原价
     // $dto["cost_price"] = "";
     // 商品小票ID
@@ -163,7 +175,7 @@ function get19e94a0184f747f6982948cf6ba48405() {
     return $dto;
 }
 
-function get7527e1d652aa46c7B9a92d109c226446() {
+function get50877803A06245d38bcb6a45871203a5() {
     $dto = array();
     // 门店id
     // $dto["id"] = "";
@@ -177,15 +189,15 @@ function get7527e1d652aa46c7B9a92d109c226446() {
     return $dto;
 }
 
-function getD42ab81a5b164524850869038b15cb7d() {
+function get2aa619b3D0cd4f5c815a6f91454837d7() {
     $dto = array();
     // 门店信息
-    // $dto["store_info"] = get7527e1d652aa46c7B9a92d109c226446();
+    // $dto["store_info"] = get50877803A06245d38bcb6a45871203a5();
 
     return $dto;
 }
 
-function get66d783217b8a4ed28542C78430a8982b() {
+function get43ab2d7320984566Af4cA9d285a79624() {
     $dto = array();
     // 收款设备IP直联模式必填字段；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：192.168.2.2&lt;/font&gt;
     // $dto["spbill_create_ip"] = "test";
@@ -198,9 +210,9 @@ function get66d783217b8a4ed28542C78430a8982b() {
     // 附加数据
     // $dto["attach"] = "";
     // 商品详情
-    // $dto["detail"] = get19e94a0184f747f6982948cf6ba48405();
+    // $dto["detail"] = get0f7b40a9833441138aeeA7efa6b062bc();
     // 场景信息
-    // $dto["scene_info"] = getD42ab81a5b164524850869038b15cb7d();
+    // $dto["scene_info"] = get2aa619b3D0cd4f5c815a6f91454837d7();
     // 单品优惠标识
     // $dto["promotion_flag"] = "";
     // 电子发票入口开放标识
@@ -209,7 +221,7 @@ function get66d783217b8a4ed28542C78430a8982b() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function get51e781bfEd904cf7Ba6cE0e666c3766d() {
+function get2aaf1ab89e3640f0B0c39b0a3e706d3b() {
     $dto = array();
     // 商品的编号
     // $dto["goods_id"] = "test";
@@ -233,7 +245,7 @@ function get51e781bfEd904cf7Ba6cE0e666c3766d() {
     return $dtoList;
 }
 
-function getD36ed8d937b846df96fdBaf8cecddae1() {
+function get79386404D962492eBc108a1991549354() {
     $dto = array();
     // 卡类型
     // $dto["card_type"] = "";
@@ -253,7 +265,7 @@ function getD36ed8d937b846df96fdBaf8cecddae1() {
     return $dto;
 }
 
-function get75b1c7f3F0494610Abb07accf6c71769() {
+function get7ca7c63f25694a18Ae14831ab2970756() {
     $dto = array();
     // 姓名
     // $dto["name"] = "";
@@ -273,20 +285,20 @@ function get75b1c7f3F0494610Abb07accf6c71769() {
     return $dto;
 }
 
-function get368d9bca5ec543a4Adb5273d6e4ed80c() {
+function get985d922a84c74774Bb5621ce46000533() {
     $dto = array();
     // 支付宝的店铺编号
     // $dto["alipay_store_id"] = "";
     // 订单包含的商品列表信息
-    // $dto["goods_detail"] = get51e781bfEd904cf7Ba6cE0e666c3766d();
+    // $dto["goods_detail"] = get2aaf1ab89e3640f0B0c39b0a3e706d3b();
     // 业务扩展参数
-    // $dto["extend_params"] = getD36ed8d937b846df96fdBaf8cecddae1();
+    // $dto["extend_params"] = get79386404D962492eBc108a1991549354();
     // 商户操作员编号
     // $dto["operator_id"] = "";
     // 商户门店编号
     // $dto["store_id"] = "";
     // 外部指定买家
-    // $dto["ext_user_info"] = get75b1c7f3F0494610Abb07accf6c71769();
+    // $dto["ext_user_info"] = get7ca7c63f25694a18Ae14831ab2970756();
     // 商户业务信息
     // $dto["ali_business_params"] = "";
     // 订单描述
@@ -297,7 +309,19 @@ function get368d9bca5ec543a4Adb5273d6e4ed80c() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function get7d4af3a608a546b59438D8b12b06273f() {
+function get1a0bcb2115af4e268b2d8a8dc54411ac() {
+    $dto = array();
+    // 服务商订单编号
+    // $dto["pnr_order_id"] = "";
+    // 服务商密文
+    // $dto["pid_sct"] = "";
+    // 场景标识
+    // $dto["trade_scene"] = "";
+
+    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+}
+
+function get85ec4d56988349c18016A14805976b6d() {
     $dto = array();
     // 币种
     // $dto["currency_code"] = "";
@@ -313,11 +337,13 @@ function get7d4af3a608a546b59438D8b12b06273f() {
     // $dto["term_id"] = "";
     // 收款方附加数据
     // $dto["addn_data"] = "";
+    // 服务商信息
+    // $dto["pid_info"] = get1a0bcb2115af4e268b2d8a8dc54411ac();
 
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function getE40ed26aD5ea4274A45b341665c34232() {
+function get5532fa68450f46b58e3a179fcc348380() {
     $dto = array();
     // ip地址
     $dto["ip_addr"] = "180.167.105.130";
@@ -331,7 +357,7 @@ function getE40ed26aD5ea4274A45b341665c34232() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function getCaa0f1aeDed7495e896823d875a7898f() {
+function getA0a2516292fd4b1e8c5a4b13bb444ccc() {
     $dto = array();
     // 商户设备类型
     // $dto["mer_device_type"] = "test";
@@ -377,7 +403,7 @@ function getCaa0f1aeDed7495e896823d875a7898f() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function getB1405e1010f64efcA785355ea6f2f549() {
+function getBfc3ff1710df4b9cB94c1d4645bd6016() {
     $dto = array();
     // 补贴手续费金额
     // $dto["allowance_fee_amt"] = "";

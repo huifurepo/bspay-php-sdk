@@ -25,6 +25,10 @@ class V2FlexibleIndvModifyRequest extends BaseRequest
      * 渠道商/商户汇付Id
      */
     private $upperHuifuId;
+    /**
+     * 汇付ID
+     */
+    private $huifuId;
 
     public function getFunctionCode() {
         return FunctionCodeEnum::$V2_FLEXIBLE_INDV_MODIFY;
@@ -53,6 +57,14 @@ class V2FlexibleIndvModifyRequest extends BaseRequest
 
     public function setUpperHuifuId($upperHuifuId) {
         $this->upperHuifuId = $upperHuifuId;
+    }
+
+    public function getHuifuId() {
+        return $this->huifuId;
+    }
+
+    public function setHuifuId($huifuId) {
+        $this->huifuId = $huifuId;
     }
 
 }
