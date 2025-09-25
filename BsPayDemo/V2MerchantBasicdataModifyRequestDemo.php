@@ -26,7 +26,7 @@ $request->setUpperHuifuId("6666000021000000");
 // 汇付客户Id
 $request->setHuifuId("6666000107932702");
 // 签约人jsonObject格式；agreement_info中选择电子签约时必填；个人商户填本人信息。
-// $request->setSignUserInfo(get36bb8df6Cf40478fAe7dE65c294bc063());
+// $request->setSignUserInfo(getC04b2f98490543728bf35899e3448acf());
 
 // 设置非必填字段
 $extendInfoMap = getExtendInfos();
@@ -110,8 +110,6 @@ function getExtendInfos() {
     $extendInfoMap["detail_addr"]= "徐州市徐汇区宜山路7497号";
     // 联系人姓名
     $extendInfoMap["contact_name"]= "我是联系人";
-    // 联系人手机号
-    $extendInfoMap["contact_mobile_no"]= "15556622331";
     // 联系人电子邮箱
     $extendInfoMap["contact_email"]= "mei.zhang@huifu.com";
     // 客服电话
@@ -119,23 +117,23 @@ function getExtendInfos() {
     // 小票名称
     $extendInfoMap["receipt_name"]= "小票上的名称";
     // *结算卡信息配置*
-    $extendInfoMap["card_info"]= get92f3537aEdb1447583063c60cca0ad90();
+    $extendInfoMap["card_info"]= getC95eb62cD1e046009abb09d59f99f1c5();
     // 结算协议图片文件
     // $extendInfoMap["settle_agree_pic"]= "";
     // 基本存款账户编号或核准号
     // $extendInfoMap["open_licence_no"]= "";
     // 取现信息配置
-    $extendInfoMap["cash_config"]= get080f56a09a544a1a84b4209b8bd713ce();
+    $extendInfoMap["cash_config"]= get28a3bc0a687e468bAf1e23519a0b4331();
     // 结算规则配置
-    $extendInfoMap["settle_config"]= get71776a962cc84f619806D866710bd14d();
+    $extendInfoMap["settle_config"]= getA6b5a66340e04a7bB1637e7953cb8572();
     // 商户主页URL
     // $extendInfoMap["mer_url"]= "";
     // 商户ICP备案编号
     // $extendInfoMap["mer_icp"]= "";
     // 受益人列表
-    // $extendInfoMap["beneficiary_info"]= getB2d209620c5c41789bdd7858181367b2();
+    // $extendInfoMap["beneficiary_info"]= get1b63d34b50d1405189114f2ac70fac30();
     // 协议信息
-    // $extendInfoMap["agreement_info"]= get22ced7b7Df8346f691edEea9f99c27cd();
+    // $extendInfoMap["agreement_info"]= get50e7ca21167a4557985011ba1b6709bf();
     // 营业执照图片
     // $extendInfoMap["license_pic"]= "";
     // 授权委托书
@@ -149,13 +147,13 @@ function getExtendInfos() {
     // 店铺收银台/公司前台照
     // $extendInfoMap["store_cashier_desk_pic"]= "";
     // 扩展资料包
-    // $extendInfoMap["extended_material_list"]= get10127c1d237e4d658757D3535f12029f();
+    // $extendInfoMap["extended_material_list"]= get2e3b787eC65f43358383Bdd07fbebc50();
     // 异步通知地址
     $extendInfoMap["async_return_url"]= "archer://C_SSPM_NSPOSM_BUSIRESULT";
     // 斗拱e账户功能配置
-    // $extendInfoMap["elec_acct_config"]= get65f4e70f6bf54dbaB038F8c0cb502fa6();
+    // $extendInfoMap["elec_acct_config"]= get8d8378b92b0b467e853eC25f78947b74();
     // 股东信息
-    // $extendInfoMap["share_holder_info_list"]= getEe7defa890cb4dccB394079fd2502f1a();
+    // $extendInfoMap["share_holder_info_list"]= getEa22fd25E2824efcA42eCe1f3e2f9a99();
     // 外部商户号
     // $extendInfoMap["ext_mer_id"]= "";
     // 备注
@@ -163,7 +161,7 @@ function getExtendInfos() {
     return $extendInfoMap;
 }
 
-function get92f3537aEdb1447583063c60cca0ad90() {
+function getC95eb62cD1e046009abb09d59f99f1c5() {
     $dto = array();
     // 结算账户类型
     $dto["card_type"] = "1";
@@ -203,8 +201,6 @@ function get92f3537aEdb1447583063c60cca0ad90() {
     // $dto["authentication_person_mobile"] = "test";
     // 银行所在省
     $dto["prov_id"] = "310000";
-    // 银行编码
-    $dto["bank_code"] = "01020000";
     // 持卡人证件号码
     $dto["cert_no"] = "320923199111206319";
     // 结算人手机号
@@ -219,7 +215,7 @@ function get92f3537aEdb1447583063c60cca0ad90() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function get080f56a09a544a1a84b4209b8bd713ce() {
+function get28a3bc0a687e468bAf1e23519a0b4331() {
     $dto = array();
     // 状态
     $dto["switch_state"] = "1";
@@ -247,7 +243,7 @@ function get080f56a09a544a1a84b4209b8bd713ce() {
     return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function get71776a962cc84f619806D866710bd14d() {
+function getA6b5a66340e04a7bB1637e7953cb8572() {
     $dto = array();
     // 结算开关
     $dto["settle_status"] = "1";
@@ -285,7 +281,7 @@ function get71776a962cc84f619806D866710bd14d() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function getB2d209620c5c41789bdd7858181367b2() {
+function get1b63d34b50d1405189114f2ac70fac30() {
     $dto = array();
     // 受益人名称
     // $dto["bo_name"] = "test";
@@ -313,7 +309,7 @@ function getB2d209620c5c41789bdd7858181367b2() {
     return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function get36bb8df6Cf40478fAe7dE65c294bc063() {
+function getC04b2f98490543728bf35899e3448acf() {
     $dto = array();
     // 签约人类型
     // $dto["type"] = "test";
@@ -327,7 +323,7 @@ function get36bb8df6Cf40478fAe7dE65c294bc063() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function get22ced7b7Df8346f691edEea9f99c27cd() {
+function get50e7ca21167a4557985011ba1b6709bf() {
     $dto = array();
     // 协议类型
     // $dto["agreement_type"] = "test";
@@ -343,7 +339,7 @@ function get22ced7b7Df8346f691edEea9f99c27cd() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function get10127c1d237e4d658757D3535f12029f() {
+function get2e3b787eC65f43358383Bdd07fbebc50() {
     $dto = array();
     // 文件id
     // $dto["file_id"] = "test";
@@ -355,7 +351,7 @@ function get10127c1d237e4d658757D3535f12029f() {
     return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function getCed00b1410a347b4Be3bD68b1a4f5b2e() {
+function get6f65faa1Ca6c4c6aA194B245a79ebda3() {
     $dto = array();
     // 银行编码
     // $dto["bank_code"] = "test";
@@ -387,7 +383,7 @@ function getCed00b1410a347b4Be3bD68b1a4f5b2e() {
     return $dtoList;
 }
 
-function get65f4e70f6bf54dbaB038F8c0cb502fa6() {
+function get8d8378b92b0b467e853eC25f78947b74() {
     $dto = array();
     // 电子账户开关
     // $dto["switch_state"] = "test";
@@ -400,7 +396,7 @@ function get65f4e70f6bf54dbaB038F8c0cb502fa6() {
     // 角色类型
     // $dto["role_type"] = "test";
     // 银行卡信息
-    // $dto["elec_card_list"] = getCed00b1410a347b4Be3bD68b1a4f5b2e();
+    // $dto["elec_card_list"] = get6f65faa1Ca6c4c6aA194B245a79ebda3();
     // 中信签约短信流水号
     // $dto["elec_acct_sign_seq_id"] = "";
     // 签约成功标志
@@ -409,7 +405,7 @@ function get65f4e70f6bf54dbaB038F8c0cb502fa6() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function getEe7defa890cb4dccB394079fd2502f1a() {
+function getEa22fd25E2824efcA42eCe1f3e2f9a99() {
     $dto = array();
     // 股东姓名
     // $dto["name"] = "test";

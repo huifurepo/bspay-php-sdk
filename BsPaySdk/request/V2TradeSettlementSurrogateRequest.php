@@ -66,7 +66,7 @@ class V2TradeSettlementSurrogateRequest extends BaseRequest
      */
     private $certificateNoCrypt;
     /**
-     * 证件类型
+     * 证件类型对私必填，类型&lt;br/&gt;01：身份证&lt;br/&gt;03：护照（国内）&lt;br/&gt;09：外国人居留证&lt;br/&gt;15：港澳台居住证&lt;br/&gt;16：回乡证&lt;br/&gt;17：台胞证&lt;br/&gt;
      */
     private $certificateType;
     /**

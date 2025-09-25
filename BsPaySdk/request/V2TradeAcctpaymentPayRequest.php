@@ -45,6 +45,10 @@ class V2TradeAcctpaymentPayRequest extends BaseRequest
      * 手续费承担方标识余额支付手续费承担方标识；商户余额支付扣收规则为接口指定承担方时必填！枚举值：&lt;br/&gt;OUT：出款方；&lt;br/&gt;IN：分账接受方。&lt;br/&gt;&lt;font color&#x3D;&quot;green&quot;&gt;示例值：IN&lt;/font&gt;
      */
     private $transFeeTakeFlag;
+    /**
+     * 核验值verify_type不为空时必填。当verify_type&#x3D;SMS时，填写用户收到的短信验证码
+     */
+    private $verifyValue;
 
     public function getFunctionCode() {
         return FunctionCodeEnum::$V2_TRADE_ACCTPAYMENT_PAY;
@@ -113,6 +117,14 @@ class V2TradeAcctpaymentPayRequest extends BaseRequest
 
     public function setTransFeeTakeFlag($transFeeTakeFlag) {
         $this->transFeeTakeFlag = $transFeeTakeFlag;
+    }
+
+    public function getVerifyValue() {
+        return $this->verifyValue;
+    }
+
+    public function setVerifyValue($verifyValue) {
+        $this->verifyValue = $verifyValue;
     }
 
 }

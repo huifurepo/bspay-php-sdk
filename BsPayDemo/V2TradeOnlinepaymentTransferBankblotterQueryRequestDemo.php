@@ -23,10 +23,6 @@ $request->setReqSeqId(date("YmdHis").mt_rand());
 $request->setReqDate(date("Ymd"));
 // 商户号
 $request->setHuifuId("6666000003100615");
-// 原请求流水号
-$request->setOrgReqSeqId("2021091708126665001");
-// 原请求日期
-$request->setOrgReqDate("20231215");
 
 // 设置非必填字段
 $extendInfoMap = getExtendInfos();
@@ -48,6 +44,10 @@ if (!$result || $result->isError()) {  //失败处理
 function getExtendInfos() {
     // 设置非必填字段
     $extendInfoMap = array();
+    // 原请求流水号
+    $extendInfoMap["org_req_seq_id"]= "2021091708126665001";
+    // 原请求日期
+    $extendInfoMap["org_req_date"]= "20231215";
     // 实际付款方银行卡号
     // $extendInfoMap["bank_card_no"]= "";
     // 实际付款方姓名
@@ -56,8 +56,8 @@ function getExtendInfos() {
     // $extendInfoMap["trans_date"]= "";
     // 交易金额
     // $extendInfoMap["trans_amt"]= "";
-    // 收款账号/打款备注
-    // $extendInfoMap["bank_remark"]= "";
+    // 收款方账号
+    // $extendInfoMap["payee_acct_no"]= "";
     return $extendInfoMap;
 }
 

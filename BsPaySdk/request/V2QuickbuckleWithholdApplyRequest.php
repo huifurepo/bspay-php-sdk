@@ -46,11 +46,11 @@ class V2QuickbuckleWithholdApplyRequest extends BaseRequest
      */
     private $cardId;
     /**
-     * 银行卡开户姓名 
+     * 银行卡开户姓名
      */
     private $cardName;
     /**
-     * 银行卡绑定证件类型 
+     * 银行卡绑定证件类型
      */
     private $certType;
     /**
@@ -58,17 +58,9 @@ class V2QuickbuckleWithholdApplyRequest extends BaseRequest
      */
     private $certId;
     /**
-     * 银行卡绑定手机号 
+     * 银行卡绑定手机号
      */
     private $cardMp;
-    /**
-     * CVV2信用卡代扣专用 需要密文传输，需要密文传输，使用汇付RSA公钥加密(加密前64位，加密后最长2048位），参见[参考文档](https://paas.huifu.com/open/doc/guide/#/api_jiami_jiemi)；
-     */
-    private $vipCode;
-    /**
-     * 卡有效期 信用卡代扣专用，格式：MMYY 需要密文传输，使用汇付RSA公钥加密(加密前64位，加密后最长2048位），参见[参考文档](https://paas.huifu.com/open/doc/guide/#/api_jiami_jiemi)；
-     */
-    private $expiration;
     /**
      * 个人证件有效期类型
      */
@@ -77,10 +69,6 @@ class V2QuickbuckleWithholdApplyRequest extends BaseRequest
      * 个人证件有效期起始日
      */
     private $certBeginDate;
-    /**
-     * 个人证件有效期到期日长期有效不填.格式：YYYYMMDD；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：20450112&lt;/font&gt;
-     */
-    private $certEndDate;
     /**
      * 卡的借贷类型
      */
@@ -187,22 +175,6 @@ class V2QuickbuckleWithholdApplyRequest extends BaseRequest
         $this->cardMp = $cardMp;
     }
 
-    public function getVipCode() {
-        return $this->vipCode;
-    }
-
-    public function setVipCode($vipCode) {
-        $this->vipCode = $vipCode;
-    }
-
-    public function getExpiration() {
-        return $this->expiration;
-    }
-
-    public function setExpiration($expiration) {
-        $this->expiration = $expiration;
-    }
-
     public function getCertValidityType() {
         return $this->certValidityType;
     }
@@ -217,14 +189,6 @@ class V2QuickbuckleWithholdApplyRequest extends BaseRequest
 
     public function setCertBeginDate($certBeginDate) {
         $this->certBeginDate = $certBeginDate;
-    }
-
-    public function getCertEndDate() {
-        return $this->certEndDate;
-    }
-
-    public function setCertEndDate($certEndDate) {
-        $this->certEndDate = $certEndDate;
     }
 
     public function getDcType() {

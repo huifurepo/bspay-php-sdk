@@ -5,6 +5,34 @@ namespace BsPaySdk\enums;
 class FunctionCodeEnum
 {
     /**
+     * 提现记录查询
+     */
+    static $V2_LLA_DYWITHDRAW_QUERY = 'v2/lla/dywithdraw/query';
+    /**
+     * 代运营代扣业务配置查询
+     */
+    static $V2_MERCHANT_BUSI_LLADETAIL = 'v2/merchant/busi/lladetail';
+    /**
+     * 代运营代扣业务配置
+     */
+    static $V2_MERCHANT_BUSI_LLACONFIG = 'v2/merchant/busi/llaconfig';
+    /**
+     * 代运营佣金代扣退款查询
+     */
+    static $V2_LLA_WITHHOLD_REFUND_QUERY = 'v2/lla/withhold/refund/query';
+    /**
+     * 代运营佣金代扣退款
+     */
+    static $V2_LLA_WITHHOLD_REFUND = 'v2/lla/withhold/refund';
+    /**
+     * 代运营佣金代扣查询
+     */
+    static $V2_LLA_WITHHOLD_QUERY = 'v2/lla/withhold/query';
+    /**
+     * 代运营佣金代扣
+     */
+    static $V2_LLA_WITHHOLD = 'v2/lla/withhold';
+    /**
      * 灵工支付退款查询
      */
     static $V2_FLEXIBLE_REFUND_QUERY = 'v2/flexible/refund/query';

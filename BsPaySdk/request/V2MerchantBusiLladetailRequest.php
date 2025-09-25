@@ -5,12 +5,12 @@ namespace BsPaySdk\request;
 use BsPaySdk\enums\FunctionCodeEnum;
 
 /**
- * 灵工支付查询
+ * 代运营代扣业务配置查询
  *
  * @author sdk-generator
  * @Description
  */
-class V2FlexibleTradeQueryRequest extends BaseRequest
+class V2MerchantBusiLladetailRequest extends BaseRequest
 {
 
     /**
@@ -22,20 +22,12 @@ class V2FlexibleTradeQueryRequest extends BaseRequest
      */
     private $reqDate;
     /**
-     * 原请求流水号
-     */
-    private $orgReqSeqId;
-    /**
-     * 原请求日期
-     */
-    private $orgReqDate;
-    /**
-     * 汇付商户号
+     * 商户汇付id
      */
     private $huifuId;
 
     public function getFunctionCode() {
-        return FunctionCodeEnum::$V2_FLEXIBLE_TRADE_QUERY;
+        return FunctionCodeEnum::$V2_MERCHANT_BUSI_LLADETAIL;
     }
 
 
@@ -53,22 +45,6 @@ class V2FlexibleTradeQueryRequest extends BaseRequest
 
     public function setReqDate($reqDate) {
         $this->reqDate = $reqDate;
-    }
-
-    public function getOrgReqSeqId() {
-        return $this->orgReqSeqId;
-    }
-
-    public function setOrgReqSeqId($orgReqSeqId) {
-        $this->orgReqSeqId = $orgReqSeqId;
-    }
-
-    public function getOrgReqDate() {
-        return $this->orgReqDate;
-    }
-
-    public function setOrgReqDate($orgReqDate) {
-        $this->orgReqDate = $orgReqDate;
     }
 
     public function getHuifuId() {

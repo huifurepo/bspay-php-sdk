@@ -50,7 +50,7 @@ class V2MerchantBusiEfpconfigRequest extends BaseRequest
      */
     private $signUserInfo;
     /**
-     * 入账来源开通全域资金时需填写；01:抖音 02:美团 03:快手 04:拼多多 05:小红书 06:淘宝/天猫/飞猪 07:微信视频号/微信小店 08:京东 09:饿了么 11:得物 12:唯品会 13:携程 14:支付宝直连 15:微信直连 16:滴滴加油 17:团油 18:通联 19:易宝 20:百度 多个逗号分隔；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：01,02,05&lt;/font&gt;；
+     * 入账来源开通全域资金时需填写；01:抖音 02:美团 03:快手 04:拼多多 05:小红书 06:淘宝/天猫/飞猪 07:微信视频号/微信小店 08:京东 09:饿了么 11:得物 12:唯品会 13:携程 14:支付宝直连 15:微信直连 16:滴滴加油 17:团油 18:通联 19:易宝 20:百度 21:顺丰22:希音 多个逗号分隔；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：01,02,05&lt;/font&gt;；
      */
     private $acctSource;
     /**
@@ -137,6 +137,14 @@ class V2MerchantBusiEfpconfigRequest extends BaseRequest
      * 主店商户号是否店群为是时必填
      */
     private $mainStoreHuifuId;
+    /**
+     * 顺丰合作证明材料入账来源包含21:顺丰时必填 文件类型F618；详见[文件类型说明](https://paas.huifu.com/open/doc/api/#/csfl/api_csfl_wjlx)；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：57cc7f00-600a-33ab-b614-6221bbf2e530&lt;/font&gt;
+     */
+    private $sfCooperationProvePic;
+    /**
+     * 希音合作证明材料入账来源包含22:希音时必填 文件类型F619；详见[文件类型说明](https://paas.huifu.com/open/doc/api/#/csfl/api_csfl_wjlx)；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：57cc7f00-600a-33ab-b614-6221bbf2e530&lt;/font&gt;
+     */
+    private $xyCooperationProvePic;
 
     public function getFunctionCode() {
         return FunctionCodeEnum::$V2_MERCHANT_BUSI_EFPCONFIG;
@@ -389,6 +397,22 @@ class V2MerchantBusiEfpconfigRequest extends BaseRequest
 
     public function setMainStoreHuifuId($mainStoreHuifuId) {
         $this->mainStoreHuifuId = $mainStoreHuifuId;
+    }
+
+    public function getSfCooperationProvePic() {
+        return $this->sfCooperationProvePic;
+    }
+
+    public function setSfCooperationProvePic($sfCooperationProvePic) {
+        $this->sfCooperationProvePic = $sfCooperationProvePic;
+    }
+
+    public function getXyCooperationProvePic() {
+        return $this->xyCooperationProvePic;
+    }
+
+    public function setXyCooperationProvePic($xyCooperationProvePic) {
+        $this->xyCooperationProvePic = $xyCooperationProvePic;
     }
 
 }

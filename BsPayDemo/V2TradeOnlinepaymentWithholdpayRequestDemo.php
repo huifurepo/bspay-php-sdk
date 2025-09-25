@@ -36,11 +36,11 @@ $request->setWithholdType("2");
 // 异步通知地址
 $request->setNotifyUrl("http://www.chinapnr.com/");
 // 银行扩展数据
-$request->setExtendPayData(getBc0e9e11Ebff43daB92bE7ea5bd7bdad());
+$request->setExtendPayData(getF459eb2755d4496dA22633b514331e0c());
 // 风控信息
-$request->setRiskCheckData(get6d53968b60e147a197e6D79df28ee365());
+$request->setRiskCheckData(get58632caaC6844b46Aa0e1f192cc7c1f1());
 // 设备信息数据
-$request->setTerminalDeviceData(get8d44fde70e4249e882ce8efb9fbc3271());
+$request->setTerminalDeviceData(get1c595ea4332b42cc8ac8Aa44eb5fc579());
 
 // 设置非必填字段
 $extendInfoMap = getExtendInfos();
@@ -69,13 +69,13 @@ function getExtendInfos() {
     // 订单失效时间
     $extendInfoMap["time_expire"]= "20221212121212";
     // 分账对象
-    // $extendInfoMap["acct_split_bunch"]= getAef0b506B3fe41ff8743B17ba618b928();
+    // $extendInfoMap["acct_split_bunch"]= get42e47512E9a6418680173509165b2100();
     // 补贴支付信息
-    // $extendInfoMap["combinedpay_data"]= getD5fdec34Fc2744729c6968ab05d267b6();
+    // $extendInfoMap["combinedpay_data"]= get68d1322323b04623Baf08462a64b731d();
     return $extendInfoMap;
 }
 
-function get64536140Aaa8449a8dfa21cf20fb67b2() {
+function get1d06be63D3244552Bd188fa04a8e6ee4() {
     $dto = array();
     // 支付金额
     // $dto["div_amt"] = "";
@@ -89,10 +89,10 @@ function get64536140Aaa8449a8dfa21cf20fb67b2() {
     return $dtoList;
 }
 
-function getAef0b506B3fe41ff8743B17ba618b928() {
+function get42e47512E9a6418680173509165b2100() {
     $dto = array();
     // 分账信息列表
-    // $dto["acct_infos"] = get64536140Aaa8449a8dfa21cf20fb67b2();
+    // $dto["acct_infos"] = get1d06be63D3244552Bd188fa04a8e6ee4();
     // 百分比分账标志
     // $dto["percentage_flag"] = "";
     // 是否净值分账
@@ -101,7 +101,7 @@ function getAef0b506B3fe41ff8743B17ba618b928() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function getBc0e9e11Ebff43daB92bE7ea5bd7bdad() {
+function getF459eb2755d4496dA22633b514331e0c() {
     $dto = array();
     // 业务种类
     $dto["biz_tp"] = "012345";
@@ -113,7 +113,7 @@ function getBc0e9e11Ebff43daB92bE7ea5bd7bdad() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function get6d53968b60e147a197e6D79df28ee365() {
+function get58632caaC6844b46Aa0e1f192cc7c1f1() {
     $dto = array();
     // 基站地址经纬度、基站地址、IP地址三组信息至少填写一组；&lt;br/&gt;【mcc】+【mnc】+【location_cd】+【lbs_num】&lt;br/&gt;- mcc:移动国家代码，460代表中国；3位长&lt;br/&gt;- mnc：移动网络号码；2位长；&lt;br/&gt;- location_cd：位置区域码，16进制，5位长&lt;br/&gt;- lbs_num：基站编号，16进制，5位长&lt;br/&gt;- 注意若位数不足用空格补足；&lt;br/&gt;&lt;font color&#x3D;&quot;green&quot;&gt;示例值：460001039217563&lt;/font&gt;，460（mcc)， 00(mnc)，10392(location_cd)， 17563(lbs_num)
     $dto["base_station"] = "";
@@ -127,7 +127,7 @@ function get6d53968b60e147a197e6D79df28ee365() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function get8d44fde70e4249e882ce8efb9fbc3271() {
+function get1c595ea4332b42cc8ac8Aa44eb5fc579() {
     $dto = array();
     // 交易设备ip
     $dto["device_ip"] = "172.31.31.145";
@@ -149,7 +149,7 @@ function get8d44fde70e4249e882ce8efb9fbc3271() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function getD5fdec34Fc2744729c6968ab05d267b6() {
+function get68d1322323b04623Baf08462a64b731d() {
     $dto = array();
     // 补贴方汇付编号
     // $dto["huifu_id"] = "test";

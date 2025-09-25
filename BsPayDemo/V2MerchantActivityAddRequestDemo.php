@@ -97,7 +97,7 @@ function getExtendInfos() {
     // 优惠费率承诺函
     $extendInfoMap["activity_rate_commit_photo"]= "42204258-967e-373c-88d2-1afa4c7bb8ef";
     // 商户同名银行账户信息
-    $extendInfoMap["bank_account"]= getE22c830eBd364d3bA2af2f753ab2a489();
+    $extendInfoMap["bank_account"]= getEd6068c8514647eeBd3eB1900924b7a2();
     // 银行开户证明图片
     $extendInfoMap["bank_account_prove_photo"]= "";
     // 机构银行合作授权函图
@@ -119,7 +119,7 @@ function getExtendInfos() {
     return $extendInfoMap;
 }
 
-function getE22c830eBd364d3bA2af2f753ab2a489() {
+function getEd6068c8514647eeBd3eB1900924b7a2() {
     $dto = array();
     // 账户名
     $dto["card_name"] = "张三";

@@ -28,9 +28,9 @@ $request->setTransAmt("0.11");
 // 商品描述
 $request->setOrderDesc("通用性商品1");
 // 安全信息
-$request->setRiskCheckData(get78a697deDaac42289ed46a8efebf4302());
+$request->setRiskCheckData(get4f0e0a54526d4f8fAa1c47b75e6f20f1());
 // 三方支付数据jsonObject；pay_scene为云闪付公众号与云闪付小程序时必填
-// $request->setThirdPayData(getFd56600b1aae4377A6464cbb9d5c443a());
+// $request->setThirdPayData(get1f6db52aF76b4284Bbe9Cf520498a4be());
 
 // 设置非必填字段
 $extendInfoMap = getExtendInfos();
@@ -62,8 +62,6 @@ function getExtendInfos() {
     // $extendInfoMap["pay_card_type"]= "";
     // 订单失效时间
     $extendInfoMap["time_expire"]= "";
-    // 分账对象
-    // $extendInfoMap["acct_split_bunch"]= get5744b670118e4ce1B173928f87a25f67();
     // 前端跳转地址
     $extendInfoMap["front_url"]= "https://www.service.com/getresp";
     // 异步通知地址
@@ -78,10 +76,14 @@ function getExtendInfos() {
     $extendInfoMap["delay_acct_flag"]= "Y";
     // 手续费扣款标志
     // $extendInfoMap["fee_flag"]= "";
+    // 分账对象
+    // $extendInfoMap["acct_split_bunch"]= getFad2159860044e5f89776fbabd8695a5();
+    // 设备信息数据
+    // $extendInfoMap["terminal_device_data"]= get205d7b8fCaae49baAb2a4e66c4603bda();
     return $extendInfoMap;
 }
 
-function get08fb8ed1C11a40d1B38468f1226832df() {
+function get5869f1882aba4cf2A939673ad5d94bca() {
     $dto = array();
     // 分账金额
     // $dto["div_amt"] = "";
@@ -97,10 +99,10 @@ function get08fb8ed1C11a40d1B38468f1226832df() {
     return $dtoList;
 }
 
-function get5744b670118e4ce1B173928f87a25f67() {
+function getFad2159860044e5f89776fbabd8695a5() {
     $dto = array();
     // 分账明细
-    // $dto["acct_infos"] = get08fb8ed1C11a40d1B38468f1226832df();
+    // $dto["acct_infos"] = get5869f1882aba4cf2A939673ad5d94bca();
     // 百分比分账标志
     // $dto["percentage_flag"] = "";
     // 是否净值分账
@@ -109,7 +111,7 @@ function get5744b670118e4ce1B173928f87a25f67() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function get78a697deDaac42289ed46a8efebf4302() {
+function get4f0e0a54526d4f8fAa1c47b75e6f20f1() {
     $dto = array();
     // 基站地址
     $dto["base_station"] = "7";
@@ -123,10 +125,18 @@ function get78a697deDaac42289ed46a8efebf4302() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function getFd56600b1aae4377A6464cbb9d5c443a() {
+function get1f6db52aF76b4284Bbe9Cf520498a4be() {
     $dto = array();
     // 小程序id
     // $dto["app_id"] = "";
+
+    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+}
+
+function get205d7b8fCaae49baAb2a4e66c4603bda() {
+    $dto = array();
+    // 终端设备号
+    // $dto["device_id"] = "test";
 
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }

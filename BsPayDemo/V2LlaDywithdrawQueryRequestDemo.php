@@ -1,7 +1,7 @@
 <?php
 
 /**
- * 灵工支付查询 - 示例
+ * 提现记录查询 - 示例
  *
  * @author sdk-generator
  * @Description
@@ -10,23 +10,29 @@ namespace BsPayDemo;
 
 // 1. 资源及配置加载
 require_once dirname(__FILE__) . "/loader.php";
-require_once  dirname(__FILE__). "/../BsPaySdk/request/V2FlexibleTradeQueryRequest.php";
+require_once  dirname(__FILE__). "/../BsPaySdk/request/V2LlaDywithdrawQueryRequest.php";
 
 use BsPaySdk\core\BsPayClient;
-use BsPaySdk\request\V2FlexibleTradeQueryRequest;
+use BsPaySdk\request\V2LlaDywithdrawQueryRequest;
 
 // 2.组装请求参数
-$request = new V2FlexibleTradeQueryRequest();
+$request = new V2LlaDywithdrawQueryRequest();
 // 请求流水号
 $request->setReqSeqId(date("YmdHis").mt_rand());
 // 请求日期
 $request->setReqDate(date("Ymd"));
-// 原请求流水号
-$request->setOrgReqSeqId("2025060916130548005test001");
-// 原请求日期
-$request->setOrgReqDate("20250609");
-// 汇付商户号
-$request->setHuifuId("6666000107740841");
+// 代运营汇付id
+$request->setAgencyHuifuId("6666000108967194");
+// 商家汇付id
+$request->setMerchantHuifuId("6666000108938576");
+// 平台
+$request->setPlatformType("DYLK");
+// 提现发起开始日期
+$request->setStartDate("20250820");
+// 查询游标
+$request->setCursor("0");
+// 页大小
+$request->setSize("10");
 
 // 设置非必填字段
 $extendInfoMap = getExtendInfos();

@@ -25,14 +25,6 @@ class V2TradeOnlinepaymentTransferBankblotterQueryRequest extends BaseRequest
      * 商户号
      */
     private $huifuId;
-    /**
-     * 原请求流水号
-     */
-    private $orgReqSeqId;
-    /**
-     * 原请求日期
-     */
-    private $orgReqDate;
 
     public function getFunctionCode() {
         return FunctionCodeEnum::$V2_TRADE_ONLINEPAYMENT_TRANSFER_BANKBLOTTER_QUERY;
@@ -61,22 +53,6 @@ class V2TradeOnlinepaymentTransferBankblotterQueryRequest extends BaseRequest
 
     public function setHuifuId($huifuId) {
         $this->huifuId = $huifuId;
-    }
-
-    public function getOrgReqSeqId() {
-        return $this->orgReqSeqId;
-    }
-
-    public function setOrgReqSeqId($orgReqSeqId) {
-        $this->orgReqSeqId = $orgReqSeqId;
-    }
-
-    public function getOrgReqDate() {
-        return $this->orgReqDate;
-    }
-
-    public function setOrgReqDate($orgReqDate) {
-        $this->orgReqDate = $orgReqDate;
     }
 
 }

@@ -172,7 +172,7 @@ class V2MerchantBasicdataEntRequest extends BaseRequest
     /**
      * 授权委托书**对私非法人、对公非同名结算必填**；通过[图片上传接口](https://paas.huifu.com/open/doc/api/#/shgl/shjj/api_shjj_shtpsc)上传材料；文件类型：F15；开通银行电子账户（中信E管家）需提供F520；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：57cc7f00-600a-33ab-b614-6221bbf2e530&lt;/font&gt;
      */
-    private $authEnturstPic;
+    private $authEntrustPic;
     /**
      * 上级汇付Id如果head_office_flag&#x3D;0，则字段必填，如果head_office_flag&#x3D;1，上级汇付Id不可传&lt;br/&gt;如果headOfficeFlag&#x3D;0，useHeadInfoFlag&#x3D;Y,且head_huifu_id不为空则基本信息部分复用上级的基本信息。&lt;br/&gt;&lt;font color&#x3D;&quot;green&quot;&gt;示例值：6666000123123123&lt;/font&gt;
      */
@@ -511,12 +511,12 @@ class V2MerchantBasicdataEntRequest extends BaseRequest
         $this->settleCertFrontPic = $settleCertFrontPic;
     }
 
-    public function getAuthEnturstPic() {
-        return $this->authEnturstPic;
+    public function getAuthEntrustPic() {
+        return $this->authEntrustPic;
     }
 
-    public function setAuthEnturstPic($authEnturstPic) {
-        $this->authEnturstPic = $authEnturstPic;
+    public function setAuthEntrustPic($authEntrustPic) {
+        $this->authEntrustPic = $authEntrustPic;
     }
 
     public function getHeadHuifuId() {

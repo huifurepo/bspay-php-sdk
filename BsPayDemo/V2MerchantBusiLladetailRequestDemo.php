@@ -1,7 +1,7 @@
 <?php
 
 /**
- * 灵工支付查询 - 示例
+ * 代运营代扣业务配置查询 - 示例
  *
  * @author sdk-generator
  * @Description
@@ -10,23 +10,19 @@ namespace BsPayDemo;
 
 // 1. 资源及配置加载
 require_once dirname(__FILE__) . "/loader.php";
-require_once  dirname(__FILE__). "/../BsPaySdk/request/V2FlexibleTradeQueryRequest.php";
+require_once  dirname(__FILE__). "/../BsPaySdk/request/V2MerchantBusiLladetailRequest.php";
 
 use BsPaySdk\core\BsPayClient;
-use BsPaySdk\request\V2FlexibleTradeQueryRequest;
+use BsPaySdk\request\V2MerchantBusiLladetailRequest;
 
 // 2.组装请求参数
-$request = new V2FlexibleTradeQueryRequest();
+$request = new V2MerchantBusiLladetailRequest();
 // 请求流水号
 $request->setReqSeqId(date("YmdHis").mt_rand());
 // 请求日期
 $request->setReqDate(date("Ymd"));
-// 原请求流水号
-$request->setOrgReqSeqId("2025060916130548005test001");
-// 原请求日期
-$request->setOrgReqDate("20250609");
-// 汇付商户号
-$request->setHuifuId("6666000107740841");
+// 商户汇付id
+$request->setHuifuId("6666000123123123");
 
 // 设置非必填字段
 $extendInfoMap = getExtendInfos();
