@@ -26,7 +26,7 @@ $request->setHuifuId("6666000109133323");
 // 开票类目
 $request->setInvoiceCategory("信息技术服务*软件测试服务");
 // 汇付全局流水号集合
-// $request->setHfSeqIds("test");
+$request->setHfSeqIds("0035000topB250922101351P997c0a8414a00000,0035000topB250922092931P351c0a8414a00000");
 
 // 设置非必填字段
 $extendInfoMap = getExtendInfos();
@@ -72,6 +72,8 @@ function getExtendInfos() {
     $extendInfoMap["invoice_type"]= "1";
     // 备注
     $extendInfoMap["remarks"]= "";
+    // 合作平台
+    // $extendInfoMap["lg_platform_type"]= "";
     return $extendInfoMap;
 }
 

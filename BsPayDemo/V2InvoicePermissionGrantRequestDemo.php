@@ -23,8 +23,6 @@ $request = new V2InvoicePermissionGrantRequest();
 $request->setReqDate(date("Ymd"));
 // 开票方汇付ID
 $request->setHuifuId("6666000149801800");
-// 开通类型
-$request->setStatus("Y");
 
 // 设置非必填字段
 $extendInfoMap = getExtendInfos();
@@ -46,6 +44,10 @@ if (!$result || $result->isError()) {  //失败处理
 function getExtendInfos() {
     // 设置非必填字段
     $extendInfoMap = array();
+    // 收费方式
+    // $extendInfoMap["charge_type"]= "";
+    // 底价
+    // $extendInfoMap["floor_price"]= "";
     return $extendInfoMap;
 }
 

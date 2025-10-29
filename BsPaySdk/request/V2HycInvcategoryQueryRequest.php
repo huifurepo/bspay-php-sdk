@@ -25,6 +25,10 @@ class V2HycInvcategoryQueryRequest extends BaseRequest
      * 落地公司机构号
      */
     private $minorAgentId;
+    /**
+     * 商户号lg_platform_type为HXY或空时必填
+     */
+    private $huifuId;
 
     public function getFunctionCode() {
         return FunctionCodeEnum::$V2_HYC_INVCATEGORY_QUERY;
@@ -53,6 +57,14 @@ class V2HycInvcategoryQueryRequest extends BaseRequest
 
     public function setMinorAgentId($minorAgentId) {
         $this->minorAgentId = $minorAgentId;
+    }
+
+    public function getHuifuId() {
+        return $this->huifuId;
+    }
+
+    public function setHuifuId($huifuId) {
+        $this->huifuId = $huifuId;
     }
 
 }

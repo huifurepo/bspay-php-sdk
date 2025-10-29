@@ -48,6 +48,8 @@ function getExtendInfos() {
     $extendInfoMap["start_date"]= "20240112";
     // 结束时间
     $extendInfoMap["end_date"]= "20240112";
+    // 合作平台
+    // $extendInfoMap["lg_platform_type"]= "";
     return $extendInfoMap;
 }
 

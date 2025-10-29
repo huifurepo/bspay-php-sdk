@@ -33,6 +33,10 @@ class V2UserBusiOpenRequest extends BaseRequest
      * 乐接活配置当合作平台为乐接活，必填
      */
     private $ljhData;
+    /**
+     * 汇薪云配置当合作平台为汇薪云，必填
+     */
+    private $hxyData;
 
     public function getFunctionCode() {
         return FunctionCodeEnum::$V2_USER_BUSI_OPEN;
@@ -77,6 +81,14 @@ class V2UserBusiOpenRequest extends BaseRequest
 
     public function setLjhData($ljhData) {
         $this->ljhData = $ljhData;
+    }
+
+    public function getHxyData() {
+        return $this->hxyData;
+    }
+
+    public function setHxyData($hxyData) {
+        $this->hxyData = $hxyData;
     }
 
 }

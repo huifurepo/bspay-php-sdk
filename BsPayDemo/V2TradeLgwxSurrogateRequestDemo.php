@@ -34,7 +34,7 @@ $request->setSubAppid("123213");
 // 异步通知地址
 $request->setNotifyUrl("virgo://http://www.gangcai.com");
 // 分账明细
-$request->setAcctSplitBunch(get2cc87980007348a7A86e461ee467b2db());
+$request->setAcctSplitBunch(getF1feffe72adf427594625abfeb040860());
 
 // 设置非必填字段
 $extendInfoMap = getExtendInfos();
@@ -58,10 +58,12 @@ function getExtendInfos() {
     $extendInfoMap = array();
     // 出款方账户号
     $extendInfoMap["acct_id"]= "C02418374";
+    // 合作平台
+    // $extendInfoMap["lg_platform_type"]= "";
     return $extendInfoMap;
 }
 
-function get2cc87980007348a7A86e461ee467b2db() {
+function getF1feffe72adf427594625abfeb040860() {
     $dto = array();
     // 用户号
     $dto["huifu_id"] = "6666000107979716";

@@ -18,6 +18,10 @@ class V2TradeCloudmisOrderDetailRequest extends BaseRequest
      */
     private $reqId;
     /**
+     * 原MIS请求的交易订单号
+     */
+    private $orgThirdOrderId;
+    /**
      * 原MIS请求商户号
      */
     private $orgHuifuId;
@@ -41,6 +45,14 @@ class V2TradeCloudmisOrderDetailRequest extends BaseRequest
 
     public function setReqId($reqId) {
         $this->reqId = $reqId;
+    }
+
+    public function getOrgThirdOrderId() {
+        return $this->orgThirdOrderId;
+    }
+
+    public function setOrgThirdOrderId($orgThirdOrderId) {
+        $this->orgThirdOrderId = $orgThirdOrderId;
     }
 
     public function getOrgHuifuId() {

@@ -23,6 +23,8 @@ $request->setReqSeqId(date("YmdHis").mt_rand());
 $request->setReqDate(date("Ymd"));
 // 落地公司机构号
 $request->setMinorAgentId("L20210316173416881");
+// 商户号lg_platform_type为HXY或空时必填
+// $request->setHuifuId("test");
 
 // 设置非必填字段
 $extendInfoMap = getExtendInfos();
@@ -44,6 +46,8 @@ if (!$result || $result->isError()) {  //失败处理
 function getExtendInfos() {
     // 设置非必填字段
     $extendInfoMap = array();
+    // 合作平台
+    // $extendInfoMap["lg_platform_type"]= "";
     return $extendInfoMap;
 }
 

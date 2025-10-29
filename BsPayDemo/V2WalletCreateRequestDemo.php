@@ -61,7 +61,7 @@ function getExtendInfos() {
     // 电子邮箱
     $extendInfoMap["email"]= "123@huifu.com";
     // 实名验证信息
-    $extendInfoMap["real_name_veri_info"]= getDd8b4ee218634d47Ba4c37c34ccd5b31();
+    $extendInfoMap["real_name_veri_info"]= get3613c586Fd964505Bd3b2800414cdda9();
     // 风险验证方式
     $extendInfoMap["risk_check_type"]= "2";
     // 是否开通免密支付
@@ -75,7 +75,7 @@ function getExtendInfos() {
     return $extendInfoMap;
 }
 
-function get2168fcfd89724371B0c2Ac35d6c5e564() {
+function getDf164c15A52847d9A0181e4daef79b30() {
     $dto = array();
     // 银行预留手机号
     $dto["trx_mobile_num"] = "13771817106";
@@ -99,7 +99,7 @@ function get2168fcfd89724371B0c2Ac35d6c5e564() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function getD8d893a20b24463c80ecC5a6f6543239() {
+function get7a7acd703a074a32A9efF955346fbeb3() {
     $dto = array();
     // IP类型
     $dto["ip_type"] = "04";
@@ -115,7 +115,7 @@ function getD8d893a20b24463c80ecC5a6f6543239() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function get9e6d80e68292401a810e1570231010f6() {
+function get7d399beb4ea64062Bdd8D448e1526d07() {
     $dto = array();
     // 银行卡号
     $dto["card_no"] = "Fihn3upMcPZThzo60j6zj8NJmmqSTc/dWUQGo5VaF/+BZHUNKUDPqd++rVhS18on4bNMKv7k8tUBlWUS8caZLdKhrouE5WvYlYGkWZZfArol0XUOftwryGdBL/YY7q1DyDBCe6VV9ZZTRb17BTTQrV8whfiVXSo1LKjLS4jesm182OJSmz5fZ3RB6MlpT1PmQWQjh/GEaOAV3isF0N314Y2Sp5WNanekXd4uaOXVX8MIecL/ykAZjp4gOgzOMm5gQo/JR3mrbcv7+ifL2+4SXXeSkH2fkuplGGZjEKUZOAvTGL9WN+VlZspVp+H5QJ+LiBw/4Hdti1eiNVCf2U3EqA==";
@@ -126,16 +126,16 @@ function get9e6d80e68292401a810e1570231010f6() {
     // 身份证照片国徽面首次绑定银行卡时，需上传身份证照片。文件类型：F41  &lt;font color&#x3D;&quot;green&quot;&gt;示例值：57cc7f00-600a-33ab-b614-6221bbf2e529&lt;/font&gt;
     $dto["cert_img_emblem"] = "57cc7f00-600a-33ab-b614-6221bbf2e530";
     // 设备信息域
-    $dto["trx_device_info"] = get2168fcfd89724371B0c2Ac35d6c5e564();
+    $dto["trx_device_info"] = getDf164c15A52847d9A0181e4daef79b30();
     // 银行卡类型
     $dto["dc_type"] = "D";
     // 风控信息
-    $dto["risk_info"] = getD8d893a20b24463c80ecC5a6f6543239();
+    $dto["risk_info"] = get7a7acd703a074a32A9efF955346fbeb3();
 
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function getDd8b4ee218634d47Ba4c37c34ccd5b31() {
+function get3613c586Fd964505Bd3b2800414cdda9() {
     $dto = array();
     // 个人证件类型
     $dto["cert_type"] = "00";
@@ -145,14 +145,14 @@ function getDd8b4ee218634d47Ba4c37c34ccd5b31() {
     $dto["cert_begin_date"] = "20230426";
     // 证件有效期类型
     $dto["cert_validity_type"] = "0";
-    // 开户人职业
+    // 开户人职业支付账户必填，填入钱包开户人的职业信息。枚举值：1A:各类专业,技术人员1B:国家机关,党群组织,企事业单位的负责人1C:办事人员和有关人员1D:商业工作人员1E:服务性工作人员1F:农林牧渔劳动者1G:生产工作,运输工作和部分体力劳动者1H:不便分类的其他劳动者&lt;font color&#x3D;&quot;green&quot;&gt;示例值：1A&lt;/font&gt;
     $dto["occupation"] = "1A";
-    // 开户人地址
+    // 开户人地址支付账户必填，填入钱包开户人的地址信息。&lt;font color&#x3D;&quot;green&quot;&gt;示例值：上海市徐汇区宜山路699号&lt;/font&gt;
     $dto["address"] = "上海市徐汇区桂林路";
     // 证件有效期结束日期
     $dto["cert_end_date"] = "20230626";
     // 钱包绑定卡信息
-    $dto["bind_card_info"] = get9e6d80e68292401a810e1570231010f6();
+    $dto["bind_card_info"] = get7d399beb4ea64062Bdd8D448e1526d07();
 
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }

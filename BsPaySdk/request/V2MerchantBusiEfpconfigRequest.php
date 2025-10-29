@@ -42,6 +42,10 @@ class V2MerchantBusiEfpconfigRequest extends BaseRequest
      */
     private $outOrderAcctOpenFees;
     /**
+     * 业务模式acquiringMode:收单模式 switch_state为1时必填
+     */
+    private $businessModel;
+    /**
      * 银行类型switch_state有值时需填写； ht1-华通银行，xw0-XW银行，ss0-苏商银行；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：ht1&lt;/font&gt;
      */
     private $outFundsGateId;
@@ -205,6 +209,14 @@ class V2MerchantBusiEfpconfigRequest extends BaseRequest
 
     public function setOutOrderAcctOpenFees($outOrderAcctOpenFees) {
         $this->outOrderAcctOpenFees = $outOrderAcctOpenFees;
+    }
+
+    public function getBusinessModel() {
+        return $this->businessModel;
+    }
+
+    public function setBusinessModel($businessModel) {
+        $this->businessModel = $businessModel;
     }
 
     public function getOutFundsGateId() {
