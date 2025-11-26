@@ -70,10 +70,6 @@ class V2TradeSettlementSurrogateRequest extends BaseRequest
      */
     private $certificateType;
     /**
-     * 手机号密文
-     */
-    private $mobileNoCrypt;
-    /**
      * 到账日期类型
      */
     private $intoAcctDateType;
@@ -193,14 +189,6 @@ class V2TradeSettlementSurrogateRequest extends BaseRequest
 
     public function setCertificateType($certificateType) {
         $this->certificateType = $certificateType;
-    }
-
-    public function getMobileNoCrypt() {
-        return $this->mobileNoCrypt;
-    }
-
-    public function setMobileNoCrypt($mobileNoCrypt) {
-        $this->mobileNoCrypt = $mobileNoCrypt;
     }
 
     public function getIntoAcctDateType() {

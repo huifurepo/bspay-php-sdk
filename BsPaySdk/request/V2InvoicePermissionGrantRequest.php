@@ -25,6 +25,10 @@ class V2InvoicePermissionGrantRequest extends BaseRequest
      * 开票方汇付ID
      */
     private $huifuId;
+    /**
+     * 开通类型
+     */
+    private $status;
 
     public function getFunctionCode() {
         return FunctionCodeEnum::$V2_INVOICE_PERMISSION_GRANT;
@@ -53,6 +57,14 @@ class V2InvoicePermissionGrantRequest extends BaseRequest
 
     public function setHuifuId($huifuId) {
         $this->huifuId = $huifuId;
+    }
+
+    public function getStatus() {
+        return $this->status;
+    }
+
+    public function setStatus($status) {
+        $this->status = $status;
     }
 
 }

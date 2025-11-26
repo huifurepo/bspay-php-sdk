@@ -27,6 +27,7 @@ $request->setExtendInfo($extendInfoMap);
 // 3. 发起API调用
 $client = new BsPayClient();
 $result = $client->postRequest($request);
+$respData = $result->getRspDatas();
 if (!$result || $result->isError()) {  //失败处理
     var_dump($result -> getErrorInfo());
 } else {    //成功处理

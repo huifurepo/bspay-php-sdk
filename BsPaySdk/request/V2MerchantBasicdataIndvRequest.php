@@ -82,7 +82,7 @@ class V2MerchantBasicdataIndvRequest extends BaseRequest
      */
     private $cardInfo;
     /**
-     * 结算卡正面
+     * 银行卡卡号面
      */
     private $settleCardFrontPic;
     /**
