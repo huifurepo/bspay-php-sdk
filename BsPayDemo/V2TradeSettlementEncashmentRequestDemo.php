@@ -55,6 +55,8 @@ function getExtendInfos() {
     // $extendInfoMap["acct_id"]= "";
     // 取现渠道
     $extendInfoMap["enchashment_channel"]= "00";
+    // 中信e账通手续费承担方
+    // $extendInfoMap["fee_type"]= "";
     // 备注
     // $extendInfoMap["remark"]= "";
     // 异步通知地址

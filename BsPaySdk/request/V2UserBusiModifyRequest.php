@@ -22,10 +22,6 @@ class V2UserBusiModifyRequest extends BaseRequest
      */
     private $reqDate;
     /**
-     * 渠道商/商户汇付Id
-     */
-    private $upperHuifuId;
-    /**
      * 汇付ID
      */
     private $huifuId;
@@ -61,14 +57,6 @@ class V2UserBusiModifyRequest extends BaseRequest
 
     public function setReqDate($reqDate) {
         $this->reqDate = $reqDate;
-    }
-
-    public function getUpperHuifuId() {
-        return $this->upperHuifuId;
-    }
-
-    public function setUpperHuifuId($upperHuifuId) {
-        $this->upperHuifuId = $upperHuifuId;
     }
 
     public function getHuifuId() {

@@ -130,7 +130,7 @@ class V2FlexibleEntRequest extends BaseRequest
      */
     private $cardInfo;
     /**
-     * 签约人
+     * 签约人jsonObject格式；协议类型&#x3D;电子合同时，必填；
      */
     private $signUserInfo;
 

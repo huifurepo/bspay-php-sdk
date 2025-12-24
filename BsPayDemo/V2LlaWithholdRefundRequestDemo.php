@@ -32,9 +32,9 @@ $request->setAgencyHuifuId("6666000108967194");
 // 退款金额
 $request->setTransAmt("25.00");
 // 设备信息
-$request->setTerminalDeviceData(get401cdbafBf0248b9Bd22Fc29c064ec90());
+$request->setTerminalDeviceData(get8f8248504c3e44a38d548e3e9babc215());
 // 安全信息
-$request->setRiskCheckData(get5f9a6c9a2f274b58B08b898a909edb95());
+$request->setRiskCheckData(get650b403b46084c5fAd0d014ac712ecc4());
 
 // 设置非必填字段
 $extendInfoMap = getExtendInfos();
@@ -64,7 +64,7 @@ function getExtendInfos() {
     return $extendInfoMap;
 }
 
-function get401cdbafBf0248b9Bd22Fc29c064ec90() {
+function get8f8248504c3e44a38d548e3e9babc215() {
     $dto = array();
     // 交易设备类型
     $dto["device_type"] = "4";
@@ -74,7 +74,7 @@ function get401cdbafBf0248b9Bd22Fc29c064ec90() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function get5f9a6c9a2f274b58B08b898a909edb95() {
+function get650b403b46084c5fAd0d014ac712ecc4() {
     $dto = array();
     // 经度
     // $dto["longitude"] = "";

@@ -26,11 +26,11 @@ $request->setHuifuId("6666000104778898");
 // 直属渠道号
 $request->setUpperHuifuId("6666000003080000");
 // 签约人jsonObject格式；agreement_info中选择电子签约时必填；个人商户填本人信息。
-// $request->setSignUserInfo(get707433a562aa4e079227B5ec91aebed6());
+// $request->setSignUserInfo(getDaf7f2d752374b63B9433eed93587606());
 // 线上业务类型编码基本信息入驻接口中scene_type&#x3D;ONLINE/ALL时必填；&lt;br/&gt;开通以下业务快捷、网银、余额支付Pro版、银行大额转账、分账比例&gt;30%需要提供补充材料，参见[线上业务类型编码及补充材料说明](https://cloudpnrcdn.oss-cn-shanghai.aliyuncs.com/opps/api/prod/download_file/kyc/KYC-%E7%BA%BF%E4%B8%8A%E4%B8%9A%E5%8A%A1%E7%B1%BB%E5%9E%8B%E7%BC%96%E7%A0%81%E5%8F%8A%E8%A1%A5%E5%85%85%E6%9D%90%E6%96%99%E8%AF%B4%E6%98%8E.xlsx)；材料通过[图片上传接口](https://paas.huifu.com/open/doc/api/#/shgl/shjj/api_shjj_shtpsc)上传&lt;font color&#x3D;&quot;green&quot;&gt;示例值：H7999AL&lt;/font&gt;
 // $request->setOnlineBusiType("test");
-// *协议信息实体*jsonObject字符串；[签约协议材料说明](https://cloudpnrcdn.oss-cn-shanghai.aliyuncs.com/opps/api/prod/download_file/kyc/KYC-%E5%95%86%E6%88%B7%E5%90%88%E5%90%8C%E7%AD%BE%E7%BA%A6%E8%A7%84%E5%88%99.xlsx) &lt;br/&gt;若未签署过协议的情况下，调用该接口时必填 ，且注册地址或经营地址为如下地区（江苏省、浙江省、湖南省、湖北省、云南省、贵州省、陕西省、河南省、吉林省、黑龙江省、福建省、海南省、重庆市、青海省、宁夏回族自治区）开通银联二维码或刷卡业务不支持挂网协议；&lt;br/&gt;若已签署过纸质或电子协议下，调用该接口时必填，且只可以选择纸质或电子协议；&lt;br/&gt;若已签署过挂网协议下，调用该接口时，选填。
-$request->setAgreementInfo(getE50a82866bb5426dB3a3B843af7f3006());
+// *协议信息实体*jsonObject字符串；[签约协议材料说明](https://cloudpnrcdn.oss-cn-shanghai.aliyuncs.com/opps/api/prod/download_file/kyc/KYC-%E5%95%86%E6%88%B7%E5%90%88%E5%90%8C%E7%AD%BE%E7%BA%A6%E8%A7%84%E5%88%99.xlsx) &lt;br/&gt;若未签署过协议的情况下，调用该接口时必填；&lt;br/&gt;若已签署过纸质或电子协议下，调用该接口时必填，且只可以选择纸质或电子协议；&lt;br/&gt;若已签署过挂网协议下，调用该接口时，选填。
+$request->setAgreementInfo(get7a451c27Db114cb48ea6145ced19c91c());
 
 // 设置非必填字段
 $extendInfoMap = getExtendInfos();
@@ -70,39 +70,39 @@ function getExtendInfos() {
     // 交易手续费外扣时的账户类型
     $extendInfoMap["out_fee_acct_type"]= "";
     // 支付宝配置对象
-    $extendInfoMap["ali_conf_list"]= get534d3b688359488cB4869cd6c1abcd52();
+    $extendInfoMap["ali_conf_list"]= get21fac24742f9427aA460Aab352a6432f();
     // 支付宝直连配置对象
-    // $extendInfoMap["ali_zl_conf"]= getE9ed8e296aaf421d9ce42b2b5019f5fa();
+    // $extendInfoMap["ali_zl_conf"]= get88a6111e41a844b886b0E6bb77ca1b9c();
     // 开通支付宝预授权
     $extendInfoMap["alipay_pre_auth_flag"]= "N";
     // 微信配置对象
-    $extendInfoMap["wx_conf_list"]= get79f4de2eEccc4b589e07E7ff69ed654c();
+    $extendInfoMap["wx_conf_list"]= getF3d85b100b98442996569fc23beba46b();
     // 微信直连配置对象
-    // $extendInfoMap["wx_zl_conf"]= get14bc7b38E2ae4104BdbdD14d0f445d42();
+    // $extendInfoMap["wx_zl_conf"]= getC7503ea387844077A01a3062082cc013();
     // 开通微信预授权
     $extendInfoMap["wechatpay_pre_auth_flag"]= "N";
     // 银联二维码配置
-    $extendInfoMap["union_conf_list"]= getA703b9de64a1402d994333ddb957f3e2();
+    $extendInfoMap["union_conf_list"]= get20f5ad4bF54f4286Bde6Cfcfeb6153bf();
     // 银行卡业务配置
-    $extendInfoMap["bank_card_conf"]= getBb55a07d62564066Beb3Ae7460e7561a();
+    $extendInfoMap["bank_card_conf"]= get77f68bdc3bd147869d4e3b69e935fe88();
     // 线上费率配置
-    // $extendInfoMap["online_fee_conf_list"]= getD9a1c242B92b4e639a0c0db34c557efb();
+    // $extendInfoMap["online_fee_conf_list"]= get94326be6F38f4193925fD4bd3da0fece();
     // 线上手续费承担方配置
-    // $extendInfoMap["online_pay_fee_conf_list"]= get84a5aa01547d4f32B8d57a31c8741738();
+    // $extendInfoMap["online_pay_fee_conf_list"]= getD449710963124a3690477580031161bf();
     // 运营媒介
-    // $extendInfoMap["online_media_info_list"]= get65b36dd5565548a49afd328a8c6add51();
+    // $extendInfoMap["online_media_info_list"]= get1fcfc7baF5d148889917938e9b883f03();
     // *余额支付配置*
-    $extendInfoMap["balance_pay_config"]= getCf11666b3a324161A495799fa94a3e89();
+    $extendInfoMap["balance_pay_config"]= getDc4988554ee74ddfBa3989153611eb1f();
     // 全域资金管理配置(华通银行)
-    // $extendInfoMap["out_order_funds_config"]= get8e12b63fBe89428999f03781625796e7();
+    // $extendInfoMap["out_order_funds_config"]= get5bdfdb6508b04408Ae95Cdfaa942d289();
     // 补贴支付
-    $extendInfoMap["combine_pay_config"]= get91a870c6C6a5407e97b71b087c8a7c8e();
+    $extendInfoMap["combine_pay_config"]= get2960341b43524ee5B6ac6cdd21c82adc();
     // 花呗分期费率配置
-    $extendInfoMap["hb_fq_fee_config"]= getFd24ec1a6d5a4e2f81c9235f2ed5bab6();
+    $extendInfoMap["hb_fq_fee_config"]= get7fb3ebc3Bc074f9388f321d6479aa9f1();
     // 汇总结算配置
-    // $extendInfoMap["collection_settle_config_list"]= get7448372bA11b4a0eA89a0c74a8ba0354();
+    // $extendInfoMap["collection_settle_config_list"]= get1a5d8b7863b745e4823aF9b1cdf777e8();
     // 分账配置信息
-    // $extendInfoMap["split_conf_info"]= get567d087fAb1244b1Bc2c723f454a1786();
+    // $extendInfoMap["split_conf_info"]= getC42884ccF1c34024B67f38aaaba20c6d();
     // 延迟入账开关
     $extendInfoMap["delay_flag"]= "Y";
     // 商户开通强制延迟标记
@@ -110,7 +110,7 @@ function getExtendInfos() {
     // 使用上级微信、支付宝商户号发起交易
     // $extendInfoMap["use_chains_flag"]= "";
     // *补充文件信息*
-    // $extendInfoMap["extended_material_list"]= get2e3f45c0032847fd91d609a314d1b368();
+    // $extendInfoMap["extended_material_list"]= get0084765a7bce49e597667ac9645b0212();
     // 开户费用值(元)
     // $extendInfoMap["enter_fee"]= "";
     // 开户费用类型
@@ -128,17 +128,17 @@ function getExtendInfos() {
     // 交易异步应答地址
     $extendInfoMap["recon_resp_addr"]= "http://192.168.85.157:30031/sspm/testVirgo";
     // 银联线上收银台
-    // $extendInfoMap["uni_app_payment_config"]= get9a8b6b3696084b8e81ad52376d21c73d();
+    // $extendInfoMap["uni_app_payment_config"]= get9aa699174a274895B393A6fadb5d95b8();
     // 资金归集开通标记
     // $extendInfoMap["fund_collection_flag"]= "";
     // 代发配置
-    // $extendInfoMap["surrogate_config_list"]= get398bd92898c142e0B1ca2c6476f37bbf();
+    // $extendInfoMap["surrogate_config_list"]= get68fad2ce1407417fAfecF5d7c76f5c44();
     // 大额支付配置
-    // $extendInfoMap["large_amt_pay_config"]= get60fa1db883b346c1B3bf3ec868a1cb92();
+    // $extendInfoMap["large_amt_pay_config"]= get07efeda90f7849fbAcdeBeaa1db4cc83();
     // 托管支付开关
     // $extendInfoMap["half_pay_host_flag"]= "";
     // 代发复核配置
-    // $extendInfoMap["agent_recheck_config"]= get3f8e4c365f9d4157925a60aa77875b14();
+    // $extendInfoMap["agent_recheck_config"]= getD8249d311f9f42989beeB0c19cc40c96();
     // 商户开通网银充值开关
     // $extendInfoMap["online_recharge_flag"]= "";
     // 是否开通垫资退款
@@ -146,7 +146,7 @@ function getExtendInfos() {
     return $extendInfoMap;
 }
 
-function get707433a562aa4e079227B5ec91aebed6() {
+function getDaf7f2d752374b63B9433eed93587606() {
     $dto = array();
     // 签约人类型
     // $dto["type"] = "test";
@@ -162,7 +162,7 @@ function get707433a562aa4e079227B5ec91aebed6() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function get11b6b6e7E24d4d79B74448cb3e1e47f8() {
+function get3cc9d3a6454340ff8251703bdeb70fcf() {
     $dto = array();
     // 联系人身份证号码
     // $dto["id_card_number"] = "test";
@@ -174,7 +174,7 @@ function get11b6b6e7E24d4d79B74448cb3e1e47f8() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function get27c6632e69fa4c758b56860511d74111() {
+function get10b3e4a3887c493dA5871786d353f7df() {
     $dto = array();
     // 证件持有人类型
     // $dto["legal_type"] = "";
@@ -200,7 +200,7 @@ function get27c6632e69fa4c758b56860511d74111() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function get89a6a4f788b54902B15329dbf6ee9aa8() {
+function get8a2e5c750608487eA4c742b3a2c56b27() {
     $dto = array();
     // 是否金融机构
     // $dto["finance_institution_flag"] = "";
@@ -213,14 +213,14 @@ function get89a6a4f788b54902B15329dbf6ee9aa8() {
     // 特殊行业id
     // $dto["special_category_id"] = "";
     // 联系人信息对象
-    // $dto["contact_person_info"] = get11b6b6e7E24d4d79B74448cb3e1e47f8();
+    // $dto["contact_person_info"] = get3cc9d3a6454340ff8251703bdeb70fcf();
     // 法人身份信息
-    // $dto["legal_person_info"] = get27c6632e69fa4c758b56860511d74111();
+    // $dto["legal_person_info"] = get10b3e4a3887c493dA5871786d353f7df();
 
     return $dto;
 }
 
-function get534d3b688359488cB4869cd6c1abcd52() {
+function get21fac24742f9427aA460Aab352a6432f() {
     $dto = array();
     // 支付场景
     $dto["pay_scene"] = "1";
@@ -233,7 +233,7 @@ function get534d3b688359488cB4869cd6c1abcd52() {
     // 是否需要实名认证
     // $dto["is_check_real_name"] = "";
     // 实名认证信息
-    // $dto["al_real_name_info"] = get89a6a4f788b54902B15329dbf6ee9aa8();
+    // $dto["al_real_name_info"] = get8a2e5c750608487eA4c742b3a2c56b27();
     // *商户经营类目*
     $dto["mcc"] = "2015091000052157";
 
@@ -242,7 +242,7 @@ function get534d3b688359488cB4869cd6c1abcd52() {
     return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function get61ff187b35114e8f8038F68bada65a50() {
+function getCdd891aa7c744bf999d24c2b165a9beb() {
     $dto = array();
     // 文件类型
     // $dto["file_type"] = "test";
@@ -254,7 +254,7 @@ function get61ff187b35114e8f8038F68bada65a50() {
     return $dtoList;
 }
 
-function getE9ed8e296aaf421d9ce42b2b5019f5fa() {
+function get88a6111e41a844b886b0E6bb77ca1b9c() {
     $dto = array();
     // 申请类型
     // $dto["apply_type"] = "test";
@@ -263,7 +263,7 @@ function getE9ed8e296aaf421d9ce42b2b5019f5fa() {
     // 服务费率仅支持渠道商。平台商户调用不支持该字段服务费率（%），0.38~3之间，精确到0.01。&lt;font color&#x3D;&quot;green&quot;&gt;示例值：0.06&lt;/font&gt;
     // $dto["fee_rate"] = "test";
     // 文件列表
-    // $dto["file_list"] = get61ff187b35114e8f8038F68bada65a50();
+    // $dto["file_list"] = getCdd891aa7c744bf999d24c2b165a9beb();
     // 联系人姓名
     // $dto["contact_name"] = "";
     // 联系人手机号
@@ -284,7 +284,7 @@ function getE9ed8e296aaf421d9ce42b2b5019f5fa() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function get5ca845582c334717A9164accd279fd1d() {
+function get41455f58592c46f9825138fcecc83239() {
     $dto = array();
     // 联系人姓名联系人类型contact_type&#x3D;SUPER时必填。示例值：张三
     // $dto["name"] = "test";
@@ -314,7 +314,7 @@ function get5ca845582c334717A9164accd279fd1d() {
     return $dto;
 }
 
-function get79f4de2eEccc4b589e07E7ff69ed654c() {
+function getF3d85b100b98442996569fc23beba46b() {
     $dto = array();
     // 支付场景
     $dto["pay_scene"] = "1";
@@ -331,14 +331,14 @@ function get79f4de2eEccc4b589e07E7ff69ed654c() {
     // 是否需要实名认证
     // $dto["is_check_real_name"] = "";
     // 实名认证信息
-    // $dto["wx_real_name_info"] = get5ca845582c334717A9164accd279fd1d();
+    // $dto["wx_real_name_info"] = get41455f58592c46f9825138fcecc83239();
 
     $dtoList = array();
     array_push($dtoList, $dto);
     return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function get220dd710A6a44feaB6e686c5fd2e4379() {
+function get26ca5760B92c47deBcdf1f965829d45b() {
     $dto = array();
     // 文件类型
     // $dto["file_type"] = "test";
@@ -348,7 +348,7 @@ function get220dd710A6a44feaB6e686c5fd2e4379() {
     return $dto;
 }
 
-function get212004911a4d471c8ed8Da9d319006d0() {
+function get6546b55169b14bd68e38051a0cc8dca3() {
     $dto = array();
     // 联系人类型
     // $dto["contact_type"] = "test";
@@ -363,7 +363,7 @@ function get212004911a4d471c8ed8Da9d319006d0() {
     // 联系人电子邮箱
     // $dto["contact_email"] = "test";
     // 联系人资料联系人类型为经办人时必填F28-联系人身份证国徽面   F29-联系人身份证人像面F227-微信业务办理授权函&lt;br/&gt;&lt;font color&#x3D;&quot;green&quot;&gt;示例值：&lt;/font&gt;
-    // $dto["contact_file_list"] = get220dd710A6a44feaB6e686c5fd2e4379();
+    // $dto["contact_file_list"] = get26ca5760B92c47deBcdf1f965829d45b();
     // 证件有效期类型
     // $dto["contact_cert_validity_type"] = "test";
     // 证件有效期开始日期
@@ -374,7 +374,7 @@ function get212004911a4d471c8ed8Da9d319006d0() {
     return $dto;
 }
 
-function getFbb6538557ae47418ec5C00bc96391c6() {
+function getA44687d41b8a4cbeBe711d241337aa53() {
     $dto = array();
     // 文件类型
     // $dto["file_type"] = "test";
@@ -386,7 +386,7 @@ function getFbb6538557ae47418ec5C00bc96391c6() {
     return $dtoList;
 }
 
-function get4bdce7bc0382420fB59606c69d150516() {
+function getFf3d6e72A6984258B84d4d6180ca124e() {
     $dto = array();
     // 证件类型
     // $dto["ubo_cert_type"] = "test";
@@ -401,7 +401,7 @@ function get4bdce7bc0382420fB59606c69d150516() {
     // 证件有效期开始日期
     // $dto["ubo_cert_begin_date"] = "test";
     // 文件列表
-    // $dto["ubo_file_list"] = getFbb6538557ae47418ec5C00bc96391c6();
+    // $dto["ubo_file_list"] = getA44687d41b8a4cbeBe711d241337aa53();
     // 证件有效期截止日期
     // $dto["ubo_cert_end_date"] = "";
 
@@ -410,17 +410,17 @@ function get4bdce7bc0382420fB59606c69d150516() {
     return $dtoList;
 }
 
-function get6159aaa80e404ad9A617551b15de2d35() {
+function getAa40331d7c7c4fee8725C040cfc89336() {
     $dto = array();
     // 经营者/法人是否为受益人
     // $dto["ubo_type"] = "test";
     // 受益人信息列表jsonArray格式,当ubo_type为Y时可不填
-    // $dto["ubo_info_list"] = get4bdce7bc0382420fB59606c69d150516();
+    // $dto["ubo_info_list"] = getFf3d6e72A6984258B84d4d6180ca124e();
 
     return $dto;
 }
 
-function getA9cf10a25ff248bc975d12c8f8c275d1() {
+function getA11f01730306436c930fE86b1056b00d() {
     $dto = array();
     // 文件类型
     // $dto["file_type"] = "test";
@@ -430,7 +430,7 @@ function getA9cf10a25ff248bc975d12c8f8c275d1() {
     return $dto;
 }
 
-function getFbedfc9c625c4e9a997eA35c410ad0c6() {
+function get16252679Ad9447e38facD6ccd1673dc5() {
     $dto = array();
     // 经营场景类型
     // $dto["sales_scenes_type"] = "test";
@@ -459,7 +459,7 @@ function getFbedfc9c625c4e9a997eA35c410ad0c6() {
     // 商家企业微信CorpID开通企业微信场景时填入；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：xxxxx&lt;/font&gt;
     // $dto["sub_corp_id"] = "test";
     // 文件列表
-    // $dto["sales_scenes_file_list"] = getA9cf10a25ff248bc975d12c8f8c275d1();
+    // $dto["sales_scenes_file_list"] = getA11f01730306436c930fE86b1056b00d();
     // 文件列表
     // $dto["fee_rate_file_list"] = "";
     // 门店名称
@@ -472,7 +472,7 @@ function getFbedfc9c625c4e9a997eA35c410ad0c6() {
     return $dto;
 }
 
-function get459fcbeaF217476e998403b65ef1ebc3() {
+function get5bd4f96f1fb343e7A2b8Df1899997462() {
     $dto = array();
     // 文件类型
     // $dto["file_type"] = "test";
@@ -484,7 +484,7 @@ function get459fcbeaF217476e998403b65ef1ebc3() {
     return $dtoList;
 }
 
-function get7421120a74ee44efA73a5bc8015e31c7() {
+function get37990abe9331440eA1f61645c12a9689() {
     $dto = array();
     // 登记证书类型
     // $dto["cert_type"] = "test";
@@ -501,14 +501,14 @@ function get7421120a74ee44efA73a5bc8015e31c7() {
     // 证书有效期开始日期
     // $dto["cert_begin_date"] = "test";
     // 文件列表
-    // $dto["cert_file_list"] = get459fcbeaF217476e998403b65ef1ebc3();
+    // $dto["cert_file_list"] = get5bd4f96f1fb343e7A2b8Df1899997462();
     // 证书有效期截止日期
     // $dto["cert_end_date"] = "";
 
     return $dto;
 }
 
-function get3e170155Ae9943cdB6304f4d714941e8() {
+function getC23b7a7fE38e4cda8c374aec7044b45b() {
     $dto = array();
     // 账户类型
     // $dto["card_type"] = "test";
@@ -530,7 +530,7 @@ function get3e170155Ae9943cdB6304f4d714941e8() {
     return $dto;
 }
 
-function get54ed2f011dbc497eB56991092a98bc26() {
+function get17cfb4fd36b44ef29ce4516af9858c25() {
     $dto = array();
     // 申请服务
     // $dto["service_code"] = "test";
@@ -546,7 +546,7 @@ function get54ed2f011dbc497eB56991092a98bc26() {
     return $dtoList;
 }
 
-function get517cf50e21b14eac95536adbf8310f52() {
+function get6ce22e4b07b64c79A87025ba63c99290() {
     $dto = array();
     // 文件类型
     // $dto["file_type"] = "test";
@@ -558,33 +558,33 @@ function get517cf50e21b14eac95536adbf8310f52() {
     return $dtoList;
 }
 
-function get14bc7b38E2ae4104BdbdD14d0f445d42() {
+function getC7503ea387844077A01a3062082cc013() {
     $dto = array();
     // 微信子商户号微信支付分配的子商户号；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：1632157057&lt;/font&gt;
     // $dto["sub_mch_id"] = "test";
     // 联系人信息jsonObject字符串,新增时必填
-    // $dto["contact_info"] = get212004911a4d471c8ed8Da9d319006d0();
+    // $dto["contact_info"] = get6546b55169b14bd68e38051a0cc8dca3();
     // 最终受益人信息jsonObject字符串，商户类型为企业时，微信侧必填。（如果基本信息里有的话，可以不传取 huifu_id 对应的信息）。新增时填入
-    // $dto["ubo_info"] = get6159aaa80e404ad9A617551b15de2d35();
+    // $dto["ubo_info"] = getAa40331d7c7c4fee8725C040cfc89336();
     // 经营场景jsonObject字符串，新增时填入
-    // $dto["sales_info"] = getFbedfc9c625c4e9a997eA35c410ad0c6();
+    // $dto["sales_info"] = get16252679Ad9447e38facD6ccd1673dc5();
     // 特殊主体登记证书jsonObject字符串，商户营业执照类型为政府机关/事业单位/其他组织时，传入相应信息。新增时需填入
-    // $dto["certificate_info"] = get7421120a74ee44efA73a5bc8015e31c7();
+    // $dto["certificate_info"] = get37990abe9331440eA1f61645c12a9689();
     // 银行账户信息jsonObject字符串，该字段不填时，取商户在汇付系统录入的结算账号信息。新增或修改时填入，修改时必填
-    // $dto["wx_card_info"] = get3e170155Ae9943cdB6304f4d714941e8();
+    // $dto["wx_card_info"] = getC23b7a7fE38e4cda8c374aec7044b45b();
     // 配置集合对指定的sub_mch_id做配置
-    // $dto["wx_zl_pay_conf_list"] = get54ed2f011dbc497eB56991092a98bc26();
+    // $dto["wx_zl_pay_conf_list"] = get17cfb4fd36b44ef29ce4516af9858c25();
     // 操作类型ADD-新增， UPDATE-修改， 默认新增；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：ADD&lt;/font&gt;
     // $dto["operate_type"] = "test";
     // 补充说明信息
     // $dto["business_addition_msg"] = "";
     // 补充说明文件列表
-    // $dto["addition_file_list"] = get517cf50e21b14eac95536adbf8310f52();
+    // $dto["addition_file_list"] = get6ce22e4b07b64c79A87025ba63c99290();
 
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function getA703b9de64a1402d994333ddb957f3e2() {
+function get20f5ad4bF54f4286Bde6Cfcfeb6153bf() {
     $dto = array();
     // 借记卡手续费（%）
     // $dto["debit_fee_rate"] = "test";
@@ -602,7 +602,7 @@ function getA703b9de64a1402d994333ddb957f3e2() {
     return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function getBb55a07d62564066Beb3Ae7460e7561a() {
+function get77f68bdc3bd147869d4e3b69e935fe88() {
     $dto = array();
     // 借记卡手续费（%）
     $dto["debit_fee_rate"] = "0.38";
@@ -620,23 +620,13 @@ function getBb55a07d62564066Beb3Ae7460e7561a() {
     $dto["small_free_amt"] = "1000";
     // 小额双免手续费（%）
     $dto["small_fee_amt"] = "0.33";
-    // 银联手机闪付借记卡手续费1000以上（%）
-    $dto["cloud_debit_fee_rate_up"] = "0.56";
-    // 银联手机闪付借记卡封顶1000以上(元)
-    $dto["cloud_debit_fee_limit_up"] = "12";
-    // 银联手机闪付贷记卡手续费1000以上（%）
-    $dto["cloud_credit_fee_rate_up"] = "0.59";
-    // 银联手机闪付借记卡手续费1000以下（%）
-    $dto["cloud_debit_fee_rate_down"] = "0.37";
-    // 银联手机闪付借记卡封顶1000以下(元)
-    $dto["cloud_debit_fee_limit_down"] = "5";
-    // 银联手机闪付贷记卡手续费1000以下（%）
-    $dto["cloud_credit_fee_rate_down"] = "0.36";
+    // 云闪付开通状态
+    // $dto["is_open_cloud_flag"] = "";
 
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function getD9a1c242B92b4e639a0c0db34c557efb() {
+function get94326be6F38f4193925fD4bd3da0fece() {
     $dto = array();
     // 业务类型
     // $dto["fee_type"] = "test";
@@ -646,7 +636,7 @@ function getD9a1c242B92b4e639a0c0db34c557efb() {
     return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function get84a5aa01547d4f32B8d57a31c8741738() {
+function getD449710963124a3690477580031161bf() {
     $dto = array();
     // 业务类型
     // $dto["pay_type"] = "";
@@ -662,7 +652,7 @@ function get84a5aa01547d4f32B8d57a31c8741738() {
     return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function get65b36dd5565548a49afd328a8c6add51() {
+function get1fcfc7baF5d148889917938e9b883f03() {
     $dto = array();
     // *运营媒介类型*
     // $dto["media_type"] = "test";
@@ -702,7 +692,7 @@ function get65b36dd5565548a49afd328a8c6add51() {
     return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function get85f3783c92a147a0A43f4137e6d07431() {
+function getCc41b1adFedb4976B5ad288411eb1ff2() {
     $dto = array();
     // *业务模式说明*请详细说明商户的业务模式，包括不限于（业务参与方、各方的权利及义务关系等）。最大500个汉字，仅Pro版时必填&lt;br/&gt;&lt;font color&#x3D;&quot;green&quot;&gt;示例值：商户向企业采购产品，并将其展示在其电商平台上，用户注册后购买其产品，产品主要有家电、服饰、鞋帽等，用户购买产品的资金作为商户所得，商户根据订单情况进行物流配送。&lt;/font&gt;
     // $dto["busi_instruction"] = "test";
@@ -714,12 +704,12 @@ function get85f3783c92a147a0A43f4137e6d07431() {
     return $dto;
 }
 
-function getCf11666b3a324161A495799fa94a3e89() {
+function getDc4988554ee74ddfBa3989153611eb1f() {
     $dto = array();
     // *业务模式*
     // $dto["balance_model"] = "test";
     // 业务情况说明
-    // $dto["description_info"] = get85f3783c92a147a0A43f4137e6d07431();
+    // $dto["description_info"] = getCc41b1adFedb4976B5ad288411eb1ff2();
     // 手续费(%)
     $dto["fee_rate"] = "2";
     // 手续费（固定/元）
@@ -738,7 +728,7 @@ function getCf11666b3a324161A495799fa94a3e89() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function get1a64f48cEc2849efB2e3D96d4278de7d() {
+function get362d896dC911494fBba6698ad92cc098() {
     $dto = array();
     // 支行联行号card_type为0时必填，参考：[银行支行编码](https://paas.huifu.com/open/doc/api/#/csfl/api_csfl_yhzhbm)；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：102290026507&lt;/font&gt;
     // $dto["branch_code"] = "test";
@@ -774,7 +764,7 @@ function get1a64f48cEc2849efB2e3D96d4278de7d() {
     return $dto;
 }
 
-function getCbba6310Fe2f4d59B83a155f7d9a7940() {
+function getD7f6aec01dd34576B03921d38a1c98e8() {
     $dto = array();
     // 开户手续费(元)
     // $dto["fee_fix_amt"] = "test";
@@ -786,7 +776,7 @@ function getCbba6310Fe2f4d59B83a155f7d9a7940() {
     return $dto;
 }
 
-function get8e12b63fBe89428999f03781625796e7() {
+function get5bdfdb6508b04408Ae95Cdfaa942d289() {
     $dto = array();
     // 自动入账开关
     // $dto["out_order_auto_acct_flag"] = "test";
@@ -803,16 +793,16 @@ function get8e12b63fBe89428999f03781625796e7() {
     // 交易手续费外扣汇付ID
     // $dto["out_fee_huifuid"] = "";
     // 全域资金开户银行卡信息
-    // $dto["out_order_acct_card"] = get1a64f48cEc2849efB2e3D96d4278de7d();
+    // $dto["out_order_acct_card"] = get362d896dC911494fBba6698ad92cc098();
     // 全域资金开户手续费
-    // $dto["out_order_acct_open_fees"] = getCbba6310Fe2f4d59B83a155f7d9a7940();
+    // $dto["out_order_acct_open_fees"] = getD7f6aec01dd34576B03921d38a1c98e8();
     // 全域支付业务模式
     // $dto["business_model"] = "";
 
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function get91a870c6C6a5407e97b71b087c8a7c8e() {
+function get2960341b43524ee5B6ac6cdd21c82adc() {
     $dto = array();
     // 是否交易手续费外扣
     // $dto["out_fee_flag"] = "test";
@@ -828,7 +818,7 @@ function get91a870c6C6a5407e97b71b087c8a7c8e() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function getFd24ec1a6d5a4e2f81c9235f2ed5bab6() {
+function get7fb3ebc3Bc074f9388f321d6479aa9f1() {
     $dto = array();
     // 花呗收单分期3期（%）分期费率不为空时，收单费率必填，大于0，保留2位小数，不小于渠道商成本；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：1.0&lt;/font&gt;代表费率为1.00%
     $dto["acq_three_period"] = "1.30";
@@ -854,7 +844,7 @@ function getFd24ec1a6d5a4e2f81c9235f2ed5bab6() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function get7448372bA11b4a0eA89a0c74a8ba0354() {
+function get1a5d8b7863b745e4823aF9b1cdf777e8() {
     $dto = array();
     // 归集留存金(元)
     // $dto["out_resv_amt"] = "test";
@@ -872,7 +862,7 @@ function get7448372bA11b4a0eA89a0c74a8ba0354() {
     return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function get8c7ebf06811d40deBef069801ffe83a5() {
+function get918b83c413f74502Ab3fBa415df84980() {
     $dto = array();
     // 分账比例
     // $dto["fee_rate"] = "test";
@@ -882,7 +872,7 @@ function get8c7ebf06811d40deBef069801ffe83a5() {
     return $dto;
 }
 
-function getDf1ab49d414945679b1e37458a473838() {
+function getDbde2eab1c7a4cde830b2384a4c624a0() {
     $dto = array();
     // *业务模式说明*
     // $dto["busi_instruction"] = "test";
@@ -894,7 +884,7 @@ function getDf1ab49d414945679b1e37458a473838() {
     return $dto;
 }
 
-function get567d087fAb1244b1Bc2c723f454a1786() {
+function getC42884ccF1c34024B67f38aaaba20c6d() {
     $dto = array();
     // 分账开关
     // $dto["div_flag"] = "test";
@@ -907,7 +897,7 @@ function get567d087fAb1244b1Bc2c723f454a1786() {
     // 分账模式
     // $dto["scene"] = "test";
     // 分账明细
-    // $dto["acct_split_bunch_list"] = get8c7ebf06811d40deBef069801ffe83a5();
+    // $dto["acct_split_bunch_list"] = get918b83c413f74502Ab3fBa415df84980();
     // 手续费外扣开关
     // $dto["out_fee_flag"] = "";
     // 手续费外扣时的账户类型
@@ -919,12 +909,12 @@ function get567d087fAb1244b1Bc2c723f454a1786() {
     // 固定手续费
     // $dto["per_amt"] = "";
     // 业务情况说明
-    // $dto["split_ext_info"] = getDf1ab49d414945679b1e37458a473838();
+    // $dto["split_ext_info"] = getDbde2eab1c7a4cde830b2384a4c624a0();
 
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function get2e3f45c0032847fd91d609a314d1b368() {
+function get0084765a7bce49e597667ac9645b0212() {
     $dto = array();
     // *文件id*
     // $dto["file_id"] = "test";
@@ -936,7 +926,7 @@ function get2e3f45c0032847fd91d609a314d1b368() {
     return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function getE50a82866bb5426dB3a3B843af7f3006() {
+function get7a451c27Db114cb48ea6145ced19c91c() {
     $dto = array();
     // *协议类型*
     $dto["agreement_type"] = "0";
@@ -954,7 +944,7 @@ function getE50a82866bb5426dB3a3B843af7f3006() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function get9a8b6b3696084b8e81ad52376d21c73d() {
+function get9aa699174a274895B393A6fadb5d95b8() {
     $dto = array();
     // 借记手续费（%）借记卡费率与贷记卡费率不能同时为空;保留2位小数，最大值100.00，最小值0.00；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：0.02&lt;/font&gt;
     // $dto["debit_fee_rate"] = "test";
@@ -974,7 +964,7 @@ function get9a8b6b3696084b8e81ad52376d21c73d() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function get398bd92898c142e0B1ca2c6476f37bbf() {
+function get68fad2ce1407417fAfecF5d7c76f5c44() {
     $dto = array();
     // 代发业务类型
     // $dto["surrogate_type"] = "test";
@@ -1002,7 +992,7 @@ function get398bd92898c142e0B1ca2c6476f37bbf() {
     return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function getD01acfa3D2dd45d1Bcf24dc5d23c0d10() {
+function getE30e4f41A98a4b7a9d3c23c655436c06() {
     $dto = array();
     // 大额支付业务模式
     // $dto["business_model"] = "test";
@@ -1026,10 +1016,10 @@ function getD01acfa3D2dd45d1Bcf24dc5d23c0d10() {
     return $dtoList;
 }
 
-function get60fa1db883b346c1B3bf3ec868a1cb92() {
+function get07efeda90f7849fbAcdeBeaa1db4cc83() {
     $dto = array();
     // 大额支付配置列表
-    // $dto["large_amt_pay_config_info_list"] = getD01acfa3D2dd45d1Bcf24dc5d23c0d10();
+    // $dto["large_amt_pay_config_info_list"] = getE30e4f41A98a4b7a9d3c23c655436c06();
     // 交易手续费外扣huifuId交易手续费外扣时必填；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：6666000108854952&lt;/font&gt;
     // $dto["out_fee_huifu_id"] = "test";
     // 交易手续费外扣账户号交易手续费外扣时必填；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：F00598602&lt;/font&gt;
@@ -1042,7 +1032,7 @@ function get60fa1db883b346c1B3bf3ec868a1cb92() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function get3f8e4c365f9d4157925a60aa77875b14() {
+function getD8249d311f9f42989beeB0c19cc40c96() {
     $dto = array();
     // 代发复核开关
     // $dto["agent_recheck_flag"] = "";

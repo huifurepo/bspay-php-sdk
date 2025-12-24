@@ -30,7 +30,7 @@ $request->setPhaseHfSeqId("");
 // 支付金额
 $request->setOrdAmt("20");
 // 分账对象
-$request->setAcctSplitBunch(get5ff7863bFba14fd185823535ee0a9e52());
+$request->setAcctSplitBunch(get2cfe14563b14475eBbdfD9392f16df9d());
 
 // 设置非必填字段
 $extendInfoMap = getExtendInfos();
@@ -60,7 +60,7 @@ function getExtendInfos() {
     return $extendInfoMap;
 }
 
-function get875acdbcEff4424dBa4551dffa06d840() {
+function get82ee536eE9db4db2A5151412ac55ccc9() {
     $dto = array();
     // 分账金额
     $dto["div_amt"] = "20.00";
@@ -72,10 +72,10 @@ function get875acdbcEff4424dBa4551dffa06d840() {
     return $dto;
 }
 
-function get5ff7863bFba14fd185823535ee0a9e52() {
+function get2cfe14563b14475eBbdfD9392f16df9d() {
     $dto = array();
     // 分账明细
-    $dto["acct_info"] = get875acdbcEff4424dBa4551dffa06d840();
+    $dto["acct_info"] = get82ee536eE9db4db2A5151412ac55ccc9();
 
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
