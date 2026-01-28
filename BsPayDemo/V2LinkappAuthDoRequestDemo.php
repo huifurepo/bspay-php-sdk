@@ -59,6 +59,8 @@ function getExtendInfos() {
     $extendInfoMap = array();
     // 回调地址
     // $extendInfoMap["callback_url"]= "";
+    // 额外业务参数
+    // $extendInfoMap["erp_biz_params"]= "";
     // 
     // $extendInfoMap["以下仅RPA授权输入"]= "";
     // 登录账号名称

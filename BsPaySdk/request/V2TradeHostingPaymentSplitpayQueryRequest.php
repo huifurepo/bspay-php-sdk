@@ -5,12 +5,12 @@ namespace BsPaySdk\request;
 use BsPaySdk\enums\FunctionCodeEnum;
 
 /**
- * 应用场景
+ * 拆单支付订单查询
  *
  * @author sdk-generator
  * @Description
  */
-class V3TradePaymentJspayRequest extends BaseRequest
+class V2TradeHostingPaymentSplitpayQueryRequest extends BaseRequest
 {
 
     /**
@@ -26,20 +26,16 @@ class V3TradePaymentJspayRequest extends BaseRequest
      */
     private $huifuId;
     /**
-     * 商品描述
+     * 原交易请求日期
      */
-    private $goodsDesc;
+    private $orgReqDate;
     /**
-     * 交易类型
+     * 原交易请求流水号
      */
-    private $tradeType;
-    /**
-     * 交易金额
-     */
-    private $transAmt;
+    private $orgReqSeqId;
 
     public function getFunctionCode() {
-        return FunctionCodeEnum::$V3_TRADE_PAYMENT_JSPAY;
+        return FunctionCodeEnum::$V2_TRADE_HOSTING_PAYMENT_SPLITPAY_QUERY;
     }
 
 
@@ -67,28 +63,20 @@ class V3TradePaymentJspayRequest extends BaseRequest
         $this->huifuId = $huifuId;
     }
 
-    public function getGoodsDesc() {
-        return $this->goodsDesc;
+    public function getOrgReqDate() {
+        return $this->orgReqDate;
     }
 
-    public function setGoodsDesc($goodsDesc) {
-        $this->goodsDesc = $goodsDesc;
+    public function setOrgReqDate($orgReqDate) {
+        $this->orgReqDate = $orgReqDate;
     }
 
-    public function getTradeType() {
-        return $this->tradeType;
+    public function getOrgReqSeqId() {
+        return $this->orgReqSeqId;
     }
 
-    public function setTradeType($tradeType) {
-        $this->tradeType = $tradeType;
-    }
-
-    public function getTransAmt() {
-        return $this->transAmt;
-    }
-
-    public function setTransAmt($transAmt) {
-        $this->transAmt = $transAmt;
+    public function setOrgReqSeqId($orgReqSeqId) {
+        $this->orgReqSeqId = $orgReqSeqId;
     }
 
 }

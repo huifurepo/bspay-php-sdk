@@ -21,6 +21,10 @@ class V2HycContractQueryRequest extends BaseRequest
      * 请求日期
      */
     private $reqDate;
+    /**
+     * 合同编号
+     */
+    private $contractId;
 
     public function getFunctionCode() {
         return FunctionCodeEnum::$V2_HYC_CONTRACT_QUERY;
@@ -41,6 +45,14 @@ class V2HycContractQueryRequest extends BaseRequest
 
     public function setReqDate($reqDate) {
         $this->reqDate = $reqDate;
+    }
+
+    public function getContractId() {
+        return $this->contractId;
+    }
+
+    public function setContractId($contractId) {
+        $this->contractId = $contractId;
     }
 
 }

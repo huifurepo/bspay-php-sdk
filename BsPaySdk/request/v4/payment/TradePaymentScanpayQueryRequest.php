@@ -1,18 +1,17 @@
 <?php
 
-namespace BsPaySdk\request;
+namespace BsPaySdk\request\v4\payment;
 
+use BsPaySdk\request\BaseRequest;
 use BsPaySdk\enums\FunctionCodeEnum;
 
 /**
- * 应用场景
+ * 扫码交易查询
  *
  * @author sdk-generator
  * @Description
  */
-class V3TradePaymentJspayRequest extends BaseRequest
-{
-
+class TradePaymentScanpayQueryRequest extends BaseRequest {
     /**
      * 请求日期
      */
@@ -26,22 +25,17 @@ class V3TradePaymentJspayRequest extends BaseRequest
      */
     private $huifuId;
     /**
-     * 商品描述
+     * 全局流水号
      */
-    private $goodsDesc;
+    private $hfSeqId;
     /**
-     * 交易类型
+     * 原请求流水号
      */
-    private $tradeType;
-    /**
-     * 交易金额
-     */
-    private $transAmt;
+    private $outOrdId;
 
     public function getFunctionCode() {
-        return FunctionCodeEnum::$V3_TRADE_PAYMENT_JSPAY;
+        return FunctionCodeEnum::$V4_TRADE_PAYMENT_SCANPAY_QUERY;
     }
-
 
     public function getReqDate() {
         return $this->reqDate;
@@ -67,28 +61,19 @@ class V3TradePaymentJspayRequest extends BaseRequest
         $this->huifuId = $huifuId;
     }
 
-    public function getGoodsDesc() {
-        return $this->goodsDesc;
+    public function getHfSeqId() {
+        return $this->hfSeqId;
     }
 
-    public function setGoodsDesc($goodsDesc) {
-        $this->goodsDesc = $goodsDesc;
+    public function setHfSeqId($hfSeqId) {
+        $this->hfSeqId = $hfSeqId;
     }
 
-    public function getTradeType() {
-        return $this->tradeType;
+    public function getOutOrdId() {
+        return $this->outOrdId;
     }
 
-    public function setTradeType($tradeType) {
-        $this->tradeType = $tradeType;
+    public function setOutOrdId($outOrdId) {
+        $this->outOrdId = $outOrdId;
     }
-
-    public function getTransAmt() {
-        return $this->transAmt;
-    }
-
-    public function setTransAmt($transAmt) {
-        $this->transAmt = $transAmt;
-    }
-
 }

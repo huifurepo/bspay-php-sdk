@@ -28,11 +28,11 @@ $request->setOrdAmt("0.01");
 // 原交易请求日期
 $request->setOrgReqDate("20240229");
 // 安全信息线上交易退款必填，参见线上退款接口；jsonObject字符串
-$request->setRiskCheckData(get195595a868964f2bB023E9566fcd0297());
+$request->setRiskCheckData(get062a3a29990c4c65Ba27F5e7e44ad959());
 // 设备信息线上交易退款必填，参见线上退款接口；jsonObject字符串
-$request->setTerminalDeviceData(get8d8843c250f94e9b80a253d37ec6f80a());
+$request->setTerminalDeviceData(get45dd2bc3914b4494B9778347817905cb());
 // 大额转账支付账户信息数据jsonObject格式；银行大额转账支付交易退款申请时必填
-// $request->setBankInfoData(getAa3a4591240343e2Bad5D6a0764f06dc());
+// $request->setBankInfoData(getBaef9718F002418eB6cd783789b24044());
 
 // 设置非必填字段
 $extendInfoMap = getExtendInfos();
@@ -62,7 +62,7 @@ function getExtendInfos() {
     // 原交易请求流水号
     $extendInfoMap["org_req_seq_id"]= "202207099803123123199941";
     // 分账对象
-    $extendInfoMap["acct_split_bunch"]= get4a68d378Cb6e41dfA9405a589b476160();
+    $extendInfoMap["acct_split_bunch"]= get9fb20b0c028c43e29a9e05180b3fe3d9();
     // 备注
     // $extendInfoMap["remark"]= "";
     // 异步通知地址
@@ -70,7 +70,7 @@ function getExtendInfos() {
     return $extendInfoMap;
 }
 
-function get33a52525B1614d3bBc18Ff7d935b2bca() {
+function getD6950095Dd8c4fe194d2Afcb74dfeef2() {
     $dto = array();
     // 分账金额
     $dto["div_amt"] = "0.12";
@@ -82,15 +82,15 @@ function get33a52525B1614d3bBc18Ff7d935b2bca() {
     return $dtoList;
 }
 
-function get4a68d378Cb6e41dfA9405a589b476160() {
+function get9fb20b0c028c43e29a9e05180b3fe3d9() {
     $dto = array();
     // 分账明细
-    $dto["acct_infos"] = get33a52525B1614d3bBc18Ff7d935b2bca();
+    $dto["acct_infos"] = getD6950095Dd8c4fe194d2Afcb74dfeef2();
 
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function get195595a868964f2bB023E9566fcd0297() {
+function get062a3a29990c4c65Ba27F5e7e44ad959() {
     $dto = array();
     // ip地址
     // $dto["ip_addr"] = "";
@@ -104,7 +104,7 @@ function get195595a868964f2bB023E9566fcd0297() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function get8d8843c250f94e9b80a253d37ec6f80a() {
+function get45dd2bc3914b4494B9778347817905cb() {
     $dto = array();
     // 设备类型
     $dto["device_type"] = "4";
@@ -126,7 +126,7 @@ function get8d8843c250f94e9b80a253d37ec6f80a() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function getAa3a4591240343e2Bad5D6a0764f06dc() {
+function getBaef9718F002418eB6cd783789b24044() {
     $dto = array();
     // 省份付款方为对公账户时必填，参见省市地区码；示例值：0013
     // $dto["province"] = "test";

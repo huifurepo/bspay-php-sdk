@@ -30,7 +30,7 @@ class V2MerchantBusiOpenRequest extends BaseRequest
      */
     private $upperHuifuId;
     /**
-     * 签约人jsonObject格式；agreement_info中选择电子签约时必填；个人商户填本人信息。
+     * 签约人jsonObject字符串；agreement_info中选择电子签约时必填；个人商户填本人信息。
      */
     private $signUserInfo;
     /**

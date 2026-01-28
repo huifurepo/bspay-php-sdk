@@ -9,7 +9,7 @@ if (!defined("SDK_BASE")) {
 
 # sdk 版本号
 if (!defined("SDK_VERSION")) {
-    define("SDK_VERSION", "php#v2.0.23");
+    define("SDK_VERSION", "php#v2.0.24");
 }
 
 # api 接口版本号
@@ -38,6 +38,7 @@ require_once SDK_BASE . "/core/BsPayRequestV2.php";
 require_once SDK_BASE . "/core/BsPayTools.php";
 require_once SDK_BASE . "/core/BsPay.php";
 require_once SDK_BASE . "/core/BsPayClient.php";
+require_once SDK_BASE . "/core/Payment.php";
 require_once SDK_BASE . "/request/BaseRequest.php";
 require_once SDK_BASE . "/enums/FunctionCodeEnum.php";
 

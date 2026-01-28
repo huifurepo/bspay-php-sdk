@@ -46,15 +46,15 @@ function getExtendInfos() {
     // 异步通知地址
     $extendInfoMap["async_return_url"]= "http://192.168.85.157:30031/sspm/testVirgo";
     // 花呗分期费率
-    $extendInfoMap["hb_fq_fee_list"]= get33058a553e95455aA0255248d770c221();
+    $extendInfoMap["hb_fq_fee_list"]= get05b26244F3754368911e63e76d5d79a8();
     // 白条分期配置对象
-    // $extendInfoMap["jdbt_data"]= get5c64baa01d644dac8995286b4cffca1b();
+    // $extendInfoMap["jdbt_data"]= get5ed415516215448cAa71B459248bb501();
     // 银联聚分期配置对象
-    // $extendInfoMap["yljfq_data"]= getD940990307634ddcBaafDcdb0dd06c87();
+    // $extendInfoMap["yljfq_data"]= get3d393069Ef9f439fA8845a37ee62815b();
     return $extendInfoMap;
 }
 
-function get33058a553e95455aA0255248d770c221() {
+function get05b26244F3754368911e63e76d5d79a8() {
     $dto = array();
     // 商户汇付Id
     $dto["huifu_id"] = "6666000003156435";
@@ -94,7 +94,7 @@ function get33058a553e95455aA0255248d770c221() {
     return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function get8e5138faDdb344b6805a94d933246d0d() {
+function getBf2960d0062d419582e82c814aaee6b9() {
     $dto = array();
     // 支付场景
     // $dto["pay_scene"] = "test";
@@ -118,7 +118,7 @@ function get8e5138faDdb344b6805a94d933246d0d() {
     return $dtoList;
 }
 
-function get5c64baa01d644dac8995286b4cffca1b() {
+function get5ed415516215448cAa71B459248bb501() {
     $dto = array();
     // 商户汇付Id
     // $dto["huifu_id"] = "test";
@@ -129,7 +129,7 @@ function get5c64baa01d644dac8995286b4cffca1b() {
     // 挂网协议地址3-挂网协议必填；示例值：https://cloudpnrcdn.oss-cn-shanghai.aliyuncs.com/opps/api/prod/dg_gwxy/PaymentServiceAgreement_xxxx.html
     // $dto["agreement_url"] = "test";
     // 京东白条费率数据
-    // $dto["jdbt_fee_data"] = get8e5138faDdb344b6805a94d933246d0d();
+    // $dto["jdbt_fee_data"] = getBf2960d0062d419582e82c814aaee6b9();
     // 签约人姓名
     // $dto["name"] = "";
     // 签约人身份证号
@@ -140,7 +140,7 @@ function get5c64baa01d644dac8995286b4cffca1b() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function get582500aeD6b3421eAfa3Aacb46bbc89c() {
+function getA022abb7Afe746bb8a807f05ed2d6608() {
     $dto = array();
     // 支付场景
     // $dto["pay_scene"] = "test";
@@ -164,7 +164,7 @@ function get582500aeD6b3421eAfa3Aacb46bbc89c() {
     return $dtoList;
 }
 
-function get5b3906c269e9412387cf7c5707a32c92() {
+function getC4eed850Ec61447c977420b8d9e86d56() {
     $dto = array();
     // 文件id
     // $dto["file_id"] = "test";
@@ -176,7 +176,7 @@ function get5b3906c269e9412387cf7c5707a32c92() {
     return $dtoList;
 }
 
-function getD940990307634ddcBaafDcdb0dd06c87() {
+function get3d393069Ef9f439fA8845a37ee62815b() {
     $dto = array();
     // 商户汇付Id
     // $dto["huifu_id"] = "test";
@@ -185,13 +185,13 @@ function getD940990307634ddcBaafDcdb0dd06c87() {
     // 签约人手机号
     // $dto["mobile_no"] = "test";
     // 银联聚分期费率数据
-    // $dto["yljfq_fee_data"] = get582500aeD6b3421eAfa3Aacb46bbc89c();
+    // $dto["yljfq_fee_data"] = getA022abb7Afe746bb8a807f05ed2d6608();
     // 签约人姓名
     // $dto["name"] = "";
     // 签约人身份证号
     // $dto["cert_no"] = "";
     // 补充业务信息
-    // $dto["file_list"] = get5b3906c269e9412387cf7c5707a32c92();
+    // $dto["file_list"] = getC4eed850Ec61447c977420b8d9e86d56();
 
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
