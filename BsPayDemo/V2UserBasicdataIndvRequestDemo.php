@@ -35,7 +35,7 @@ $request->setCertBeginDate("20200117");
 // $request->setCertNationality("test");
 // 手机号
 $request->setMobileNo("13764462205");
-// 地址开通中信E管家必填
+// 地址开通中信E管家必填；开通电子回单必填
 // $request->setAddress("test");
 
 // 设置非必填字段
@@ -70,7 +70,7 @@ function getExtendInfos() {
     // 拓展方字段
     $extendInfoMap["expand_id"]= "";
     // 文件列表
-    $extendInfoMap["file_list"]= getDb2bd6a770dd4fbc80f23305842efb38();
+    $extendInfoMap["file_list"]= get5f0a1885Bba7488a89ad02827ab6eb69();
     // 所属行业
     // $extendInfoMap["mcc"]= "";
     // 省
@@ -82,7 +82,7 @@ function getExtendInfos() {
     return $extendInfoMap;
 }
 
-function getDb2bd6a770dd4fbc80f23305842efb38() {
+function get5f0a1885Bba7488a89ad02827ab6eb69() {
     $dto = array();
     // 文件类型
     $dto["file_type"] = "F04";

@@ -5,6 +5,22 @@ namespace BsPaySdk\enums;
 class FunctionCodeEnum
 {
     /**
+     * 账单计划变更
+     */
+    static $V3_BILLPAY_PLAN_MODIFY = 'v3/billpay/plan/modify';
+    /**
+     * 查询账单计划下已生成账单数据
+     */
+    static $V3_BILLPAY_PLAN_BILL_LIST = 'v3/billpay/plan/bill/list';
+    /**
+     * 查询账单计划详情
+     */
+    static $V3_BILLPAY_PLAN_DETAIL = 'v3/billpay/plan/detail';
+    /**
+     * 创建账单计划
+     */
+    static $V3_BILLPAY_PLAN_ADD = 'v3/billpay/plan/add';
+    /**
      * 聚合下单接口
      */
     static $V4_TRADE_PAYMENT_CREATE = 'v4/trade/payment/create';
@@ -510,7 +526,7 @@ class FunctionCodeEnum
      */
     static $V2_INVOICE_PERMISSION_QUERY = 'v2/invoice/permission/query';
     /**
-     * 电子发票业务开通
+     * 电子发票业务配置
      */
     static $V2_INVOICE_PERMISSION_GRANT = 'v2/invoice/permission/grant';
     /**

@@ -49,6 +49,8 @@ function getExtendInfos() {
     $extendInfoMap = array();
     // 区分商品创建者的查询方式
     $extendInfoMap["goods_creator_type"]= "0";
+    // 新商品查询参数
+    // $extendInfoMap["goods_query_type"]= "";
     // 商品名称
     // $extendInfoMap["product_name"]= "";
     // 是否查询商品全量关联门店

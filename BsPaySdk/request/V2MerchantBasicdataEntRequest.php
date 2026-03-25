@@ -134,11 +134,11 @@ class V2MerchantBasicdataEntRequest extends BaseRequest
      */
     private $legalCertFrontPic;
     /**
-     * 联系人手机号
+     * 管理员手机号
      */
     private $contactMobileNo;
     /**
-     * 联系人电子邮箱
+     * 管理员电子邮箱
      */
     private $contactEmail;
     /**

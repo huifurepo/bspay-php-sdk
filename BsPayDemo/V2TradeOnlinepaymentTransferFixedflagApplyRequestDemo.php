@@ -47,6 +47,8 @@ if (!$result || $result->isError()) {  //失败处理
 function getExtendInfos() {
     // 设置非必填字段
     $extendInfoMap = array();
+    // 用户客户号
+    // $extendInfoMap["user_huifu_id"]= "";
     // 银行模式
     // $extendInfoMap["bank_mode"]= "";
     return $extendInfoMap;

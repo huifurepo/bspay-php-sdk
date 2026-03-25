@@ -5,12 +5,12 @@ namespace BsPaySdk\request;
 use BsPaySdk\enums\FunctionCodeEnum;
 
 /**
- * 电子发票业务配置
+ * 账单计划变更
  *
  * @author sdk-generator
  * @Description
  */
-class V2InvoicePermissionGrantRequest extends BaseRequest
+class V3BillpayPlanModifyRequest extends BaseRequest
 {
 
     /**
@@ -18,20 +18,20 @@ class V2InvoicePermissionGrantRequest extends BaseRequest
      */
     private $reqSeqId;
     /**
-     * 请求时间
+     * 请求日期
      */
     private $reqDate;
     /**
-     * 开票方汇付ID
+     * 商户号
      */
     private $huifuId;
     /**
-     * 开通类型
+     * 账单计划编号
      */
-    private $status;
+    private $planNo;
 
     public function getFunctionCode() {
-        return FunctionCodeEnum::$V2_INVOICE_PERMISSION_GRANT;
+        return FunctionCodeEnum::$V3_BILLPAY_PLAN_MODIFY;
     }
 
 
@@ -59,12 +59,12 @@ class V2InvoicePermissionGrantRequest extends BaseRequest
         $this->huifuId = $huifuId;
     }
 
-    public function getStatus() {
-        return $this->status;
+    public function getPlanNo() {
+        return $this->planNo;
     }
 
-    public function setStatus($status) {
-        $this->status = $status;
+    public function setPlanNo($planNo) {
+        $this->planNo = $planNo;
     }
 
 }

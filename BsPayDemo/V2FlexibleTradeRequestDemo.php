@@ -25,12 +25,12 @@ $request->setReqDate(date("Ymd"));
 $request->setOutHuifuId("6666000108903745");
 // 交易阶段操作类型
 $request->setStageOperationType("FIRST_STAGE");
-// 前段交易流水号** 当交易阶段操作类型为02时，该字段必填。填写的是交易阶段操作类型为01时交易已完成的交易全局流水号。 &lt;font color&#x3D;&quot;green&quot;&gt;示例值：20250620112533115566896&lt;/font&gt;
+// 前段交易流水号当交易阶段操作类型为02时，该字段必填。填写的是交易阶段操作类型为01时交易已完成的交易全局流水号。 &lt;font color&#x3D;&quot;green&quot;&gt;示例值：20250620112533115566896&lt;/font&gt;
 $request->setPhaseHfSeqId("");
 // 支付金额
 $request->setOrdAmt("20");
 // 分账对象
-$request->setAcctSplitBunch(get2cfe14563b14475eBbdfD9392f16df9d());
+$request->setAcctSplitBunch(get811975e3Cdcf4f28B9f8Abe7e9cc66ae());
 
 // 设置非必填字段
 $extendInfoMap = getExtendInfos();
@@ -60,7 +60,7 @@ function getExtendInfos() {
     return $extendInfoMap;
 }
 
-function get82ee536eE9db4db2A5151412ac55ccc9() {
+function getEd6657d466574b04B3586dc431e5feef() {
     $dto = array();
     // 分账金额
     $dto["div_amt"] = "20.00";
@@ -72,10 +72,10 @@ function get82ee536eE9db4db2A5151412ac55ccc9() {
     return $dto;
 }
 
-function get2cfe14563b14475eBbdfD9392f16df9d() {
+function get811975e3Cdcf4f28B9f8Abe7e9cc66ae() {
     $dto = array();
     // 分账明细
-    $dto["acct_info"] = get82ee536eE9db4db2A5151412ac55ccc9();
+    $dto["acct_info"] = getEd6657d466574b04B3586dc431e5feef();
 
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }

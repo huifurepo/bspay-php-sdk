@@ -1,7 +1,7 @@
 <?php
 
 /**
- * 扫码交易关单查询 - 示例
+ * 账单计划变更 - 示例
  *
  * @author sdk-generator
  * @Description
@@ -10,21 +10,21 @@ namespace BsPayDemo;
 
 // 1. 资源及配置加载
 require_once dirname(__FILE__) . "/loader.php";
-require_once  dirname(__FILE__). "/../BsPaySdk/request/V2TradePaymentScanpayClosequeryRequest.php";
+require_once  dirname(__FILE__). "/../BsPaySdk/request/V3BillpayPlanModifyRequest.php";
 
 use BsPaySdk\core\BsPayClient;
-use BsPaySdk\request\V2TradePaymentScanpayClosequeryRequest;
+use BsPaySdk\request\V3BillpayPlanModifyRequest;
 
 // 2.组装请求参数
-$request = new V2TradePaymentScanpayClosequeryRequest();
-// 请求日期
-$request->setReqDate(date("Ymd"));
+$request = new V3BillpayPlanModifyRequest();
 // 请求流水号
 $request->setReqSeqId(date("YmdHis").mt_rand());
+// 请求日期
+$request->setReqDate(date("Ymd"));
 // 商户号
-$request->setHuifuId("6666000109133323");
-// 原交易请求日期
-$request->setOrgReqDate("20240328");
+$request->setHuifuId("6666000123123123");
+// 账单计划编号
+$request->setPlanNo("BP202412270001");
 
 // 设置非必填字段
 $extendInfoMap = getExtendInfos();
@@ -47,12 +47,12 @@ if (!$result || $result->isError()) {  //失败处理
 function getExtendInfos() {
     // 设置非必填字段
     $extendInfoMap = array();
-    // 原交易请求流水号
-    $extendInfoMap["org_req_seq_id"]= "20240129555522220211711612931";
-    // 原交易返回的全局流水号
-    // $extendInfoMap["org_hf_seq_id"]= "";
-    // 是否合单交易关单查询
-    // $extendInfoMap["merge_flag"]= "";
+    // 账单计划有效期
+    $extendInfoMap["plan_expire_date"]= "20251231";
+    // 是否发送代扣前短信通知
+    $extendInfoMap["sms_notify_flag"]= "Y";
+    // 账单计划状态
+    $extendInfoMap["plan_status"]= "PROGRESS";
     return $extendInfoMap;
 }
 

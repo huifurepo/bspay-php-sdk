@@ -1,7 +1,7 @@
 <?php
 
 /**
- * 扫码交易关单查询 - 示例
+ * 查询账单计划详情 - 示例
  *
  * @author sdk-generator
  * @Description
@@ -10,21 +10,25 @@ namespace BsPayDemo;
 
 // 1. 资源及配置加载
 require_once dirname(__FILE__) . "/loader.php";
-require_once  dirname(__FILE__). "/../BsPaySdk/request/V2TradePaymentScanpayClosequeryRequest.php";
+require_once  dirname(__FILE__). "/../BsPaySdk/request/V3BillpayPlanDetailRequest.php";
 
 use BsPaySdk\core\BsPayClient;
-use BsPaySdk\request\V2TradePaymentScanpayClosequeryRequest;
+use BsPaySdk\request\V3BillpayPlanDetailRequest;
 
 // 2.组装请求参数
-$request = new V2TradePaymentScanpayClosequeryRequest();
-// 请求日期
-$request->setReqDate(date("Ymd"));
+$request = new V3BillpayPlanDetailRequest();
 // 请求流水号
 $request->setReqSeqId(date("YmdHis").mt_rand());
+// 请求日期
+$request->setReqDate(date("Ymd"));
 // 商户号
-$request->setHuifuId("6666000109133323");
-// 原交易请求日期
-$request->setOrgReqDate("20240328");
+$request->setHuifuId("6666000123123123");
+// 账单计划编号与原请求流水号编号二选一必填；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：BP202412270001&lt;/font&gt;
+// $request->setPlanNo("test");
+// 原请求流水号原请求流水号，同一商户号当天唯一；与账单计划编号二选一必填
+$request->setOrgReqSeqId("2022012614120615001");
+// 原请求日期原请求日期格式：yyyyMMdd，以北京时间为准；与账单编号二选一必填
+$request->setOrgReqDate("20220125");
 
 // 设置非必填字段
 $extendInfoMap = getExtendInfos();
@@ -47,12 +51,6 @@ if (!$result || $result->isError()) {  //失败处理
 function getExtendInfos() {
     // 设置非必填字段
     $extendInfoMap = array();
-    // 原交易请求流水号
-    $extendInfoMap["org_req_seq_id"]= "20240129555522220211711612931";
-    // 原交易返回的全局流水号
-    // $extendInfoMap["org_hf_seq_id"]= "";
-    // 是否合单交易关单查询
-    // $extendInfoMap["merge_flag"]= "";
     return $extendInfoMap;
 }
 

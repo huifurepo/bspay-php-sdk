@@ -30,7 +30,7 @@ $request->setGoodsDesc("支付托管消费");
 // 预下单类型
 $request->setPreOrderType("1");
 // 半支付托管扩展参数集合
-$request->setHostingData(get09d88dfbDf114c75A78215a3f7d5763b());
+$request->setHostingData(get97399eabA25d41d38d7135da80c50ab2());
 
 // 设置非必填字段
 $extendInfoMap = getExtendInfos();
@@ -55,18 +55,16 @@ function getExtendInfos() {
     $extendInfoMap = array();
     // 收款汇付账户号
     // $extendInfoMap["acct_id"]= "";
-    // 收银台样式
-    // $extendInfoMap["style_id"]= "";
     // 是否延迟交易
     $extendInfoMap["delay_acct_flag"]= "N";
     // 是否支持切换支付方式
     // $extendInfoMap["multi_pay_way_flag"]= "";
     // 分账对象
-    $extendInfoMap["acct_split_bunch"]= getEd3159f3265f4b4988c2Fdfb3fc748c5();
+    $extendInfoMap["acct_split_bunch"]= get2e15193dC1e74cd19ba2A0db5a62ea59();
     // 交易失效时间
     // $extendInfoMap["time_expire"]= "";
     // 业务信息
-    $extendInfoMap["biz_info"]= getE85a3937837c48589c443c2beca86303();
+    $extendInfoMap["biz_info"]= getD09496cb54354998Bd3c490f29795d25();
     // 交易异步通知地址
     $extendInfoMap["notify_url"]= "https://callback.service.com/xx";
     // 使用类型
@@ -74,21 +72,23 @@ function getExtendInfos() {
     // 交易类型
     // $extendInfoMap["trans_type"]= "";
     // 微信参数集合
-    // $extendInfoMap["wx_data"]= get30117b1cBb8e49a4855575d068bf7a33();
+    // $extendInfoMap["wx_data"]= getF650ecb742344e21Ab0bD6ab713d2a65();
     // 支付宝参数集合
-    // $extendInfoMap["alipay_data"]= get616f9db224ed4bcb9b03Add178fe3b38();
+    // $extendInfoMap["alipay_data"]= get59bd3ff360df40989b888707d8bc0733();
+    // 抖音参数集合
+    // $extendInfoMap["dy_data"]= getEa804efc10e44fe28f5d4d7029bad882();
     // 银联参数集合
-    // $extendInfoMap["unionpay_data"]= get261e0fe676ef4092A9edFbe3b6cf7882();
+    // $extendInfoMap["unionpay_data"]= getE8d452bf85544f5e890c34e25686a9c4();
     // 设备信息
-    // $extendInfoMap["terminal_device_data"]= getF326b5a0E9424032A2c05a1c1a6ed619();
+    // $extendInfoMap["terminal_device_data"]= get2bf02cdfFb804336937aA9bf0b2881d0();
     // 大额支付参数集合
-    // $extendInfoMap["largeamt_data"]= get64d1afd9A9a1415684c5414bdba18796();
+    // $extendInfoMap["largeamt_data"]= get8917c8c32c6d42859eb752be632db2a8();
     // 手续费场景标识
     // $extendInfoMap["fee_sign"]= "";
     return $extendInfoMap;
 }
 
-function get86977942Dde94776945bF2362fcbc81b() {
+function get6a2b7220Fb2345e7Bd1eAefffe3510fc() {
     $dto = array();
     // 分账金额
     $dto["div_amt"] = "0.08";
@@ -104,10 +104,10 @@ function get86977942Dde94776945bF2362fcbc81b() {
     return $dtoList;
 }
 
-function getEd3159f3265f4b4988c2Fdfb3fc748c5() {
+function get2e15193dC1e74cd19ba2A0db5a62ea59() {
     $dto = array();
     // 分账明细
-    $dto["acct_infos"] = get86977942Dde94776945bF2362fcbc81b();
+    $dto["acct_infos"] = get6a2b7220Fb2345e7Bd1eAefffe3510fc();
     // 百分比分账标志
     // $dto["percentage_flag"] = "";
     // 是否净值分账
@@ -116,7 +116,7 @@ function getEd3159f3265f4b4988c2Fdfb3fc748c5() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function get09d88dfbDf114c75A78215a3f7d5763b() {
+function get97399eabA25d41d38d7135da80c50ab2() {
     $dto = array();
     // 项目标题
     $dto["project_title"] = "收银台标题";
@@ -132,7 +132,7 @@ function get09d88dfbDf114c75A78215a3f7d5763b() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function get83e8e4baA9dd436aBbb350e29de7ded5() {
+function get2767ae1870aa4e34Ac499f850e0460a7() {
     $dto = array();
     // 是否提供校验身份信息
     $dto["need_check_info"] = "T";
@@ -144,7 +144,7 @@ function get83e8e4baA9dd436aBbb350e29de7ded5() {
     return $dto;
 }
 
-function getDa7302beA9b04712B615C58cdbe3b063() {
+function get8fe397b23f0d4cadBc91Bb2d9c619b7d() {
     $dto = array();
     // 指定支付者
     $dto["limit_payer"] = "ADULT";
@@ -154,7 +154,7 @@ function getDa7302beA9b04712B615C58cdbe3b063() {
     return $dto;
 }
 
-function get02e34fc880ca40ab8a92C17c422dce9a() {
+function get8ee44447B4464f798f5a6ff92175933a() {
     $dto = array();
     // 姓名
     $dto["name"] = "张三";
@@ -168,19 +168,19 @@ function get02e34fc880ca40ab8a92C17c422dce9a() {
     return $dto;
 }
 
-function getE85a3937837c48589c443c2beca86303() {
+function getD09496cb54354998Bd3c490f29795d25() {
     $dto = array();
     // 付款人验证（支付宝）
-    $dto["payer_check_ali"] = get83e8e4baA9dd436aBbb350e29de7ded5();
+    $dto["payer_check_ali"] = get2767ae1870aa4e34Ac499f850e0460a7();
     // 付款人验证（微信）
-    $dto["payer_check_wx"] = getDa7302beA9b04712B615C58cdbe3b063();
+    $dto["payer_check_wx"] = get8fe397b23f0d4cadBc91Bb2d9c619b7d();
     // 个人付款人信息
-    $dto["person_payer"] = get02e34fc880ca40ab8a92C17c422dce9a();
+    $dto["person_payer"] = get8ee44447B4464f798f5a6ff92175933a();
 
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function get2841c5f775ef4857A3d3641da0bf5986() {
+function getDa98ad1e3e1346d6Ad8e42f48dd578c8() {
     $dto = array();
     // 商品编码
     // $dto["goods_id"] = "";
@@ -198,10 +198,10 @@ function get2841c5f775ef4857A3d3641da0bf5986() {
     return $dtoList;
 }
 
-function get5f223a2753a64f2cBf03Dafdece4d787() {
+function get2c5f1ef951b64c3aB9103133bb0a7ba6() {
     $dto = array();
     // 单品列表
-    // $dto["goods_detail"] = get2841c5f775ef4857A3d3641da0bf5986();
+    // $dto["goods_detail"] = getDa98ad1e3e1346d6Ad8e42f48dd578c8();
     // 订单原价(元)
     // $dto["cost_price"] = "";
     // 商品小票ID
@@ -210,7 +210,7 @@ function get5f223a2753a64f2cBf03Dafdece4d787() {
     return $dto;
 }
 
-function getE1aabf110dd443c397f92dd5e432ba73() {
+function get79d97887Da0d445dBfffC4d306e879c2() {
     $dto = array();
     // 门店id
     // $dto["id"] = "";
@@ -224,26 +224,26 @@ function getE1aabf110dd443c397f92dd5e432ba73() {
     return $dto;
 }
 
-function get1d88ffc55f4d4a13A5090111c6f573fa() {
+function get3d1e0df6561a4a5e92cbC06fb1d462cd() {
     $dto = array();
     // 门店信息
-    // $dto["store_info"] = getE1aabf110dd443c397f92dd5e432ba73();
+    // $dto["store_info"] = get79d97887Da0d445dBfffC4d306e879c2();
 
     return $dto;
 }
 
-function get30117b1cBb8e49a4855575d068bf7a33() {
+function getF650ecb742344e21Ab0bD6ab713d2a65() {
     $dto = array();
     // 附加数据
     // $dto["attach"] = "";
     // 商品详情
-    // $dto["detail"] = get5f223a2753a64f2cBf03Dafdece4d787();
+    // $dto["detail"] = get2c5f1ef951b64c3aB9103133bb0a7ba6();
     // 订单优惠标记
     // $dto["goods_tag"] = "";
     // 开发票入口开放标识
     // $dto["receipt"] = "";
     // 场景信息
-    // $dto["scene_info"] = get1d88ffc55f4d4a13A5090111c6f573fa();
+    // $dto["scene_info"] = get3d1e0df6561a4a5e92cbC06fb1d462cd();
     // 单品优惠标识
     // $dto["promotion_flag"] = "";
     // 新增商品ID
@@ -252,7 +252,7 @@ function get30117b1cBb8e49a4855575d068bf7a33() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function get9e16bb9d777d494cAeff02b53ad6dbc7() {
+function get88742fe10e2844eb8adcD452c0513890() {
     $dto = array();
     // 卡类型
     // $dto["card_type"] = "";
@@ -274,7 +274,7 @@ function get9e16bb9d777d494cAeff02b53ad6dbc7() {
     return $dto;
 }
 
-function get64bf68b26e7f4c1e8954C382d9fab3b1() {
+function get1cf9c5be08fe406bB7e91c7f01c24e8c() {
     $dto = array();
     // 商品的编号
     // $dto["goods_id"] = "test";
@@ -298,14 +298,14 @@ function get64bf68b26e7f4c1e8954C382d9fab3b1() {
     return $dtoList;
 }
 
-function get616f9db224ed4bcb9b03Add178fe3b38() {
+function get59bd3ff360df40989b888707d8bc0733() {
     $dto = array();
     // 支付宝的店铺编号
     // $dto["alipay_store_id"] = "";
     // 业务扩展参数
-    // $dto["extend_params"] = get9e16bb9d777d494cAeff02b53ad6dbc7();
+    // $dto["extend_params"] = get88742fe10e2844eb8adcD452c0513890();
     // 订单包含的商品列表信息
-    // $dto["goods_detail"] = get64bf68b26e7f4c1e8954C382d9fab3b1();
+    // $dto["goods_detail"] = get1cf9c5be08fe406bB7e91c7f01c24e8c();
     // 商户原始订单号
     // $dto["merchant_order_no"] = "";
     // 商户操作员编号
@@ -326,7 +326,45 @@ function get616f9db224ed4bcb9b03Add178fe3b38() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function get94660e62B04d47b188e30003e47743d8() {
+function get36ee098d5f12479595845fdd522d44c5() {
+    $dto = array();
+    // 场景类型
+    // $dto["type"] = "test";
+    // 应用名称
+    // $dto["app_name"] = "";
+    // 网站URL
+    // $dto["app_url"] = "";
+    // iOS平台BundleID
+    // $dto["bundle_id"] = "";
+    // Android平台PackageName
+    // $dto["package_name"] = "";
+
+    return $dto;
+}
+
+function get3796381aE64d403dA34411b0bb6d0a18() {
+    $dto = array();
+    // 用户终端IP
+    // $dto["payer_client_ip"] = "test";
+
+    return $dto;
+}
+
+function getEa804efc10e44fe28f5d4d7029bad882() {
+    $dto = array();
+    // 子商户应用ID
+    // $dto["sub_appid"] = "test";
+    // H5场景信息
+    // $dto["h5_info"] = get36ee098d5f12479595845fdd522d44c5();
+    // 场景信息
+    // $dto["scene_info"] = get3796381aE64d403dA34411b0bb6d0a18();
+    // 优惠标记
+    // $dto["coupon_info"] = "";
+
+    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+}
+
+function get292ec8fe80c9455a962eD6120493a567() {
     $dto = array();
     // 商户类别
     // $dto["mer_cat_code"] = "";
@@ -340,7 +378,7 @@ function get94660e62B04d47b188e30003e47743d8() {
     return $dto;
 }
 
-function get261e0fe676ef4092A9edFbe3b6cf7882() {
+function getE8d452bf85544f5e890c34e25686a9c4() {
     $dto = array();
     // 收款方附加数据
     // $dto["addn_data"] = "";
@@ -351,7 +389,7 @@ function get261e0fe676ef4092A9edFbe3b6cf7882() {
     // 收款方附言
     // $dto["payee_comments"] = "";
     // 收款方信息
-    // $dto["payee_info"] = get94660e62B04d47b188e30003e47743d8();
+    // $dto["payee_info"] = get292ec8fe80c9455a962eD6120493a567();
     // 银联分配的服务商机构标识码
     // $dto["pnr_ins_id_cd"] = "";
     // 请求方自定义域
@@ -362,7 +400,7 @@ function get261e0fe676ef4092A9edFbe3b6cf7882() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function getF326b5a0E9424032A2c05a1c1a6ed619() {
+function get2bf02cdfFb804336937aA9bf0b2881d0() {
     $dto = array();
     // 汇付机具号
     // $dto["devs_id"] = "test";
@@ -370,7 +408,7 @@ function getF326b5a0E9424032A2c05a1c1a6ed619() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function get64d1afd9A9a1415684c5414bdba18796() {
+function get8917c8c32c6d42859eb752be632db2a8() {
     $dto = array();
     // 付款方名称
     // $dto["certificate_name"] = "";

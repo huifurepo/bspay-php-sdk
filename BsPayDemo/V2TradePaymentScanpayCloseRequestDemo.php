@@ -51,6 +51,8 @@ function getExtendInfos() {
     // $extendInfoMap["org_hf_seq_id"]= "";
     // 原交易请求流水号
     $extendInfoMap["org_req_seq_id"]= "20210918956161001";
+    // 是否合单交易关单
+    // $extendInfoMap["merge_flag"]= "";
     return $extendInfoMap;
 }
 
