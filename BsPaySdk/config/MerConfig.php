@@ -18,4 +18,6 @@ class MerConfig {
 	public $sys_id = '';
 
     public $huifu_id = '';
+    
+    public $skill_source = '';
 }

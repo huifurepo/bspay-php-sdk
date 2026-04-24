@@ -26,11 +26,11 @@ $request->setReqDate(date("Ymd"));
 // 渠道商/商户汇付Id
 $request->setUpperHuifuId("6666000003084836");
 // 乐接活配置当合作平台为乐接活，必填
-// $request->setLjhData(get946260a3001d40b790af4a63d4bc507a());
+// $request->setLjhData(getEa5f000fC206464d84561546611e438c());
 // 汇薪云配置当合作平台为汇薪云，必填
-// $request->setHxyData(getAfd95265Cbb34f6eA998C6aa1ebd6aa6());
+// $request->setHxyData(get8bd06bd5A99e44adAe28A0691bb9c632());
 // 签约人信息当电子回单配置开关为开通时必填
-// $request->setSignUserInfo(getBb8e41275a004c9d88c43771075cdeae());
+// $request->setSignUserInfo(get70d57b5a26344cb6B481Ee80386ac37f());
 
 // 设置非必填字段
 $extendInfoMap = getExtendInfos();
@@ -54,17 +54,17 @@ function getExtendInfos() {
     // 设置非必填字段
     $extendInfoMap = array();
     // 结算信息配置列表
-    $extendInfoMap["settle_config_list"]= get95228d48D73c469d857b8b8f55ec4a58();
+    $extendInfoMap["settle_config_list"]= get587db9e6D8894faeA57aB82cebb7325b();
     // 结算卡信息
-    $extendInfoMap["card_info"]= get0f8e5b722b7040598434776d49dd158d();
+    $extendInfoMap["card_info"]= get55006e8c8f2d46e59ffa91b77af59dd8();
     // 取现配置列表
-    $extendInfoMap["cash_config"]= getF800e4627c6a4e178bfa46e22210db52();
+    $extendInfoMap["cash_config"]= getBecc6212B3104dac90d374e542f6f814();
     // 文件列表
-    $extendInfoMap["file_list"]= get1b88e8a515c74183Bc43Dfa9f8f72aa1();
+    $extendInfoMap["file_list"]= getFe5179045f6c4f3bAc50Aa1c0e9cb5b2();
     // 延迟入账开关
     // $extendInfoMap["delay_flag"]= "";
     // 斗拱e账户功能配置
-    // $extendInfoMap["elec_acct_config"]= get9647bee040a947cbB8a2E1429229880d();
+    // $extendInfoMap["elec_acct_config"]= get0ec7d681D1cf454b8e54D7b4d5617348();
     // 灵活用工开关
     // $extendInfoMap["open_tax_flag"]= "";
     // 异步请求地址
@@ -72,11 +72,11 @@ function getExtendInfos() {
     // 合作平台
     // $extendInfoMap["lg_platform_type"]= "";
     // 电子回单配置
-    // $extendInfoMap["elec_receipt_config"]= get469884c3Ea7c4607Afc977a5e7a0d62c();
+    // $extendInfoMap["elec_receipt_config"]= get7e4e760bDc2842efB27c19f5f2df5682();
     return $extendInfoMap;
 }
 
-function get95228d48D73c469d857b8b8f55ec4a58() {
+function get587db9e6D8894faeA57aB82cebb7325b() {
     $dto = array();
     // 结算周期
     $dto["settle_cycle"] = "D1";
@@ -114,7 +114,7 @@ function get95228d48D73c469d857b8b8f55ec4a58() {
     return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function get0f8e5b722b7040598434776d49dd158d() {
+function get55006e8c8f2d46e59ffa91b77af59dd8() {
     $dto = array();
     // 卡类型
     $dto["card_type"] = "0";
@@ -146,7 +146,7 @@ function get0f8e5b722b7040598434776d49dd158d() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function getF800e4627c6a4e178bfa46e22210db52() {
+function getBecc6212B3104dac90d374e542f6f814() {
     $dto = array();
     // 提现手续费（固定/元）fix_amt与fee_rate至少填写一项， 需保留小数点后两位，不收费请填写0.00；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：1.00&lt;/font&gt;注：当cash_type&#x3D;D1时为节假日取现手续费
     $dto["fix_amt"] = "0.03";
@@ -172,7 +172,7 @@ function getF800e4627c6a4e178bfa46e22210db52() {
     return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function get1b88e8a515c74183Bc43Dfa9f8f72aa1() {
+function getFe5179045f6c4f3bAc50Aa1c0e9cb5b2() {
     $dto = array();
     // 文件类型
     $dto["file_type"] = "F02";
@@ -186,7 +186,7 @@ function get1b88e8a515c74183Bc43Dfa9f8f72aa1() {
     return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function get295e763725c24e9e8050D9279bc19944() {
+function get3859a2de2cca4b1d8953Fff398a7e84e() {
     $dto = array();
     // 银行所在省
     // $dto["prov_id"] = "test";
@@ -218,7 +218,7 @@ function get295e763725c24e9e8050D9279bc19944() {
     return $dtoList;
 }
 
-function get9647bee040a947cbB8a2E1429229880d() {
+function get0ec7d681D1cf454b8e54D7b4d5617348() {
     $dto = array();
     // 电子账户开关
     // $dto["switch_state"] = "test";
@@ -233,7 +233,7 @@ function get9647bee040a947cbB8a2E1429229880d() {
     // 签约成功标志
     // $dto["sign_success_flag"] = "test";
     // 银行卡信息
-    // $dto["elec_card_list"] = get295e763725c24e9e8050D9279bc19944();
+    // $dto["elec_card_list"] = get3859a2de2cca4b1d8953Fff398a7e84e();
     // 用户类型
     // $dto["user_type"] = "";
     // 中信签约短信流水号
@@ -242,7 +242,7 @@ function get9647bee040a947cbB8a2E1429229880d() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function get946260a3001d40b790af4a63d4bc507a() {
+function getEa5f000fC206464d84561546611e438c() {
     $dto = array();
     // 税源地id当合作平台为乐接活，必填
     // $dto["tax_area_id"] = "test";
@@ -250,7 +250,7 @@ function get946260a3001d40b790af4a63d4bc507a() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function getAfd95265Cbb34f6eA998C6aa1ebd6aa6() {
+function get8bd06bd5A99e44adAe28A0691bb9c632() {
     $dto = array();
     // 落地公司机构号当合作平台为汇薪云时，该参数必填；如果仅有一个可不填
     // $dto["minor_agent_id"] = "test";
@@ -258,7 +258,7 @@ function getAfd95265Cbb34f6eA998C6aa1ebd6aa6() {
     return $dto;
 }
 
-function get469884c3Ea7c4607Afc977a5e7a0d62c() {
+function get7e4e760bDc2842efB27c19f5f2df5682() {
     $dto = array();
     // 电子回单开关
     // $dto["switch_state"] = "test";
@@ -266,7 +266,7 @@ function get469884c3Ea7c4607Afc977a5e7a0d62c() {
     return $dto;
 }
 
-function getBb8e41275a004c9d88c43771075cdeae() {
+function get70d57b5a26344cb6B481Ee80386ac37f() {
     $dto = array();
     // 签约人类型
     // $dto["type"] = "test";

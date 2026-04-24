@@ -65,6 +65,8 @@ function getExtendInfos() {
     $extendInfoMap["prov_id"]= "310000";
     // 所属市
     $extendInfoMap["city_id"]= "310100";
+    // 区域代码
+    // $extendInfoMap["area_code"]= "";
     return $extendInfoMap;
 }
 

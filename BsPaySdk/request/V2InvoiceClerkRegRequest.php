@@ -41,6 +41,10 @@ class V2InvoiceClerkRegRequest extends BaseRequest
      * 开票员手机号
      */
     private $clerkPhoneNo;
+    /**
+     * 开票员名字
+     */
+    private $clerkName;
 
     public function getFunctionCode() {
         return FunctionCodeEnum::$V2_INVOICE_CLERK_REG;
@@ -101,6 +105,14 @@ class V2InvoiceClerkRegRequest extends BaseRequest
 
     public function setClerkPhoneNo($clerkPhoneNo) {
         $this->clerkPhoneNo = $clerkPhoneNo;
+    }
+
+    public function getClerkName() {
+        return $this->clerkName;
+    }
+
+    public function setClerkName($clerkName) {
+        $this->clerkName = $clerkName;
     }
 
 }

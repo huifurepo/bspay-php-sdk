@@ -30,11 +30,11 @@ $request->setInstalmentsNum("03");
 // 银行卡号instalments_num不为空时必填；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：6228480031509440000&lt;/font&gt;
 $request->setBankCardNo("6222021102043040313");
 // 网联扩展数据
-$request->setExtendPayData(getE236f3e2A5774278813b68f967f8db3e());
+$request->setExtendPayData(getDd504898Bffb4bf5Ba99Ab55df780d13());
 // 安全信息
-$request->setRiskCheckData(getEd6bb3aaBe474bba91da630a1272ee02());
+$request->setRiskCheckData(get03c1fe26A83c44299a9a2d581f3ba773());
 // 设备信息
-$request->setTerminalDeviceData(get642463d25eb543ffB49d07c169d8229b());
+$request->setTerminalDeviceData(get78c55c2e9da34443A934709dcdacd225());
 // 页面跳转地址
 $request->setFrontUrl("http://www.baidu.com");
 // 异步通知地址
@@ -66,7 +66,7 @@ function getExtendInfos() {
     // 交易有效期
     $extendInfoMap["time_expire"]= "20220406210038";
     // 分账对象
-    $extendInfoMap["acct_split_bunch"]= getFc676215E3594ef1Ba9e03f35781872f();
+    $extendInfoMap["acct_split_bunch"]= get7a50e06eB3364f25B5a9Ee4d0df9907c();
     // 备注
     $extendInfoMap["remark"]= "";
     // 页面失败跳转地址
@@ -74,7 +74,7 @@ function getExtendInfos() {
     return $extendInfoMap;
 }
 
-function getE236f3e2A5774278813b68f967f8db3e() {
+function getDd504898Bffb4bf5Ba99Ab55df780d13() {
     $dto = array();
     // 商品简称
     $dto["goods_short_name"] = "一般商品";
@@ -86,7 +86,7 @@ function getE236f3e2A5774278813b68f967f8db3e() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function get26c547a0B0894cfaAc8509ea166da9ae() {
+function get1fd045ed92e142e0Bf58B57e6f2f99c0() {
     $dto = array();
     // 支付金额
     // $dto["div_amt"] = "";
@@ -102,10 +102,10 @@ function get26c547a0B0894cfaAc8509ea166da9ae() {
     return $dtoList;
 }
 
-function getFc676215E3594ef1Ba9e03f35781872f() {
+function get7a50e06eB3364f25B5a9Ee4d0df9907c() {
     $dto = array();
     // 分账信息列表
-    $dto["acct_infos"] = get26c547a0B0894cfaAc8509ea166da9ae();
+    $dto["acct_infos"] = get1fd045ed92e142e0Bf58B57e6f2f99c0();
     // 百分比分账标志
     // $dto["percentage_flag"] = "";
     // 是否净值分账
@@ -114,7 +114,7 @@ function getFc676215E3594ef1Ba9e03f35781872f() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function getEd6bb3aaBe474bba91da630a1272ee02() {
+function get03c1fe26A83c44299a9a2d581f3ba773() {
     $dto = array();
     // ip地址
     $dto["ip_addr"] = "111";
@@ -128,7 +128,7 @@ function getEd6bb3aaBe474bba91da630a1272ee02() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function get642463d25eb543ffB49d07c169d8229b() {
+function get78c55c2e9da34443A934709dcdacd225() {
     $dto = array();
     // 交易设备ip
     $dto["device_ip"] = "127.0.0.1";

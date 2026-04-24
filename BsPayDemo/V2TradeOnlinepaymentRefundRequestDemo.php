@@ -26,9 +26,9 @@ $request->setHuifuId("6666000109133323");
 // 退款金额
 $request->setOrdAmt("0.01");
 // 设备信息条件必填，当为银行大额支付时可不填，jsonObject格式
-$request->setTerminalDeviceData(get75ed576a25334009B39c9a32ba35a82c());
+$request->setTerminalDeviceData(get3ba8cd4255da4c76A5a60100bb3040ff());
 // 安全信息条件必填，当为银行大额支付时可不填，jsonObject格式
-$request->setRiskCheckData(getE9afd6ee9b9d4d3792ecD7fece10e129());
+$request->setRiskCheckData(get6a7f1ffdEf724ff0A6765874e1e91420());
 
 // 设置非必填字段
 $extendInfoMap = getExtendInfos();
@@ -58,15 +58,15 @@ function getExtendInfos() {
     // 原交易请求流水号
     $extendInfoMap["org_req_seq_id"]= "295700155481522176";
     // 分账对象
-    // $extendInfoMap["acct_split_bunch"]= getAdb4ca3e488f4d15Bce4257e00e08036();
+    // $extendInfoMap["acct_split_bunch"]= get7f63f0d677364d0eB8649895a46917a5();
     // 备注
     // $extendInfoMap["remark"]= "";
     // 异步通知地址
     $extendInfoMap["notify_url"]= "http://www.baidu.com";
     // 补贴支付信息
-    // $extendInfoMap["combinedpay_data"]= get270ca5b037324d64B30165369e52c256();
+    // $extendInfoMap["combinedpay_data"]= get87e4d75491d645cf979c17fe801e6149();
     // 大额转账支付账户信息数据
-    // $extendInfoMap["bank_info_data"]= getF6a68fdf9cbc4bc3Ba31B8362ac62484();
+    // $extendInfoMap["bank_info_data"]= get74759bdbA37549d1B0ee19208bf9bfa9();
     // 是否垫资
     // $extendInfoMap["loan_flag"]= "";
     // 垫资承担者
@@ -76,7 +76,7 @@ function getExtendInfos() {
     return $extendInfoMap;
 }
 
-function get089d1506323646b3Be73F47b7c92e50e() {
+function get64dd7d8a7c1a4f868adeF0c135e59ab8() {
     $dto = array();
     // 商户号
     // $dto["huifu_id"] = "test";
@@ -92,15 +92,15 @@ function get089d1506323646b3Be73F47b7c92e50e() {
     return $dtoList;
 }
 
-function getAdb4ca3e488f4d15Bce4257e00e08036() {
+function get7f63f0d677364d0eB8649895a46917a5() {
     $dto = array();
     // 分账信息列表
-    // $dto["acct_infos"] = get089d1506323646b3Be73F47b7c92e50e();
+    // $dto["acct_infos"] = get64dd7d8a7c1a4f868adeF0c135e59ab8();
 
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function get75ed576a25334009B39c9a32ba35a82c() {
+function get3ba8cd4255da4c76A5a60100bb3040ff() {
     $dto = array();
     // 交易设备ip
     $dto["device_ip"] = "172.31.31.145";
@@ -124,7 +124,7 @@ function get75ed576a25334009B39c9a32ba35a82c() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function getE9afd6ee9b9d4d3792ecD7fece10e129() {
+function get6a7f1ffdEf724ff0A6765874e1e91420() {
     $dto = array();
     // 经度
     // $dto["longitude"] = "test";
@@ -138,7 +138,7 @@ function getE9afd6ee9b9d4d3792ecD7fece10e129() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function get270ca5b037324d64B30165369e52c256() {
+function get87e4d75491d645cf979c17fe801e6149() {
     $dto = array();
     // 补贴方汇付编号
     // $dto["huifu_id"] = "test";
@@ -154,18 +154,12 @@ function get270ca5b037324d64B30165369e52c256() {
     return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function getF6a68fdf9cbc4bc3Ba31B8362ac62484() {
+function get74759bdbA37549d1B0ee19208bf9bfa9() {
     $dto = array();
-    // 省份
-    // $dto["province"] = "";
-    // 地区
-    // $dto["area"] = "";
     // 银行编号
-    // $dto["bank_code"] = "";
-    // 联行号
-    // $dto["correspondent_code"] = "";
+    // $dto["bank_code"] = "test";
     // 付款方账户类型
-    // $dto["card_acct_type"] = "";
+    // $dto["card_acct_type"] = "test";
 
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }

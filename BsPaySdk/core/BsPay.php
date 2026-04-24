@@ -67,6 +67,7 @@ class BsPay extends BsPayRequestV2
         $merConfig->sys_id = isset($config_obj['sys_id']) ? $config_obj['sys_id'] : '';
         $merConfig->rsa_merch_private_key = isset($config_obj['rsa_merch_private_key']) ? $config_obj['rsa_merch_private_key'] : '';
         $merConfig->rsa_huifu_public_key = isset($config_obj['rsa_huifu_public_key']) ? $config_obj['rsa_huifu_public_key'] : '';
+        $merConfig->skill_source = isset($config_obj['skill_source']) ? $config_obj['skill_source'] : '';
         
         self::addMerConfig($merchantKey, $merConfig);
     }
@@ -135,6 +136,18 @@ class BsPay extends BsPayRequestV2
 		if (empty($file)){
 			$header = array('Content-Type:application/json');
             $is_json = true;
+
+            // 添加技能来源头
+            $skillSource = $merchantConfig->skill_source;
+            if (!empty($skillSource)) {
+                array_push($header, 'jpt-x-skill-source:' . $skillSource);
+
+                // 添加汇付ID头
+                $huifuId = $request_params['huifu_id'];
+                if (!empty($huifuId)) {
+                    array_push($header, 'jpt-x-skill-huifu_id:' . $huifuId);
+                }
+            }
 		}else{
 			$header = array('Content-Type:multipart/form-data');
 			$is_json = false;
