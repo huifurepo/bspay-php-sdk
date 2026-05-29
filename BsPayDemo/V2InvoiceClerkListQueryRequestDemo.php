@@ -1,7 +1,7 @@
 <?php
 
 /**
- * 统一进件页面版查询 - 示例
+ * 开票员查询 - 示例
  *
  * @author sdk-generator
  * @Description
@@ -10,19 +10,15 @@ namespace BsPayDemo;
 
 // 1. 资源及配置加载
 require_once dirname(__FILE__) . "/loader.php";
-require_once  dirname(__FILE__). "/../BsPaySdk/request/V2MerchantBusiStatusQueryRequest.php";
+require_once  dirname(__FILE__). "/../BsPaySdk/request/V2InvoiceClerkListQueryRequest.php";
 
 use BsPaySdk\core\BsPayClient;
-use BsPaySdk\request\V2MerchantBusiStatusQueryRequest;
+use BsPaySdk\request\V2InvoiceClerkListQueryRequest;
 
 // 2.组装请求参数
-$request = new V2MerchantBusiStatusQueryRequest();
-// 请求流水号
-$request->setReqSeqId(date("YmdHis").mt_rand());
-// 请求日期
-$request->setReqDate(date("Ymd"));
-// 门店号
-$request->setStoreId("yu653454308");
+$request = new V2InvoiceClerkListQueryRequest();
+// 汇付商户号
+$request->setHuifuId("6666000103334211");
 
 // 设置非必填字段
 $extendInfoMap = getExtendInfos();
@@ -45,8 +41,12 @@ if (!$result || $result->isError()) {  //失败处理
 function getExtendInfos() {
     // 设置非必填字段
     $extendInfoMap = array();
-    // 渠道商号
-    // $extendInfoMap["upper_huifu_id"]= "";
+    // 请求流水号
+    $extendInfoMap["req_seq_id"]= date("YmdHis").mt_rand();
+    // 请求日期
+    $extendInfoMap["req_date"]= date("Ymd");
+    // 登记状态
+    // $extendInfoMap["clerk_state_list"]= "";
     return $extendInfoMap;
 }
 

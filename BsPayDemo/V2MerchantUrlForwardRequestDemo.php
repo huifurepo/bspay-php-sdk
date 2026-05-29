@@ -57,6 +57,14 @@ function getExtendInfos() {
     // $extendInfoMap["async_receive_url"]= "";
     // 模版编号
     $extendInfoMap["template_id"]= "155625";
+    // 商户身份
+    // $extendInfoMap["head_office_flag"]= "";
+    // 上级汇付Id
+    // $extendInfoMap["head_huifu_id"]= "";
+    // 使用上级微信、支付宝商户号发起交易
+    // $extendInfoMap["use_chains_flag"]= "";
+    // 小微经营类型
+    // $extendInfoMap["micro_biz_type"]= "";
     return $extendInfoMap;
 }
 

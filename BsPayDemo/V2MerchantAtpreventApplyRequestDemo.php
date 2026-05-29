@@ -45,13 +45,41 @@ if (!$result || $result->isError()) {  //失败处理
 function getExtendInfos() {
     // 设置非必填字段
     $extendInfoMap = array();
-    // 微信开通数
-    $extendInfoMap["wx_open_count"]= "0";
-    // 支付宝开通数
-    $extendInfoMap["ali_open_count"]= "1";
     // 异步通知地址
     $extendInfoMap["async_url"]= "http://service.example.com/to/path";
+    // 微信开通明细
+    $extendInfoMap["wx_open_list"]= get4ee5a21dCd974031Aaff86bc6a77ad6e();
+    // 支付宝开通明细
+    $extendInfoMap["ali_open_list"]= getAf3f6e6aB58f47f99761E0107d9733be();
     return $extendInfoMap;
+}
+
+function get4ee5a21dCd974031Aaff86bc6a77ad6e() {
+    $dto = array();
+    // 渠道号
+    $dto["pay_channel_id"] = "10000001";
+    // 线上开通数
+    $dto["online_open_count"] = "1";
+    // 线下开通数
+    $dto["offline_open_count"] = "1";
+
+    $dtoList = array();
+    array_push($dtoList, $dto);
+    return $dtoList;
+}
+
+function getAf3f6e6aB58f47f99761E0107d9733be() {
+    $dto = array();
+    // 渠道号
+    $dto["pay_channel_id"] = "10000001";
+    // 线上开通数
+    $dto["online_open_count"] = "1";
+    // 线下开通数
+    $dto["offline_open_count"] = "1";
+
+    $dtoList = array();
+    array_push($dtoList, $dto);
+    return $dtoList;
 }
 
 

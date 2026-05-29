@@ -148,6 +148,8 @@ class BsPay extends BsPayRequestV2
                     array_push($header, 'jpt-x-skill-huifu_id:' . $huifuId);
                 }
             }
+            // 添加网关埋点
+            array_push($header, 'jpt-sdk_version:' . SDK_VERSION);
 		}else{
 			$header = array('Content-Type:multipart/form-data');
 			$is_json = false;

@@ -50,7 +50,7 @@ $request->setContactMobileNo("13111112222");
 // 负责人电子邮箱
 $request->setContactEmail("jeff.peng@huifu.com");
 // 结算卡信息配置
-$request->setCardInfo(getE66472f287674547A782A4f93b296ae7());
+$request->setCardInfo(getE4d510160efc42e5Afa4Fa4639ca2682());
 // 银行卡卡号面
 // $request->setSettleCardFrontPic("test");
 // 商户ICP备案编号商户ICP备案编号或网站许可证号；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：沪ICP备06046402号-28 &lt;/font&gt;&lt;br/&gt;类型为PC网站时，且为企业商户，且开通快捷或网银，或大额转账，或余额支付或分账业务（20%（不含）-100%），或为个人商户开通分账业务（10%（不含）-100%），必填
@@ -96,9 +96,9 @@ function getExtendInfos() {
     // 负责人职业
     // $extendInfoMap["occupation"]= "";
     // 结算规则配置
-    $extendInfoMap["settle_config"]= getE27d5818314e42e8B024Fc83008d709c();
+    $extendInfoMap["settle_config"]= get3fc1e14c47074d97Bc16B6dd843a9ab5();
     // 取现信息配置
-    $extendInfoMap["cash_config"]= getC936e4be129540a78c77D4760c3c581a();
+    $extendInfoMap["cash_config"]= getF035da8cD9dd4dd3B5feA4907768259f();
     // 商户通知标识
     $extendInfoMap["sms_send_flag"]= "1";
     // 管理员账号
@@ -114,13 +114,15 @@ function getExtendInfos() {
     // 商户身份
     // $extendInfoMap["head_office_flag"]= "";
     // 斗拱e账户功能配置
-    // $extendInfoMap["elec_acct_config"]= get5da5abafC1b84272A6d9468e68131012();
+    // $extendInfoMap["elec_acct_config"]= getF815cc1a9cdc46a5B1aa6a3ddfc3828a();
     // 扩展资料包
-    // $extendInfoMap["extended_material_list"]= get0602d7b28b514194Ae8fE744b7156bb8();
+    // $extendInfoMap["extended_material_list"]= get4057cf2720ef4e7bA5fd9c1ebf0679f0();
+    // 产品大类
+    // $extendInfoMap["activated_products"]= "";
     return $extendInfoMap;
 }
 
-function getE66472f287674547A782A4f93b296ae7() {
+function getE4d510160efc42e5Afa4Fa4639ca2682() {
     $dto = array();
     // 卡户名
     $dto["card_name"] = "张天德";
@@ -150,7 +152,7 @@ function getE66472f287674547A782A4f93b296ae7() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function getE27d5818314e42e8B024Fc83008d709c() {
+function get3fc1e14c47074d97Bc16B6dd843a9ab5() {
     $dto = array();
     // 结算周期
     $dto["settle_cycle"] = "D1";
@@ -186,7 +188,7 @@ function getE27d5818314e42e8B024Fc83008d709c() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function getC936e4be129540a78c77D4760c3c581a() {
+function getF035da8cD9dd4dd3B5feA4907768259f() {
     $dto = array();
     // 取现类型
     $dto["cash_type"] = "D1";
@@ -212,7 +214,7 @@ function getC936e4be129540a78c77D4760c3c581a() {
     return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function get6894f407Cbb3490e88ff132ad8b2202b() {
+function get7a27faf4Cfb843348d049994078a7028() {
     $dto = array();
     // 银行编码
     // $dto["bank_code"] = "test";
@@ -244,7 +246,7 @@ function get6894f407Cbb3490e88ff132ad8b2202b() {
     return $dtoList;
 }
 
-function get5da5abafC1b84272A6d9468e68131012() {
+function getF815cc1a9cdc46a5B1aa6a3ddfc3828a() {
     $dto = array();
     // 电子账户开关
     // $dto["switch_state"] = "test";
@@ -259,14 +261,14 @@ function get5da5abafC1b84272A6d9468e68131012() {
     // 签约成功标志
     // $dto["sign_success_flag"] = "test";
     // 银行卡信息
-    // $dto["elec_card_list"] = get6894f407Cbb3490e88ff132ad8b2202b();
+    // $dto["elec_card_list"] = get7a27faf4Cfb843348d049994078a7028();
     // 中信签约短信流水号
     // $dto["elec_acct_sign_seq_id"] = "";
 
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function get0602d7b28b514194Ae8fE744b7156bb8() {
+function get4057cf2720ef4e7bA5fd9c1ebf0679f0() {
     $dto = array();
     // 文件id
     // $dto["file_id"] = "test";
