@@ -46,7 +46,7 @@ function getExtendInfos() {
     // 请求日期
     $extendInfoMap["req_date"]= date("Ymd");
     // 登记状态
-    // $extendInfoMap["clerk_state_list"]= "";
+    $extendInfoMap["clerk_state_list"]= ["S","F","I","P"];
     return $extendInfoMap;
 }
 

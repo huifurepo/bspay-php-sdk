@@ -5,6 +5,10 @@ namespace BsPaySdk\enums;
 class FunctionCodeEnum
 {
     /**
+     * 开票商品查询
+     */
+    static $V2_INVOICE_MANAGE_GOODS_QUERYLIST = 'v2/invoice/manage/goods/queryList';
+    /**
      * 设置默认开票员
      */
     static $V2_INVOICE_CLERK_DEFAULT_MODIFY = 'v2/invoice/clerk/default/modify';

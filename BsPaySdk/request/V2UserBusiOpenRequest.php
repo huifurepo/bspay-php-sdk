@@ -30,14 +30,6 @@ class V2UserBusiOpenRequest extends BaseRequest
      */
     private $upperHuifuId;
     /**
-     * 乐接活配置当合作平台为乐接活，必填
-     */
-    private $ljhData;
-    /**
-     * 汇薪云配置当合作平台为汇薪云，必填
-     */
-    private $hxyData;
-    /**
      * 签约人信息当电子回单配置开关为开通时必填
      */
     private $signUserInfo;
@@ -77,22 +69,6 @@ class V2UserBusiOpenRequest extends BaseRequest
 
     public function setUpperHuifuId($upperHuifuId) {
         $this->upperHuifuId = $upperHuifuId;
-    }
-
-    public function getLjhData() {
-        return $this->ljhData;
-    }
-
-    public function setLjhData($ljhData) {
-        $this->ljhData = $ljhData;
-    }
-
-    public function getHxyData() {
-        return $this->hxyData;
-    }
-
-    public function setHxyData($hxyData) {
-        $this->hxyData = $hxyData;
     }
 
     public function getSignUserInfo() {

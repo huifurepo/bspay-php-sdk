@@ -1,7 +1,7 @@
 <?php
 
 /**
- * 开票员登记 - 示例
+ * 开票商品查询 - 示例
  *
  * @author sdk-generator
  * @Description
@@ -10,29 +10,15 @@ namespace BsPayDemo;
 
 // 1. 资源及配置加载
 require_once dirname(__FILE__) . "/loader.php";
-require_once  dirname(__FILE__). "/../BsPaySdk/request/V2InvoiceClerkRegRequest.php";
+require_once  dirname(__FILE__). "/../BsPaySdk/request/V2InvoiceManageGoodsQuerylistRequest.php";
 
 use BsPaySdk\core\BsPayClient;
-use BsPaySdk\request\V2InvoiceClerkRegRequest;
+use BsPaySdk\request\V2InvoiceManageGoodsQuerylistRequest;
 
 // 2.组装请求参数
-$request = new V2InvoiceClerkRegRequest();
-// 请求流水号
-$request->setReqSeqId(date("YmdHis").mt_rand());
-// 请求时间
-$request->setReqDate(date("Ymd"));
-// 商户汇付Id
+$request = new V2InvoiceManageGoodsQuerylistRequest();
+// 汇付商户号
 $request->setHuifuId("6666000149801800");
-// 开票员登录身份
-$request->setClerkIdentity("04");
-// 登录账号
-$request->setLoginAccount("31011520010");
-// 登录密码
-$request->setLoginPassword("1******5");
-// 开票员手机号
-$request->setClerkPhoneNo("17621100776");
-// 开票员名字
-$request->setClerkName("张三");
 
 // 设置非必填字段
 $extendInfoMap = getExtendInfos();
@@ -55,8 +41,12 @@ if (!$result || $result->isError()) {  //失败处理
 function getExtendInfos() {
     // 设置非必填字段
     $extendInfoMap = array();
-    // 是否设置默认开票员
-    // $extendInfoMap["is_default_set"]= "";
+    // 请求日期
+    $extendInfoMap["req_date"]= date("Ymd");
+    // 请求流水号
+    $extendInfoMap["req_seq_id"]= date("YmdHis").mt_rand();
+    // 商品id
+    $extendInfoMap["goods_id"]= "goods_id";
     return $extendInfoMap;
 }
 
