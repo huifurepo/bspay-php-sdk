@@ -56,17 +56,17 @@ function getExtendInfos() {
     // 原交易请求流水号
     // $extendInfoMap["org_req_seq_id"]= "";
     // 分账对象
-    // $extendInfoMap["acct_split_bunch"]= get641df3f4C94748d48e4635007f755f47();
+    // $extendInfoMap["acct_split_bunch"]= get7294aba8487147a6942a0c5357968a5e();
     // 微信拓展参数集合
-    // $extendInfoMap["wx_data"]= get81730c8fEec745f89ed55ddca843c35d();
+    // $extendInfoMap["wx_data"]= getAf5f54be79934c3f8c49529fcd061464();
     // 数字货币拓展参数集合
-    // $extendInfoMap["digital_currency_data"]= get3f660ca48e1249a8870bB36cddbf53df();
+    // $extendInfoMap["digital_currency_data"]= get0be12df03c854954B32dB324413a3ca9();
     // 抖音拓展参数集合
-    // $extendInfoMap["dy_data"]= get7380711a77c943abB65dFd0262d2a339();
+    // $extendInfoMap["dy_data"]= getE8deca19C21d4308852c1deaa67386cc();
     // 补贴支付信息
-    // $extendInfoMap["combinedpay_data"]= getB48bed7aB6174f51Af5d8d93d208f004();
+    // $extendInfoMap["combinedpay_data"]= get5d91c24bC8714ba88d8f2342b12a244e();
     // 补贴支付手续费承担方信息
-    // $extendInfoMap["combinedpay_data_fee_info"]= get337cdd659f544810B6ee091fb21950fd();
+    // $extendInfoMap["combinedpay_data_fee_info"]= get69aca13a8d924fff9289195c39d7c217();
     // 备注
     // $extendInfoMap["remark"]= "";
     // 是否垫资退款
@@ -76,17 +76,17 @@ function getExtendInfos() {
     // 垫资账户类型
     // $extendInfoMap["loan_acct_type"]= "";
     // 安全信息
-    // $extendInfoMap["risk_check_data"]= get857f190d4de14c95812b472db2d4546d();
+    // $extendInfoMap["risk_check_data"]= getEd401e5fF79e4950A6d6E51ee136d90b();
     // 设备信息
-    // $extendInfoMap["terminal_device_data"]= get5b739bb834934f4cBf091bfe6f6b1751();
+    // $extendInfoMap["terminal_device_data"]= get2e071436C376427c9a072f8523dd4f68();
     // 异步通知地址
     // $extendInfoMap["notify_url"]= "";
     // 银联参数集合
-    // $extendInfoMap["unionpay_data"]= get2c17c847649d4d3a84bdFff0a7b9bb33();
+    // $extendInfoMap["unionpay_data"]= getA326a52eD1484c1189d19381b9cb9480();
     return $extendInfoMap;
 }
 
-function getA259171491144b858892C854abdc3633() {
+function get8de68f64D0884cc48053932ce32bd311() {
     $dto = array();
     // 分账金额
     // $dto["div_amt"] = "test";
@@ -100,15 +100,15 @@ function getA259171491144b858892C854abdc3633() {
     return $dtoList;
 }
 
-function get641df3f4C94748d48e4635007f755f47() {
+function get7294aba8487147a6942a0c5357968a5e() {
     $dto = array();
     // 分账信息列表
-    // $dto["acct_infos"] = getA259171491144b858892C854abdc3633();
+    // $dto["acct_infos"] = get8de68f64D0884cc48053932ce32bd311();
 
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function get1c5125870a39427f96d928170154a26d() {
+function get61dda879F4d64bc6Be9638de1fbc0ee4() {
     $dto = array();
     // 商品编码
     // $dto["goods_id"] = "test";
@@ -128,25 +128,25 @@ function get1c5125870a39427f96d928170154a26d() {
     return $dtoList;
 }
 
-function getB1dda134445a4afe9f3b1c23e906b0d0() {
+function getC8fec9ebCa74483a8bcaF50d4379205a() {
     $dto = array();
     // 商品详情列表
-    // $dto["goods_detail"] = get1c5125870a39427f96d928170154a26d();
+    // $dto["goods_detail"] = get61dda879F4d64bc6Be9638de1fbc0ee4();
 
     return $dto;
 }
 
-function get81730c8fEec745f89ed55ddca843c35d() {
+function getAf5f54be79934c3f8c49529fcd061464() {
     $dto = array();
     // 退款商品详情
-    // $dto["detail"] = getB1dda134445a4afe9f3b1c23e906b0d0();
+    // $dto["detail"] = getC8fec9ebCa74483a8bcaF50d4379205a();
     // 退款原因
     // $dto["refund_desc"] = "";
 
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function get3f660ca48e1249a8870bB36cddbf53df() {
+function get0be12df03c854954B32dB324413a3ca9() {
     $dto = array();
     // 退款原因
     // $dto["refund_desc"] = "";
@@ -154,7 +154,7 @@ function get3f660ca48e1249a8870bB36cddbf53df() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function get7380711a77c943abB65dFd0262d2a339() {
+function getE8deca19C21d4308852c1deaa67386cc() {
     $dto = array();
     // 退款原因
     // $dto["refund_desc"] = "";
@@ -162,7 +162,7 @@ function get7380711a77c943abB65dFd0262d2a339() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function getB48bed7aB6174f51Af5d8d93d208f004() {
+function get5d91c24bC8714ba88d8f2342b12a244e() {
     $dto = array();
     // 汇付商户号
     // $dto["huifu_id"] = "test";
@@ -178,7 +178,7 @@ function getB48bed7aB6174f51Af5d8d93d208f004() {
     return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function get337cdd659f544810B6ee091fb21950fd() {
+function get69aca13a8d924fff9289195c39d7c217() {
     $dto = array();
     // 补贴支付手续费承担方汇付编号
     // $dto["huifu_id"] = "";
@@ -188,7 +188,7 @@ function get337cdd659f544810B6ee091fb21950fd() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function get857f190d4de14c95812b472db2d4546d() {
+function getEd401e5fF79e4950A6d6E51ee136d90b() {
     $dto = array();
     // ip地址
     // $dto["ip_addr"] = "";
@@ -202,7 +202,7 @@ function get857f190d4de14c95812b472db2d4546d() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function get5b739bb834934f4cBf091bfe6f6b1751() {
+function get2e071436C376427c9a072f8523dd4f68() {
     $dto = array();
     // 设备类型
     // $dto["device_type"] = "";
@@ -224,7 +224,7 @@ function get5b739bb834934f4cBf091bfe6f6b1751() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function get2c17c847649d4d3a84bdFff0a7b9bb33() {
+function getA326a52eD1484c1189d19381b9cb9480() {
     $dto = array();
     // 收款方附加数据
     // $dto["addn_data"] = "";

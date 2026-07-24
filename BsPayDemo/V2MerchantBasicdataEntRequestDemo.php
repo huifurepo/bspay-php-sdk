@@ -85,10 +85,8 @@ $request->setContactEmail("jeff.peng@huifu.com");
 $request->setLoginName("LG20220422267883697");
 // 开户许可证企业商户需要，结算账号为对公账户必填；通过[图片上传接口](https://paas.huifu.com/open/doc/api/#/shgl/shjj/api_shjj_shtpsc)上传材料；文件类型：F08；&lt;br/&gt;&lt;font color&#x3D;&quot;green&quot;&gt;示例值：57cc7f00-600a-33ab-b614-6221bbf2e530&lt;/font&gt;
 // $request->setRegAcctPic("test");
-// 基本存款账户编号或核准号条件选填；当use_head_info_flag&#x3D;Y时不填 ；&lt;br/&gt;基本存款账户信息请填写基本存款账户编号；开户许可证请填写核准号。&lt;br/&gt;当注册地址或经营地址为如下地区时必填：江苏省、浙江省、湖南省、湖北省、云南省、贵州省、陕西省、河南省、吉林省、黑龙江省、福建省、海南省、重庆市、青海省、宁夏回族自治区；&lt;br/&gt;&lt;font color&#x3D;&quot;green&quot;&gt;示例值：J2900123456789&lt;/font&gt;
-$request->setOpenLicenceNo("");
 // 银行卡信息配置
-$request->setCardInfo(getDb53ab757bd7482a9e320eba9e624932());
+$request->setCardInfo(getB6c8191d56bf4223Bbfe3536fa9f810c());
 // 银行卡卡号面**对私必填**。通过[图片上传接口](https://paas.huifu.com/open/doc/api/#/shgl/shjj/api_shjj_shtpsc)上传材料；文件类型：F13；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：57cc7f00-600a-33ab-b614-6221bbf2e530&lt;/font&gt;
 // $request->setSettleCardFrontPic("test");
 // 持卡人身份证国徽面**对私必填**。通过[图片上传接口](https://paas.huifu.com/open/doc/api/#/shgl/shjj/api_shjj_shtpsc)上传材料；文件类型：F56；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：57cc7f00-600a-33ab-b614-6221bbf2e530&lt;/font&gt;
@@ -146,7 +144,7 @@ function getExtendInfos() {
     // 法人手机号
     // $extendInfoMap["legal_mobile_no"]= "";
     // 受益人列表
-    // $extendInfoMap["beneficiary_info"]= getE278ab4672ce4a55B984Cae8d086eab3();
+    // $extendInfoMap["beneficiary_info"]= getC1644d2b11944dfb8100Cb1ac9e7d33a();
     // 管理员姓名
     $extendInfoMap["contact_name"]= "联系人";
     // 商户通知标识
@@ -154,9 +152,9 @@ function getExtendInfos() {
     // 客服电话
     $extendInfoMap["service_phone"]= "021-121111221";
     // 结算业务配置
-    $extendInfoMap["settle_config"]= getB1067c7008334704Bc1bE66b6125e102();
+    $extendInfoMap["settle_config"]= getC1627f558b904fa2Ac500f516e633526();
     // 取现业务配置
-    $extendInfoMap["cash_config"]= get272ed8587049485dA5a8B0366e4a7a56();
+    $extendInfoMap["cash_config"]= getA5e53ac6888a44128d02Aee99b2117cb();
     // 商户身份
     // $extendInfoMap["head_office_flag"]= "";
     // 使用上级资料信息
@@ -170,17 +168,17 @@ function getExtendInfos() {
     // 异步请求地址
     $extendInfoMap["async_return_url"]= "virgo://http://192.168.85.157:30031/sspm/testVirgo";
     // 斗拱e账户功能配置
-    // $extendInfoMap["elec_acct_config"]= getBb03824f21e545f6Ba6cF7511b5d8a58();
+    // $extendInfoMap["elec_acct_config"]= getC5a79280839a49d9Bf20F5975976b09e();
     // 股东信息
-    // $extendInfoMap["share_holder_info_list"]= get6f1b2325295e4941Ba14269eb0fc3303();
+    // $extendInfoMap["share_holder_info_list"]= get43fbd42303ce452e81a8Ac53e16c89ec();
     // 扩展资料包
-    // $extendInfoMap["extended_material_list"]= get80e5b2d878964f5dAc92Bf39d4fb7031();
+    // $extendInfoMap["extended_material_list"]= get614ebbfb5bed45028c976cbda3cf9308();
     // 产品大类
     // $extendInfoMap["activated_products"]= "";
     return $extendInfoMap;
 }
 
-function getE278ab4672ce4a55B984Cae8d086eab3() {
+function getC1644d2b11944dfb8100Cb1ac9e7d33a() {
     $dto = array();
     // 受益人名称
     // $dto["bo_name"] = "test";
@@ -204,7 +202,7 @@ function getE278ab4672ce4a55B984Cae8d086eab3() {
     return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function getDb53ab757bd7482a9e320eba9e624932() {
+function getB6c8191d56bf4223Bbfe3536fa9f810c() {
     $dto = array();
     // 银行账户类型
     $dto["card_type"] = "0";
@@ -236,7 +234,7 @@ function getDb53ab757bd7482a9e320eba9e624932() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function getB1067c7008334704Bc1bE66b6125e102() {
+function getC1627f558b904fa2Ac500f516e633526() {
     $dto = array();
     // 结算周期
     $dto["settle_cycle"] = "D1";
@@ -272,7 +270,7 @@ function getB1067c7008334704Bc1bE66b6125e102() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function get272ed8587049485dA5a8B0366e4a7a56() {
+function getA5e53ac6888a44128d02Aee99b2117cb() {
     $dto = array();
     // 取现手续费（固定/元）fix_amt与fee_rate至少填写一项， 需保留小数点后两位，不收费请填写0.00；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：1.00&lt;/font&gt;注：当cash_type&#x3D;D1时为节假日取现手续费；当cash_type&#x3D;T1时为工作日取现手续费
     $dto["fix_amt"] = "1.00";
@@ -298,7 +296,7 @@ function get272ed8587049485dA5a8B0366e4a7a56() {
     return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function getB1480ed011284625B2b05d24d9666703() {
+function get3abb0239Eefa47618fb2142021ef8917() {
     $dto = array();
     // 银行编码
     // $dto["bank_code"] = "test";
@@ -324,7 +322,7 @@ function getB1480ed011284625B2b05d24d9666703() {
     return $dtoList;
 }
 
-function getBb03824f21e545f6Ba6cF7511b5d8a58() {
+function getC5a79280839a49d9Bf20F5975976b09e() {
     $dto = array();
     // 电子账户开关
     // $dto["switch_state"] = "test";
@@ -339,14 +337,14 @@ function getBb03824f21e545f6Ba6cF7511b5d8a58() {
     // 签约成功标志
     // $dto["sign_success_flag"] = "test";
     // 银行卡信息
-    // $dto["elec_card_list"] = getB1480ed011284625B2b05d24d9666703();
+    // $dto["elec_card_list"] = get3abb0239Eefa47618fb2142021ef8917();
     // 中信签约短信流水号
     // $dto["elec_acct_sign_seq_id"] = "";
 
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function get6f1b2325295e4941Ba14269eb0fc3303() {
+function get43fbd42303ce452e81a8Ac53e16c89ec() {
     $dto = array();
     // 股东姓名
     // $dto["name"] = "test";
@@ -366,7 +364,7 @@ function get6f1b2325295e4941Ba14269eb0fc3303() {
     return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function get80e5b2d878964f5dAc92Bf39d4fb7031() {
+function get614ebbfb5bed45028c976cbda3cf9308() {
     $dto = array();
     // 文件id
     // $dto["file_id"] = "test";

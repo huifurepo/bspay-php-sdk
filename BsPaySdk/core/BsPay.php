@@ -136,24 +136,24 @@ class BsPay extends BsPayRequestV2
 		if (empty($file)){
 			$header = array('Content-Type:application/json');
             $is_json = true;
-
-            // 添加技能来源头
-            $skillSource = $merchantConfig->skill_source;
-            if (!empty($skillSource)) {
-                array_push($header, 'jpt-x-skill-source:' . $skillSource);
-
-                // 添加汇付ID头
-                $huifuId = $request_params['huifu_id'];
-                if (!empty($huifuId)) {
-                    array_push($header, 'jpt-x-skill-huifu_id:' . $huifuId);
-                }
-            }
-            // 添加网关埋点
-            array_push($header, 'jpt-sdk_version:' . SDK_VERSION);
 		}else{
 			$header = array('Content-Type:multipart/form-data');
 			$is_json = false;
 		}
+
+        // 添加技能来源头
+        $skillSource = $merchantConfig->skill_source;
+        if (!empty($skillSource)) {
+            array_push($header, 'jpt-x-skill-source:' . $skillSource);
+
+            // 添加汇付ID头
+            $huifuId = $request_params['huifu_id'];
+            if (!empty($huifuId)) {
+                array_push($header, 'jpt-x-skill-huifu_id:' . $huifuId);
+            }
+        }
+        // 添加网关埋点
+        array_push($header, 'jpt-sdk_version:' . SDK_VERSION);
 
 		// 实例化 http 请求执行
 		$bs_request = new BsPayRequestV2();

@@ -150,10 +150,6 @@ class V2MerchantBasicdataEntRequest extends BaseRequest
      */
     private $regAcctPic;
     /**
-     * 基本存款账户编号或核准号条件选填；当use_head_info_flag&#x3D;Y时不填 ；&lt;br/&gt;基本存款账户信息请填写基本存款账户编号；开户许可证请填写核准号。&lt;br/&gt;当注册地址或经营地址为如下地区时必填：江苏省、浙江省、湖南省、湖北省、云南省、贵州省、陕西省、河南省、吉林省、黑龙江省、福建省、海南省、重庆市、青海省、宁夏回族自治区；&lt;br/&gt;&lt;font color&#x3D;&quot;green&quot;&gt;示例值：J2900123456789&lt;/font&gt;
-     */
-    private $openLicenceNo;
-    /**
      * 银行卡信息配置
      */
     private $cardInfo;
@@ -469,14 +465,6 @@ class V2MerchantBasicdataEntRequest extends BaseRequest
 
     public function setRegAcctPic($regAcctPic) {
         $this->regAcctPic = $regAcctPic;
-    }
-
-    public function getOpenLicenceNo() {
-        return $this->openLicenceNo;
-    }
-
-    public function setOpenLicenceNo($openLicenceNo) {
-        $this->openLicenceNo = $openLicenceNo;
     }
 
     public function getCardInfo() {

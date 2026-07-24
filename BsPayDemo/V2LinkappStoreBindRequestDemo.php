@@ -49,6 +49,8 @@ if (!$result || $result->isError()) {  //失败处理
 function getExtendInfos() {
     // 设置非必填字段
     $extendInfoMap = array();
+    // 三方平台商户号
+    // $extendInfoMap["bid"]= "";
     return $extendInfoMap;
 }
 
