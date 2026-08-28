@@ -1,7 +1,7 @@
 <?php
 
 /**
- * 支付宝直连-查询申请状态 - 示例
+ * 支付宝直连-查询申请单状态 - 示例
  *
  * @author sdk-generator
  * @Description
@@ -22,9 +22,9 @@ $request->setReqSeqId(date("YmdHis").mt_rand());
 // 请求日期
 $request->setReqDate(date("Ymd"));
 // 商户汇付Id
-$request->setHuifuId("6666000003079710");
+// $request->setHuifuId("test");
 // 开发者的应用ID
-$request->setAppId("2019091967580486");
+// $request->setAppId("test");
 
 // 设置非必填字段
 $extendInfoMap = getExtendInfos();
@@ -48,9 +48,9 @@ function getExtendInfos() {
     // 设置非必填字段
     $extendInfoMap = array();
     // 事务编号
-    $extendInfoMap["batch_no"]= "3123123";
+    // $extendInfoMap["batch_no"]= "";
     // 应用授权令牌
-    $extendInfoMap["app_auth_token"]= "201912BBecafff3696694c6d889503949a6adD18";
+    // $extendInfoMap["app_auth_token"]= "";
     return $extendInfoMap;
 }
 

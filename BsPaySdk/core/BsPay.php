@@ -2,6 +2,7 @@
 namespace BsPaySdk\core;
 
 use BsPaySdk\config\MerConfig;
+use BsPaySdk\enums\SignTypeEnum;
 use Exception;
 
 class BsPay extends BsPayRequestV2
@@ -68,6 +69,9 @@ class BsPay extends BsPayRequestV2
         $merConfig->rsa_merch_private_key = isset($config_obj['rsa_merch_private_key']) ? $config_obj['rsa_merch_private_key'] : '';
         $merConfig->rsa_huifu_public_key = isset($config_obj['rsa_huifu_public_key']) ? $config_obj['rsa_huifu_public_key'] : '';
         $merConfig->skill_source = isset($config_obj['skill_source']) ? $config_obj['skill_source'] : '';
+        $merConfig->sign_type = isset($config_obj['sign_type']) ? $config_obj['sign_type'] : '';
+        $merConfig->sm2_merch_private_key = isset($config_obj['sm2_merch_private_key']) ? $config_obj['sm2_merch_private_key'] : '';
+        $merConfig->sm2_huifu_public_key = isset($config_obj['sm2_huifu_public_key']) ? $config_obj['sm2_huifu_public_key'] : '';
         
         self::addMerConfig($merchantKey, $merConfig);
     }
@@ -128,6 +132,12 @@ class BsPay extends BsPayRequestV2
 		if(empty($merchantConfig)){
 			throw new Exception('系统公私密钥配置不存在');
 		}
+        
+        #校验加密类型
+        if(!empty($merchantConfig->sign_type) && !SignTypeEnum::checkSignType($merchantConfig->sign_type)) {
+            throw new Exception('加密算法类型配置有误');
+        }
+        
         # 根据功能编码获取实际请求路径
         $req_url = $this->getRequestUrl($funcCode);
         $request_params = $this->filterEmptyData($params);
@@ -140,6 +150,11 @@ class BsPay extends BsPayRequestV2
 			$header = array('Content-Type:multipart/form-data');
 			$is_json = false;
 		}
+        
+        #加密算法请求头
+        #默认为RSA
+        $sign_type = !empty($merchantConfig->sign_type) ? $merchantConfig->sign_type : SignTypeEnum::$TYPE_RSA;
+        array_push($header, 'signType:' . $sign_type);
 
         // 添加技能来源头
         $skillSource = $merchantConfig->skill_source;

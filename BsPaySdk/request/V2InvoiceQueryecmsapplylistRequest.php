@@ -26,6 +26,10 @@ class V2InvoiceQueryecmsapplylistRequest extends BaseRequest
      */
     private $huifuId;
     /**
+     * 协议类型
+     */
+    private $agreementType;
+    /**
      * 当前页
      */
     private $pageNum;
@@ -61,6 +65,14 @@ class V2InvoiceQueryecmsapplylistRequest extends BaseRequest
 
     public function setHuifuId($huifuId) {
         $this->huifuId = $huifuId;
+    }
+
+    public function getAgreementType() {
+        return $this->agreementType;
+    }
+
+    public function setAgreementType($agreementType) {
+        $this->agreementType = $agreementType;
     }
 
     public function getPageNum() {

@@ -66,11 +66,11 @@ function getExtendInfos() {
     // 管理员账号
     $extendInfoMap["login_name"]= "Lg2022022201394910571";
     // 是否发送短信标识
-    $extendInfoMap["sms_send_flag"]= "1";
+    $extendInfoMap["sms_send_flag"]= "Y";
     // 拓展方字段
     $extendInfoMap["expand_id"]= "";
     // 文件列表
-    $extendInfoMap["file_list"]= get5f0a1885Bba7488a89ad02827ab6eb69();
+    $extendInfoMap["file_list"]= get365f3cb2D654499290f67abce7f11fcf();
     // 所属行业
     // $extendInfoMap["mcc"]= "";
     // 省
@@ -82,7 +82,7 @@ function getExtendInfos() {
     return $extendInfoMap;
 }
 
-function get5f0a1885Bba7488a89ad02827ab6eb69() {
+function get365f3cb2D654499290f67abce7f11fcf() {
     $dto = array();
     // 文件类型
     $dto["file_type"] = "F04";

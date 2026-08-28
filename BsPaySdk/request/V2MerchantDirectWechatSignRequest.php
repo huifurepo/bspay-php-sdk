@@ -38,10 +38,6 @@ class V2MerchantDirectWechatSignRequest extends BaseRequest
      */
     private $mchId;
     /**
-     * 经营者/法人是否为受益人
-     */
-    private $owner;
-    /**
      * 超级管理员信息
      */
     private $contactInfo;
@@ -49,14 +45,6 @@ class V2MerchantDirectWechatSignRequest extends BaseRequest
      * 经营场景类型
      */
     private $salesScenesType;
-    /**
-     * 经营场景
-     */
-    private $salesInfo;
-    /**
-     * 结算信息
-     */
-    private $settlementInfo;
 
     public function getFunctionCode() {
         return FunctionCodeEnum::$V2_MERCHANT_DIRECT_WECHAT_SIGN;
@@ -111,14 +99,6 @@ class V2MerchantDirectWechatSignRequest extends BaseRequest
         $this->mchId = $mchId;
     }
 
-    public function getOwner() {
-        return $this->owner;
-    }
-
-    public function setOwner($owner) {
-        $this->owner = $owner;
-    }
-
     public function getContactInfo() {
         return $this->contactInfo;
     }
@@ -133,22 +113,6 @@ class V2MerchantDirectWechatSignRequest extends BaseRequest
 
     public function setSalesScenesType($salesScenesType) {
         $this->salesScenesType = $salesScenesType;
-    }
-
-    public function getSalesInfo() {
-        return $this->salesInfo;
-    }
-
-    public function setSalesInfo($salesInfo) {
-        $this->salesInfo = $salesInfo;
-    }
-
-    public function getSettlementInfo() {
-        return $this->settlementInfo;
-    }
-
-    public function setSettlementInfo($settlementInfo) {
-        $this->settlementInfo = $settlementInfo;
     }
 
 }

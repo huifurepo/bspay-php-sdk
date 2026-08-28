@@ -25,6 +25,10 @@ class V2InvoiceRejectsignRequest extends BaseRequest
      * 汇付商户号
      */
     private $huifuId;
+    /**
+     * 协议编号
+     */
+    private $agreementId;
 
     public function getFunctionCode() {
         return FunctionCodeEnum::$V2_INVOICE_REJECTSIGN;
@@ -53,6 +57,14 @@ class V2InvoiceRejectsignRequest extends BaseRequest
 
     public function setHuifuId($huifuId) {
         $this->huifuId = $huifuId;
+    }
+
+    public function getAgreementId() {
+        return $this->agreementId;
+    }
+
+    public function setAgreementId($agreementId) {
+        $this->agreementId = $agreementId;
     }
 
 }

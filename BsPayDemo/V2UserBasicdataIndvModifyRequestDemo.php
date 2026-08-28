@@ -56,7 +56,7 @@ function getExtendInfos() {
     // 手机号
     $extendInfoMap["mobile_no"]= "15556622000";
     // 文件列表
-    // $extendInfoMap["file_list"]= getC86296f592884b19A7f0B93a9dcb9ebd();
+    // $extendInfoMap["file_list"]= getF93305f7Bad24021Bfab6b92c98e001d();
     // 地址
     // $extendInfoMap["address"]= "";
     // 所属行业
@@ -70,7 +70,7 @@ function getExtendInfos() {
     return $extendInfoMap;
 }
 
-function getC86296f592884b19A7f0B93a9dcb9ebd() {
+function getF93305f7Bad24021Bfab6b92c98e001d() {
     $dto = array();
     // 文件类型
     // $dto["file_type"] = "test";

@@ -23,6 +23,8 @@ $request->setReqDate(date("Ymd"));
 $request->setReqSeqId(date("YmdHis").mt_rand());
 // 汇付商户号
 $request->setHuifuId("6666000103334211");
+// 协议类型
+$request->setAgreementType("ELECT");
 // 当前页
 $request->setPageNum("1");
 // 分页大小
@@ -59,8 +61,6 @@ function getExtendInfos() {
     $extendInfoMap["order_id"]= "2025052118403054";
     // 商户名称
     // $extendInfoMap["mer_name"]= "";
-    // 协议类型
-    $extendInfoMap["agreement_type"]= "ELECT";
     // 产品号
     // $extendInfoMap["product_id"]= "";
     return $extendInfoMap;

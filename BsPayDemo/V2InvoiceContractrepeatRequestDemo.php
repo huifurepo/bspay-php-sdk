@@ -23,6 +23,10 @@ $request->setReqSeqId(date("YmdHis").mt_rand());
 $request->setReqDate(date("Ymd"));
 // 汇付商户号
 $request->setHuifuId("6666000103334211");
+// 协议编号
+$request->setAgreementId("130516670601443792");
+// 个人邮箱
+$request->setSignUserEmail("zhangsan@huifu.com");
 
 // 设置非必填字段
 $extendInfoMap = getExtendInfos();
@@ -45,10 +49,6 @@ if (!$result || $result->isError()) {  //失败处理
 function getExtendInfos() {
     // 设置非必填字段
     $extendInfoMap = array();
-    // 协议编号
-    $extendInfoMap["agreement_id"]= "130516670601443792";
-    // 个人邮箱
-    $extendInfoMap["sign_user_email"]= "zhangsan@huifu.com";
     return $extendInfoMap;
 }
 

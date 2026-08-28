@@ -1,10 +1,12 @@
 <?php
 namespace BsPaySdk\core;
 
+use BsPaySdk\guomi\Sm2Signer;
+
 class BsPayTools
 {
     /**
-     * 私钥加签（对数据源排序），可用于 V2 版本接口数据加签
+     * RSA算法 私钥加签（对数据源排序），可用于 V2 版本接口数据加签
      *
      * @param @param array $data 原数据( 排序后的json字符串; 数组参数排序后转json字符串(数据的中文和斜杠均不转码):
                             ksort($post_data); json_encode($post_data, JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE); )
@@ -22,6 +24,24 @@ class BsPayTools
             echo $e->getMessage();
         }
         return base64_encode($signature);
+    }
+    
+    /**
+     *  国密SM2 算法 私钥加签
+     */
+    public static function sha_with_sm2_sign($data, $sm2PrivateKey) {
+        return Sm2Signer::signHex($data, $sm2PrivateKey);
+    }
+    /**
+     *  国密SM2 算法 公钥验签
+     */
+    public static function verifySignSm2($respSign, $respData, $sm2PublicKey){
+        $signB64 = base64_encode(hex2bin($respSign));
+        ksort($respData);
+        $resString = json_encode($respData, JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE);
+        $resString = str_replace("\n","\\n",$resString);
+        $resString = str_replace('"enter_fee":0,','"enter_fee":0.00,',$resString); // 单独替换指定类型格式不正确的字段 如 enter_fee
+        return Sm2Signer::verify($resString, $signB64, $sm2PublicKey);
     }
 
     public static function encrypt_with_rsa_pubkey($data, $rsaPublicKey, $padding=OPENSSL_PKCS1_PADDING){

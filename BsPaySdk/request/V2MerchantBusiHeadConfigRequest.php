@@ -30,7 +30,7 @@ class V2MerchantBusiHeadConfigRequest extends BaseRequest
      */
     private $productId;
     /**
-     * 直属渠道号
+     * 直属渠道号该商户进件完成后归属的渠道商huifu_id；；&lt;br/&gt;sys_id主体为渠道商时填写； &lt;br/&gt;sys_id主体为总部商户时选填；&lt;br/&gt; 示例值：6666000123123123
      */
     private $upperHuifuId;
 

@@ -5,7 +5,7 @@ namespace BsPaySdk\request;
 use BsPaySdk\enums\FunctionCodeEnum;
 
 /**
- * 支付宝直连-申请当面付代签约
+ * 支付宝直连-商户入驻
  *
  * @author sdk-generator
  * @Description
@@ -57,10 +57,6 @@ class V2MerchantDirectAlipayFacetofacesignApplyRequest extends BaseRequest
      * 服务费率（%）0.38~3之间，精确到0.01。当签约且授权sign_and_auth&#x3D;Y时，必填。&lt;font color&#x3D;&quot;green&quot;&gt;示例值：0.38&lt;/font&gt;
      */
     private $rate;
-    /**
-     * 文件列表
-     */
-    private $fileList;
 
     public function getFunctionCode() {
         return FunctionCodeEnum::$V2_MERCHANT_DIRECT_ALIPAY_FACETOFACESIGN_APPLY;
@@ -153,14 +149,6 @@ class V2MerchantDirectAlipayFacetofacesignApplyRequest extends BaseRequest
 
     public function setRate($rate) {
         $this->rate = $rate;
-    }
-
-    public function getFileList() {
-        return $this->fileList;
-    }
-
-    public function setFileList($fileList) {
-        $this->fileList = $fileList;
     }
 
 }

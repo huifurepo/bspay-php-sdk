@@ -995,7 +995,7 @@ class FunctionCodeEnum
      */
     static $V2_TRADE_TRANS_WX_SURROGATE = 'v2/trade/trans/wx/surrogate';
     /**
-     * 支付宝直连-申请当面付代签约
+     * 支付宝直连-商户入驻
      */
     static $V2_MERCHANT_DIRECT_ALIPAY_FACETOFACESIGN_APPLY = 'v2/merchant/direct/alipay/facetofacesign/apply';
     /**
@@ -1003,7 +1003,7 @@ class FunctionCodeEnum
      */
     static $V2_MERCHANT_DIRECT_ALIPAY_APPAUTHTOKEN_EXCHANGE = 'v2/merchant/direct/alipay/appauthtoken/exchange';
     /**
-     * 支付宝直连-查询申请状态
+     * 支付宝直连-查询申请单状态
      */
     static $V2_MERCHANT_DIRECT_ALIPAY_APPLYORDERSTATUS_QUERY = 'v2/merchant/direct/alipay/applyorderstatus/query';
     /**

@@ -9,7 +9,7 @@ if (!defined("SDK_BASE")) {
 
 # sdk 版本号
 if (!defined("SDK_VERSION")) {
-    define("SDK_VERSION", "php_v2.0.30");
+    define("SDK_VERSION", "php_v2.0.31");
 }
 
 # api 接口版本号
@@ -39,7 +39,11 @@ require_once SDK_BASE . "/core/BsPayTools.php";
 require_once SDK_BASE . "/core/BsPay.php";
 require_once SDK_BASE . "/core/BsPayClient.php";
 require_once SDK_BASE . "/core/Payment.php";
+require_once SDK_BASE . "/guomi/Sm3.php";
+require_once SDK_BASE . "/guomi/Sm2Signer.php";
+require_once SDK_BASE . "/guomi/Sm2Compat.php";
 require_once SDK_BASE . "/request/BaseRequest.php";
 require_once SDK_BASE . "/enums/FunctionCodeEnum.php";
+require_once SDK_BASE . "/enums/SignTypeEnum.php";
 
 
