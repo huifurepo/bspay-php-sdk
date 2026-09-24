@@ -92,7 +92,7 @@ function getExtendInfos() {
     // 扩展方字段
     $extendInfoMap["expand_id"]= "";
     // 文件列表
-    // $extendInfoMap["file_list"]= getEa57237822214ca58bdb2d23030e8a65();
+    // $extendInfoMap["file_list"]= get3133b4feD98248caAbf94f93f127425c();
     // 公司类型
     // $extendInfoMap["ent_type"]= "";
     // 所属行业
@@ -100,7 +100,7 @@ function getExtendInfos() {
     return $extendInfoMap;
 }
 
-function getEa57237822214ca58bdb2d23030e8a65() {
+function get3133b4feD98248caAbf94f93f127425c() {
     $dto = array();
     // 文件类型
     // $dto["file_type"] = "test";

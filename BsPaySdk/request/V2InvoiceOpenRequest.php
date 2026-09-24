@@ -54,7 +54,7 @@ class V2InvoiceOpenRequest extends BaseRequest
      */
     private $redApplyReason;
     /**
-     * 冲红申请来源open_type&#x3D;1时必填01：销方02：购方
+     * 冲红申请来源open_type&#x3D;1时必填01：销方02：购方03：第三方
      */
     private $redApplySource;
     /**

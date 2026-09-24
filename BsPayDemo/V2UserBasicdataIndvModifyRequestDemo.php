@@ -46,7 +46,7 @@ function getExtendInfos() {
     // 设置非必填字段
     $extendInfoMap = array();
     // 个人证件有效期类型
-    $extendInfoMap["cert_validity_type"]= "2";
+    $extendInfoMap["cert_validity_type"]= "1";
     // 个人证件有效期开始日期
     $extendInfoMap["cert_begin_date"]= "20200111";
     // 个人证件有效期截止日期
@@ -56,7 +56,7 @@ function getExtendInfos() {
     // 手机号
     $extendInfoMap["mobile_no"]= "15556622000";
     // 文件列表
-    // $extendInfoMap["file_list"]= getF93305f7Bad24021Bfab6b92c98e001d();
+    // $extendInfoMap["file_list"]= getCfff4e1fAf2f41b2Ba99554f5d7c21dd();
     // 地址
     // $extendInfoMap["address"]= "";
     // 所属行业
@@ -70,7 +70,7 @@ function getExtendInfos() {
     return $extendInfoMap;
 }
 
-function getF93305f7Bad24021Bfab6b92c98e001d() {
+function getCfff4e1fAf2f41b2Ba99554f5d7c21dd() {
     $dto = array();
     // 文件类型
     // $dto["file_type"] = "test";

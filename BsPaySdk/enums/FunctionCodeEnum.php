@@ -5,6 +5,18 @@ namespace BsPaySdk\enums;
 class FunctionCodeEnum
 {
     /**
+     * 确认收货提醒
+     */
+    static $V3_TRADE_HOSTING_PAYMENT_RECEIPT_CONFIRM = 'v3/trade/hosting/payment/receipt/confirm';
+    /**
+     * 发货信息录入
+     */
+    static $V3_TRADE_HOSTING_PAYMENT_SHIPPINGINFO_UPLOAD = 'v3/trade/hosting/payment/shippinginfo/upload';
+    /**
+     * 发货信息合单录入
+     */
+    static $V3_TRADE_HOSTING_PAYMENT_COMBINEDSHIPPINGINFO_UPLOAD = 'v3/trade/hosting/payment/combinedshippinginfo/upload';
+    /**
      * 电子合同申请列表查询
      */
     static $V2_INVOICE_QUERYECMSAPPLYLIST = 'v2/invoice/queryEcmsApplyList';

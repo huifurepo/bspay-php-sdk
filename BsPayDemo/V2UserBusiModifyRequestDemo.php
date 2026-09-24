@@ -24,7 +24,7 @@ $request->setReqDate(date("Ymd"));
 // 汇付ID
 $request->setHuifuId("6666000104896342");
 // 签约人信息当电子回单配置开关为开通时必填
-// $request->setSignUserInfo(get4244f7ffCc0a4f9fBaca1609359a3aa9());
+// $request->setSignUserInfo(getC7cbf563D1c94fe9B4a950a1fd06d11e());
 
 // 设置非必填字段
 $extendInfoMap = getExtendInfos();
@@ -48,25 +48,25 @@ function getExtendInfos() {
     // 设置非必填字段
     $extendInfoMap = array();
     // 结算信息配置列表
-    $extendInfoMap["settle_config_list"]= get2a17f2a7Ea4844cb9578836ebcc44214();
+    $extendInfoMap["settle_config_list"]= get4c551ee0D70646fa9f526261fd316aaa();
     // 结算卡信息
-    $extendInfoMap["card_info"]= get490732d32f934783B5e5E5575e476743();
+    $extendInfoMap["card_info"]= getAb092eb2C18048b0B00b1c8a182b62c1();
     // 取现配置列表
-    $extendInfoMap["cash_config"]= get47aaa49f152a46a5982768a04cc5c111();
+    $extendInfoMap["cash_config"]= get292761d558884c2cA951Bb3ea7fd0258();
     // 文件列表
-    $extendInfoMap["file_list"]= get5427f7a17d0841d4Ac1fFb89fa8753e6();
+    $extendInfoMap["file_list"]= get682f390cEb7e483fA3bbD58bb02df15d();
     // 延迟入账开关
     // $extendInfoMap["delay_flag"]= "";
     // 异步请求地址
-    $extendInfoMap["async_return_url"]= "//http://service.example.com/to/path";
+    $extendInfoMap["async_return_url"]= "http://service.example.com/to/path";
     // 斗拱e账户功能配置
-    // $extendInfoMap["elec_acct_config"]= get0c39abe012e44237A3f0D794384bd4cb();
+    // $extendInfoMap["elec_acct_config"]= get85edea365b584d63Bf066e21721bf72d();
     // 电子回单配置
-    // $extendInfoMap["elec_receipt_config"]= get01afdaf9Ff4a4c97A75d6fc1e3d894dc();
+    // $extendInfoMap["elec_receipt_config"]= get5ae0730f1d774631A6b435b021e5276b();
     return $extendInfoMap;
 }
 
-function get2a17f2a7Ea4844cb9578836ebcc44214() {
+function get4c551ee0D70646fa9f526261fd316aaa() {
     $dto = array();
     // 开通状态
     $dto["settle_status"] = "1";
@@ -74,7 +74,7 @@ function get2a17f2a7Ea4844cb9578836ebcc44214() {
     $dto["settle_cycle"] = "D1";
     // 结算批次号settle_pattern为P0时必填；[参见结算批次说明](https://paas.huifu.com/open/doc/api/#/csfl/api_csfl_jspc)
     $dto["settle_batch_no"] = "0";
-    // 是否优先到账settle_pattern为P0时选填， Y：是 N：否（为空默认取值）；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：Y&lt;/font&gt;
+    // 是否优先到账settle_pattern为P0时必填， Y：是 N：否（为空默认取值）；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：Y&lt;/font&gt;
     $dto["is_priority_receipt"] = "Y";
     // 自定义结算处理时间settle_pattern为P1/P2时必填，注意：00:00到00:30不能指定；格式：HHmmss；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：103000&lt;/font&gt;
     $dto["settle_time"] = "";
@@ -106,7 +106,7 @@ function get2a17f2a7Ea4844cb9578836ebcc44214() {
     return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function get490732d32f934783B5e5E5575e476743() {
+function getAb092eb2C18048b0B00b1c8a182b62c1() {
     $dto = array();
     // 卡类型
     $dto["card_type"] = "0";
@@ -138,7 +138,7 @@ function get490732d32f934783B5e5E5575e476743() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function get47aaa49f152a46a5982768a04cc5c111() {
+function get292761d558884c2cA951Bb3ea7fd0258() {
     $dto = array();
     // 开通状态
     $dto["switch_state"] = "1";
@@ -146,9 +146,9 @@ function get47aaa49f152a46a5982768a04cc5c111() {
     $dto["fix_amt"] = "3";
     // 提现手续费率（%）fix_amt与fee_rate至少填写一项，需保留小数点后两位，取值范围[0.00,100.00]，不收费请填写0.00；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：0.05&lt;/font&gt;注：1、如果fix_amt与fee_rate都填写了则手续费&#x3D;fix_amt+支付金额\*fee_rate2、当cash_type&#x3D;D1时为节假日取现手续费
     $dto["fee_rate"] = "0.05";
-    // D1工作日取现手续费固定金额单位元，需保留小数点后两位。不收费请填写0.00；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：1.00&lt;/font&gt;cash_type&#x3D;D1时，不生效 ；cash_type取现类型为D1时，遇工作日按此费率结算，若未配置则默认按照节假日手续费计算
+    // D1工作日取现手续费固定金额单位元，需保留小数点后两位。不收费请填写0.00；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：1.00&lt;/font&gt;cash_type取现类型为D1时，遇工作日按此费率结算，若未配置则默认按照节假日手续费计算
     // $dto["weekday_fix_amt"] = "test";
-    // D1工作日取现手续费率单位%，需保留小数点后两位。取值范围[0.00，100.00]，不收费请填写0.00；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：0.05&lt;/font&gt;cash_type&#x3D;D1时，不生效 ；cash_type取现类型为D1时，遇工作日按此费率结算 ，若未配置则默认按照节假日手续费计算
+    // D1工作日取现手续费率单位%，需保留小数点后两位。取值范围[0.00，100.00]，不收费请填写0.00；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：0.05&lt;/font&gt;cash_type取现类型为D1时，遇工作日按此费率结算 ，若未配置则默认按照节假日手续费计算
     // $dto["weekday_fee_rate"] = "test";
     // 业务类型
     $dto["cash_type"] = "D0";
@@ -166,7 +166,7 @@ function get47aaa49f152a46a5982768a04cc5c111() {
     return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function get5427f7a17d0841d4Ac1fFb89fa8753e6() {
+function get682f390cEb7e483fA3bbD58bb02df15d() {
     $dto = array();
     // 文件类型
     $dto["file_type"] = "F02";
@@ -180,7 +180,7 @@ function get5427f7a17d0841d4Ac1fFb89fa8753e6() {
     return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function getAcb1e012098845aa8351B0fa12cbfe8b() {
+function getA6b0cc6f03ca481eAa408fdcb1a529c7() {
     $dto = array();
     // 银行所在省
     // $dto["prov_id"] = "test";
@@ -209,10 +209,10 @@ function getAcb1e012098845aa8351B0fa12cbfe8b() {
 
     $dtoList = array();
     array_push($dtoList, $dto);
-    return $dtoList;
+    return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function get0c39abe012e44237A3f0D794384bd4cb() {
+function get85edea365b584d63Bf066e21721bf72d() {
     $dto = array();
     // 电子账户开关
     // $dto["switch_state"] = "test";
@@ -227,7 +227,7 @@ function get0c39abe012e44237A3f0D794384bd4cb() {
     // 电子账户开通状态
     // $dto["bank_status"] = "test";
     // 银行卡信息
-    // $dto["elec_card_list"] = getAcb1e012098845aa8351B0fa12cbfe8b();
+    // $dto["elec_card_list"] = getA6b0cc6f03ca481eAa408fdcb1a529c7();
     // 银行信息
     // $dto["bank_message"] = "";
     // 中信签约短信流水号
@@ -238,15 +238,15 @@ function get0c39abe012e44237A3f0D794384bd4cb() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function get01afdaf9Ff4a4c97A75d6fc1e3d894dc() {
+function get5ae0730f1d774631A6b435b021e5276b() {
     $dto = array();
     // 电子回单开关
     // $dto["switch_state"] = "test";
 
-    return $dto;
+    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function get4244f7ffCc0a4f9fBaca1609359a3aa9() {
+function getC7cbf563D1c94fe9B4a950a1fd06d11e() {
     $dto = array();
     // 签约人类型
     // $dto["type"] = "test";
@@ -257,7 +257,7 @@ function get4244f7ffCc0a4f9fBaca1609359a3aa9() {
     // 签约人姓名
     // $dto["name"] = "";
 
-    return $dto;
+    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
 

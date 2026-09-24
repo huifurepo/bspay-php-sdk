@@ -78,7 +78,7 @@ class V2MerchantBasicdataEntRequest extends BaseRequest
      */
     private $foundDate;
     /**
-     * 注册资本保留两位小数；条件选填，国营企业、私营企业、外资企业、事业单位、其他、集体经济必填，政府机构、个体工商户可为空；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：100.00&lt;/font&gt;
+     * 注册资本保留两位小数；条件必填，国营企业、私营企业、外资企业、事业单位、其他、集体经济必填，政府机构、个体工商户可为空；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：100.00&lt;/font&gt;
      */
     private $regCapital;
     /**

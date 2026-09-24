@@ -86,13 +86,13 @@ function getExtendInfos() {
     // 注册地址(详细信息)
     $extendInfoMap["reg_detail"]= "上海市宜山路";
     // 文件列表
-    $extendInfoMap["file_list"]= getA4993046Fe4b4f64817870b32dc1185f();
+    $extendInfoMap["file_list"]= getAf630ca86694412995eb845930fc3607();
     // 所属行业
     // $extendInfoMap["mcc"]= "";
     return $extendInfoMap;
 }
 
-function getA4993046Fe4b4f64817870b32dc1185f() {
+function getAf630ca86694412995eb845930fc3607() {
     $dto = array();
     // 文件类型
     $dto["file_type"] = "F01";
