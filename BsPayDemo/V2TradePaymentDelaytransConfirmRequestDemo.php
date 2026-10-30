@@ -56,15 +56,15 @@ function getExtendInfos() {
     // 原交易全局流水号
     $extendInfoMap["org_hf_seq_id"]= "";
     // 分账对象
-    $extendInfoMap["acct_split_bunch"]= get5722171aD80244dc95ab4ae394a1e2d2();
+    $extendInfoMap["acct_split_bunch"]= get52f71d5eE9934c219d6198acd83b0db1();
     // 安全信息
-    $extendInfoMap["risk_check_data"]= getA78f259b9e5c49f1B6fd23e7b81d9ad2();
+    $extendInfoMap["risk_check_data"]= get403380607d624fe386b46dcce488e193();
     // 备注
     $extendInfoMap["remark"]= "remark123";
     return $extendInfoMap;
 }
 
-function getA3de8d54A38c4ccf87a059ab89bfcbf8() {
+function get0e8daec3B4834670Aaf510b5dbf30d89() {
     $dto = array();
     // 分账金额(元)单位元，需保留小数点后两位，最低传入0.01 ，&lt;font color&#x3D;&quot;green&quot;&gt;示例值：1.00&lt;/font&gt; ，percentage_flag非Y时必填；&lt;br/&gt;percentage_flag&#x3D;Y时div_amt不填，div_amt&#x3D;total_div_amt*percentage_div
     $dto["div_amt"] = "0.01";
@@ -80,19 +80,19 @@ function getA3de8d54A38c4ccf87a059ab89bfcbf8() {
     return $dtoList;
 }
 
-function get5722171aD80244dc95ab4ae394a1e2d2() {
+function get52f71d5eE9934c219d6198acd83b0db1() {
     $dto = array();
     // 分账总金额（元）本次交易确认总额。需保留小数点后两位&lt;br/&gt;percentage_flag&#x3D;Y时必填。该金额与分账百分比用来计算分账金额。&lt;font color&#x3D;&quot;green&quot;&gt;示例值：10.00&lt;/font&gt;；
     // $dto["total_div_amt"] = "test";
     // 百分比分账标志
     // $dto["percentage_flag"] = "";
     // 分账明细
-    $dto["acct_infos"] = getA3de8d54A38c4ccf87a059ab89bfcbf8();
+    $dto["acct_infos"] = get0e8daec3B4834670Aaf510b5dbf30d89();
 
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function getA78f259b9e5c49f1B6fd23e7b81d9ad2() {
+function get403380607d624fe386b46dcce488e193() {
     $dto = array();
     // ip地址
     // $dto["ip_addr"] = "";

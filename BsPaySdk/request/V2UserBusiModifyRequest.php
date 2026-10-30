@@ -26,7 +26,7 @@ class V2UserBusiModifyRequest extends BaseRequest
      */
     private $huifuId;
     /**
-     * 签约人信息当电子回单配置开关为开通时必填
+     * 签约人信息当电子回单配置开关为开通时必填;当用户升级LV3，并且开通 取现、余额支付、账户充值或者延迟支付任一功能时必填
      */
     private $signUserInfo;
 

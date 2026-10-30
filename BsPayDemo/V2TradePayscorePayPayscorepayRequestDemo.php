@@ -32,7 +32,7 @@ $request->setOutTradeNo("03212311224952047516172");
 // 商品描述
 $request->setGoodsDesc("bp充电");
 // 安全信息
-$request->setRiskCheckData(get52d96afbF87746fd9cb2Beb3e46d7bd5());
+$request->setRiskCheckData(getB48d154197b84a529bd3Feda38ffa3b2());
 
 // 设置非必填字段
 $extendInfoMap = getExtendInfos();
@@ -56,21 +56,19 @@ function getExtendInfos() {
     // 设置非必填字段
     $extendInfoMap = array();
     // 聚合反扫微信参数集合
-    // $extendInfoMap["wx_data"]= get2678bcc52a4848679dc2413aa3da407f();
+    // $extendInfoMap["wx_data"]= get5c00a5ea3cd34dc5Ae9fF5167eb94f47();
     // 是否延迟交易
     // $extendInfoMap["delay_acct_flag"]= "";
     // 分账对象
-    // $extendInfoMap["acct_split_bunch"]= get19a634c3D0034464Bcc050d33458448f();
+    // $extendInfoMap["acct_split_bunch"]= getF21a5d75D6d54707884529421294c092();
     // 设备信息
-    // $extendInfoMap["terminal_device_info"]= get471b78176649480eAacf4528fabca41b();
+    // $extendInfoMap["terminal_device_info"]= get3d5fd6849934424685bc1ff795152fa4();
     // 交易备注
     // $extendInfoMap["remark"]= "";
-    // 商户回调地址
-    // $extendInfoMap["notify_url"]= "";
     return $extendInfoMap;
 }
 
-function get2678bcc52a4848679dc2413aa3da407f() {
+function get5c00a5ea3cd34dc5Ae9fF5167eb94f47() {
     $dto = array();
     // 子商户用户标识
     // $dto["sub_openid"] = "test";
@@ -84,7 +82,7 @@ function get2678bcc52a4848679dc2413aa3da407f() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function getE3905e1c9bd4475c81bcEa7a29aa75f8() {
+function get7f0b850248ce424c94c3F8b305f0c42a() {
     $dto = array();
     // 分账金额
     // $dto["div_amt"] = "test";
@@ -96,15 +94,15 @@ function getE3905e1c9bd4475c81bcEa7a29aa75f8() {
     return $dtoList;
 }
 
-function get19a634c3D0034464Bcc050d33458448f() {
+function getF21a5d75D6d54707884529421294c092() {
     $dto = array();
     // 分账明细
-    // $dto["acct_infos"] = getE3905e1c9bd4475c81bcEa7a29aa75f8();
+    // $dto["acct_infos"] = get7f0b850248ce424c94c3F8b305f0c42a();
 
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function get52d96afbF87746fd9cb2Beb3e46d7bd5() {
+function getB48d154197b84a529bd3Feda38ffa3b2() {
     $dto = array();
     // ip地址
     $dto["ip_address"] = "127.0.0.1";
@@ -118,7 +116,7 @@ function get52d96afbF87746fd9cb2Beb3e46d7bd5() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function get471b78176649480eAacf4528fabca41b() {
+function get3d5fd6849934424685bc1ff795152fa4() {
     $dto = array();
     // 设备类型
     // $dto["device_type"] = "";

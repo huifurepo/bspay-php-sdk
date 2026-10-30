@@ -29,6 +29,10 @@ class V2MerchantUrlForwardRequest extends BaseRequest
      * 门店号
      */
     private $storeId;
+    /**
+     * 上级汇付Id如果head_office_flag&#x3D;0，则字段必填，如果head_office_flag&#x3D;1，上级汇付Id不可传
+     */
+    private $headHuifuId;
 
     public function getFunctionCode() {
         return FunctionCodeEnum::$V2_MERCHANT_URL_FORWARD;
@@ -65,6 +69,14 @@ class V2MerchantUrlForwardRequest extends BaseRequest
 
     public function setStoreId($storeId) {
         $this->storeId = $storeId;
+    }
+
+    public function getHeadHuifuId() {
+        return $this->headHuifuId;
+    }
+
+    public function setHeadHuifuId($headHuifuId) {
+        $this->headHuifuId = $headHuifuId;
     }
 
 }

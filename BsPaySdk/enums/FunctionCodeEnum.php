@@ -5,6 +5,22 @@ namespace BsPaySdk\enums;
 class FunctionCodeEnum
 {
     /**
+     * 开票商品修改
+     */
+    static $V2_INVOICE_MANAGE_GOODS_MODIFY = 'v2/invoice/manage/goods/modify';
+    /**
+     * 协议申请列表查询
+     */
+    static $V2_AGREEMENT_APPLY_LIST = 'v2/agreement/apply/list';
+    /**
+     * 电子协议拒签
+     */
+    static $V2_AGREEMENT_ELECT_REJECTSIGN = 'v2/agreement/elect/rejectsign';
+    /**
+     * 电子协议签署链接重发
+     */
+    static $V2_AGREEMENT_ELECT_SIGNURL_RESEND = 'v2/agreement/elect/signurl/resend';
+    /**
      * 确认收货提醒
      */
     static $V3_TRADE_HOSTING_PAYMENT_RECEIPT_CONFIRM = 'v3/trade/hosting/payment/receipt/confirm';

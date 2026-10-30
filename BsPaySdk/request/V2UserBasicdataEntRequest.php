@@ -94,9 +94,13 @@ class V2UserBasicdataEntRequest extends BaseRequest
      */
     private $contactMobile;
     /**
-     * 管理员账号如需短信通知则必填；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：Lg20220222013747&lt;/font&gt;
+     * 管理员账号如需短信通知则必填；升级LV3必填&lt;font color&#x3D;&quot;green&quot;&gt;示例值：Lg20220222013747&lt;/font&gt;
      */
     private $loginName;
+    /**
+     * 公司类型
+     */
+    private $entType;
 
     public function getFunctionCode() {
         return FunctionCodeEnum::$V2_USER_BASICDATA_ENT;
@@ -269,6 +273,14 @@ class V2UserBasicdataEntRequest extends BaseRequest
 
     public function setLoginName($loginName) {
         $this->loginName = $loginName;
+    }
+
+    public function getEntType() {
+        return $this->entType;
+    }
+
+    public function setEntType($entType) {
+        $this->entType = $entType;
     }
 
 }

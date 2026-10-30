@@ -23,25 +23,25 @@ $request->setReqSeqId(date("YmdHis").mt_rand());
 $request->setReqDate(date("Ymd"));
 // 开票方汇付ID
 $request->setHuifuId("6666000149801800");
-// 纳税人识别号
+// 纳税人识别号支付宝和微信乐企模式非必填，&lt;font color&#x3D;&quot;green&quot;&gt;示例值：91510108MA7CQPFFO6&lt;/font&gt;
 $request->setTaxPayerId("91310000795605184T");
-// 销方名称
+// 销方名称支付宝和微信乐企模式非必填，&lt;font color&#x3D;&quot;green&quot;&gt;示例值：汇付数电测试&lt;/font&gt;
 $request->setTaxPayerName("汇付网络技术（上海）有限公司");
-// 公司电话
+// 公司电话支付宝和微信乐企模式非必填，&lt;font color&#x3D;&quot;green&quot;&gt;示例值：021-33323999&lt;/font&gt;
 $request->setTelNo("021-33323999");
-// 公司地址
+// 公司地址支付宝和微信乐企模式非必填，&lt;font color&#x3D;&quot;green&quot;&gt;示例值：徐汇宜山路700号C5栋&lt;/font&gt;
 $request->setRegAddress("徐汇宜山路700号C5栋021-33323999");
-// 开户银行
+// 开户银行支付宝和微信乐企模式非必填，&lt;font color&#x3D;&quot;green&quot;&gt;示例值：民生银行徐汇支行&lt;/font&gt;
 $request->setBankName("民生银行徐汇支行");
-// 开户账户
+// 开户账户支付宝和微信乐企模式非必填，&lt;font color&#x3D;&quot;green&quot;&gt;示例值：0206014180001609&lt;/font&gt;
 $request->setAccountNo("0206014180001609");
-// 联系人手机号
+// 联系人手机号支付宝和微信乐企模式非必填，&lt;font color&#x3D;&quot;green&quot;&gt;示例值：18011212123&lt;/font&gt;
 $request->setContactPhoneNo("17621100776");
 // 开票方式
 $request->setOpenMode("2");
-// 所属省
+// 所属省支付宝和微信乐企模式非必填，&lt;font color&#x3D;&quot;green&quot;&gt;示例值：310000&lt;/font&gt;，参见[地区编码](https://paas.huifu.com/open/doc/api/#/csfl/api_csfl_dqbm)
 $request->setProvId("310000");
-// 所属市
+// 所属市支付宝和微信乐企模式非必填，&lt;font color&#x3D;&quot;green&quot;&gt;示例值：310100&lt;/font&gt;，参见[地区编码](https://paas.huifu.com/open/doc/api/#/csfl/api_csfl_dqbm)
 $request->setCityId("310100");
 
 // 设置非必填字段

@@ -22,7 +22,7 @@ class V2MerchantBusiConfigRequest extends BaseRequest
      */
     private $reqDate;
     /**
-     * 汇付客户Id
+     * 汇付商户号
      */
     private $huifuId;
     /**

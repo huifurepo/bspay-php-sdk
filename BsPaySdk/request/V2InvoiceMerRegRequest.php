@@ -26,31 +26,31 @@ class V2InvoiceMerRegRequest extends BaseRequest
      */
     private $huifuId;
     /**
-     * 纳税人识别号
+     * 纳税人识别号支付宝和微信乐企模式非必填，&lt;font color&#x3D;&quot;green&quot;&gt;示例值：91510108MA7CQPFFO6&lt;/font&gt;
      */
     private $taxPayerId;
     /**
-     * 销方名称
+     * 销方名称支付宝和微信乐企模式非必填，&lt;font color&#x3D;&quot;green&quot;&gt;示例值：汇付数电测试&lt;/font&gt;
      */
     private $taxPayerName;
     /**
-     * 公司电话
+     * 公司电话支付宝和微信乐企模式非必填，&lt;font color&#x3D;&quot;green&quot;&gt;示例值：021-33323999&lt;/font&gt;
      */
     private $telNo;
     /**
-     * 公司地址
+     * 公司地址支付宝和微信乐企模式非必填，&lt;font color&#x3D;&quot;green&quot;&gt;示例值：徐汇宜山路700号C5栋&lt;/font&gt;
      */
     private $regAddress;
     /**
-     * 开户银行
+     * 开户银行支付宝和微信乐企模式非必填，&lt;font color&#x3D;&quot;green&quot;&gt;示例值：民生银行徐汇支行&lt;/font&gt;
      */
     private $bankName;
     /**
-     * 开户账户
+     * 开户账户支付宝和微信乐企模式非必填，&lt;font color&#x3D;&quot;green&quot;&gt;示例值：0206014180001609&lt;/font&gt;
      */
     private $accountNo;
     /**
-     * 联系人手机号
+     * 联系人手机号支付宝和微信乐企模式非必填，&lt;font color&#x3D;&quot;green&quot;&gt;示例值：18011212123&lt;/font&gt;
      */
     private $contactPhoneNo;
     /**
@@ -58,11 +58,11 @@ class V2InvoiceMerRegRequest extends BaseRequest
      */
     private $openMode;
     /**
-     * 所属省
+     * 所属省支付宝和微信乐企模式非必填，&lt;font color&#x3D;&quot;green&quot;&gt;示例值：310000&lt;/font&gt;，参见[地区编码](https://paas.huifu.com/open/doc/api/#/csfl/api_csfl_dqbm)
      */
     private $provId;
     /**
-     * 所属市
+     * 所属市支付宝和微信乐企模式非必填，&lt;font color&#x3D;&quot;green&quot;&gt;示例值：310100&lt;/font&gt;，参见[地区编码](https://paas.huifu.com/open/doc/api/#/csfl/api_csfl_dqbm)
      */
     private $cityId;
 

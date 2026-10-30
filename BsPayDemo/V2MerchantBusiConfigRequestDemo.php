@@ -21,7 +21,7 @@ $request = new V2MerchantBusiConfigRequest();
 $request->setReqSeqId(date("YmdHis").mt_rand());
 // 请求日期
 $request->setReqDate(date("Ymd"));
-// 汇付客户Id
+// 汇付商户号
 $request->setHuifuId("6666000108854952");
 // 业务开通类型
 $request->setFeeType("02");

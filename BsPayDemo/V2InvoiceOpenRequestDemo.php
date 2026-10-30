@@ -25,6 +25,8 @@ $request->setReqDate(date("Ymd"));
 $request->setHuifuId("6666000107430944");
 // 外部商户号&lt;font color&#x3D;&quot;green&quot;&gt;示例值：&lt;/font&gt;
 $request->setExtMerId("");
+// 开票方式乐企联用模式下非斗拱交易必填 枚举： TRADE-交易即开票  PAY-支付即开票
+// $request->setIvcModeCode("test");
 // 渠道号汇付商户号为空时，必传；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：6666000109812124&lt;/font&gt;
 // $request->setChannelId("test");
 // 发票类型
@@ -44,11 +46,13 @@ $request->setOriIvcCode("90222082");
 // 原发票号码openType&#x3D;1时必填；参见[发票右上角](https://paas.huifu.com/open/doc/api/#/fp/api_fp_yanglitu.md)；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：20685767&lt;/font&gt;
 $request->setOriIvcNumber("150000020026");
 // 开票商品信息
-$request->setGoodsInfos(getC6a36685B0564080A1f00db79747ed42());
+$request->setGoodsInfos(getE39d35ceD1c946049c4a78abe4385b46());
 // 不动产销售特殊字段specialFlag为05时，必填；jsonArray格式
-// $request->setEstateSales(get825c74feC48446519d3aB46871b242af());
+// $request->setEstateSales(get3e2cef346688416b829072c10a9ceadd());
 // 不动产租赁特殊字段specialFlag为16时，必填；jsonArray格式
-// $request->setEstateLease(get68aea0a200b84510B95fEbf67bf4e1aa());
+// $request->setEstateLease(get47f6d2af90b840db984f379ab6303717());
+// 交易订单信息jsonObject格式，订单信息（乐企联用，AT联用模式必填）
+// $request->setOrderInfo(get9f17cfb9260e4d8c9db3Ee08ada0cc13());
 
 // 设置非必填字段
 $extendInfoMap = getExtendInfos();
@@ -71,6 +75,10 @@ if (!$result || $result->isError()) {  //失败处理
 function getExtendInfos() {
     // 设置非必填字段
     $extendInfoMap = array();
+    // 开票模式
+    // $extendInfoMap["issue_mode"]= "";
+    // 子商户号
+    // $extendInfoMap["sub_mer_id"]= "";
     // 税控盘编号
     $extendInfoMap["tax_device_id"]= "661919694739";
     // 购方单位识别号
@@ -94,13 +102,11 @@ function getExtendInfos() {
     // 红字信息表编号
     $extendInfoMap["red_info_number"]= "";
     // 开票人信息
-    $extendInfoMap["payer_info"]= get5849a9a316d84bf7966d897f8a655ad6();
+    $extendInfoMap["payer_info"]= getCa65c4309ca442c0A892037585b8e873();
     // 开票结果异步通知地址
     $extendInfoMap["callback_url"]= "virgo://http://192.168.85.157:30031/sspm/testVirgo";
     // 强制开票标识
     $extendInfoMap["buyer_info_confirm"]= "";
-    // 交易订单信息
-    $extendInfoMap["order_info"]= getBde9fd3e10a8499dB6e786ba643edb13();
     // 购方自然人标识
     // $extendInfoMap["buyer_nature_person_type"]= "";
     // 购方自然人证件类型
@@ -112,11 +118,23 @@ function getExtendInfos() {
     // 减按征税类型代码
     // $extendInfoMap["reduced_tax_type"]= "";
     // 二手车信息
-    // $extendInfoMap["used_car"]= getB4eb2b8bF10841598176D92e1e6279a9();
+    // $extendInfoMap["used_car"]= get4095e83b0a9b46eeB3305641800925eb();
     return $extendInfoMap;
 }
 
-function getC6a36685B0564080A1f00db79747ed42() {
+function get6e4b3c323c4d4fa6Ae98414ce70f646a() {
+    $dto = array();
+    // 加油站名称
+    // $dto["station"] = "test";
+    // 油枪号
+    // $dto["gun_number"] = "test";
+    // 加油时间
+    // $dto["oil_time"] = "test";
+
+    return $dto;
+}
+
+function getE39d35ceD1c946049c4a78abe4385b46() {
     $dto = array();
     // 发票行性质
     $dto["ivc_nature"] = "0";
@@ -126,14 +144,16 @@ function getC6a36685B0564080A1f00db79747ed42() {
     $dto["goods_id"] = "";
     // 商品税收分类编码参考[商品编码](https://cloudpnrcdn.oss-cn-shanghai.aliyuncs.com/opps/api/prod/download_file/fp/%E7%94%B5%E5%AD%90%E5%8F%91%E7%A5%A8%E5%95%86%E5%93%81%E7%BC%96%E7%A0%81.xlsx)；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：1010101090000000000&lt;/font&gt;
     $dto["goods_code"] = "6010000000000000000";
-    // 商品名称goodsCode不为空时必填；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：&lt;/font&gt;
+    // 商品名称goods_code不为空时必填；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：&lt;/font&gt;
     $dto["goods_name"] = "预付卡";
-    // 税率goodsCode不为空时必填，最多三位小数；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：0.130&lt;/font&gt;
+    // 税率goods_code不为空时必填，最多三位小数；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：0.130&lt;/font&gt;
     $dto["tax_rate"] = "0.03";
     // 含税标识
     $dto["is_price_con_tax"] = "1";
     // 金额(元)
     $dto["trans_amt"] = "70.00";
+    // 成品油信息乐企联用、AT乐企联用模式下成品油票种必传
+    // $dto["oil_info"] = get6e4b3c323c4d4fa6Ae98414ce70f646a();
     // 规格型号
     $dto["goods_model"] = "";
     // 计量单位
@@ -156,7 +176,7 @@ function getC6a36685B0564080A1f00db79747ed42() {
     return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function get5849a9a316d84bf7966d897f8a655ad6() {
+function getCa65c4309ca442c0A892037585b8e873() {
     $dto = array();
     // 收款人
     $dto["payee"] = "收款人";
@@ -168,7 +188,7 @@ function get5849a9a316d84bf7966d897f8a655ad6() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function get825c74feC48446519d3aB46871b242af() {
+function get3e2cef346688416b829072c10a9ceadd() {
     $dto = array();
     // 不动产地址
     // $dto["addr"] = "test";
@@ -194,7 +214,7 @@ function get825c74feC48446519d3aB46871b242af() {
     return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function get68aea0a200b84510B95fEbf67bf4e1aa() {
+function get47f6d2af90b840db984f379ab6303717() {
     $dto = array();
     // 不动产地址
     // $dto["addr"] = "test";
@@ -216,17 +236,39 @@ function get68aea0a200b84510B95fEbf67bf4e1aa() {
     return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function getBde9fd3e10a8499dB6e786ba643edb13() {
+function getAbba899f2acf4386A7b6B14265184add() {
     $dto = array();
-    // 交易订单号
-    $dto["order_id"] = "002900TOP4A260519173506P786ac13683b000015";
-    // 交易订单日期
-    $dto["order_date"] = "20260701";
+    // 支付方式
+    // $dto["pay_way"] = "";
+    // 支付金额
+    // $dto["trade_amt"] = "";
+    // 支付通道订单号
+    // $dto["trade_no"] = "";
+    // 支付时间
+    // $dto["trade_time"] = "";
 
-    return $dto;
+    $dtoList = array();
+    array_push($dtoList, $dto);
+    return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function getAb411c71069e4df49eb94d27ccdbb9d6() {
+function get9f17cfb9260e4d8c9db3Ee08ada0cc13() {
+    $dto = array();
+    // 交易订单号
+    // $dto["order_id"] = "test";
+    // 交易金额示例值：1.00 单位元，is_dg_trans &#x3D; N，必填
+    // $dto["amt"] = "test";
+    // 支付方式jsonArray格式，支付信息明细，is_dg_trans&#x3D;N时必填
+    // $dto["pay_infos"] = getAbba899f2acf4386A7b6B14265184add();
+    // 交易订单日期
+    // $dto["order_date"] = "";
+    // 是否斗拱交易
+    // $dto["is_dg_trans"] = "";
+
+    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+}
+
+function get3cec4f3f754c4e91Ae1e5c32d003cd8c() {
     $dto = array();
     // 车牌号码
     // $dto["plate_number"] = "";
@@ -236,13 +278,15 @@ function getAb411c71069e4df49eb94d27ccdbb9d6() {
     // $dto["factory_plate_model"] = "";
     // 车辆类型代码
     // $dto["car_type"] = "";
+    // 转入地车辆管理所名称
+    // $dto["into_vehicle_manage_name"] = "";
+    // 车架号
+    // $dto["vehicle_identification_number"] = "";
 
-    $dtoList = array();
-    array_push($dtoList, $dto);
-    return $dtoList;
+    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function getB4eb2b8bF10841598176D92e1e6279a9() {
+function get4095e83b0a9b46eeB3305641800925eb() {
     $dto = array();
     // 二手车销售统一发票正向开票标识
     // $dto["direction_type"] = "";
@@ -267,9 +311,9 @@ function getB4eb2b8bF10841598176D92e1e6279a9() {
     // 卖方电话/自然人电话
     // $dto["car_nature_ent_tell"] = "";
     // 车辆费基本信息集合
-    // $dto["car_base_list"] = getAb411c71069e4df49eb94d27ccdbb9d6();
+    // $dto["car_base_list"] = get3cec4f3f754c4e91Ae1e5c32d003cd8c();
 
-    return $dto;
+    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
 

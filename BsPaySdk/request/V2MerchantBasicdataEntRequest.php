@@ -189,6 +189,14 @@ class V2MerchantBasicdataEntRequest extends BaseRequest
      * 店铺收银台/公司前台照scene_type字段含有线下场景时必填；通过[图片上传接口](https://paas.huifu.com/open/doc/api/#/shgl/shjj/api_shjj_shtpsc)上传材料；文件类型：F105；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：57cc7f00-600a-33ab-b614-6221bbf2e530&lt;/font&gt;&lt;br/&gt;微信/支付宝实名认证个人商户，内景照也使用此字段；
      */
     private $storeCashierDeskPic;
+    /**
+     * 对公卡信息
+     */
+    private $materialCardInfo;
+    /**
+     * 总部客群当head_office_flag为1时，必填；枚举值包含，0 集团客户，1大型商业综合体，2品牌连锁客户；
+     */
+    private $headType;
 
     public function getFunctionCode() {
         return FunctionCodeEnum::$V2_MERCHANT_BASICDATA_ENT;
@@ -545,6 +553,22 @@ class V2MerchantBasicdataEntRequest extends BaseRequest
 
     public function setStoreCashierDeskPic($storeCashierDeskPic) {
         $this->storeCashierDeskPic = $storeCashierDeskPic;
+    }
+
+    public function getMaterialCardInfo() {
+        return $this->materialCardInfo;
+    }
+
+    public function setMaterialCardInfo($materialCardInfo) {
+        $this->materialCardInfo = $materialCardInfo;
+    }
+
+    public function getHeadType() {
+        return $this->headType;
+    }
+
+    public function setHeadType($headType) {
+        $this->headType = $headType;
     }
 
 }

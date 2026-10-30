@@ -30,6 +30,10 @@ class V2InvoiceOpenRequest extends BaseRequest
      */
     private $extMerId;
     /**
+     * 开票方式乐企联用模式下非斗拱交易必填 枚举： TRADE-交易即开票  PAY-支付即开票
+     */
+    private $ivcModeCode;
+    /**
      * 渠道号汇付商户号为空时，必传；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：6666000109812124&lt;/font&gt;
      */
     private $channelId;
@@ -77,6 +81,10 @@ class V2InvoiceOpenRequest extends BaseRequest
      * 不动产租赁特殊字段specialFlag为16时，必填；jsonArray格式
      */
     private $estateLease;
+    /**
+     * 交易订单信息jsonObject格式，订单信息（乐企联用，AT联用模式必填）
+     */
+    private $orderInfo;
 
     public function getFunctionCode() {
         return FunctionCodeEnum::$V2_INVOICE_OPEN;
@@ -113,6 +121,14 @@ class V2InvoiceOpenRequest extends BaseRequest
 
     public function setExtMerId($extMerId) {
         $this->extMerId = $extMerId;
+    }
+
+    public function getIvcModeCode() {
+        return $this->ivcModeCode;
+    }
+
+    public function setIvcModeCode($ivcModeCode) {
+        $this->ivcModeCode = $ivcModeCode;
     }
 
     public function getChannelId() {
@@ -209,6 +225,14 @@ class V2InvoiceOpenRequest extends BaseRequest
 
     public function setEstateLease($estateLease) {
         $this->estateLease = $estateLease;
+    }
+
+    public function getOrderInfo() {
+        return $this->orderInfo;
+    }
+
+    public function setOrderInfo($orderInfo) {
+        $this->orderInfo = $orderInfo;
     }
 
 }

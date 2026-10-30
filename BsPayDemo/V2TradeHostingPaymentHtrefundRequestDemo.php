@@ -28,11 +28,11 @@ $request->setOrdAmt("0.01");
 // 原交易请求日期
 $request->setOrgReqDate("20240229");
 // 安全信息线上交易退款必填，参见线上退款接口；jsonObject字符串
-$request->setRiskCheckData(getD826c3096785458dBc8b01c6777e35b0());
+$request->setRiskCheckData(get23e26cf0945b48fa956a9cf1d9de0bc2());
 // 设备信息线上交易退款必填，参见线上退款接口；jsonObject字符串
-$request->setTerminalDeviceData(getEd3f08adA40c41768ceaC05bd276cbf7());
+$request->setTerminalDeviceData(get2a00d4edBc624d72A543F7981bbb91a4());
 // 大额转账支付账户信息数据jsonObject格式；银行大额转账支付交易退款申请时必填
-// $request->setBankInfoData(get849b0a0043c246c1B69bB43d2a2339c1());
+// $request->setBankInfoData(get8715a51e6c3f4b4c8220F0c99a839c2e());
 
 // 设置非必填字段
 $extendInfoMap = getExtendInfos();
@@ -62,7 +62,7 @@ function getExtendInfos() {
     // 原交易请求流水号
     $extendInfoMap["org_req_seq_id"]= "202207099803123123199941";
     // 分账对象
-    $extendInfoMap["acct_split_bunch"]= get9bd41f6c14e846f09f9363c3ed43df51();
+    $extendInfoMap["acct_split_bunch"]= get49056c85Ad904b4fB10e9184a2a9ef46();
     // 备注
     // $extendInfoMap["remark"]= "";
     // 是否垫资退款
@@ -74,11 +74,13 @@ function getExtendInfos() {
     // 异步通知地址
     $extendInfoMap["notify_url"]= "http://www.baidu.com";
     // 抖音拓展参数集合
-    // $extendInfoMap["dy_data"]= get5867b38731174c9d9e4457b715935a28();
+    // $extendInfoMap["dy_data"]= get5557f4f4Ccc04255820eEe2ef2fae63c();
+    // 子单退款信息列表
+    // $extendInfoMap["sub_orders_request"]= get71c30c76C15b427eB5f138660e74cae2();
     return $extendInfoMap;
 }
 
-function getFe3996d580ce46b8946dF444fe0dcf43() {
+function get8c84d690642f48ce8b4c5b44e6f1441c() {
     $dto = array();
     // 分账金额
     $dto["div_amt"] = "0.12";
@@ -92,18 +94,18 @@ function getFe3996d580ce46b8946dF444fe0dcf43() {
     return $dtoList;
 }
 
-function get9bd41f6c14e846f09f9363c3ed43df51() {
+function get49056c85Ad904b4fB10e9184a2a9ef46() {
     $dto = array();
     // 分账明细
-    $dto["acct_infos"] = getFe3996d580ce46b8946dF444fe0dcf43();
+    $dto["acct_infos"] = get8c84d690642f48ce8b4c5b44e6f1441c();
 
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function getD826c3096785458dBc8b01c6777e35b0() {
+function get23e26cf0945b48fa956a9cf1d9de0bc2() {
     $dto = array();
     // ip地址
-    // $dto["ip_addr"] = "";
+    $dto["ip_addr"] = "127.0.0.1";
     // 基站地址
     // $dto["base_station"] = "";
     // 纬度
@@ -114,7 +116,7 @@ function getD826c3096785458dBc8b01c6777e35b0() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function getEd3f08adA40c41768ceaC05bd276cbf7() {
+function get2a00d4edBc624d72A543F7981bbb91a4() {
     $dto = array();
     // 设备类型
     $dto["device_type"] = "4";
@@ -136,7 +138,7 @@ function getEd3f08adA40c41768ceaC05bd276cbf7() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function get849b0a0043c246c1B69bB43d2a2339c1() {
+function get8715a51e6c3f4b4c8220F0c99a839c2e() {
     $dto = array();
     // 省份付款方为对公账户时必填，参见省市地区码；示例值：0013
     // $dto["province"] = "test";
@@ -152,12 +154,56 @@ function get849b0a0043c246c1B69bB43d2a2339c1() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function get5867b38731174c9d9e4457b715935a28() {
+function get5557f4f4Ccc04255820eEe2ef2fae63c() {
     $dto = array();
     // 退款原因
     // $dto["refund_desc"] = "";
 
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+}
+
+function get8fc59e80664a4493B9a0796467c8a91a() {
+    $dto = array();
+    // 分账金额
+    // $dto["div_amt"] = "test";
+    // 分账接收方ID
+    // $dto["huifu_id"] = "test";
+
+    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+}
+
+function getE42dd76d256b4a4595b43b74f719c75c() {
+    $dto = array();
+    // 分账信息列表
+    // $dto["acct_infos"] = get8fc59e80664a4493B9a0796467c8a91a();
+
+    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+}
+
+function get71c30c76C15b427eB5f138660e74cae2() {
+    $dto = array();
+    // 子单请求日期
+    // $dto["sub_req_date"] = "test";
+    // 子单请求流水号
+    // $dto["sub_req_seq_id"] = "test";
+    // 子单商户号
+    // $dto["sub_huifu_id"] = "test";
+    // 子单申请退款金额
+    // $dto["sub_ord_amt"] = "test";
+    // 原子单交易请求日期
+    // $dto["org_sub_req_date"] = "test";
+    // 原子单交易全局流水号
+    // $dto["org_sub_hf_seq_id"] = "";
+    // 原子单交易请求流水号
+    // $dto["org_sub_req_seq_id"] = "";
+    // 分账对象
+    // $dto["acct_split_bunch"] = getE42dd76d256b4a4595b43b74f719c75c();
+    // 子单备注
+    // $dto["sub_remark"] = "";
+
+    $dtoList = array();
+    array_push($dtoList, $dto);
+    return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
 

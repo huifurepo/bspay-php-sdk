@@ -70,7 +70,7 @@ function getExtendInfos() {
     // 拓展方字段
     $extendInfoMap["expand_id"]= "";
     // 文件列表
-    $extendInfoMap["file_list"]= getE0dde9e7D5a54431Ac1c9947d57b9ead();
+    $extendInfoMap["file_list"]= get76b3e6cfDeae48a68bcc9ca9af1c2feb();
     // 所属行业
     // $extendInfoMap["mcc"]= "";
     // 省
@@ -82,7 +82,7 @@ function getExtendInfos() {
     return $extendInfoMap;
 }
 
-function getE0dde9e7D5a54431Ac1c9947d57b9ead() {
+function get76b3e6cfDeae48a68bcc9ca9af1c2feb() {
     $dto = array();
     // 文件类型
     $dto["file_type"] = "F04";

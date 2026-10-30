@@ -23,10 +23,8 @@ $request->setReqSeqId(date("YmdHis").mt_rand());
 $request->setReqDate(date("Ymd"));
 // 汇付ID
 $request->setHuifuId("6666000105418240");
-// 主体信息
-$request->setAuthIdentityInfo(getAuthIdentityInfo());
 // 联系人信息
-$request->setContactPersonInfo(getContactPersonInfo());
+$request->setContactPersonInfo(getCad99be040984802A2d78e1a215bccee());
 
 // 设置非必填字段
 $extendInfoMap = getExtendInfos();
@@ -53,14 +51,16 @@ function getExtendInfos() {
     $extendInfoMap["pay_channel_id"]= "10000001";
     // 业务开通类型
     $extendInfoMap["pay_scene"]= "1";
+    // 主体信息
+    $extendInfoMap["auth_identity_info"]= getF1cb10c324624018984dF83d6bcf19c3();
     // 法人身份信息
-    $extendInfoMap["legal_person_info"]= getLegalPersonInfo();
+    $extendInfoMap["legal_person_info"]= getF053471c77d24b0eB58d65ff7f75fefe();
     // 受益人信息
-    $extendInfoMap["ubo_info"]= getUboInfo();
+    $extendInfoMap["ubo_info"]= getE539caea7196498aA7fe688411696e67();
     return $extendInfoMap;
 }
 
-function getCertificateInfo() {
+function get5a14daf1576a4040A33eEf2779559f62() {
     $dto = array();
     // 登记证书类型**证照类型为登记证书时(certificate_type&#x3D;REGISTER_CERT)必填**。枚举：&lt;br/&gt;统一社会信用代码证书(CERTIFICATE_TYPE_2389)&lt;br/&gt;慈善组织公开募捐资格证书(CERTIFICATE_TYPE_2397)&lt;br/&gt;社会团体法人登记证书(CERTIFICATE_TYPE_2394)&lt;br/&gt;民办非企业单位登记证书(CERTIFICATE_TYPE_2395)&lt;br/&gt;基金会法人登记证书(CERTIFICATE_TYPE_2396)&lt;br/&gt;农民专业合作社法人营业执照(CERTIFICATE_TYPE_2398)&lt;br/&gt;宗教活动场所登记证(CERTIFICATE_TYPE_2399)&lt;br/&gt;其他证书/批文/证明(CERTIFICATE_TYPE_2400)&lt;br/&gt;&lt;font color&#x3D;&quot;green&quot;&gt;示例值：CERTIFICATE_TYPE_2389&lt;/font&gt;
     $dto["cert_type"] = "CERTIFICATE_TYPE_2389";
@@ -82,7 +82,7 @@ function getCertificateInfo() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function getSupportCredentials() {
+function getAb3d2d9110ce4232Bf1bFd4a82f346cb() {
     $dto = array();
     // 小微经营类型
     $dto["micro_biz_type"] = "MICRO_TYPE_STORE";
@@ -110,7 +110,7 @@ function getSupportCredentials() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function getQualificationInfoList() {
+function get2250a07b4aed4b06831326ac1c71421f() {
     $dto = array();
     // 行业类目id
     $dto["mcc_code"] = "2015050700000000";
@@ -122,7 +122,7 @@ function getQualificationInfoList() {
     return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function getAuthIdentityInfo() {
+function getF1cb10c324624018984dF83d6bcf19c3() {
     $dto = array();
     // 主体类型
     $dto["business_type"] = "2";
@@ -135,18 +135,18 @@ function getAuthIdentityInfo() {
     // 证照类型
     $dto["certificate_type"] = "BUSINESS_CERT";
     // 登记证书信息
-    $dto["certificate_info"] = getCertificateInfo();
+    $dto["certificate_info"] = get5a14daf1576a4040A33eEf2779559f62();
     // 单位证明函照片
     $dto["company_prove_copy"] = "71da066c-5d15-3658-a86d-4e85ee67808a";
     // 辅助证明材料信息
-    $dto["support_credentials"] = getSupportCredentials();
+    $dto["support_credentials"] = getAb3d2d9110ce4232Bf1bFd4a82f346cb();
     // 经营许可证
-    $dto["qualification_info_list"] = getQualificationInfoList();
+    $dto["qualification_info_list"] = get2250a07b4aed4b06831326ac1c71421f();
 
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function getLegalPersonInfo() {
+function getF053471c77d24b0eB58d65ff7f75fefe() {
     $dto = array();
     // 证件持有人类型
     $dto["legal_type"] = "SUPER";
@@ -172,7 +172,7 @@ function getLegalPersonInfo() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function getContactPersonInfo() {
+function getCad99be040984802A2d78e1a215bccee() {
     $dto = array();
     // 联系人身份证号码
     $dto["id_card_number"] = "120103198507275017";
@@ -184,7 +184,7 @@ function getContactPersonInfo() {
     return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 
-function getUboInfo() {
+function getE539caea7196498aA7fe688411696e67() {
     $dto = array();
     // 证件姓名
     $dto["ubo_id_doc_name"] = "消化";
